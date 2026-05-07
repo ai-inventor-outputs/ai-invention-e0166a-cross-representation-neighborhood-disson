@@ -1,0 +1,150 @@
+{
+  "title": "Niche→ML Adapt",
+  "summary": "Comprehensive survey of ecological niche overlap metrics (Schoener's D, Hellinger distance, Warren's I) and their adaptation from low-dimensional ecology (2D PCA grids) to high-dimensional ML feature spaces (50-768D). Covers exact formulas verified from ecospat source code, the Broennimann PCA-env 5-step framework, KDE curse of dimensionality with MISE convergence rate O(n^{-4/(d+4)}), dimensionality reduction strategy (2D PCA primary, 5D sensitivity, UMAP/t-SNE rejected), bandwidth selection (Scott's rule), computational feasibility (<10 min for 10K instances, 5 classes, 3 feature spaces), comparison with ML class overlap measures (pycol F1-F3, Bhattacharyya coefficient), and novelty assessment confirming no prior cross-domain application of ecological niche metrics to ML class distributions.",
+  "answer": "## Adapting Ecological Niche Overlap Metrics to High-Dimensional ML Feature Spaces\n\n### 1. Exact Mathematical Definitions (Verified from Source Code)\n\n**Schoener's D** was created by Schoener (1968) for quantifying prey item overlap in anoles and is defined in its discrete form as D(p_X, p_Y) = 1 - (1/2) × Σ_i |p_{X,i} - p_{Y,i}| [1]. The metric ranges from 0 (no overlap) to 1 (identical distributions). The continuous KDE-based form replaces the sum with an integral: D(f_X, f_Y) = 1 - (1/2) × ∫ |f_X(x) - f_Y(x)| dx [1]. In the ecospat R package, the implementation is: `SchoenerD <- 1 - 0.5 * sum(abs(p1 - p2))` where p1 and p2 are normalized probability vectors with sum = 1 [2, 5]. Schoener's D quantifies the extent to which two distributions occupy the same space and is robust to data that extends beyond the region occupied by either species [1].\n\n**Hellinger distance** is defined as H(p_X, p_Y) = √(Σ_i (√p_{X,i} - √p_{Y,i})²) and was applied to niche overlap by Warren et al. (2008) [6]. The R implementation is `HellingerDist <- sqrt(sum((sqrt(p1) - sqrt(p2))^2))` [2]. **Warren's I** statistic is derived from Hellinger distance as I = 1 - (H²)/2, also ranging from 0 (no overlap) to 1 (identical distributions) [6]. The implementation is `WarrenI <- 1 - ((HellingerDist^2)/2)` [2, 5]. Warren noted that despite the theoretical advantages of I over D for ecological niche models, both metrics give qualitatively similar results in practice [1, 6].\n\n**Key mathematical relationships**: All three metrics (D, H, I) are computed from the same pair of normalized probability vectors. D uses L1 (total variation) distance, H uses the Bhattacharyya/Hellinger geometry (square root transform), and I is a monotonic transform of H [1, 2]. Critically, Warren's I is mathematically identical to the Bhattacharyya coefficient BC = Σ√(p_i × q_i), since H² = 2(1 - BC) implies I = 1 - H²/2 = BC [17]. This establishes a direct bridge between the ecological metric and a well-known statistical quantity.\n\n### 2. The Broennimann PCA-env Framework (2012)\n\nThe standard ecological pipeline for niche overlap measurement follows a 5-step procedure introduced by Broennimann et al. (2012) [3] and implemented in the ecospat R package [4, 5]:\n\n**Step 1 — PCA Calibration**: Perform PCA on ALL environmental variables from the combined background of both species. The PCA is calibrated on all sites of the study area using `dudi.pca()` from the ade4 package. Only the first 2 axes are retained [3, 4].\n\n**Step 2 — Score Projection**: Project each species' occurrences as supplementary rows onto the PCA axes using `suprow()`. Species scores are supplemental to the calibrated PCA space [4].\n\n**Step 3 — Grid Construction**: Construct a 100×100 grid (R=100 parameter) spanning the extent of PCA-space defined by the background environmental data. The grid extent is bounded by the min/max PCA values in the background [19, 4].\n\n**Step 4 — Kernel Density Estimation**: Estimate kernel density per species on the 2D grid using `ecospat.grid.clim.dyn()`, which delegates to `ecospat.kd()` supporting two kernel methods: 'adehabitat' (kernelUD from adehabitatHR) or 'ks' (kde from the ks package). An environmental mask constrains species density to regions where the environment actually exists [4, 19].\n\n**Step 5 — Overlap Computation**: Normalize density grids so each sums to 1, then compute D = 1 - 0.5 × Σ|p1 - p2| and I = 1 - (H²)/2 [5].\n\nThe function signature is `ecospat.grid.clim.dyn(glob, glob1, sp, R=100, th.sp=0, th.env=0, geomask=NULL, kernel.method='adehabitat', extend.extent=c(0,0,0,0))` [4, 19]. Two key density outputs are produced: **z.uncor** — density normalized to the range 0-to-1, a direct reflection of occurrence density regardless of environmental distribution; and **z.cor** — density corrected for environmental prevalence: z/Z where Z is background environment density, requiring more occurrences at common environments to achieve the same density as at rare environments [4]. The overlap function `ecospat.niche.overlap(z1, z2, cor)` uses z.uncor when cor=FALSE and z.cor when cor=TRUE [5].\n\n**Critical insight**: The Broennimann framework ALWAYS reduces to 2D before KDE. This is not an arbitrary choice but reflects the practical impossibility of grid-based KDE in higher dimensions [3, 4].\n\n### 3. Alternative Niche Overlap Methods\n\n**nicheROVER** (Swanson et al. 2015) defines niche regions as α-probability regions of a multivariate normal distribution N(μ, Σ), with overlap defined as the probability that an individual from species A falls in the niche region of species B [7]. It works in arbitrary dimensions without grid discretization, provides directional estimates (overlap of A in B differs from B in A), and uses a Bayesian framework with Normal-Inverse-Wishart priors to account for uncertainty [8, 7]. However, it assumes multivariate normality, which may not hold for complex ML class distributions, particularly multimodal ones [7, 8]. A Gaussian copula extension has been proposed to handle non-normal marginals but is not standard [7, 8].\n\n**Hypervolume methods** construct n-dimensional bounding volumes around species occurrences and measure overlap as shared volume [20]. However, they suffer severely from the curse of dimensionality: mis-sampling by 5% in each dimension compounds to (1-0.05)^d total error — for example, 40% error at d=10 — regardless of the algorithm used [20].\n\n**Ecological consensus**: PCA reduction to 2D followed by grid-KDE (the Broennimann approach) is the standard method in the field. Hypervolume methods are used but acknowledged as more experimental [3, 4, 20].\n\n### 4. KDE Curse of Dimensionality — Quantitative Analysis\n\nThe optimal MISE (Mean Integrated Squared Error) convergence rate for multivariate KDE is O(n^{-4/(d+4)}) [9]. Any reasonable bandwidth selector H has H = O(n^{-2/(d+4)}), and substituting into the MISE formula yields this optimal rate [9]. This has severe practical implications for high-dimensional data:\n\n| Dimensions (d) | MISE exponent (n=10K) | Quality Assessment |\n|---|---|---|\n| d=2 | −0.667 | Good — standard ecology |\n| d=5 | −0.444 | Acceptable — usable |\n| d=10 | −0.286 | Marginal — degraded |\n| d=50 | −0.074 | Unusable — no convergence |\n| d=768 | −0.005 | Hopeless |\n\nWang & Scott (2019) define 'high-dimensional' for density estimation as 3 < d ≤ 50 and note that the ideal density estimator should handle dimensions 4 to 50, but acknowledge this remains extremely challenging [10]. The curse is even more stark for grid-based methods: with R=100 grid resolution per dimension, d=2 requires 10,000 cells (trivial), d=5 requires 10^10 cells (infeasible), and d=10 requires 10^20 cells (impossible) [9, 10]. Grid-based KDE is therefore limited to d ≤ 3, possibly d=4 with coarser grids.\n\nFor the target scenario of n=10,000 data points, KDE is reliable only for d ≤ 5. Achieving MISE ~ 0.01 (1% error) requires approximately n ~ 1,000 at d=2, n ~ 30,000 at d=5, and n ~ 10^6 at d=10 [9, 21, 23].\n\n### 5. Dimensionality Reduction Strategies for ML Adaptation\n\n**Primary recommendation: 2D PCA.** This is directly faithful to Broennimann's PCA-env framework [3, 4]. A 100×100 grid is perfectly feasible, there is no curse of dimensionality, and results are maximally comparable to the ecology literature. PCA preserves Euclidean distances, which is required for meaningful KDE with Gaussian kernels [3, 4]. The main limitation is that 2 PCs from 768-dimensional BERT embeddings may explain less than 20% of the total variance. This should be mitigated by reporting the explained variance ratio and interpreting D values with caution if it falls below 50%.\n\n**Sensitivity analysis: 5D PCA.** This retains more variance (typically >80-90% for 50-dimensional features, >50% for 768-dimensional) while KDE still converges at an acceptable rate for n=10,000 [9]. Instead of grid-based KDE, a sampling-based approach is used: fit per-class KDEs in 5D PCA space using scipy.stats.gaussian_kde [11], evaluate both KDEs at the union of data points, normalize, and compute D. The pseudocode is:\n\n```\n1. X_pca = PCA(n_components=5).fit_transform(X_combined)\n2. kde_a = gaussian_kde(X_class_a.T)  # Scott's bandwidth\n3. kde_b = gaussian_kde(X_class_b.T)\n4. eval_points = vstack([X_class_a, X_class_b])\n5. p_a = kde_a(eval_points.T); p_a /= p_a.sum()\n6. p_b = kde_b(eval_points.T); p_b /= p_b.sum()\n7. D = 1 - 0.5 * sum(abs(p_a - p_b))\n```\n\n**Not recommended: above 10D.** KDE convergence rate becomes too slow. Scott's bandwidth becomes very large, causing severe oversmoothing. This would require n > 10^6 for meaningful density estimates [21, 9]. For higher dimensions, use nicheROVER-style parametric (multivariate normal) overlap as a crosscheck [7, 8].\n\n**UMAP and t-SNE are NOT appropriate for KDE-based overlap.** UMAP does not preserve density well due to its uniform density assumption [13]. The UMAP author (Leland McInnes) confirmed that distances in the embedding are not precisely interpretable, axes have no meaning, and 'the scale of UMAP output is somewhat arbitrary' [14]. t-SNE and UMAP distort both distances and densities, making them fundamentally invalid for KDE-based overlap computation where Euclidean distances must be meaningful [13, 14]. DensMAP attempts to better preserve local density but still does not provide distance-faithful embeddings [13]. PCA, by contrast, preserves Euclidean distances by construction, which is required for Gaussian kernel KDE to be meaningful.\n\n**Separate vs. shared PCA**: PCA should be applied separately per feature space (analogous to ecospat PCA-env where PCA is calibrated on the combined background within each environmental context) [3, 4]. Each feature space (e.g., penultimate layer, logits, embeddings) has its own geometry. Cross-space comparison comes from comparing D values across spaces, not from shared PCA axes.\n\n### 6. Bandwidth Selection Strategy\n\n**Scott's rule** is implemented as scotts_factor = n^{-1/(d+4)} per the scipy documentation, where the covariance matrix is scaled by factor² [11]. The Silverman alternative is silverman_factor = (n × (d+2) / 4)^{-1/(d+4)} [11]. For the target scenario with n=10,000:\n\n| Dimensions | Scott's factor | Bandwidth quality |\n|---|---|---|\n| d=2 | 0.215 | Tight, good resolution |\n| d=5 | 0.374 | Moderate, acceptable |\n| d=10 | 0.464 | Wide, oversmoothing |\n\nScott's rule assumes a unimodal distribution. For multimodal class distributions (common in ML), it may oversmooth, merging distinct modes [9, 11]. Silverman's rule gives a slightly smaller bandwidth but has the same asymptotic behavior [9].\n\nThe scipy documentation explicitly recommends: 'for data that lies in a lower-dimensional subspace of the space in which it is expressed, consider performing principal component analysis / dimensionality reduction and using gaussian_kde with the transformed data' [11].\n\n**Recommendation**: Use Scott's rule as default for d ≤ 5. For d=5 specifically, consider leave-one-out cross-validation (LOOCV) bandwidth as a robustness check. For d > 5, oversmoothing is severe and parametric alternatives should be considered [23, 9, 11].\n\n### 7. Computational Feasibility Assessment\n\nFor the target scenario of N=10,000 instances, 5 classes, 3 feature spaces, with 10 class pairs per feature space = 30 total overlap computations:\n\n**Approach 1 — 2D PCA + grid (ecospat-style)**: PCA projection is fast. KDE on a 100×100 grid costs O(n × R²) = O(10^8) operations per class. With ~60 KDE fits and 30 overlap computations, total time is less than 1 minute. Memory is negligible (100×100 grid = 10KB per density) [4, 5, 11].\n\n**Approach 2 — 5D PCA + sampling**: Fitting scipy.stats.gaussian_kde costs O(n_class) per fit [11]. Evaluation costs O(n_class × m) per evaluation, where m ≈ 10,000 evaluation points. With n_class ≈ 2,000, this yields ~20 million operations per class pair, taking seconds per pair. Total for 30 pairs: approximately 2–5 minutes [11, 12].\n\n**Approach 3 — 10D PCA + sampling**: Same as 5D but with higher per-point cost due to 10D Gaussian evaluation. Total for 30 pairs: less than 10 minutes. However, results are less reliable due to convergence rate degradation [9, 12].\n\n**Python library comparison**: scipy.stats.gaussian_kde offers a simple API with Scott/Silverman bandwidth but O(nm) evaluation with no tree acceleration [11]. sklearn.neighbors.KernelDensity provides tree-based acceleration (ball_tree, kd_tree) for faster evaluation and multiple kernel options, but the KD tree degrades for d > 20 and the ball tree, while better for high-d, is still limited by the curse of dimensionality [12].\n\nAll three approaches are well within a 1-hour computational budget for the target scenario.\n\n### 8. Cross-Domain Applications and Novelty Assessment\n\n**Novelty finding**: No prior work was found applying Schoener's D, Hellinger distance, or Warren's I to machine learning class distributions in feature spaces. Extensive search across ecology, ML, and cross-domain literature using multiple query formulations found no precedent for this cross-domain application [1, 3, 6, 7, 15, 16, 22]. This provides strong evidence for novelty, though as always, absence of evidence has inherent uncertainty. A more exhaustive review of ML proceedings (ICML, NeurIPS, AAAI) could further confirm this.\n\n**ML class overlap measures (pycol)**: The Python Class Overlap Library (pycol) implements a comprehensive set of complexity measures from the seminal work of Ho and Basu (2002) as extended by Lorena et al. (2019) [15, 16]. Key measures include F1 (Maximum Fisher's Discriminant Ratio), F2 (Volume of Overlapping Region — product of per-feature overlap ratios), F3 (Maximum Individual Feature Efficiency), N1 (Fraction of Borderline Points using minimum spanning tree), N2 (Ratio of Intra/Extra Class NN Distance), and N3 (Error Rate of 1-NN Classifier); the pycol Python library provides implementations of all these measures [16, 15]. Class overlap has been shown to be more harmful for classification than class imbalance [22].\n\n**Critical distinction from ecological metrics**: ALL ML complexity/overlap measures work within ONE feature space to characterize classification difficulty [15, 16]. They do NOT compare overlap ACROSS different feature representations. This is the fundamental novelty of applying the ecological framework: the CRND approach compares class overlap across multiple representations (penultimate layer, logits, embeddings), using a different D value per feature space.\n\n**Comparison of distribution similarity metrics**: Schoener's D = 1 - 0.5 × Σ|p1 - p2| uses the L1 (total variation) distance and is symmetric, ranging from 0 to 1 [1, 2]. The Bhattacharyya coefficient BC = Σ√(p1 × p2) uses the geometric mean of densities, is also symmetric and ranges from 0 to 1, and has a closed-form solution for Gaussians [17]. KL divergence KL(p||q) = Σ p × log(p/q) is asymmetric, ranges from 0 to infinity, and requires absolute continuity [17, 18]. The overlap coefficient OVL = ∫ min(f(x), g(x)) dx is equivalent to 1 - TV(f,g) and is mathematically identical to Schoener's D when densities are normalized [18].\n\n**The CRND novelty is therefore NOT in the overlap metric itself** (Schoener's D is mathematically equivalent to 1 - Total Variation distance, which is well-known in statistics). Rather, the novelty lies in: (1) applying it to CLASS distributions rather than SPECIES distributions, (2) using the ecological PCA-env framework adaptation for the density estimation procedure, (3) comparing overlap ACROSS multiple feature representations, and (4) correlating the cross-representation niche divergence with model disagreement.\n\n**Economics parallel**: Economic niche theory draws parallels with ecological niches — niche formation in economics is also exponentially or power-law distributed — but does not use the specific overlap metrics (D, H, I) [3].\n\n### 9. Synthesis and Recommendations\n\n**Recommended adaptation pipeline**:\n1. For each feature space (penultimate layer, logits, embeddings), extract class-specific feature vectors.\n2. Apply PCA jointly on the union of all class instances within that feature space. Retain 2 components (primary) and 5 components (sensitivity) [3, 4].\n3. For 2D: construct 100×100 grid, apply KDE per class with Scott's bandwidth via scipy, normalize, compute D [5, 11].\n4. For 5D: fit scipy.stats.gaussian_kde per class, evaluate at union of data points, normalize, compute D [11].\n5. Report explained variance ratio. If < 50% for 2D, note as limitation [3, 4].\n6. Optionally compute nicheROVER-style parametric overlap (multivariate normal) as crosscheck [7, 8].\n\n**Dimensionality reduction summary**: 2D PCA is the primary approach — faithful to ecology, no curse of dimensionality, may lose variance. 5D PCA is for sensitivity analysis — better variance retention, KDE still converges, use sampling-based D. Above 10D is not recommended for KDE — use parametric methods only. UMAP/t-SNE must NEVER be used for KDE-based overlap as distances and densities are distorted [13, 14].\n\n**Bandwidth summary**: Scott's rule h = n^{-1/(d+4)} × σ as default [9, 11]. For d=2, h ≈ 0.215σ (good resolution). For d=5, h ≈ 0.374σ (acceptable). LOOCV as robustness check for d=5 [9, 23].\n\n**Computational summary**: All approaches feasible within 10 minutes for the target scenario (10K instances, 5 classes, 3 feature spaces, 30 overlap computations) [11, 12].\n\n**Failure contingencies**: If 5D KDE fails, fall back to 2D PCA (always works) [3, 4]. If 2D variance is too low, use nicheROVER parametric overlap as complementary metric [7, 8]. If distributions are strongly multimodal, Scott's rule oversmooths — try Silverman or CV bandwidth, or consider mixture-model-based overlap [9, 11].\n\n### Contradicting Evidence and Limitations\n\n- The 2D PCA reduction may lose substantial information for high-dimensional feature spaces (768-d BERT embeddings → 2D could explain <20% variance), potentially making overlap measurements misleading [3, 4].\n- The z.cor prevalence correction in ecospat corrects for environmental frequency, but this has no clear ML analogue — using z.uncor (raw density) is more appropriate for ML but loses the ecological framework's robustness to frequency bias [4, 5].\n- nicheROVER's multivariate normal assumption, while restrictive for general ML, could actually be appropriate for certain feature spaces where batch normalization produces approximately Gaussian features [7, 8].\n- Schoener's D is mathematically identical to 1 - Total Variation distance, meaning the metric itself is NOT novel — only its application context and the cross-representation comparison framework are novel [1, 17, 18].\n- Scott's rule bandwidth may severely oversmooth multimodal distributions common in ML feature spaces, potentially masking important class structure [9, 11].\n\n### Confidence Assessment\n\n- **Mathematical definitions**: Very high — confirmed from multiple sources including original source code [1, 2, 5].\n- **Broennimann framework**: Very high — confirmed from ecospat source code, vignettes, and tutorials [3, 4, 5, 19].\n- **Curse of dimensionality**: High — standard statistical theory with well-established convergence rates [9, 10, 21].\n- **Dimensionality reduction recommendation**: High — PCA to 2D is the ecological standard; 5D as sensitivity is well-motivated [3, 4, 9].\n- **Computational feasibility**: High — order-of-magnitude estimates based on known algorithm complexity [11, 12].\n- **Novelty assessment**: Moderate-high — extensive search found no precedent, but absence of evidence has inherent uncertainty [15, 16, 22].\n- **UMAP/t-SNE unsuitability**: Very high — confirmed by UMAP author and fundamental mathematical properties [13, 14].",
+  "sources": [
+    {
+      "index": 1,
+      "url": "https://plantarum.ca/2021/12/02/schoenersd/",
+      "title": "Schoener's D and Study Extent - plantarum.ca",
+      "summary": "Comprehensive walkthrough of Schoener's D formula, origin (Schoener 1968), Warren's I, Hellinger distance, with R code and worked examples."
+    },
+    {
+      "index": 2,
+      "url": "https://modtools.wordpress.com/2015/10/30/modoverlap/",
+      "title": "Assess model overlap with Schoener's D, Hellinger distance and Warren's I - modTools",
+      "summary": "Complete R implementation (modOverlap function) showing exact code for computing all three metrics from two prediction vectors."
+    },
+    {
+      "index": 3,
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1466-8238.2011.00698.x",
+      "title": "Broennimann et al. (2012) - Measuring ecological niche overlap from occurrence and spatial environmental data",
+      "summary": "Primary reference for the PCA-env framework introducing kernel density estimation on 2D PCA grids for niche overlap measurement."
+    },
+    {
+      "index": 4,
+      "url": "https://plantarum.ca/notebooks/ecospat/",
+      "title": "Ecospat Niche Overlap Analysis - plantarum.ca",
+      "summary": "Step-by-step tutorial of the ecospat framework showing PCA calibration, grid.clim.dyn, R=100 parameter, z.uncor vs z.cor outputs."
+    },
+    {
+      "index": 5,
+      "url": "https://raw.githubusercontent.com/cran/ecospat/master/R/ecospat.nicheoverlap.R",
+      "title": "ecospat source code - ecospat.niche.overlap function",
+      "summary": "Actual R source code showing D = 1 - (0.5 * sum(abs(p1 - p2))) and I = 1 - (H^2)/2 computation from normalized z.uncor or z.cor grids."
+    },
+    {
+      "index": 6,
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1558-5646.2008.00482.x",
+      "title": "Warren et al. (2008) - Environmental Niche Equivalency vs Conservatism",
+      "summary": "Original paper proposing Warren's I statistic based on Hellinger distance for niche overlap, with niche equivalency and background similarity tests."
+    },
+    {
+      "index": 7,
+      "url": "https://esajournals.onlinelibrary.wiley.com/doi/10.1890/14-0235.1",
+      "title": "Swanson et al. (2015) - A new probabilistic method for n-dimensional ecological niches and niche overlap",
+      "summary": "Introduces nicheROVER method for n-dimensional niche overlap using multivariate normal assumption and Bayesian framework."
+    },
+    {
+      "index": 8,
+      "url": "https://cran.r-project.org/web/packages/nicheROVER/nicheROVER.pdf",
+      "title": "nicheROVER R package documentation",
+      "summary": "Package documentation describing Normal-Inverse-Wishart prior, alpha-probability niche regions, and overlap computation in arbitrary dimensions."
+    },
+    {
+      "index": 9,
+      "url": "https://en.wikipedia.org/wiki/Multivariate_kernel_density_estimation",
+      "title": "Multivariate kernel density estimation - Wikipedia",
+      "summary": "Formal MISE convergence rate O(n^{-4/(d+4)}), bandwidth matrix parametrizations (S, D, F classes), Scott's and Silverman's rules of thumb."
+    },
+    {
+      "index": 10,
+      "url": "https://arxiv.org/pdf/1904.00176",
+      "title": "Wang & Scott (2019) - Nonparametric Density Estimation for High-Dimensional Data",
+      "summary": "Comprehensive review of nonparametric density estimation algorithms for high-dimensional data (3 < d <= 50), including curse of dimensionality analysis."
+    },
+    {
+      "index": 11,
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gaussian_kde.html",
+      "title": "scipy.stats.gaussian_kde documentation",
+      "summary": "Python KDE implementation with Scott's factor = n**(-1./(d+4)), Silverman's factor, explicit recommendation to use PCA for data in lower-dimensional subspaces."
+    },
+    {
+      "index": 12,
+      "url": "https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KernelDensity.html",
+      "title": "sklearn.neighbors.KernelDensity documentation",
+      "summary": "Tree-based KDE implementation. KD tree fast for d<20 but degrades; ball tree better for high-d but still limited by curse of dimensionality."
+    },
+    {
+      "index": 13,
+      "url": "https://umap-learn.readthedocs.io/en/latest/faq.html",
+      "title": "UMAP FAQ - Does UMAP preserve density?",
+      "summary": "UMAP author confirms density is not well preserved due to uniform density assumption, making UMAP inappropriate for KDE-based overlap computation."
+    },
+    {
+      "index": 14,
+      "url": "https://github.com/lmcinnes/umap/issues/92",
+      "title": "UMAP GitHub Issue #92 - Are euclidean distances interpretable?",
+      "summary": "UMAP author (McInnes) states distances are not precisely interpretable, axes have no meaning, and scale is 'somewhat arbitrary'."
+    },
+    {
+      "index": 15,
+      "url": "https://arxiv.org/pdf/1808.03591",
+      "title": "Lorena et al. (2019/2021) - How Complex is your Classification Problem? A Survey of Data Complexity Measures",
+      "summary": "Comprehensive survey of ML complexity measures: F1-F4 (feature overlap), N1-N4 (neighborhood), T1 (topology). Extends Ho & Basu (2002)."
+    },
+    {
+      "index": 16,
+      "url": "https://github.com/miriamspsantos/pycol",
+      "title": "pycol - Python Class Overlap Library",
+      "summary": "Python library implementing comprehensive set of class overlap complexity measures. All measures work within a single feature space."
+    },
+    {
+      "index": 17,
+      "url": "https://en.wikipedia.org/wiki/Bhattacharyya_distance",
+      "title": "Bhattacharyya distance - Wikipedia",
+      "summary": "Bhattacharyya coefficient BC = sum(sqrt(p*q)), distance DB = -ln(BC). Symmetric, bounded. Related to Hellinger distance: H^2 = 2(1-BC)."
+    },
+    {
+      "index": 18,
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2019.01089/full",
+      "title": "Measuring Distribution Similarities: A Distribution-Free Overlapping Index",
+      "summary": "Distribution-free overlap index linked to KL divergence and Bhattacharyya distance. Works with any distribution including multimodal."
+    },
+    {
+      "index": 19,
+      "url": "https://rdrr.io/cran/ecospat/man/ecospat.grid.clim.dyn.html",
+      "title": "ecospat.grid.clim.dyn documentation",
+      "summary": "Function documentation for dynamic occurrence density grid construction with R=100 default, kernel methods, and threshold parameters."
+    },
+    {
+      "index": 20,
+      "url": "https://nsojournals.onlinelibrary.wiley.com/doi/full/10.1111/ecog.03187",
+      "title": "Hypervolume concepts in niche- and trait-based ecology",
+      "summary": "Review of hypervolume methods showing curse of dimensionality: 5% per-dimension error yields 40% total error at d=10."
+    },
+    {
+      "index": 21,
+      "url": "https://faculty.washington.edu/yenchic/17Sp_403/Lec7-density.pdf",
+      "title": "Lecture 7: Density Estimation - University of Washington",
+      "summary": "Formal treatment of KDE convergence rates and curse of dimensionality in density estimation."
+    },
+    {
+      "index": 22,
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S1566253522001099",
+      "title": "A unifying view of class overlap and imbalance - Information Fusion (2022)",
+      "summary": "Systematic review showing class overlap is more harmful for classification than class imbalance, providing taxonomy of overlap measures."
+    },
+    {
+      "index": 23,
+      "url": "https://bookdown.org/egarpor/NP-UC3M/kde-ii-mult.html",
+      "title": "Multivariate kernel density estimation - Notes for Nonparametric Statistics",
+      "summary": "Textbook treatment of multivariate KDE with bandwidth matrix selection and convergence properties."
+    }
+  ],
+  "follow_up_questions": [
+    "How does the explained variance ratio of 2D PCA differ across feature space types (penultimate layer vs logits vs embeddings) for common ML architectures, and at what threshold should overlap results be considered unreliable?",
+    "Could a mixture-model-based overlap metric (e.g., using Gaussian Mixture Models instead of KDE) provide better handling of multimodal class distributions in higher dimensions while avoiding the curse of dimensionality?",
+    "What is the sensitivity of Schoener's D to the choice of grid resolution R (e.g., 50 vs 100 vs 200) and to the prevalence correction (z.cor vs z.uncor) in the ML context where 'environmental prevalence' has no direct analogue?"
+  ]
+}

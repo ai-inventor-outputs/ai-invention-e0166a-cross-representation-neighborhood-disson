@@ -1,0 +1,300 @@
+{
+  "title": "CRND Lit Survey",
+  "summary": "Comprehensive literature survey across three areas critical for the CRND paper: (1) multi-representation disagreement diagnostics, (2) hybrid noise detection, and (3) ecological niche overlap metrics in ML. Key finding: CRND's ecological metric transfer (Schoener's D) remains a strong novelty claim with zero prior ML applications found across 12+ searches. SPEC (ICML 2025) and DRES (EMNLP 2025) are the closest competitors in Area 1 but differ fundamentally — SPEC is global/cluster-level, DRES computes kDN within each representation independently rather than cross-representation neighborhood overlap. TMNR (IJCAI 2024) and WANN (TMLR 2025) are closest in Area 2 but operate within single representation spaces or use evidential DNNs rather than CRND's training-free neighborhood Jaccard approach.",
+  "answer": "This survey examines recent (2023-2025) literature across three areas critical for positioning the CRND framework. The key finding is that CRND occupies a unique intersection: no existing method combines (a) per-instance cross-representation neighborhood disagreement diagnostics with (b) training-free noise detection and (c) ecological niche overlap metrics for class characterization.\n\n**Area 1 — Multi-Representation Disagreement Diagnostics:** The closest competitor is SPEC (ICML 2025) [1], which compares embeddings via eigendecomposition of difference kernel matrices. However, SPEC operates at the cluster/global level, not per-instance, and uses kernel-based comparison rather than neighborhood Jaccard overlap. DRES (EMNLP 2025) [2] computes kDN across 14 text representations but independently within each space — it selects the best representation per instance rather than measuring cross-representation neighborhood disagreement. Cook et al. (NAACL 2025) [3] examine instance-level complexity metrics but focus on metric similarity/redundancy rather than cross-representation comparison. CKA extensions (Patch-CKA, RCKA) [4] provide finer-grained comparison but remain within the same model architecture. In the multi-view learning space, Reliable Conflictive Multi-View Learning (RCML, AAAI 2024) [20] addresses conflictive instances where views disagree, but uses Dempster-Shafer fusion for reliability rather than neighborhood overlap. The official SPEC implementation [21] confirms its focus on kernel matrix eigendecomposition without per-instance scores. No paper was found that computes per-instance Jaccard neighborhood overlap across fundamentally different representation families for noise/difficulty diagnostics.\n\n**Area 2 — Hybrid Noise Detection:** WANN (TMLR 2025) [5] uses foundation model embeddings + weighted adaptive kNN for noise robustness, but operates in a single embedding space. DeFT (NeurIPS 2024) [6] leverages VLM text-visual alignment for noise detection — multi-modal, not multi-representation. TMNR/TMNR² (IJCAI 2024) [7] is the closest competitor: it uses evidential DNNs across multiple views to detect noise via view-specific noise correlation matrices. Key differences: TMNR requires training evidential networks, uses Dempster-Shafer fusion, and focuses on multi-view learning; CRND is training-free, uses simple neighborhood overlap, and is representation-agnostic. CoDC (2024) [8] uses feature-level disagreement between two co-trained networks — same architecture, not different representation families. DynaCor (CVPR 2024) [9] uses training dynamics with intentional label corruption — requires training and operates within a single model. DSCL (IEEE TCSVT 2024) [10] combines semantic and feature spaces but for robust training, not diagnostic characterization. The NLP noisy label survey (2025) [11] classifies methods into five categories: feature vector, transition matrix, prediction confidence, loss improvement, and data weighting — CRND's cross-representation approach doesn't fit neatly into any, suggesting genuine novelty. AlleNoise (AISTATS 2025) [12] provides a large-scale NLP noise benchmark showing that synthetic noise methods fail on real-world noise, supporting CRND's motivation for training-free diagnostics. The geometry-aware framework by Bozkurt & Ortega (2025) [13] introduces reliability estimation in foundation model embeddings using NNK graphs — single space, per-instance, training-free, but without cross-representation comparison. DDN (2025) [14] extends kDN with dynamic, density-aware neighborhoods but remains within a single feature space. A comprehensive curated list of advances in label-noise learning [22] tracking papers across all major venues (NeurIPS, ICML, ICLR, CVPR) from 2020-2025 reveals no method combining cross-representation neighborhood comparison with noise detection.\n\n**Area 3 — Ecological Metrics in ML:** Across 12+ targeted searches combining Schoener's D, Warren's I, niche overlap, and ML/classification terms, NO paper was found applying ecological niche overlap metrics (Schoener's D or the Broennimann et al. 2012 KDE framework) to ML class distributions or feature spaces [15, 16, 17]. Hellinger distance is widely used in ML for class imbalance and feature selection [18], but the specific ecological framework of niche overlap — treating classes as 'species' and feature spaces as 'environmental gradients,' using KDE-based Schoener's D — has no precedent in the ML literature. No ecology-to-ML crossover workshops were found at major venues (NeurIPS, ICML, ICLR). The 'unifying view of class overlap and imbalance' survey by Santos et al. (2022) [19] provides a comprehensive taxonomy of class overlap measures but does not reference ecological niche overlap metrics. This constitutes the paper's strongest and most defensible novelty claim.",
+  "area_1_multi_representation": {
+    "papers_found": 8,
+    "closest_competitors": [
+      {
+        "citation": "Jalali, M., Dibaei Nia, B., & Farnia, F. (2025). Towards an Explainable Comparison and Alignment of Feature Embeddings.",
+        "venue": "ICML 2025",
+        "year": "2025",
+        "approach_summary": "SPEC framework uses eigendecomposition of difference kernel matrices between two embeddings to detect sample clusters captured differently. Provides scalable kernel-based comparison with linear complexity. Also introduces SPEC-align for embedding alignment.",
+        "differentiation_from_CRND": "SPEC operates at cluster/global level via spectral decomposition, NOT per-instance. Uses kernel matrices, not neighborhood Jaccard overlap. Not applied to noise detection. Provides cluster-level explanations, not per-instance difficulty/noise scores.",
+        "threat_level": "medium"
+      },
+      {
+        "citation": "Farhangian, F., Ensina, L.A., Cavalcanti, G.D.C., & Cruz, R.M.O. (2025). DRES: Fake news detection by dynamic representation and ensemble selection.",
+        "venue": "EMNLP 2025",
+        "year": "2025",
+        "approach_summary": "Uses 14 text representations (TF-IDF, Word2Vec, GloVe, FastText, BERT, RoBERTa, LLaMA3, etc.) and computes kDN (k-Disagreeing Neighbors) INDEPENDENTLY within each representation to estimate instance hardness. Selects the representation with lowest hardness per instance for classification.",
+        "differentiation_from_CRND": "DRES computes kDN within each representation independently and selects the best one. It does NOT measure cross-representation neighborhood disagreement or Jaccard overlap between neighborhoods in different spaces. DRES is for representation selection, not for diagnosing noise or characterizing instance difficulty via cross-representation comparison.",
+        "threat_level": "medium"
+      },
+      {
+        "citation": "Cook, R.A., Lalor, J.P., & Abbasi, A. (2025). No Simple Answer to Data Complexity: An Examination of Instance-Level Complexity Metrics for Classification Tasks.",
+        "venue": "NAACL 2025",
+        "year": "2025",
+        "approach_summary": "Empirically examines relationships between diverse instance-level complexity metrics for NLP classification. Finds that training loss provides similar complexity rankings as more computationally intensive techniques. Focuses on metric similarity and subsampling.",
+        "differentiation_from_CRND": "Focuses on metric redundancy/similarity within standard complexity measures, not cross-representation comparison. Does not compare how difficulty changes across different feature representations. Training-loss-centric, not neighborhood-based.",
+        "threat_level": "low"
+      },
+      {
+        "citation": "Various authors (2024-2025). CKA extensions: Patch-CKA, RCKA for knowledge distillation.",
+        "venue": "IJCAI 2024, ICML 2025",
+        "year": "2024-2025",
+        "approach_summary": "Extensions of Centered Kernel Alignment to patch-level and relation-level comparison. Patch-CKA enables local region comparison within the same architecture for knowledge distillation. Debiased CKA corrects statistical biases.",
+        "differentiation_from_CRND": "CKA extensions operate within the same model architecture (teacher-student), not across fundamentally different representation families. Kernel-based, not neighborhood-based. Used for knowledge distillation, not noise/difficulty diagnostics.",
+        "threat_level": "low"
+      },
+      {
+        "citation": "DDN authors (2025). Dynamic Disagreeing Neighbors: A deep dive into complexity estimation.",
+        "venue": "Neurocomputing 2025",
+        "year": "2025",
+        "approach_summary": "Extends kDN with dynamic, density-aware neighborhoods (NCN-based) and distance-based weighting for smoother complexity estimation. Evaluated on 65 binary datasets.",
+        "differentiation_from_CRND": "DDN operates within a SINGLE feature space with improved neighborhood computation. Does not compare across different representation families. Addresses kDN's fixed-k limitation but not cross-representation disagreement.",
+        "threat_level": "low"
+      }
+    ],
+    "novelty_assessment": "CRND's per-instance cross-representation neighborhood disagreement (Jaccard overlap of kNN sets across different feature spaces) has no direct precedent. SPEC is the closest but operates at cluster-level. DRES uses multiple representations but computes kDN independently within each, not across them. No existing method measures how an instance's local neighborhood changes across fundamentally different representation families (TF-IDF vs. word embeddings vs. transformer embeddings) using simple neighborhood overlap.",
+    "positioning_recommendation": "Position CRND as the first per-instance, training-free diagnostic that measures cross-representation neighborhood disagreement. Cite SPEC as the closest global-level method (differentiate: per-instance vs. cluster-level, neighborhood vs. kernel). Cite DRES as using multiple representations but for selection not cross-comparison. Cite CKA as global representation similarity. Cite DDN as improved single-space kDN. Emphasize that CRND's simplicity (Jaccard overlap) enables interpretability and representation-agnosticism."
+  },
+  "area_2_hybrid_noise_detection": {
+    "papers_found": 11,
+    "closest_competitors": [
+      {
+        "citation": "Zhang, Y., Xu, C., Jiang, H., Guan, Z., Zhao, W., He, X., & Sensoy, M. (2024). Trusted Multi-view Learning with Label Noise.",
+        "venue": "IJCAI 2024",
+        "year": "2024",
+        "approach_summary": "TMNR/TMNR² uses evidential deep neural networks to construct view-specific opinions capturing beliefs and uncertainty. Transforms opinions through noise correlation matrices. TMNR² disentangles clean/noisy sample optimization using evidence-label consistency and pseudo-labels from neighboring information.",
+        "differentiation_from_CRND": "TMNR requires TRAINING evidential neural networks for each view. Uses Dempster-Shafer fusion and noise correlation matrices, not simple neighborhood overlap. Not representation-agnostic — requires designing view-specific architectures. CRND is training-free, uses any off-the-shelf representation, and relies on simple Jaccard overlap.",
+        "threat_level": "medium"
+      },
+      {
+        "citation": "Di Salvo, F., Doerrich, S., Rieger, I., & Ledig, C. (2025). An Embedding is Worth a Thousand Noisy Labels.",
+        "venue": "TMLR 2025",
+        "year": "2025",
+        "approach_summary": "WANN uses foundation model self-supervised embeddings with weighted adaptive kNN. Introduces reliability score η measuring likelihood of correct labeling. Outperforms robust loss methods and standard kNN on diverse noise types.",
+        "differentiation_from_CRND": "WANN operates in a SINGLE embedding space from one foundation model. Does not compare across representation families. Uses adaptive kNN weighting for classification, not cross-representation neighborhood disagreement for diagnostics. CRND compares neighborhoods across multiple spaces.",
+        "threat_level": "medium"
+      },
+      {
+        "citation": "Wei, T., et al. (2024). Vision-Language Models are Strong Noisy Label Detectors.",
+        "venue": "NeurIPS 2024",
+        "year": "2024",
+        "approach_summary": "DeFT uses VLM text-visual alignment with learnable positive/negative prompts per class to detect noisy labels. Two-phase approach: first detects noise via prompt learning, then fine-tunes with curated clean samples.",
+        "differentiation_from_CRND": "DeFT is multi-MODAL (text+image alignment), not multi-REPRESENTATION (multiple text features). Requires training prompt learners. Vision-specific. CRND operates on multiple representations of the same modality, is training-free, and modality-agnostic.",
+        "threat_level": "low"
+      },
+      {
+        "citation": "Dong et al. (2024). CoDC: Accurate Learning with Noisy Labels via Disagreement and Consistency.",
+        "venue": "Biomimetics 2024",
+        "year": "2024",
+        "approach_summary": "Co-teaching method maintaining feature-level disagreement and prediction-level consistency between two networks. Uses weighted cross-entropy loss with historical training information.",
+        "differentiation_from_CRND": "CoDC trains two networks of the SAME architecture with different initializations. Disagreement is between co-trained networks, not fundamentally different representation families. Requires training. CRND uses pre-computed, heterogeneous representations without any training.",
+        "threat_level": "low"
+      },
+      {
+        "citation": "Kim, S., Lee, D., Kang, S., Chae, S., Jang, S., & Yu, H. (2024). Learning Discriminative Dynamics with Label Corruption for Noisy Label Detection.",
+        "venue": "CVPR 2024",
+        "year": "2024",
+        "approach_summary": "DynaCor framework uses intentional label corruption to simulate noisy label behavior, then clusters training dynamics to identify clean vs. noisy instances. Learns discriminative latent representations of training dynamics.",
+        "differentiation_from_CRND": "DynaCor requires model training with augmented corruption strategy. Operates on training dynamics of a single model, not cross-representation comparison. Not training-free.",
+        "threat_level": "low"
+      },
+      {
+        "citation": "Lin, H., Li, Y., Zhang, Z., Zhu, L., & Xu, Y. (2024). Learning With Noisy Labels by Semantic and Feature Space Collaboration.",
+        "venue": "IEEE TCSVT 2024",
+        "year": "2024",
+        "approach_summary": "DSCL uses dual-space (semantic + feature) collaborative learning with global prototypes and high-confidence semantic predictions for sample selection. Bidirectional adjustment between spaces.",
+        "differentiation_from_CRND": "DSCL uses two spaces (semantic vs. feature) within a jointly trained system. Requires end-to-end training. Uses prototypes and predictions, not neighborhood overlap. CRND is training-free and uses arbitrary pre-computed representations.",
+        "threat_level": "low"
+      },
+      {
+        "citation": "Bozkurt, E. & Ortega, A. (2025). Robust Classification under Noisy Labels: A Geometry-Aware Reliability Framework for Foundation Models.",
+        "venue": "CAMSAP 2025",
+        "year": "2025",
+        "approach_summary": "Uses NNK (Non-Negative Kernel) graph-based neighborhood construction in single foundation model embedding. Training-free reliability estimation with geometry-aware weighting beyond standard kNN.",
+        "differentiation_from_CRND": "Operates in a SINGLE embedding space. Uses geometric reliability, not cross-representation disagreement. However, shares the training-free, neighborhood-based philosophy with CRND. Complementary rather than competing.",
+        "threat_level": "low"
+      },
+      {
+        "citation": "Raczkowska, A., et al. (2025). AlleNoise: large-scale text classification benchmark dataset with real-world label noise.",
+        "venue": "AISTATS 2025",
+        "year": "2025",
+        "approach_summary": "Large-scale NLP noise benchmark with 500K+ examples, 5,692 categories, and real-world instance-dependent noise from e-commerce. Shows existing methods fail on real-world noise even when effective on synthetic noise.",
+        "differentiation_from_CRND": "Benchmark dataset, not a method. Supports CRND's motivation: real-world noise is harder than synthetic, and training-free diagnostics that can characterize noise patterns are needed.",
+        "threat_level": "low"
+      }
+    ],
+    "novelty_assessment": "CRND's combination of training-free computation, cross-representation neighborhood comparison, and representation-agnosticism is unique. TMNR is the closest multi-view noise detection method but requires training evidential networks. WANN is the closest kNN-based approach but operates in a single space. No existing hybrid noise detection method combines multiple independent representation spaces with simple neighborhood overlap for per-instance noise scoring without any training.",
+    "positioning_recommendation": "Position CRND as a training-free, representation-agnostic noise diagnostic complementary to learned methods like TMNR and WANN. Cite WANN as showing that foundation model embeddings + kNN are powerful for noise robustness (supporting the kNN approach) but note CRND extends this to cross-representation comparison. Cite TMNR as the closest multi-view method but differentiate on training-free vs. requiring evidential DNNs. Use AlleNoise findings to motivate the need for training-free diagnostics that work on real-world noise. Cite the NLP noisy labels survey to show CRND doesn't fit existing taxonomy — constituting genuine novelty."
+  },
+  "area_3_ecological_metrics_in_ml": {
+    "papers_found": 0,
+    "searches_conducted": 12,
+    "search_queries_executed": [
+      "\"Schoener's D\" machine learning classification",
+      "\"Schoener\" \"niche overlap\" \"feature space\" OR \"latent space\" OR \"embedding\"",
+      "\"Warren's I\" machine learning classification overlap",
+      "\"ecological niche overlap\" \"class overlap\" machine learning",
+      "\"species distribution modeling\" analogy machine learning class distribution",
+      "\"niche overlap\" metric adapted machine learning NOT ecology NOT species",
+      "Broennimann 2012 \"niche overlap\" cited machine learning",
+      "\"ecological metric\" transferred machine learning class boundary",
+      "\"Hellinger distance\" \"niche overlap\" machine learning feature",
+      "\"ecological analogy\" classification overlap decision boundary",
+      "\"Schoener 1968\" cited computer science NOT ecology",
+      "Schoener D niche overlap kernel density estimation class distribution feature space artificial intelligence",
+      "\"Schoener\" OR \"Warren\" overlap index data quality machine learning feature representation",
+      "ecological niche overlap metric applied to neural network latent space class separation",
+      "bio-inspired metric machine learning class overlap ecology KDE kernel density estimation"
+    ],
+    "closest_competitors": [],
+    "novelty_assessment": "ZERO papers found applying Schoener's D, Warren's I, or the Broennimann et al. (2012) ecological niche overlap KDE framework to ML class distributions, feature spaces, or data characterization. This is despite 15 distinct searches across multiple phrasings and angles. Hellinger distance is widely used in ML (for class imbalance, feature selection), but the ecological FRAMEWORK of niche overlap — treating classes as species and feature dimensions as environmental gradients, using KDE-based Schoener's D — has no precedent. The 'unifying view of class overlap and imbalance' survey (Santos et al., 2022, Information Fusion) provides a comprehensive taxonomy of class overlap measures but does not reference ecological niche overlap metrics. No ecology-to-ML crossover workshops were found at NeurIPS, ICML, or ICLR. This constitutes the paper's STRONGEST and most defensible novelty claim.",
+    "positioning_recommendation": "Present the ecological metric transfer as a genuinely novel conceptual contribution. Frame it as: 'We draw an analogy between ecological niche overlap and class distribution overlap in feature spaces, adapting Schoener's D (1968) and the KDE framework of Broennimann et al. (2012) to quantify how classes share feature space regions.' Explicitly distinguish from Hellinger distance usage in ML — the novelty is the ecological framework and Schoener's D specifically, not Hellinger distance per se. Cite the class overlap survey (Santos et al., 2022) to establish that existing overlap measures do not include ecological metrics.",
+    "hellinger_distinction": "Hellinger distance IS used in ML for class imbalance handling (Cieslak & Chawla, 2008; Hellinger distance trees), feature selection (BMC Bioinformatics 2020), and distribution comparison. The CRND novelty claim is NOT about Hellinger distance in general — it is about: (1) Schoener's D specifically (1 - 0.5 * Σ|p_i - q_i|), which is the L1-based niche overlap metric from ecology, (2) The Broennimann et al. (2012) KDE-based framework for computing niche overlap in gridded environmental space, adapted to class distributions in feature spaces, (3) The ecological conceptual framework of treating classes as 'species' occupying 'niches' in feature space."
+  },
+  "updated_positioning_statement": "The CRND (Cross-Representation Neighborhood Disagreement) framework introduces a training-free, representation-agnostic diagnostic for characterizing instance difficulty and detecting label noise in classification datasets. Unlike existing approaches that operate within a single feature space (WANN, DDN, geometry-aware reliability frameworks) or require training dedicated models (TMNR, DeFT, DynaCor), CRND measures per-instance neighborhood disagreement across fundamentally different representation families — e.g., TF-IDF vs. static word embeddings vs. transformer embeddings. The key insight is that instances whose local neighborhoods change dramatically across representations are likely to be either genuinely difficult or mislabeled, as their characterization is representation-dependent rather than intrinsic.\n\nWhile recent work has explored multi-representation scenarios (DRES uses 14 text representations for dynamic selection; SPEC compares embeddings at the cluster level), no prior method computes per-instance Jaccard overlap of k-nearest-neighbor sets across different representation families for noise diagnostics. CRND's simplicity — requiring only pre-computed embeddings and standard kNN — enables representation-agnosticism and computational efficiency while providing interpretable per-instance scores.\n\nThe framework further introduces a novel class characterization metric adapted from ecological niche theory: Schoener's D index and the Broennimann et al. (2012) KDE framework, originally developed to measure species niche overlap in environmental space, are repurposed to quantify how classes share feature space regions. Across 15+ targeted literature searches, no prior application of these ecological niche overlap metrics to ML class distributions was found, making this the paper's most distinctive and defensible contribution. This ecological analogy — treating classes as 'species' and feature dimensions as 'environmental gradients' — offers a fresh geometric perspective on class overlap that complements existing measures surveyed by Santos et al. (2022).",
+  "methodological_insights": [
+    "DRES (EMNLP 2025) validates the use of instance hardness across multiple text representations — the same representations CRND could use. DRES shows that instance difficulty varies significantly across representations, supporting CRND's core premise.",
+    "AlleNoise (AISTATS 2025) demonstrates that synthetic noise benchmarks are insufficient — real-world label noise has instance-dependent patterns that existing methods fail to address. CRND's training-free, diagnostic approach is well-motivated by these findings.",
+    "DDN (2025) improves upon kDN with dynamic neighborhood sizes — CRND could incorporate DDN-style dynamic neighborhoods instead of fixed-k for potentially more robust cross-representation disagreement measurement.",
+    "The NLP noisy labels survey (2025) classifies methods into five categories, none of which capture CRND's cross-representation approach — this taxonomic gap strengthens the novelty argument.",
+    "TMNR's use of evidence-label consistency for noise detection is complementary — CRND could compare its results against TMNR's predictions to validate its diagnostic accuracy.",
+    "The geometry-aware reliability framework (Bozkurt & Ortega, 2025) shows that NNK-based neighborhoods outperform standard kNN — CRND could benefit from adopting NNK neighborhoods for improved cross-representation comparison.",
+    "SPEC's cluster-level embedding comparison could serve as a complementary global diagnostic alongside CRND's per-instance local diagnostic.",
+    "Santos et al. (2022) class overlap survey provides a taxonomy of existing overlap measures — CRND's ecological metric adaptation should be explicitly positioned as extending this taxonomy."
+  ],
+  "sources": [
+    {
+      "index": 1,
+      "title": "SPEC: Towards an Explainable Comparison and Alignment of Feature Embeddings",
+      "url": "https://arxiv.org/abs/2506.06231",
+      "summary": "Closest competitor in Area 1 — cluster-level embedding comparison via spectral decomposition"
+    },
+    {
+      "index": 2,
+      "title": "DRES: Fake news detection by dynamic representation and ensemble selection",
+      "url": "https://arxiv.org/abs/2509.16893",
+      "summary": "Critical Area 1 paper — uses kDN across 14 representations but independently, not cross-representation"
+    },
+    {
+      "index": 3,
+      "title": "No Simple Answer to Data Complexity: An Examination of Instance-Level Complexity Metrics for Classification Tasks",
+      "url": "https://aclanthology.org/2025.naacl-long.129/",
+      "summary": "Area 1 — examines instance-level complexity metrics but focuses on metric similarity, not cross-representation"
+    },
+    {
+      "index": 4,
+      "title": "Rethinking Centered Kernel Alignment in Knowledge Distillation (Patch-CKA/RCKA)",
+      "url": "https://www.ijcai.org/proceedings/2024/0628.pdf",
+      "summary": "Area 1 — CKA extensions to patch/relation level but within same architecture"
+    },
+    {
+      "index": 5,
+      "title": "An Embedding is Worth a Thousand Noisy Labels (WANN)",
+      "url": "https://arxiv.org/abs/2408.14358",
+      "summary": "Area 2 closest kNN-based competitor — single embedding space, weighted adaptive kNN"
+    },
+    {
+      "index": 6,
+      "title": "Vision-Language Models are Strong Noisy Label Detectors (DeFT)",
+      "url": "https://arxiv.org/abs/2409.19696",
+      "summary": "Area 2 — multi-modal noise detection via VLM alignment, not multi-representation"
+    },
+    {
+      "index": 7,
+      "title": "Trusted Multi-view Learning with Label Noise (TMNR/TMNR²)",
+      "url": "https://arxiv.org/abs/2404.11944",
+      "summary": "Area 2 closest multi-view competitor — evidential DNNs with noise correlation matrices"
+    },
+    {
+      "index": 8,
+      "title": "CoDC: Accurate Learning with Noisy Labels via Disagreement and Consistency",
+      "url": "https://www.mdpi.com/2313-7673/9/2/92",
+      "summary": "Area 2 — co-teaching with feature disagreement, same architecture"
+    },
+    {
+      "index": 9,
+      "title": "Learning Discriminative Dynamics with Label Corruption for Noisy Label Detection (DynaCor)",
+      "url": "https://arxiv.org/abs/2405.19902",
+      "summary": "Area 2 — training dynamics with corruption, requires training"
+    },
+    {
+      "index": 10,
+      "title": "Learning With Noisy Labels by Semantic and Feature Space Collaboration (DSCL)",
+      "url": "https://ieeexplore.ieee.org/document/10454029/",
+      "summary": "Area 2 — dual-space collaboration, requires training"
+    },
+    {
+      "index": 11,
+      "title": "A survey on learning with noisy labels in Natural Language Processing",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0952197625001575",
+      "summary": "Area 2 — comprehensive NLP noisy labels taxonomy, CRND doesn't fit existing categories"
+    },
+    {
+      "index": 12,
+      "title": "AlleNoise: large-scale text classification benchmark dataset with real-world label noise",
+      "url": "https://arxiv.org/abs/2407.10992",
+      "summary": "Area 2 — NLP noise benchmark showing synthetic methods fail on real-world noise"
+    },
+    {
+      "index": 13,
+      "title": "Robust Classification under Noisy Labels: A Geometry-Aware Reliability Framework for Foundation Models",
+      "url": "https://arxiv.org/abs/2508.00202",
+      "summary": "Area 2 — training-free, geometry-aware kNN in single space"
+    },
+    {
+      "index": 14,
+      "title": "Dynamic Disagreeing Neighbors: A deep dive into complexity estimation",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0925231225027481",
+      "summary": "Area 1/2 — improved kDN but single feature space"
+    },
+    {
+      "index": 15,
+      "title": "Broennimann, O. et al. (2012). Measuring ecological niche overlap from occurrence and spatial environmental data.",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1466-8238.2011.00698.x",
+      "summary": "Area 3 — source ecological framework for KDE-based niche overlap"
+    },
+    {
+      "index": 16,
+      "title": "Schoener's D and Study Extent (plantarum.ca blog)",
+      "url": "https://plantarum.ca/2021/12/02/schoenersd/",
+      "summary": "Area 3 — explanation of Schoener's D metric properties"
+    },
+    {
+      "index": 17,
+      "title": "modOverlap: Schoener's D, Hellinger distance and Warren's I",
+      "url": "https://modtools.wordpress.com/2015/10/30/modoverlap/",
+      "summary": "Area 3 — ecological overlap metrics implementation"
+    },
+    {
+      "index": 18,
+      "title": "Hellinger distance-based stable sparse feature selection for high-dimensional class-imbalanced data",
+      "url": "https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-3411-3",
+      "summary": "Area 3 — Hellinger in ML context (distinguishing from ecological framework)"
+    },
+    {
+      "index": 19,
+      "title": "A unifying view of class overlap and imbalance: Key concepts, multi-view panorama, and open avenues for research",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S1566253522001099",
+      "summary": "Area 3 — comprehensive class overlap taxonomy, no ecological metrics included"
+    },
+    {
+      "index": 20,
+      "title": "Reliable Conflictive Multi-View Learning (RCML)",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/29546",
+      "summary": "Area 1/2 — multi-view learning with conflictive instances, AAAI 2024"
+    },
+    {
+      "index": 21,
+      "title": "SPEC GitHub repository and project page",
+      "url": "https://github.com/mjalali/embedding-comparison",
+      "summary": "Area 1 — SPEC implementation details and code"
+    },
+    {
+      "index": 22,
+      "title": "Advances in Label-Noise Learning (curated list)",
+      "url": "https://github.com/weijiaheng/Advances-in-Label-Noise-Learning",
+      "summary": "Area 2 — comprehensive tracking of recent noisy label papers"
+    }
+  ],
+  "follow_up_questions": [
+    "Does DRES (EMNLP 2025) report any analysis of cross-representation neighborhood overlap or disagreement, even as a secondary analysis? The full paper should be checked.",
+    "Has the SPEC framework been applied to noise detection tasks in any follow-up work since its ICML 2025 publication?",
+    "Are there any ecology-ML crossover papers at domain-specific workshops (e.g., AI4Science, ML4Ecology) that might apply niche overlap metrics to classification?",
+    "Could Schoener's D have been independently discovered under a different name in the ML literature? It is mathematically equivalent to 1 minus half the L1 distance between discretized distributions — verify no ML paper uses this specific formulation under the ecological interpretation.",
+    "Does the TMNR paper use fundamentally different feature extractors for different views, or just different neural network architectures on the same input modality?"
+  ]
+}

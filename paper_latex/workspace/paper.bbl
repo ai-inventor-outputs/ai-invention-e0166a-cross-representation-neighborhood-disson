@@ -1,0 +1,162 @@
+\begin{thebibliography}{20}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Alqahtani et~al.(2025)]{Alqahtani2025}
+A.~S. Alqahtani et~al.
+\newblock Clinical impact of artificial intelligence-based triage systems in
+  emergency departments: {A} systematic review.
+\newblock \emph{PMC}, 2025.
+
+\bibitem[Bahri et~al.(2020)Bahri, Jiang, and Gupta]{Bahri2020}
+Dara Bahri, Heinrich Jiang, and Maya~R. Gupta.
+\newblock Deep k-nn for noisy labels.
+\newblock In \emph{Proceedings of the 37th International Conference on Machine
+  Learning, {ICML} 2020}, volume 119 of \emph{Proceedings of Machine Learning
+  Research}, pages 540--550. {PMLR}, 2020.
+
+\bibitem[Broennimann et~al.(2012)Broennimann, Fitzpatrick, Pearman,
+  Petitpierre, Pellissier, Yoccoz, Thuiller, Fortin, Randin, Zimmermann,
+  Graham, and Guisan]{Broennimann2012}
+Olivier Broennimann, Matthew~C. Fitzpatrick, Peter~B. Pearman, Blaise
+  Petitpierre, Lo{\"{i}}c Pellissier, Nigel~G. Yoccoz, Wilfried Thuiller,
+  Marie-Jos{\'{e}}e Fortin, Christophe Randin, Niklaus~E. Zimmermann,
+  Catherine~H. Graham, and Antoine Guisan.
+\newblock Measuring ecological niche overlap from occurrence and spatial
+  environmental data.
+\newblock \emph{Global Ecology and Biogeography}, 21\penalty0 (4):\penalty0
+  481--497, 2012.
+\newblock \doi{10.1111/j.1466-8238.2011.00698.x}.
+
+\bibitem[Cheng et~al.(2021)Cheng, Zhu, Li, Gong, Sun, and Liu]{Cheng2021}
+Hao Cheng, Zhaowei Zhu, Xingyu Li, Yifei Gong, Xing Sun, and Yang Liu.
+\newblock Learning with instance-dependent label noise: {A} sample sieve
+  approach.
+\newblock In \emph{9th International Conference on Learning Representations,
+  {ICLR} 2021}. OpenReview.net, 2021.
+
+\bibitem[Fernandez-Arias et~al.(2025)]{FernandezArias2025}
+V.~Fernandez-Arias et~al.
+\newblock Automated triage classification in emergency services using {S}panish
+  clinical notes: {A} comparative analysis between {ALBERT} and classical
+  machine learning approaches.
+\newblock In \emph{NeurIPS 2025 Workshop}, 2025.
+
+\bibitem[Ho and Basu(2002)]{Ho2002}
+Tin~Kam Ho and Mitra Basu.
+\newblock Complexity measures of supervised classification problems.
+\newblock \emph{{IEEE} Trans. Pattern Anal. Mach. Intell.}, 24\penalty0
+  (3):\penalty0 289--300, 2002.
+\newblock \doi{10.1109/34.990132}.
+
+\bibitem[Iscen et~al.(2022)Iscen, Valmadre, Arnab, and Schmid]{Iscen2022}
+Ahmet Iscen, Jack Valmadre, Anurag Arnab, and Cordelia Schmid.
+\newblock Learning with neighbor consistency for noisy labels.
+\newblock In \emph{{IEEE/CVF} Conference on Computer Vision and Pattern
+  Recognition, {CVPR} 2022}, pages 4662--4671. {IEEE}, 2022.
+\newblock \doi{10.1109/CVPR52688.2022.00463}.
+
+\bibitem[Kornblith et~al.(2019)Kornblith, Norouzi, Lee, and
+  Hinton]{Kornblith2019}
+Simon Kornblith, Mohammad Norouzi, Honglak Lee, and Geoffrey~E. Hinton.
+\newblock Similarity of neural network representations revisited.
+\newblock In \emph{Proceedings of the 36th International Conference on Machine
+  Learning, {ICML} 2019}, volume~97 of \emph{Proceedings of Machine Learning
+  Research}, pages 3519--3529. {PMLR}, 2019.
+
+\bibitem[Lorena et~al.(2019)Lorena, Garcia, Lehmann, de~Souto, and
+  Ho]{Lorena2019}
+Ana~Carolina Lorena, Lu{\'{\i}}s Paulo~F. Garcia, Jens Lehmann, Marc{\'{\i}}lio
+  Carlos~Pereira de~Souto, and Tin~Kam Ho.
+\newblock How complex is your classification problem?: {A} survey on measuring
+  classification complexity.
+\newblock \emph{{ACM} Comput. Surv.}, 52\penalty0 (5):\penalty0 107:1--107:34,
+  2019.
+\newblock \doi{10.1145/3347711}.
+
+\bibitem[Northcutt et~al.(2021)Northcutt, Jiang, and Chuang]{Northcutt2021}
+Curtis~G. Northcutt, Lu~Jiang, and Isaac~L. Chuang.
+\newblock Confident learning: Estimating uncertainty in dataset labels.
+\newblock \emph{J. Artif. Intell. Res.}, 70:\penalty0 1373--1411, 2021.
+\newblock \doi{10.1613/jair.1.12125}.
+
+\bibitem[Pleiss et~al.(2020)Pleiss, Zhang, Elenberg, and
+  Weinberger]{Pleiss2020}
+Geoff Pleiss, Tianyi Zhang, Ethan~R. Elenberg, and Kilian~Q. Weinberger.
+\newblock Identifying mislabeled data using the area under the margin ranking.
+\newblock In \emph{Advances in Neural Information Processing Systems 33,
+  NeurIPS 2020}, 2020.
+
+\bibitem[Raghu et~al.(2017)Raghu, Gilmer, Yosinski, and
+  Sohl{-}Dickstein]{Raghu2017}
+Maithra Raghu, Justin Gilmer, Jason Yosinski, and Jascha Sohl{-}Dickstein.
+\newblock {SVCCA:} singular vector canonical correlation analysis for deep
+  learning dynamics and interpretability.
+\newblock In \emph{Advances in Neural Information Processing Systems 30}, pages
+  6076--6085, 2017.
+
+\bibitem[Reimers and Gurevych(2019)]{Reimers2019}
+Nils Reimers and Iryna Gurevych.
+\newblock Sentence-bert: Sentence embeddings using siamese bert-networks.
+\newblock In \emph{Proceedings of the 2019 Conference on Empirical Methods in
+  Natural Language Processing and the 9th International Joint Conference on
+  Natural Language Processing, {EMNLP-IJCNLP} 2019}, pages 3980--3990.
+  Association for Computational Linguistics, 2019.
+\newblock \doi{10.18653/v1/D19-1410}.
+
+\bibitem[Rodriguez-Ruiz et~al.(2024)]{RodriguezRuiz2024}
+M.~Rodriguez-Ruiz et~al.
+\newblock Improving triage performance in emergency departments using machine
+  learning and natural language processing: A systematic review.
+\newblock \emph{BMC Emergency Medicine}, 24, 2024.
+
+\bibitem[Schoener(1968)]{Schoener1968}
+Thomas~W. Schoener.
+\newblock The {A}nolis lizards of {B}imini: Resource partitioning in a complex
+  fauna.
+\newblock \emph{Ecology}, 49\penalty0 (4):\penalty0 704--726, 1968.
+
+\bibitem[Smith et~al.(2014)Smith, Martinez, and Giraud{-}Carrier]{Smith2014}
+Michael~R. Smith, Tony~R. Martinez, and Christophe~G. Giraud{-}Carrier.
+\newblock An instance level analysis of data complexity.
+\newblock \emph{Mach. Learn.}, 95\penalty0 (2):\penalty0 225--256, 2014.
+\newblock \doi{10.1007/s10994-013-5422-z}.
+
+\bibitem[Swayamdipta et~al.(2020)Swayamdipta, Schwartz, Lourie, Wang,
+  Hajishirzi, Smith, and Choi]{Swayamdipta2020}
+Swabha Swayamdipta, Roy Schwartz, Nicholas Lourie, Yizhong Wang, Hannaneh
+  Hajishirzi, Noah~A. Smith, and Yejin Choi.
+\newblock Dataset cartography: Mapping and diagnosing datasets with training
+  dynamics.
+\newblock In \emph{Proceedings of the 2020 Conference on Empirical Methods in
+  Natural Language Processing, {EMNLP} 2020}, pages 9275--9293. Association for
+  Computational Linguistics, 2020.
+\newblock \doi{10.18653/v1/2020.emnlp-main.746}.
+
+\bibitem[Touvron et~al.(2023)Touvron, Lavril, Izacard, Martinet, Lachaux,
+  Lacroix, Rozi{\`{e}}re, Goyal, Hambro, Azhar, Rodriguez, Joulin, Grave, and
+  Lample]{Touvron2023}
+Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie{-}Anne
+  Lachaux, Timoth{\'{e}}e Lacroix, Baptiste Rozi{\`{e}}re, Naman Goyal, Eric
+  Hambro, Faisal Azhar, Aur{\'{e}}lien Rodriguez, Armand Joulin, Edouard Grave,
+  and Guillaume Lample.
+\newblock Llama: Open and efficient foundation language models.
+\newblock \emph{CoRR}, abs/2302.13971, 2023.
+\newblock \doi{10.48550/arXiv.2302.13971}.
+
+\bibitem[Warren et~al.(2008)Warren, Glor, and Turelli]{Warren2008}
+Dan~L. Warren, Richard~E. Glor, and Michael Turelli.
+\newblock Environmental niche equivalency versus conservatism: Quantitative
+  approaches to niche evolution.
+\newblock \emph{Evolution}, 62\penalty0 (11):\penalty0 2868--2883, 2008.
+\newblock \doi{10.1111/j.1558-5646.2008.00482.x}.
+
+\bibitem[Xu et~al.(2013)Xu, Tao, and Xu]{Xu2013}
+Chang Xu, Dacheng Tao, and Chao Xu.
+\newblock A survey on multi-view learning.
+\newblock \emph{CoRR}, abs/1304.5634, 2013.
+
+\end{thebibliography}

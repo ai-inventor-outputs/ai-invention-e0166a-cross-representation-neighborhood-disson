@@ -1,0 +1,107 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{RodriguezRuiz2024,FernandezArias2025}
+\citation{Schoener1968}
+\citation{Broennimann2012}
+\providecommand \oddpage@label [2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\citation{Ho2002}
+\citation{Lorena2019}
+\citation{Smith2014}
+\citation{Kornblith2019}
+\citation{Raghu2017}
+\citation{Iscen2022}
+\citation{Northcutt2021}
+\citation{Swayamdipta2020}
+\citation{Pleiss2020}
+\citation{Bahri2020}
+\citation{Cheng2021}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Data Complexity and Instance Hardness.}{2}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Representation Comparison Methods.}{2}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Learning with Noisy Labels.}{2}{section*.3}\protected@file@percent }
+\citation{Schoener1968}
+\citation{Broennimann2012}
+\citation{Warren2008}
+\citation{RodriguezRuiz2024,Alqahtani2025}
+\citation{FernandezArias2025}
+\citation{Xu2013}
+\citation{Reimers2019}
+\citation{Touvron2023}
+\citation{Broennimann2012}
+\@writefile{toc}{\contentsline {paragraph}{Ecological Niche Overlap.}{3}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Clinical Triage Classification.}{3}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Multi-View Learning.}{3}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Methods}{3}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Cross-Representation Neighborhood Dissonance (CRND)}{3}{subsection.3.1}\protected@file@percent }
+\newlabel{eq:crnd}{{1}{3}{Cross-Representation Neighborhood Dissonance (CRND)}{equation.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Ecological Niche Overlap via Schoener's D}{3}{subsection.3.2}\protected@file@percent }
+\citation{Smith2014}
+\citation{Northcutt2021}
+\citation{Reimers2019}
+\newlabel{eq:schoener}{{2}{4}{Ecological Niche Overlap via Schoener's D}{equation.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Noise Detection Validation}{4}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Method Selection Prediction}{4}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Experimental Setup}{4}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Datasets}{4}{subsection.4.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Dataset characteristics. All datasets contain free-text suitable for TF-IDF and sentence transformer embeddings.}}{5}{table.1}\protected@file@percent }
+\newlabel{tab:datasets}{{1}{5}{Dataset characteristics. All datasets contain free-text suitable for TF-IDF and sentence transformer embeddings}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Evaluation Metrics}{5}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Results}{5}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}SC1: Noise Detection---A Decisive Negative Result}{5}{subsection.5.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Noise detection ROC-AUC at 10\% noise rate (mean over seeds). CRND performs at chance level across all datasets while kDN and cleanlab achieve strong detection.}}{5}{table.2}\protected@file@percent }
+\newlabel{tab:noise_auc}{{2}{5}{Noise detection ROC-AUC at 10\% noise rate (mean over seeds). CRND performs at chance level across all datasets while kDN and cleanlab achieve strong detection}{table.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Why does CRND fail?}{5}{section*.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Noise detection ROC-AUC at 10\% noise rate across five datasets. CRND (red) operates at chance level while kDN (blue) and cleanlab (green) consistently achieve AUC 0.6--0.98. The dashed line marks random chance (AUC\,=\,0.5).}}{6}{figure.1}\protected@file@percent }
+\newlabel{fig:noise_detection}{{1}{6}{Noise detection ROC-AUC at 10\% noise rate across five datasets. CRND (red) operates at chance level while kDN (blue) and cleanlab (green) consistently achieve AUC 0.6--0.98. The dashed line marks random chance (AUC\,=\,0.5)}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}SC2: Method Selection---Weak and Inconsistent Signal}{6}{subsection.5.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Kendall's $\tau $ for niche overlap predicting classifier rank-ordering per dataset. SC2 threshold: $\tau > 0.4$.}}{6}{table.3}\protected@file@percent }
+\newlabel{tab:method_selection}{{3}{6}{Kendall's $\tau $ for niche overlap predicting classifier rank-ordering per dataset. SC2 threshold: $\tau > 0.4$}{table.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}SC3: Interpretable Class-Level Structure---The Positive Result}{7}{subsection.5.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Kruskal--Wallis test for class-level CRND variation. Significant results ($p < 0.05$) in 3 of 5 primary datasets, with large $\eta ^2$ in mental\_health.}}{7}{table.4}\protected@file@percent }
+\newlabel{tab:class_structure}{{4}{7}{Kruskal--Wallis test for class-level CRND variation. Significant results ($p < 0.05$) in 3 of 5 primary datasets, with large $\eta ^2$ in mental\_health}{table.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Per-class CRND distributions for the mental health conditions dataset. Classes range from ``personality disorder'' (mean CRND\,=\,0.777, most representation-stable) to ``normal'' (mean CRND\,=\,0.962, most representation-sensitive). Kruskal--Wallis $H = 469.19$, $p < 0.001$, $\eta ^2 = 0.466$.}}{7}{figure.2}\protected@file@percent }
+\newlabel{fig:class_crnd}{{2}{7}{Per-class CRND distributions for the mental health conditions dataset. Classes range from ``personality disorder'' (mean CRND\,=\,0.777, most representation-stable) to ``normal'' (mean CRND\,=\,0.962, most representation-sensitive). Kruskal--Wallis $H = 469.19$, $p < 0.001$, $\eta ^2 = 0.466$}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Schoener's D: Cross-Representation Niche Overlap Profiles}{8}{subsection.5.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Schoener's D niche overlap heatmaps for the medical\_abstracts dataset across three feature spaces. The Digestive--Nervous pair shows the largest D-gap (0.816 in TF-IDF vs.\ 0.264 in LLM, gap\,=\,0.551), illustrating how class separability depends strongly on the representation.}}{8}{figure.3}\protected@file@percent }
+\newlabel{fig:niche_overlap}{{3}{8}{Schoener's D niche overlap heatmaps for the medical\_abstracts dataset across three feature spaces. The Digestive--Nervous pair shows the largest D-gap (0.816 in TF-IDF vs.\ 0.264 in LLM, gap\,=\,0.551), illustrating how class separability depends strongly on the representation}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Ablation Studies}{8}{subsection.5.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$k$-sensitivity.}{8}{section*.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Distance metric.}{8}{section*.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{PCA dimensionality for Schoener's D.}{8}{section*.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces CRND sensitivity to neighborhood size $k$ across three datasets. Large datasets (medical\_abstracts, mimic\_iv\_ed) show gradual, monotonic decrease, while the small clinical\_triage\_nl dataset ($N=31$) degrades sharply as $k$ approaches $N$.}}{9}{figure.4}\protected@file@percent }
+\newlabel{fig:k_sensitivity}{{4}{9}{CRND sensitivity to neighborhood size $k$ across three datasets. Large datasets (medical\_abstracts, mimic\_iv\_ed) show gradual, monotonic decrease, while the small clinical\_triage\_nl dataset ($N=31$) degrades sharply as $k$ approaches $N$}{figure.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{Alternative CRND formulations.}{9}{section*.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Confound analysis.}{9}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{9}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}The Fundamental Failure of Cross-Representation Noise Detection}{9}{subsection.6.1}\protected@file@percent }
+\citation{Broennimann2012,Schoener1968,Warren2008}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}The Partial Promise of Ecological Niche Overlap}{10}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Class-Level CRND as a Descriptive Diagnostic}{10}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Limitations}{10}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{10}{section.7}\protected@file@percent }
+\bibstyle{plainnat}
+\bibdata{references}
+\bibcite{Alqahtani2025}{{1}{2025}{{Alqahtani et~al.}}{{}}}
+\bibcite{Bahri2020}{{2}{2020}{{Bahri et~al.}}{{Bahri, Jiang, and Gupta}}}
+\bibcite{Broennimann2012}{{3}{2012}{{Broennimann et~al.}}{{Broennimann, Fitzpatrick, Pearman, Petitpierre, Pellissier, Yoccoz, Thuiller, Fortin, Randin, Zimmermann, Graham, and Guisan}}}
+\bibcite{Cheng2021}{{4}{2021}{{Cheng et~al.}}{{Cheng, Zhu, Li, Gong, Sun, and Liu}}}
+\bibcite{FernandezArias2025}{{5}{2025}{{Fernandez-Arias et~al.}}{{}}}
+\bibcite{Ho2002}{{6}{2002}{{Ho and Basu}}{{}}}
+\bibcite{Iscen2022}{{7}{2022}{{Iscen et~al.}}{{Iscen, Valmadre, Arnab, and Schmid}}}
+\bibcite{Kornblith2019}{{8}{2019}{{Kornblith et~al.}}{{Kornblith, Norouzi, Lee, and Hinton}}}
+\bibcite{Lorena2019}{{9}{2019}{{Lorena et~al.}}{{Lorena, Garcia, Lehmann, de~Souto, and Ho}}}
+\bibcite{Northcutt2021}{{10}{2021}{{Northcutt et~al.}}{{Northcutt, Jiang, and Chuang}}}
+\bibcite{Pleiss2020}{{11}{2020}{{Pleiss et~al.}}{{Pleiss, Zhang, Elenberg, and Weinberger}}}
+\bibcite{Raghu2017}{{12}{2017}{{Raghu et~al.}}{{Raghu, Gilmer, Yosinski, and Sohl{-}Dickstein}}}
+\bibcite{Reimers2019}{{13}{2019}{{Reimers and Gurevych}}{{}}}
+\bibcite{RodriguezRuiz2024}{{14}{2024}{{Rodriguez-Ruiz et~al.}}{{}}}
+\bibcite{Schoener1968}{{15}{1968}{{Schoener}}{{}}}
+\bibcite{Smith2014}{{16}{2014}{{Smith et~al.}}{{Smith, Martinez, and Giraud{-}Carrier}}}
+\bibcite{Swayamdipta2020}{{17}{2020}{{Swayamdipta et~al.}}{{Swayamdipta, Schwartz, Lourie, Wang, Hajishirzi, Smith, and Choi}}}
+\bibcite{Touvron2023}{{18}{2023}{{Touvron et~al.}}{{Touvron, Lavril, Izacard, Martinet, Lachaux, Lacroix, Rozi{\`{e}}re, Goyal, Hambro, Azhar, Rodriguez, Joulin, Grave, and Lample}}}
+\bibcite{Warren2008}{{19}{2008}{{Warren et~al.}}{{Warren, Glor, and Turelli}}}
+\bibcite{Xu2013}{{20}{2013}{{Xu et~al.}}{{Xu, Tao, and Xu}}}
+\gdef \@abspage@last{12}
