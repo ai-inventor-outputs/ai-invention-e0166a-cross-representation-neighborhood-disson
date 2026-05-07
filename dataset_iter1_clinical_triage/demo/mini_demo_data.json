@@ -1,0 +1,631 @@
+{
+  "datasets": [
+    {
+      "dataset": "medical_abstracts",
+      "examples": [
+        {
+          "input": "Factors influencing the development of metabolic bone disease in primary biliary cirrhosis. The prevalence, type, and factors that may influence the development of bone disease in primary biliary cirrhosis, have been investigated in 20 consecutive patients, who, in addition to liver function tests and mineral and vitamin D metabolism studies, were submitted to a transiliac bone biopsy after tet...",
+          "output": "Digestive_system_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 3384,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Acute autonomic neuropathy. Two cases and a clinical review. Acute autonomic neuropathy is an uncommon syndrome, usually affecting healthy young people. Presentation is often dramatic and initial misdiagnosis is common. We describe two young women with acute autonomic neuropathy who presented with gastrointestinal involvement heralding widespread dysautonomia and review 26 additional cases of a...",
+          "output": "Digestive_system_diseases",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 872,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Cryosurgery and acrylic cementation as surgical adjuncts in the treatment of aggressive (benign) bone tumors. Analysis of 25 patients below the age of 21. This article reviews the clinical experience with cryosurgery (use of liquid nitrogen) and acrylic cementation (polymethylmethacrylate; PMMA) in the treatment of aggressive, benign bone sarcomas and the biologic basis of this technique. The r...",
+          "output": "Neoplasms",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 1046,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "A coproporphyria-like syndrome induced by glipizide. A 49-year-old man with a 1-month history of episodic, severe abdominal pain sought medical attention. The patient's history was remarkable for type II diabetes, for which glipizide therapy had been initiated 2 months earlier. No other medications were being taken at the time the paroxysms of pain began. During the episodes of pain, both exami...",
+          "output": "Digestive_system_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 1702,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Vasodilatory beta-blockers: systemic and regional hemodynamic effects. The systemic and regional hemodynamic alterations in hypertension and of the beta-adrenergic receptor inhibiting agents are reviewed. Hemodynamically, hypertension may be regarded as persistent elevation of arterial pressure associated with increased total peripheral resistance. In early or mild essential hypertension, howev...",
+          "output": "Cardiovascular_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 6596,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Chemotherapy for children with aggressive fibromatosis and Langerhans' cell histiocytosis. Two disorders involving histologically benign proliferations of fibrous tissue or of histiocytes occur preferentially in children and often require combined management by an orthopedic surgeon and a pediatric oncologist. Treatment of young people with aggressive fibromatosis usually begins with wide local...",
+          "output": "Neoplasms",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 9469,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "EEG correlation of improvement in hemolytic-uremic syndrome after plasma infusion. We report a previously undescribed electroencephalographic pattern of epochs of diffuse delta background (85-240 sec) alternating with epochs of classic \"burst suppression\" (90-270 sec) in a 13-month-old girl with hemolytic-uremic syndrome. A dramatic electroencephalographic improvement was evident on continuous ...",
+          "output": "Nervous_system_diseases",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 1041,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Kawasaki disease: echocardiographic features in 91 cases presenting in the United Kingdom. Ninety-one patients with Kawasaki disease were examined by cross sectional echocardiography between 1980 and 1988. In the 75 patients evaluated during the acute phase of the illness (the first month), the first echocardiographic examination was carried out at a mean time of 16 days (range 5-30) and corona...",
+          "output": "General_pathological_conditions",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 1986,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Hepatic lesions in the rabbit induced by acoustic cavitation. Tissue damage during shock-wave lithotripsy is presumably secondary to cavitation phenomena involving the collapsus of gas bubbles in a fluid. To enhance shock-wave-related hepatic lesions, intravascular gas microbubbles were administered. Three groups of eight rabbits each received either 500 shock waves focused on the right hepatic...",
+          "output": "General_pathological_conditions",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 3153,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "A retinoic acid response element is part of a pleiotropic domain in the phosphoenolpyruvate carboxykinase gene. Several hormones, including insulin, glucagon, and glucocorticoids, regulate the expression of the rate-limiting gluconeogenic enzyme, phosphoenolpyruvate carboxykinase [GTP: oxaloacetate carboxy-lyase (transphosphorylating); EC 4.1.1.32; PEPCK] in liver. In this report we demonstrate...",
+          "output": "Neoplasms",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 4940,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Clinical and anatomical considerations for nonoperative therapy in tibial disease and the results of angioplasty. For a 6-year period, 96 patients had 146 below-knee angioplasties. There were 31 total occlusions and 95 multiple stenoses. All patients had distal ischemia, and 40% had gangrene. The primary success rate was 97%, and the 2-year limb salvage rate was 83%. The ankle/brachial index in...",
+          "output": "Cardiovascular_diseases",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 2408,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Clinical and Doppler echocardiographic follow-up after percutaneous balloon valvuloplasty for aortic valve stenosis. Percutaneous balloon valvuloplasty has been shown to increase the aortic orifice area and to improve clinical symptoms. However, there are only few data concerning long-term results after balloon valvuloplasty. In this study, 36 patients (11 men, 25 women, mean age 75 +/- 8 years...",
+          "output": "General_pathological_conditions",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 6021,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Reversible myeloneuropathy of nitrous oxide abuse: serial electrophysiological studies. Detailed electrophysiological studies were performed in 4 patients with myeloneuropathy induced by abuse of nitrous oxide for 1 to 4 years. All presented with paresthesias, weakness, and Lhermitte's phenomena, and exhibited signs of sensorimotor polyneuropathy, ataxia, and arreflexia. Two had subnormal serum...",
+          "output": "Nervous_system_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 3365,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Cardiac arrest after hypertonic citrate anticoagulation for chronic hemodialysis. The use of regional citrate anticoagulation as an alternative to standard therapy in hemodialysis patients at risk for bleeding complications has been well described. Recently, a method using hypertonic citrate has been reported as being safe and efficacious, and having several advantages over the usual techniques...",
+          "output": "Cardiovascular_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 5179,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Serum creatinine: an independent predictor of survival after stroke. We prospectively studied the relationship between serum creatinine and survival among 492 elderly subjects admitted for stroke and monitored for a mean period of 18 months post-stroke. In multivariate proportional hazards models, serum creatinine remained an independent predictor of mortality (P = 0.0001) after accounting for ...",
+          "output": "Nervous_system_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 9946,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        }
+      ]
+    },
+    {
+      "dataset": "mimic_iv_ed_demo",
+      "examples": [
+        {
+          "input": "Chief complaint: Hypertension. Vitals: HR 65, RR 18, BP 218/72, Temp 97.5, O2 96%, Pain 0/10",
+          "output": "ESI-3",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 182,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10012853",
+          "metadata_stay_id": "38687872"
+        },
+        {
+          "input": "Chief complaint: Lower back pain, s/p Fall. Vitals: HR 102, RR 18, BP 121/79, Temp 96.9, O2 98%, Pain 8/10",
+          "output": "ESI-4",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 131,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10020306",
+          "metadata_stay_id": "37321464"
+        },
+        {
+          "input": "Chief complaint: Wound eval, Transfer. Vitals: HR 100, RR 16, BP 131/55, Temp 99.1, O2 98%, Pain 0/10",
+          "output": "ESI-2",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 44,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10018081",
+          "metadata_stay_id": "33007927"
+        },
+        {
+          "input": "Chief complaint: N/V, Tachycardia. Vitals: HR 140, RR 20, BP 139/70, Temp 100.3, O2 95%, Pain 0/10",
+          "output": "ESI-1",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 127,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10015860",
+          "metadata_stay_id": "37977734"
+        },
+        {
+          "input": "Chief complaint: Tachycardia, Hypoxia. Vitals: HR 157, RR 18, BP 115/81, Temp 98.3, O2 100%",
+          "output": "ESI-1",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 125,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10003400",
+          "metadata_stay_id": "33678912"
+        },
+        {
+          "input": "Chief complaint: Cardiac arrest, Transfer",
+          "output": "ESI-1",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 115,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10004720",
+          "metadata_stay_id": "34391979"
+        },
+        {
+          "input": "Chief complaint: Head injury, s/p Fall. Vitals: HR 95, RR 18, BP 150/56, Temp 36.5, O2 98%, Pain 8/10",
+          "output": "ESI-3",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 151,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10037928",
+          "metadata_stay_id": "34992024"
+        },
+        {
+          "input": "Chief complaint: Clogged foley. Vitals: HR 66, RR 14, BP 165/51, Temp 97.8, O2 99%, Pain 8/10",
+          "output": "ESI-4",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 130,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10012853",
+          "metadata_stay_id": "38074673"
+        },
+        {
+          "input": "Chief complaint: SI. Vitals: HR 110, RR 18, BP 123/67, Temp 98.5, O2 100%, Pain 0/10",
+          "output": "ESI-2",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 101,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10002930",
+          "metadata_stay_id": "35540249"
+        },
+        {
+          "input": "Chief complaint: LOWER EXTREMITY PAIN. Vitals: HR 64, RR 16, BP 177/76, Temp 97.8, O2 99%, Pain 8/10",
+          "output": "ESI-3",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 138,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10022281",
+          "metadata_stay_id": "39346340"
+        },
+        {
+          "input": "Chief complaint: BRBPR. Vitals: HR 100, RR 22, BP 122/80, Temp 97.4, O2 98%, Pain 0/10",
+          "output": "ESI-2",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 37,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10014354",
+          "metadata_stay_id": "36250263"
+        }
+      ]
+    },
+    {
+      "dataset": "clinical_patient_triage_nl",
+      "examples": [
+        {
+          "input": "Chronic lower back pain exacerbated by lifting heavy object; no numbness. Age: 45. Vital signs: Stable. Primary complaint: Musculoskeletal",
+          "output": "Moderate",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 3,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8004"
+        },
+        {
+          "input": "Routine physical exam; patient reports no symptoms or current health issues. Age: 29. Vital signs: Stable. Primary complaint: General_Checkup",
+          "output": "Routine",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 5,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8006"
+        },
+        {
+          "input": "Burning sensation during urination and localized abdominal pain. Age: 28. Vital signs: Stable. Primary complaint: Urinary_Tract",
+          "output": "Low",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 14,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8015"
+        },
+        {
+          "input": "Patient presents with persistent dry cough and low-grade fever for 5 days. Age: 34. Vital signs: Stable. Primary complaint: Respiratory_Distress",
+          "output": "Mild",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 0,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8001"
+        },
+        {
+          "input": "Scaling skin rash and intense itching on upper torso. Age: 33. Vital signs: Stable. Primary complaint: Dermatology",
+          "output": "Low",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 15,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8016"
+        },
+        {
+          "input": "Increased thirst and frequent urination; family history of diabetes. Age: 10. Vital signs: Stable. Primary complaint: Endocrine",
+          "output": "Moderate",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 27,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8028"
+        },
+        {
+          "input": "Unresponsive patient arrived via EMS; suspected opioid overdose. Age: 26. Vital signs: Critical. Primary complaint: Toxicology",
+          "output": "Critical",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 9,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8010"
+        },
+        {
+          "input": "Pregnancy confirmation and initial prenatal screening requested. Age: 27. Vital signs: Stable. Primary complaint: Obstetrics",
+          "output": "Routine",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 23,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8024"
+        },
+        {
+          "input": "Sudden onset of acute chest pain radiating to left arm with diaphoresis. Age: 58. Vital signs: Unstable. Primary complaint: Cardiac_Event",
+          "output": "Critical",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 1,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8002"
+        },
+        {
+          "input": "Suspected fracture of right tibia following fall from height. Age: 37. Vital signs: Stable. Primary complaint: Orthopedic_Trauma",
+          "output": "High",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 11,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8012"
+        },
+        {
+          "input": "Severe allergic reaction with facial swelling and difficulty breathing. Age: 12. Vital signs: Guarded. Primary complaint: Anaphylaxis",
+          "output": "High",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 4,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8005"
+        }
+      ]
+    },
+    {
+      "dataset": "ohsumed_single",
+      "examples": [
+        {
+          "input": "Dermal mast cell degranulation in systemic sclerosis.\n Paired biopsy samples from involved and uninvolved skin were obtained from 19 patients with generalized scleroderma (11 with early, progressive disease and 8 with late, improving disease).\n Skin biopsy samples were double stained for mast cell granules and for mast cell membrane.\n The number of mast cells was increased in patients with syst...",
+          "output": "Skin_and_Connective_Tissue_Diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 23,
+          "metadata_row_index": 2319,
+          "metadata_source": "huggingface/joao-luz/ohsumed-single"
+        },
+        {
+          "input": "Histopathologic study of the Molteno glaucoma implant in three patients.\n Three eyes with the Molteno glaucoma implant (one eye with epithelial downgrowth, one eye with iridocorneal endothelial syndrome, and one eye with aphakia and glaucoma) were enucleated two to six years after implantation.\n Histopathologic examinations disclosed no evidence of erosion of sclera or conjunctiva of the eye by...",
+          "output": "Eye_Diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 23,
+          "metadata_row_index": 1250,
+          "metadata_source": "huggingface/joao-luz/ohsumed-single"
+        },
+        {
+          "input": "A surgeon's risk of AIDS.\n A probabilistic model is used to estimate the cumulative risk to surgeons from human immunodeficiency virus (HIV).\n Recent data suggest that the probability of infection following percutaneous inoculation is about 1 in 250 cases.\n Several studies suggest that the frequency of percutaneous injury in surgery is at least 1 in 40 cases, for some as high as 1 in 20 cases.\n...",
+          "output": "Immunologic_Diseases",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 23,
+          "metadata_row_index": 3078,
+          "metadata_source": "huggingface/joao-luz/ohsumed-single"
+        },
+        {
+          "input": "The prevalence of periodontitis in a military treatment population.\n A group of 1,984 males and females (age range 13 to 84) at a military dental clinic were given oral examinations with full-mouth circumferential periodontal probing.\n Diagnoses were made both for individual quadrants and for the entire mouth using clearly defined diagnostic criteria.\n The results showed 37% of the subjects had...",
+          "output": "Stomatognathic_Diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 23,
+          "metadata_row_index": 863,
+          "metadata_source": "huggingface/joao-luz/ohsumed-single"
+        },
+        {
+          "input": "Morphine pharmacokinetics during anesthesia and surgery in patients with burns.\n The plasma clearance, plasma half-life, and apparent volume of distribution of morphine during anesthesia and surgery were determined in seven patients with burns and compared with seven age-matched control subjects.\n The burn group had a significantly lower clearance, longer terminal half-life, and smaller volume ...",
+          "output": "Disorders_of_Environmental_Origin",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 23,
+          "metadata_row_index": 2921,
+          "metadata_source": "huggingface/joao-luz/ohsumed-single"
+        },
+        {
+          "input": "Injured drivers and alcohol use: culpability, convictions, and pre- and post-crash driving history.\n The culpability, crash-related traffic convictions, and pre- and post-crash driving records of a group of injured impaired (blood alcohol level greater than 80 mg/dl) drivers (N = 58) who were admitted to a Level I trauma center were compared with a group of admitted unimpaired drivers (N = 92)....",
+          "output": "Disorders_of_Environmental_Origin",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 23,
+          "metadata_row_index": 3306,
+          "metadata_source": "huggingface/joao-luz/ohsumed-single"
+        },
+        {
+          "input": "Changes in surgical treatments: the example of hysterectomy versus conization for cervical carcinoma in situ.\n From 1969 through 1985, 4584 women in the state of New Mexico were diagnosed with carcinoma in situ of the cervix.\n Of these women, 65.5% underwent hysterectomy while 31.1% had a conservative therapy (primarily conization).\n Over the 17-year period, there was a steady increase in the p...",
+          "output": "Neoplasms",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 23,
+          "metadata_row_index": 199,
+          "metadata_source": "huggingface/joao-luz/ohsumed-single"
+        },
+        {
+          "input": "Two frameshift mutations in the cystic fibrosis gene.\n Cystic fibrosis (CF) is a recessive disease caused by mutations in the CF transmembrane conductance regulator (CFTR) gene.\n We have identified in exon 7 two frameshift mutations, one caused by a two-nucleotide insertion and the other caused by a one-nucleotide deletion; these mutations--CF1154insTC and CF1213delT, respectively, are predicte...",
+          "output": "Neonatal_Diseases_and_Abnormalities",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 23,
+          "metadata_row_index": 2706,
+          "metadata_source": "huggingface/joao-luz/ohsumed-single"
+        },
+        {
+          "input": "Alkalinisation of prilocaine for intravenous regional anaesthesia. Suitability for clinical use.\n Eighty unpremedicated patients undergoing day-case hand surgery under intravenous regional anaesthesia were randomly allocated to receive, in a double-blind study, either 40 ml 0.75% prilocaine hydrochloride, with 5 ml 8.4% sodium bicarbonate or 5 ml 0.9% saline.\n The alkalinised group had signific...",
+          "output": "Nervous_System_Diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 23,
+          "metadata_row_index": 1235,
+          "metadata_source": "huggingface/joao-luz/ohsumed-single"
+        },
+        {
+          "input": "Pediatric spondyloarthropathies.\n Seronegative spondyloarthropathies in childhood are often misdiagnosed as juvenile rheumatoid arthritis, but recognition of their distinct clinical manifestations and unique underlying pathophysiologies can aid in making a proper diagnosis.\n Ankylosing spondylitis, Reiter's syndrome, psoriatic arthritis, and the arthritis associated with inflammatory bowel dise...",
+          "output": "Musculoskeletal_Diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 23,
+          "metadata_row_index": 592,
+          "metadata_source": "huggingface/joao-luz/ohsumed-single"
+        },
+        {
+          "input": "Immunocytochemical analysis of lymph node aspirates in patients with human immunodeficiency virus infection.\n Thirty four patients positive for human immunodeficiency virus (HIV) who had lymphadenopathy were investigated using fine needle aspiration.\n Cytological analysis included immunocytochemical investigation with the alkaline phosphatase-antialkaline phosphatase (APAAP) method.\n All patien...",
+          "output": "Virus_Diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 23,
+          "metadata_row_index": 119,
+          "metadata_source": "huggingface/joao-luz/ohsumed-single"
+        },
+        {
+          "input": "Improved technique for inserting a T tube in patients with subglottic stenosis.\n An improved method for inserting a silicone T tube through a tracheostomy stoma in patients with subglottic stenosis is presented.\n A silicone T tube is pulled into the trachea with a catheter that is inserted into the tracheostomy stoma, advanced through the stenotic subglottic space, and pulled out the mouth.\n A ...",
+          "output": "Otorhinolaryngologic_Diseases",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 23,
+          "metadata_row_index": 1271,
+          "metadata_source": "huggingface/joao-luz/ohsumed-single"
+        },
+        {
+          "input": "Lidocaine in the middle ear.\n Anesthesia of the ear canal is produced by injection of lidocaine hydrochloride into the skin of the lateral external ear canal.\n Ear canal, tympanic membrane, and middle ear surgeries are performed with this injection.\n The fluid found in the middle ear during tympanotomy was collected and analyzed.\n The percentage of lidocaine in the fluid was calculated by an en...",
+          "output": "Otorhinolaryngologic_Diseases",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 23,
+          "metadata_row_index": 1263,
+          "metadata_source": "huggingface/joao-luz/ohsumed-single"
+        },
+        {
+          "input": "Evaluation of the stimulated menstrual cycle by magnetic resonance imaging.\n Changes in uterine zonal anatomy in six women during a cycle of treatment with clomiphene citrate is studied by magnetic resonance imaging.\n There was a rapid rate of increase in endometrial thickness during the periovulatory period that was similar to the pattern seen in a prior study of women with normal (nonstimulat...",
+          "output": "Female_Genital_Diseases_and_Pregnancy_Complications",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 23,
+          "metadata_row_index": 1520,
+          "metadata_source": "huggingface/joao-luz/ohsumed-single"
+        },
+        {
+          "input": "Multimodality preoperative treatment for advanced stage IV (MO) cancer of the head and neck.\n Sixty-three patients with advanced unresectable squamous cell carcinoma of the head and neck were treated with a combination of chemotherapy, radiation, and surgery.\n We observed a 75% response to neoadjuvant chemotherapy.\n The 5-year survival rate for all 63 patients was 20%, and only 3 patients were ...",
+          "output": "Neoplasms",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 23,
+          "metadata_row_index": 255,
+          "metadata_source": "huggingface/joao-luz/ohsumed-single"
+        }
+      ]
+    },
+    {
+      "dataset": "mental_health_conditions",
+      "examples": [
+        {
+          "input": "i have suffered depression most of my life ever since i can remember i have always felt something wa off or wrong even when i wa a child i just didn t have a name for it i lived in a latin household so of course whenever i talked about it with someone i wa mostly met with man up it just a phase it all in your head or you are a kid you dont know im now i started therapy year ago started taking p...",
+          "output": "depression",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 63568,
+          "metadata_source": "huggingface/sai1908/Mental_Health_Condition_Classification"
+        },
+        {
+          "input": "someone who is overwhelmed with stress may find it difficult to communicate their feelings effectively, leading them to express their emotions in various ways that may not always be explicitly clear to others. below are some common expressions that individuals overwhelmed with stress might exhibit:\n\n1. verbal expressions: they might use strong language or swearing, cry, or talk rapidly or slowl...",
+          "output": "stress",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 95927,
+          "metadata_source": "huggingface/sai1908/Mental_Health_Condition_Classification"
+        },
+        {
+          "input": "Despite the sun shining brightly outside, the weight of my depression settled upon me like a thick fog, obscuring all sense of hope and motivation.",
+          "output": "bipolar",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 8108,
+          "metadata_source": "huggingface/sai1908/Mental_Health_Condition_Classification"
+        },
+        {
+          "input": "did anyone else see this? i imagine it makes you feel the same way as me. https://www.reddit.com/r/randomthoughts/comments/1133p8v/how_do_you_deal_with_your_friends_who_avoid_you/?utm_source=share&amp;utm_medium=android_app&amp;utm_name=androidcss&amp;utm_term=1&amp;utm_content=share_button",
+          "output": "personality disorder",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 76013,
+          "metadata_source": "huggingface/sai1908/Mental_Health_Condition_Classification"
+        },
+        {
+          "input": "\"one moment i'm elated, laughing and creating, the next i'm plunged into a deep depression, unable to find joy or motivation.\"",
+          "output": "bipolar",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 23583,
+          "metadata_source": "huggingface/sai1908/Mental_Health_Condition_Classification"
+        },
+        {
+          "input": "'my mind is a whirlwind of worries, and even the simplest tasks feel insurmountable, leaving me paralyzed with fear and doubt.'",
+          "output": "anxiety",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 24634,
+          "metadata_source": "huggingface/sai1908/Mental_Health_Condition_Classification"
+        },
+        {
+          "input": "\"my reflection stares back at me, an unfamiliar stranger with a smile that isn't mine. i can't trust my emotions, they're as volatile as the weather, leaving me feeling lost and alone.\"",
+          "output": "personality disorder",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 80757,
+          "metadata_source": "huggingface/sai1908/Mental_Health_Condition_Classification"
+        },
+        {
+          "input": "I'm drowning in tasks, each one demanding my attention, yet the finish line remains elusive, leaving me feeling trapped in a never-ending cycle of pressure and anxiety.",
+          "output": "stress",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 10360,
+          "metadata_source": "huggingface/sai1908/Mental_Health_Condition_Classification"
+        },
+        {
+          "input": "for some reason this was removed, so i have to remake it. i want answers. &amp;#x200b;i have a weird sexual preference towards cute things, that includes children, and it is more likely to be children than adults. i developed this sexual preference from puberty. it is not a choice, please never mistake psychological developments as choice, such as this one. that is a very common misconception a...",
+          "output": "suicidal",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 48959,
+          "metadata_source": "huggingface/sai1908/Mental_Health_Condition_Classification"
+        },
+        {
+          "input": "days go on and on one way indistinguishable from the other, i am 21 have not done anything in my life. self loathing,anixiety never ends. it is not like i have gone through anything traumatic and i have already given up on life. timidity has followed me everywhere i cannot stand up for my own believes,ideas. when i think of my future all i see is a depressing lifeless routine. trapped in a life...",
+          "output": "suicidal",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 36956,
+          "metadata_source": "huggingface/sai1908/Mental_Health_Condition_Classification"
+        },
+        {
+          "input": "is there anyone else who feels like getting depressed again is somewhat like going back to home in a weird way?? its just me. okay. got it. i will take my leave then. is there anyone??",
+          "output": "depression",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 45257,
+          "metadata_source": "huggingface/sai1908/Mental_Health_Condition_Classification"
+        },
+        {
+          "input": "inner monologue:\n(fingers tremble as i reach for the doorknob)\noh god, this can't be happening. i can't do this. not today. i can feel my heart racing. what if they see through me? what if i make a fool of myself? what if i fail?\n(taking a deep breath)\nthis is just a small gathering. just a few people. it's not a big deal. you've done this before. you can do it again. you've prepared for this. ...",
+          "output": "anxiety",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 99081,
+          "metadata_source": "huggingface/sai1908/Mental_Health_Condition_Classification"
+        },
+        {
+          "input": "at my mama ji s place everybody keep giving me new option to study or work now i get more confused with each passing day",
+          "output": "normal",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 70518,
+          "metadata_source": "huggingface/sai1908/Mental_Health_Condition_Classification"
+        },
+        {
+          "input": "so tired god i hate the new job and only two day in",
+          "output": "normal",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 68177,
+          "metadata_source": "huggingface/sai1908/Mental_Health_Condition_Classification"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "datasets": [
+    {
+      "dataset": "medical_abstracts",
+      "examples": [
+        {
+          "input": "Tissue changes around loose prostheses. A canine model to investigate the effects of an antiinflammatory agent. The aseptically loosened prosthesis provided a means for investigating the in vivo and i...",
+          "output": "General_pathological_conditions",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 0,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Neuropeptide Y and neuron-specific enolase levels in benign and malignant pheochromocytomas. Neuron-specific enolase (NSE) is the isoform of enolase, a glycolytic enzyme found in the neuroendocrine sy...",
+          "output": "Neoplasms",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 1,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Sexually transmitted diseases of the colon, rectum, and anus. The challenge of the nineties. During the past two decades, an explosive growth in both the prevalence and types of sexually transmitted d...",
+          "output": "Digestive_system_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 2,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        }
+      ]
+    },
+    {
+      "dataset": "mimic_iv_ed_demo",
+      "examples": [
+        {
+          "input": "Chief complaint: Abd pain, LEAKING ASCITES",
+          "output": "ESI-2",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 15,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10005866",
+          "metadata_stay_id": "34558830"
+        },
+        {
+          "input": "Chief complaint: Dizziness, Diplopia",
+          "output": "ESI-2",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 16,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10014354",
+          "metadata_stay_id": "34820898"
+        },
+        {
+          "input": "Chief complaint: Abd pain. Vitals: HR 72, RR 18, BP 98/48, Temp 98.8, O2 90%, Pain 13/10",
+          "output": "ESI-2",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 17,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10016810",
+          "metadata_stay_id": "35758326"
+        }
+      ]
+    },
+    {
+      "dataset": "clinical_patient_triage_nl",
+      "examples": [
+        {
+          "input": "Patient presents with persistent dry cough and low-grade fever for 5 days. Age: 34. Vital signs: Stable. Primary complaint: Respiratory_Distress",
+          "output": "Mild",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 0,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8001"
+        },
+        {
+          "input": "Sudden onset of acute chest pain radiating to left arm with diaphoresis. Age: 58. Vital signs: Unstable. Primary complaint: Cardiac_Event",
+          "output": "Critical",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 1,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8002"
+        },
+        {
+          "input": "Minor laceration on right forearm caused by kitchen knife; bleeding controlled. Age: 22. Vital signs: Stable. Primary complaint: Trauma_Minor",
+          "output": "Low",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 2,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8003"
+        }
+      ]
+    }
+  ]
+}

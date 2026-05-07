@@ -1,0 +1,1785 @@
+{
+  "metadata": {
+    "evaluation_name": "Cross-Representation Class Characterization",
+    "description": "Synthesizes 4 dependency experiments into a class-level representation suitability map using Schoener's D gap analysis, boundary CRND disagreement topology with Mantel test, predictive validation (Kendall tau), ecological vs. ML overlap comparison (Fisher F1, Bhattacharyya coefficient), and clinical interpretability profiles.",
+    "d_gap_results_per_dataset": {
+      "medical_abstracts": {
+        "mean_d_gap": 0.2988628303105552,
+        "max_d_gap": 0.5512536470029953,
+        "n_pairs": 10,
+        "pair_details": {
+          "Cardiovascular_diseases__vs__Digestive_system_diseases": {
+            "d_gap": 0.3439098815652044,
+            "d_values": {
+              "tfidf": 0.5561,
+              "sentence_transformer": 0.3215,
+              "llm_zeroshot": 0.2122
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.2122,
+            "max_d": 0.5561
+          },
+          "Cardiovascular_diseases__vs__General_pathological_conditions": {
+            "d_gap": 0.23511571860385638,
+            "d_values": {
+              "tfidf": 0.5947,
+              "sentence_transformer": 0.5203,
+              "llm_zeroshot": 0.3596
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.3596,
+            "max_d": 0.5947
+          },
+          "Cardiovascular_diseases__vs__Neoplasms": {
+            "d_gap": 0.21982546075460085,
+            "d_values": {
+              "tfidf": 0.3658,
+              "sentence_transformer": 0.146,
+              "llm_zeroshot": 0.3232
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.146,
+            "max_d": 0.3658
+          },
+          "Cardiovascular_diseases__vs__Nervous_system_diseases": {
+            "d_gap": 0.38529756750785304,
+            "d_values": {
+              "tfidf": 0.5539,
+              "sentence_transformer": 0.4494,
+              "llm_zeroshot": 0.1686
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.1686,
+            "max_d": 0.5539
+          },
+          "Digestive_system_diseases__vs__General_pathological_conditions": {
+            "d_gap": 0.3095245226676917,
+            "d_values": {
+              "tfidf": 0.8419,
+              "sentence_transformer": 0.7731,
+              "llm_zeroshot": 0.5324
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.5324,
+            "max_d": 0.8419
+          },
+          "Digestive_system_diseases__vs__Neoplasms": {
+            "d_gap": 0.1571964346897725,
+            "d_values": {
+              "tfidf": 0.614,
+              "sentence_transformer": 0.5295,
+              "llm_zeroshot": 0.4568
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.4568,
+            "max_d": 0.614
+          },
+          "Digestive_system_diseases__vs__Nervous_system_diseases": {
+            "d_gap": 0.5512536470029953,
+            "d_values": {
+              "tfidf": 0.8155,
+              "sentence_transformer": 0.8062,
+              "llm_zeroshot": 0.2643
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.2643,
+            "max_d": 0.8155
+          },
+          "General_pathological_conditions__vs__Neoplasms": {
+            "d_gap": 0.24060629479974316,
+            "d_values": {
+              "tfidf": 0.6525,
+              "sentence_transformer": 0.4596,
+              "llm_zeroshot": 0.7003
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.4596,
+            "max_d": 0.7003
+          },
+          "General_pathological_conditions__vs__Nervous_system_diseases": {
+            "d_gap": 0.3471800089954573,
+            "d_values": {
+              "tfidf": 0.8311,
+              "sentence_transformer": 0.8079,
+              "llm_zeroshot": 0.4839
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.4839,
+            "max_d": 0.8311
+          },
+          "Neoplasms__vs__Nervous_system_diseases": {
+            "d_gap": 0.19871876651837772,
+            "d_values": {
+              "tfidf": 0.6196,
+              "sentence_transformer": 0.4209,
+              "llm_zeroshot": 0.4266
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.4209,
+            "max_d": 0.6196
+          }
+        }
+      },
+      "mimic_iv_ed_demo": {
+        "mean_d_gap": 0.28305513265595766,
+        "max_d_gap": 0.4043841257344041,
+        "n_pairs": 6,
+        "pair_details": {
+          "ESI-1__vs__ESI-2": {
+            "d_gap": 0.4043841257344041,
+            "d_values": {
+              "tfidf": 0.4926,
+              "sentence_transformer": 0.7265,
+              "llm_zeroshot": 0.3221
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.3221,
+            "max_d": 0.7265
+          },
+          "ESI-1__vs__ESI-3": {
+            "d_gap": 0.1287798695911927,
+            "d_values": {
+              "tfidf": 0.391,
+              "sentence_transformer": 0.4579,
+              "llm_zeroshot": 0.3291
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.3291,
+            "max_d": 0.4579
+          },
+          "ESI-1__vs__ESI-4": {
+            "d_gap": 0.27042987055769874,
+            "d_values": {
+              "tfidf": 0.5109,
+              "sentence_transformer": 0.4043,
+              "llm_zeroshot": 0.6747
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.4043,
+            "max_d": 0.6747
+          },
+          "ESI-2__vs__ESI-3": {
+            "d_gap": 0.2254167201561369,
+            "d_values": {
+              "tfidf": 0.8096,
+              "sentence_transformer": 0.6232,
+              "llm_zeroshot": 0.8486
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.6232,
+            "max_d": 0.8486
+          },
+          "ESI-2__vs__ESI-4": {
+            "d_gap": 0.2712661210907562,
+            "d_values": {
+              "tfidf": 0.4646,
+              "sentence_transformer": 0.4662,
+              "llm_zeroshot": 0.195
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.195,
+            "max_d": 0.4662
+          },
+          "ESI-3__vs__ESI-4": {
+            "d_gap": 0.39805408880555715,
+            "d_values": {
+              "tfidf": 0.404,
+              "sentence_transformer": 0.6034,
+              "llm_zeroshot": 0.2054
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.2054,
+            "max_d": 0.6034
+          }
+        }
+      },
+      "clinical_patient_triage_nl": {
+        "mean_d_gap": 0.49636402840981797,
+        "max_d_gap": 0.9381360883360113,
+        "n_pairs": 15,
+        "pair_details": {
+          "Critical__vs__High": {
+            "d_gap": 0.4999999073693443,
+            "d_values": {
+              "tfidf": 0.0,
+              "sentence_transformer": 0.1457,
+              "llm_zeroshot": 0.5
+            },
+            "best_space": "tfidf",
+            "min_d": 0.0,
+            "max_d": 0.5
+          },
+          "Critical__vs__Low": {
+            "d_gap": 0.49953033666557156,
+            "d_values": {
+              "tfidf": 0.0005,
+              "sentence_transformer": 0.1546,
+              "llm_zeroshot": 0.5
+            },
+            "best_space": "tfidf",
+            "min_d": 0.0005,
+            "max_d": 0.5
+          },
+          "Critical__vs__Mild": {
+            "d_gap": 0.495501446287022,
+            "d_values": {
+              "tfidf": 0.0045,
+              "sentence_transformer": 0.1148,
+              "llm_zeroshot": 0.5
+            },
+            "best_space": "tfidf",
+            "min_d": 0.0045,
+            "max_d": 0.5
+          },
+          "Critical__vs__Moderate": {
+            "d_gap": 0.4996631074504212,
+            "d_values": {
+              "tfidf": 0.0003,
+              "sentence_transformer": 0.1503,
+              "llm_zeroshot": 0.5
+            },
+            "best_space": "tfidf",
+            "min_d": 0.0003,
+            "max_d": 0.5
+          },
+          "Critical__vs__Routine": {
+            "d_gap": 0.9381360883360113,
+            "d_values": {
+              "tfidf": 0.5,
+              "sentence_transformer": 0.0619,
+              "llm_zeroshot": 1.0
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.0619,
+            "max_d": 1.0
+          },
+          "High__vs__Low": {
+            "d_gap": 0.6855489586822743,
+            "d_values": {
+              "tfidf": 0.1033,
+              "sentence_transformer": 0.7889,
+              "llm_zeroshot": 0.3029
+            },
+            "best_space": "tfidf",
+            "min_d": 0.1033,
+            "max_d": 0.7889
+          },
+          "High__vs__Mild": {
+            "d_gap": 0.463732649672689,
+            "d_values": {
+              "tfidf": 0.2123,
+              "sentence_transformer": 0.676,
+              "llm_zeroshot": 0.6252
+            },
+            "best_space": "tfidf",
+            "min_d": 0.2123,
+            "max_d": 0.676
+          },
+          "High__vs__Moderate": {
+            "d_gap": 0.5940061552596431,
+            "d_values": {
+              "tfidf": 0.2189,
+              "sentence_transformer": 0.8129,
+              "llm_zeroshot": 0.4639
+            },
+            "best_space": "tfidf",
+            "min_d": 0.2189,
+            "max_d": 0.8129
+          },
+          "High__vs__Routine": {
+            "d_gap": 0.39006301133432164,
+            "d_values": {
+              "tfidf": 0.5,
+              "sentence_transformer": 0.1099,
+              "llm_zeroshot": 0.5
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.1099,
+            "max_d": 0.5
+          },
+          "Low__vs__Mild": {
+            "d_gap": 0.5616144560410494,
+            "d_values": {
+              "tfidf": 0.2129,
+              "sentence_transformer": 0.7745,
+              "llm_zeroshot": 0.3494
+            },
+            "best_space": "tfidf",
+            "min_d": 0.2129,
+            "max_d": 0.7745
+          },
+          "Low__vs__Moderate": {
+            "d_gap": 0.3416115604214027,
+            "d_values": {
+              "tfidf": 0.5487,
+              "sentence_transformer": 0.8903,
+              "llm_zeroshot": 0.631
+            },
+            "best_space": "tfidf",
+            "min_d": 0.5487,
+            "max_d": 0.8903
+          },
+          "Low__vs__Routine": {
+            "d_gap": 0.35469710062879356,
+            "d_values": {
+              "tfidf": 0.5,
+              "sentence_transformer": 0.1453,
+              "llm_zeroshot": 0.5
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.1453,
+            "max_d": 0.5
+          },
+          "Mild__vs__Moderate": {
+            "d_gap": 0.39430413040922563,
+            "d_values": {
+              "tfidf": 0.3988,
+              "sentence_transformer": 0.7931,
+              "llm_zeroshot": 0.5241
+            },
+            "best_space": "tfidf",
+            "min_d": 0.3988,
+            "max_d": 0.7931
+          },
+          "Mild__vs__Routine": {
+            "d_gap": 0.36453965097000707,
+            "d_values": {
+              "tfidf": 0.5,
+              "sentence_transformer": 0.1355,
+              "llm_zeroshot": 0.5
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.1355,
+            "max_d": 0.5
+          },
+          "Moderate__vs__Routine": {
+            "d_gap": 0.36251186661949264,
+            "d_values": {
+              "tfidf": 0.5,
+              "sentence_transformer": 0.1375,
+              "llm_zeroshot": 0.5
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.1375,
+            "max_d": 0.5
+          }
+        }
+      },
+      "ohsumed_single": {
+        "mean_d_gap": 0.4592121441531781,
+        "max_d_gap": 0.6917587909452669,
+        "n_pairs": 36,
+        "pair_details": {
+          "Bacterial_Infections_and_Mycoses__vs__Digestive_System_Diseases": {
+            "d_gap": 0.360812769214075,
+            "d_values": {
+              "tfidf": 0.8046,
+              "sentence_transformer": 0.5279,
+              "llm_zeroshot": 0.4438
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.4438,
+            "max_d": 0.8046
+          },
+          "Bacterial_Infections_and_Mycoses__vs__Musculoskeletal_Diseases": {
+            "d_gap": 0.5040056839059401,
+            "d_values": {
+              "tfidf": 0.7852,
+              "sentence_transformer": 0.3508,
+              "llm_zeroshot": 0.2812
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.2812,
+            "max_d": 0.7852
+          },
+          "Bacterial_Infections_and_Mycoses__vs__Neoplasms": {
+            "d_gap": 0.5090493604955745,
+            "d_values": {
+              "tfidf": 0.6,
+              "sentence_transformer": 0.0909,
+              "llm_zeroshot": 0.2296
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.0909,
+            "max_d": 0.6
+          },
+          "Bacterial_Infections_and_Mycoses__vs__Otorhinolaryngologic_Diseases": {
+            "d_gap": 0.29880568323376167,
+            "d_values": {
+              "tfidf": 0.3131,
+              "sentence_transformer": 0.3001,
+              "llm_zeroshot": 0.0143
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.0143,
+            "max_d": 0.3131
+          },
+          "Bacterial_Infections_and_Mycoses__vs__Parasitic_Diseases": {
+            "d_gap": 0.47841583486769146,
+            "d_values": {
+              "tfidf": 0.6685,
+              "sentence_transformer": 0.5839,
+              "llm_zeroshot": 0.1901
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.1901,
+            "max_d": 0.6685
+          },
+          "Bacterial_Infections_and_Mycoses__vs__Respiratory_Tract_Diseases": {
+            "d_gap": 0.4363148901948064,
+            "d_values": {
+              "tfidf": 0.8194,
+              "sentence_transformer": 0.6796,
+              "llm_zeroshot": 0.3831
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.3831,
+            "max_d": 0.8194
+          },
+          "Bacterial_Infections_and_Mycoses__vs__Stomatognathic_Diseases": {
+            "d_gap": 0.4880266037990866,
+            "d_values": {
+              "tfidf": 0.6914,
+              "sentence_transformer": 0.3351,
+              "llm_zeroshot": 0.2034
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.2034,
+            "max_d": 0.6914
+          },
+          "Bacterial_Infections_and_Mycoses__vs__Virus_Diseases": {
+            "d_gap": 0.619670988087349,
+            "d_values": {
+              "tfidf": 0.7504,
+              "sentence_transformer": 0.5003,
+              "llm_zeroshot": 0.1307
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.1307,
+            "max_d": 0.7504
+          },
+          "Digestive_System_Diseases__vs__Musculoskeletal_Diseases": {
+            "d_gap": 0.5777213826512221,
+            "d_values": {
+              "tfidf": 0.7711,
+              "sentence_transformer": 0.4635,
+              "llm_zeroshot": 0.1934
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.1934,
+            "max_d": 0.7711
+          },
+          "Digestive_System_Diseases__vs__Neoplasms": {
+            "d_gap": 0.47540218854439376,
+            "d_values": {
+              "tfidf": 0.5986,
+              "sentence_transformer": 0.1232,
+              "llm_zeroshot": 0.1257
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.1232,
+            "max_d": 0.5986
+          },
+          "Digestive_System_Diseases__vs__Otorhinolaryngologic_Diseases": {
+            "d_gap": 0.3509848657986201,
+            "d_values": {
+              "tfidf": 0.3034,
+              "sentence_transformer": 0.3647,
+              "llm_zeroshot": 0.0137
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.0137,
+            "max_d": 0.3647
+          },
+          "Digestive_System_Diseases__vs__Parasitic_Diseases": {
+            "d_gap": 0.5892810440297241,
+            "d_values": {
+              "tfidf": 0.6996,
+              "sentence_transformer": 0.4102,
+              "llm_zeroshot": 0.1104
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.1104,
+            "max_d": 0.6996
+          },
+          "Digestive_System_Diseases__vs__Respiratory_Tract_Diseases": {
+            "d_gap": 0.6206590899051501,
+            "d_values": {
+              "tfidf": 0.8285,
+              "sentence_transformer": 0.6938,
+              "llm_zeroshot": 0.2078
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.2078,
+            "max_d": 0.8285
+          },
+          "Digestive_System_Diseases__vs__Stomatognathic_Diseases": {
+            "d_gap": 0.6073587691542607,
+            "d_values": {
+              "tfidf": 0.716,
+              "sentence_transformer": 0.5058,
+              "llm_zeroshot": 0.1086
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.1086,
+            "max_d": 0.716
+          },
+          "Digestive_System_Diseases__vs__Virus_Diseases": {
+            "d_gap": 0.5924608874973674,
+            "d_values": {
+              "tfidf": 0.705,
+              "sentence_transformer": 0.3314,
+              "llm_zeroshot": 0.1126
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.1126,
+            "max_d": 0.705
+          },
+          "Musculoskeletal_Diseases__vs__Neoplasms": {
+            "d_gap": 0.4108080222369781,
+            "d_values": {
+              "tfidf": 0.5458,
+              "sentence_transformer": 0.2385,
+              "llm_zeroshot": 0.135
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.135,
+            "max_d": 0.5458
+          },
+          "Musculoskeletal_Diseases__vs__Otorhinolaryngologic_Diseases": {
+            "d_gap": 0.3252296953298791,
+            "d_values": {
+              "tfidf": 0.323,
+              "sentence_transformer": 0.3359,
+              "llm_zeroshot": 0.0107
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.0107,
+            "max_d": 0.3359
+          },
+          "Musculoskeletal_Diseases__vs__Parasitic_Diseases": {
+            "d_gap": 0.2559032454422947,
+            "d_values": {
+              "tfidf": 0.5864,
+              "sentence_transformer": 0.4432,
+              "llm_zeroshot": 0.3305
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.3305,
+            "max_d": 0.5864
+          },
+          "Musculoskeletal_Diseases__vs__Respiratory_Tract_Diseases": {
+            "d_gap": 0.4395233021095537,
+            "d_values": {
+              "tfidf": 0.7098,
+              "sentence_transformer": 0.463,
+              "llm_zeroshot": 0.2703
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.2703,
+            "max_d": 0.7098
+          },
+          "Musculoskeletal_Diseases__vs__Stomatognathic_Diseases": {
+            "d_gap": 0.6336115595814427,
+            "d_values": {
+              "tfidf": 0.7608,
+              "sentence_transformer": 0.7539,
+              "llm_zeroshot": 0.1272
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.1272,
+            "max_d": 0.7608
+          },
+          "Musculoskeletal_Diseases__vs__Virus_Diseases": {
+            "d_gap": 0.5673522191904062,
+            "d_values": {
+              "tfidf": 0.661,
+              "sentence_transformer": 0.3711,
+              "llm_zeroshot": 0.0937
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.0937,
+            "max_d": 0.661
+          },
+          "Neoplasms__vs__Otorhinolaryngologic_Diseases": {
+            "d_gap": 0.46253628960147475,
+            "d_values": {
+              "tfidf": 0.4834,
+              "sentence_transformer": 0.4488,
+              "llm_zeroshot": 0.0208
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.0208,
+            "max_d": 0.4834
+          },
+          "Neoplasms__vs__Parasitic_Diseases": {
+            "d_gap": 0.4972023347938218,
+            "d_values": {
+              "tfidf": 0.6198,
+              "sentence_transformer": 0.1698,
+              "llm_zeroshot": 0.1226
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.1226,
+            "max_d": 0.6198
+          },
+          "Neoplasms__vs__Respiratory_Tract_Diseases": {
+            "d_gap": 0.3924871671807164,
+            "d_values": {
+              "tfidf": 0.6416,
+              "sentence_transformer": 0.2491,
+              "llm_zeroshot": 0.345
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.2491,
+            "max_d": 0.6416
+          },
+          "Neoplasms__vs__Stomatognathic_Diseases": {
+            "d_gap": 0.14681813095351226,
+            "d_values": {
+              "tfidf": 0.5264,
+              "sentence_transformer": 0.3796,
+              "llm_zeroshot": 0.522
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.3796,
+            "max_d": 0.5264
+          },
+          "Neoplasms__vs__Virus_Diseases": {
+            "d_gap": 0.4159788083227839,
+            "d_values": {
+              "tfidf": 0.5752,
+              "sentence_transformer": 0.2014,
+              "llm_zeroshot": 0.1592
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.1592,
+            "max_d": 0.5752
+          },
+          "Otorhinolaryngologic_Diseases__vs__Parasitic_Diseases": {
+            "d_gap": 0.31846516486099496,
+            "d_values": {
+              "tfidf": 0.3269,
+              "sentence_transformer": 0.3028,
+              "llm_zeroshot": 0.0085
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.0085,
+            "max_d": 0.3269
+          },
+          "Otorhinolaryngologic_Diseases__vs__Respiratory_Tract_Diseases": {
+            "d_gap": 0.4728840986268853,
+            "d_values": {
+              "tfidf": 0.3448,
+              "sentence_transformer": 0.4797,
+              "llm_zeroshot": 0.0068
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.0068,
+            "max_d": 0.4797
+          },
+          "Otorhinolaryngologic_Diseases__vs__Stomatognathic_Diseases": {
+            "d_gap": 0.4246956474869732,
+            "d_values": {
+              "tfidf": 0.3282,
+              "sentence_transformer": 0.4724,
+              "llm_zeroshot": 0.0477
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.0477,
+            "max_d": 0.4724
+          },
+          "Otorhinolaryngologic_Diseases__vs__Virus_Diseases": {
+            "d_gap": 0.12615205210827762,
+            "d_values": {
+              "tfidf": 0.3311,
+              "sentence_transformer": 0.2536,
+              "llm_zeroshot": 0.205
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.205,
+            "max_d": 0.3311
+          },
+          "Parasitic_Diseases__vs__Respiratory_Tract_Diseases": {
+            "d_gap": 0.5303040520596412,
+            "d_values": {
+              "tfidf": 0.7634,
+              "sentence_transformer": 0.4934,
+              "llm_zeroshot": 0.2331
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.2331,
+            "max_d": 0.7634
+          },
+          "Parasitic_Diseases__vs__Stomatognathic_Diseases": {
+            "d_gap": 0.4846297611430559,
+            "d_values": {
+              "tfidf": 0.6019,
+              "sentence_transformer": 0.4156,
+              "llm_zeroshot": 0.1173
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.1173,
+            "max_d": 0.6019
+          },
+          "Parasitic_Diseases__vs__Virus_Diseases": {
+            "d_gap": 0.6917587909452669,
+            "d_values": {
+              "tfidf": 0.7635,
+              "sentence_transformer": 0.7398,
+              "llm_zeroshot": 0.0718
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.0718,
+            "max_d": 0.7635
+          },
+          "Respiratory_Tract_Diseases__vs__Stomatognathic_Diseases": {
+            "d_gap": 0.42157969431122055,
+            "d_values": {
+              "tfidf": 0.6914,
+              "sentence_transformer": 0.5145,
+              "llm_zeroshot": 0.2698
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.2698,
+            "max_d": 0.6914
+          },
+          "Respiratory_Tract_Diseases__vs__Virus_Diseases": {
+            "d_gap": 0.6819820375790905,
+            "d_values": {
+              "tfidf": 0.7742,
+              "sentence_transformer": 0.4006,
+              "llm_zeroshot": 0.0922
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.0922,
+            "max_d": 0.7742
+          },
+          "Stomatognathic_Diseases__vs__Virus_Diseases": {
+            "d_gap": 0.32276507427112233,
+            "d_values": {
+              "tfidf": 0.6632,
+              "sentence_transformer": 0.3484,
+              "llm_zeroshot": 0.3404
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.3404,
+            "max_d": 0.6632
+          }
+        }
+      },
+      "mental_health_conditions": {
+        "mean_d_gap": 0.30208314016213506,
+        "max_d_gap": 0.7387619718275695,
+        "n_pairs": 21,
+        "pair_details": {
+          "anxiety__vs__bipolar": {
+            "d_gap": 0.4813408122244919,
+            "d_values": {
+              "tfidf": 0.5577,
+              "sentence_transformer": 0.4248,
+              "llm_zeroshot": 0.0764
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.0764,
+            "max_d": 0.5577
+          },
+          "anxiety__vs__depression": {
+            "d_gap": 0.05130098720083365,
+            "d_values": {
+              "tfidf": 0.1985,
+              "sentence_transformer": 0.2498,
+              "llm_zeroshot": 0.2027
+            },
+            "best_space": "tfidf",
+            "min_d": 0.1985,
+            "max_d": 0.2498
+          },
+          "anxiety__vs__normal": {
+            "d_gap": 0.08764065150915334,
+            "d_values": {
+              "tfidf": 0.146,
+              "sentence_transformer": 0.1413,
+              "llm_zeroshot": 0.2289
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.1413,
+            "max_d": 0.2289
+          },
+          "anxiety__vs__personality disorder": {
+            "d_gap": 0.23272865667398046,
+            "d_values": {
+              "tfidf": 0.332,
+              "sentence_transformer": 0.4693,
+              "llm_zeroshot": 0.2366
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.2366,
+            "max_d": 0.4693
+          },
+          "anxiety__vs__stress": {
+            "d_gap": 0.30017393418017013,
+            "d_values": {
+              "tfidf": 0.7021,
+              "sentence_transformer": 0.6207,
+              "llm_zeroshot": 0.402
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.402,
+            "max_d": 0.7021
+          },
+          "anxiety__vs__suicidal": {
+            "d_gap": 0.2030437795045864,
+            "d_values": {
+              "tfidf": 0.162,
+              "sentence_transformer": 0.2345,
+              "llm_zeroshot": 0.3651
+            },
+            "best_space": "tfidf",
+            "min_d": 0.162,
+            "max_d": 0.3651
+          },
+          "bipolar__vs__depression": {
+            "d_gap": 0.12173420261909518,
+            "d_values": {
+              "tfidf": 0.2375,
+              "sentence_transformer": 0.2598,
+              "llm_zeroshot": 0.138
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.138,
+            "max_d": 0.2598
+          },
+          "bipolar__vs__normal": {
+            "d_gap": 0.18403659207459,
+            "d_values": {
+              "tfidf": 0.1517,
+              "sentence_transformer": 0.0611,
+              "llm_zeroshot": 0.2451
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.0611,
+            "max_d": 0.2451
+          },
+          "bipolar__vs__personality disorder": {
+            "d_gap": 0.26336942165104693,
+            "d_values": {
+              "tfidf": 0.5358,
+              "sentence_transformer": 0.2725,
+              "llm_zeroshot": 0.2842
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.2725,
+            "max_d": 0.5358
+          },
+          "bipolar__vs__stress": {
+            "d_gap": 0.5613265326510263,
+            "d_values": {
+              "tfidf": 0.4036,
+              "sentence_transformer": 0.6832,
+              "llm_zeroshot": 0.1219
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.1219,
+            "max_d": 0.6832
+          },
+          "bipolar__vs__suicidal": {
+            "d_gap": 0.04068703609129809,
+            "d_values": {
+              "tfidf": 0.1965,
+              "sentence_transformer": 0.2128,
+              "llm_zeroshot": 0.1722
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.1722,
+            "max_d": 0.2128
+          },
+          "depression__vs__normal": {
+            "d_gap": 0.13701588733100245,
+            "d_values": {
+              "tfidf": 0.2833,
+              "sentence_transformer": 0.2643,
+              "llm_zeroshot": 0.4013
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.2643,
+            "max_d": 0.4013
+          },
+          "depression__vs__personality disorder": {
+            "d_gap": 0.33416192016403357,
+            "d_values": {
+              "tfidf": 0.1786,
+              "sentence_transformer": 0.0972,
+              "llm_zeroshot": 0.4314
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.0972,
+            "max_d": 0.4314
+          },
+          "depression__vs__stress": {
+            "d_gap": 0.18694215940278858,
+            "d_values": {
+              "tfidf": 0.1094,
+              "sentence_transformer": 0.1752,
+              "llm_zeroshot": 0.2964
+            },
+            "best_space": "tfidf",
+            "min_d": 0.1094,
+            "max_d": 0.2964
+          },
+          "depression__vs__suicidal": {
+            "d_gap": 0.33707120452132877,
+            "d_values": {
+              "tfidf": 0.7567,
+              "sentence_transformer": 0.8075,
+              "llm_zeroshot": 0.4705
+            },
+            "best_space": "llm_zeroshot",
+            "min_d": 0.4705,
+            "max_d": 0.8075
+          },
+          "normal__vs__personality disorder": {
+            "d_gap": 0.7387619718275695,
+            "d_values": {
+              "tfidf": 0.147,
+              "sentence_transformer": 0.0356,
+              "llm_zeroshot": 0.7744
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.0356,
+            "max_d": 0.7744
+          },
+          "normal__vs__stress": {
+            "d_gap": 0.40338259225125905,
+            "d_values": {
+              "tfidf": 0.0994,
+              "sentence_transformer": 0.0679,
+              "llm_zeroshot": 0.4713
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.0679,
+            "max_d": 0.4713
+          },
+          "normal__vs__suicidal": {
+            "d_gap": 0.30318449247410373,
+            "d_values": {
+              "tfidf": 0.3209,
+              "sentence_transformer": 0.2754,
+              "llm_zeroshot": 0.5786
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.2754,
+            "max_d": 0.5786
+          },
+          "personality disorder__vs__stress": {
+            "d_gap": 0.27216752191782734,
+            "d_values": {
+              "tfidf": 0.2203,
+              "sentence_transformer": 0.4231,
+              "llm_zeroshot": 0.4925
+            },
+            "best_space": "tfidf",
+            "min_d": 0.2203,
+            "max_d": 0.4925
+          },
+          "personality disorder__vs__suicidal": {
+            "d_gap": 0.5476473552999703,
+            "d_values": {
+              "tfidf": 0.1261,
+              "sentence_transformer": 0.0787,
+              "llm_zeroshot": 0.6263
+            },
+            "best_space": "sentence_transformer",
+            "min_d": 0.0787,
+            "max_d": 0.6263
+          },
+          "stress__vs__suicidal": {
+            "d_gap": 0.5560282318346795,
+            "d_values": {
+              "tfidf": 0.084,
+              "sentence_transformer": 0.1392,
+              "llm_zeroshot": 0.64
+            },
+            "best_space": "tfidf",
+            "min_d": 0.084,
+            "max_d": 0.64
+          }
+        }
+      }
+    },
+    "uniformly_high_d_pairs": {
+      "medical_abstracts": {
+        "threshold_0.4": {
+          "count": 5,
+          "fraction": 0.5,
+          "pairs": [
+            "Digestive_system_diseases__vs__General_pathological_conditions",
+            "Digestive_system_diseases__vs__Neoplasms",
+            "General_pathological_conditions__vs__Neoplasms",
+            "General_pathological_conditions__vs__Nervous_system_diseases",
+            "Neoplasms__vs__Nervous_system_diseases"
+          ]
+        },
+        "threshold_0.5": {
+          "count": 1,
+          "fraction": 0.1,
+          "pairs": [
+            "Digestive_system_diseases__vs__General_pathological_conditions"
+          ]
+        },
+        "threshold_0.6": {
+          "count": 0,
+          "fraction": 0.0,
+          "pairs": []
+        },
+        "threshold_0.7": {
+          "count": 0,
+          "fraction": 0.0,
+          "pairs": []
+        }
+      },
+      "mimic_iv_ed_demo": {
+        "threshold_0.4": {
+          "count": 2,
+          "fraction": 0.3333333333333333,
+          "pairs": [
+            "ESI-1__vs__ESI-4",
+            "ESI-2__vs__ESI-3"
+          ]
+        },
+        "threshold_0.5": {
+          "count": 1,
+          "fraction": 0.16666666666666666,
+          "pairs": [
+            "ESI-2__vs__ESI-3"
+          ]
+        },
+        "threshold_0.6": {
+          "count": 1,
+          "fraction": 0.16666666666666666,
+          "pairs": [
+            "ESI-2__vs__ESI-3"
+          ]
+        },
+        "threshold_0.7": {
+          "count": 0,
+          "fraction": 0.0,
+          "pairs": []
+        }
+      },
+      "clinical_patient_triage_nl": {
+        "threshold_0.4": {
+          "count": 1,
+          "fraction": 0.06666666666666667,
+          "pairs": [
+            "Low__vs__Moderate"
+          ]
+        },
+        "threshold_0.5": {
+          "count": 1,
+          "fraction": 0.06666666666666667,
+          "pairs": [
+            "Low__vs__Moderate"
+          ]
+        },
+        "threshold_0.6": {
+          "count": 0,
+          "fraction": 0.0,
+          "pairs": []
+        },
+        "threshold_0.7": {
+          "count": 0,
+          "fraction": 0.0,
+          "pairs": []
+        }
+      },
+      "ohsumed_single": {
+        "threshold_0.4": {
+          "count": 1,
+          "fraction": 0.027777777777777776,
+          "pairs": [
+            "Bacterial_Infections_and_Mycoses__vs__Digestive_System_Diseases"
+          ]
+        },
+        "threshold_0.5": {
+          "count": 0,
+          "fraction": 0.0,
+          "pairs": []
+        },
+        "threshold_0.6": {
+          "count": 0,
+          "fraction": 0.0,
+          "pairs": []
+        },
+        "threshold_0.7": {
+          "count": 0,
+          "fraction": 0.0,
+          "pairs": []
+        }
+      },
+      "mental_health_conditions": {
+        "threshold_0.4": {
+          "count": 2,
+          "fraction": 0.09523809523809523,
+          "pairs": [
+            "anxiety__vs__stress",
+            "depression__vs__suicidal"
+          ]
+        },
+        "threshold_0.5": {
+          "count": 0,
+          "fraction": 0.0,
+          "pairs": []
+        },
+        "threshold_0.6": {
+          "count": 0,
+          "fraction": 0.0,
+          "pairs": []
+        },
+        "threshold_0.7": {
+          "count": 0,
+          "fraction": 0.0,
+          "pairs": []
+        }
+      }
+    },
+    "crnd_per_class_stats": {
+      "medical_abstracts": {
+        "Cardiovascular_diseases": {
+          "mean_crnd": 0.8815351159114262,
+          "std_crnd": 0.05473042394588979,
+          "var_crnd": 0.0029954193052968265,
+          "n": 223
+        },
+        "Digestive_system_diseases": {
+          "mean_crnd": 0.9020400324532906,
+          "std_crnd": 0.04820176933552727,
+          "var_crnd": 0.0023234105670753773,
+          "n": 102
+        },
+        "General_pathological_conditions": {
+          "mean_crnd": 0.909390663264028,
+          "std_crnd": 0.046977954638764176,
+          "var_crnd": 0.0022069282220417846,
+          "n": 316
+        },
+        "Neoplasms": {
+          "mean_crnd": 0.8914759100391212,
+          "std_crnd": 0.053392883634922846,
+          "var_crnd": 0.002850800022852412,
+          "n": 227
+        },
+        "Nervous_system_diseases": {
+          "mean_crnd": 0.9038158227791381,
+          "std_crnd": 0.04912875895765601,
+          "var_crnd": 0.002413634956719466,
+          "n": 132
+        }
+      },
+      "mimic_iv_ed_demo": {
+        "ESI-1": {
+          "mean_crnd": 0.8992306112268234,
+          "std_crnd": 0.05529580597443046,
+          "var_crnd": 0.0030576261583618596,
+          "n": 18
+        },
+        "ESI-2": {
+          "mean_crnd": 0.8817895887840059,
+          "std_crnd": 0.06713138318823583,
+          "var_crnd": 0.004506622608765752,
+          "n": 97
+        },
+        "ESI-3": {
+          "mean_crnd": 0.8896227868816378,
+          "std_crnd": 0.047665477516475235,
+          "var_crnd": 0.0022719977468736064,
+          "n": 90
+        },
+        "ESI-4": {
+          "mean_crnd": 0.7910677134815066,
+          "std_crnd": 0.028441450855243966,
+          "var_crnd": 0.0008089161267512577,
+          "n": 2
+        }
+      },
+      "clinical_patient_triage_nl": {
+        "Critical": {
+          "mean_crnd": 0.40358539295737367,
+          "std_crnd": 0.06970654054952474,
+          "var_crnd": 0.0048590017953825376,
+          "n": 3
+        },
+        "High": {
+          "mean_crnd": 0.45973832349216087,
+          "std_crnd": 0.056262064863654496,
+          "var_crnd": 0.003165419942722066,
+          "n": 7
+        },
+        "Low": {
+          "mean_crnd": 0.5153688655604365,
+          "std_crnd": 0.026033502017254895,
+          "var_crnd": 0.0006777432272824148,
+          "n": 6
+        },
+        "Mild": {
+          "mean_crnd": 0.5084838533114395,
+          "std_crnd": 0.0,
+          "var_crnd": 0.0,
+          "n": 1
+        },
+        "Moderate": {
+          "mean_crnd": 0.4967144392431749,
+          "std_crnd": 0.0422578296796301,
+          "var_crnd": 0.0017857241692326264,
+          "n": 11
+        },
+        "Routine": {
+          "mean_crnd": 0.5239451906118573,
+          "std_crnd": 0.008651529177275326,
+          "var_crnd": 7.484895710524628e-05,
+          "n": 3
+        }
+      },
+      "ohsumed_single": {
+        "Bacterial_Infections_and_Mycoses": {
+          "mean_crnd": 0.8630241630647038,
+          "std_crnd": 0.07049186991350138,
+          "var_crnd": 0.004969103723902002,
+          "n": 114
+        },
+        "Digestive_System_Diseases": {
+          "mean_crnd": 0.8417461619902078,
+          "std_crnd": 0.1063227077816159,
+          "var_crnd": 0.011304518190014885,
+          "n": 176
+        },
+        "Musculoskeletal_Diseases": {
+          "mean_crnd": 0.8572907177142977,
+          "std_crnd": 0.08938338600832318,
+          "var_crnd": 0.007989389694312905,
+          "n": 83
+        },
+        "Neoplasms": {
+          "mean_crnd": 0.8802432054303923,
+          "std_crnd": 0.058027719731967534,
+          "var_crnd": 0.0033672162572917744,
+          "n": 430
+        },
+        "Otorhinolaryngologic_Diseases": {
+          "mean_crnd": 0.7954816987075052,
+          "std_crnd": 0.0,
+          "var_crnd": 0.0,
+          "n": 1
+        },
+        "Parasitic_Diseases": {
+          "mean_crnd": 0.8446612623397497,
+          "std_crnd": 0.061824846738757405,
+          "var_crnd": 0.003822311674270842,
+          "n": 21
+        },
+        "Respiratory_Tract_Diseases": {
+          "mean_crnd": 0.8615792949353275,
+          "std_crnd": 0.06832954270651555,
+          "var_crnd": 0.004668926406481532,
+          "n": 121
+        },
+        "Stomatognathic_Diseases": {
+          "mean_crnd": 0.8602701159667925,
+          "std_crnd": 0.06408912971836253,
+          "var_crnd": 0.0041074165480571,
+          "n": 29
+        },
+        "Virus_Diseases": {
+          "mean_crnd": 0.8607387479767064,
+          "std_crnd": 0.0653301959325149,
+          "var_crnd": 0.004268034500580787,
+          "n": 25
+        }
+      },
+      "mental_health_conditions": {
+        "anxiety": {
+          "mean_crnd": 0.8520485039501484,
+          "std_crnd": 0.08853164166066511,
+          "var_crnd": 0.007837851575132415,
+          "n": 176
+        },
+        "bipolar": {
+          "mean_crnd": 0.8400890573482696,
+          "std_crnd": 0.08782082132435994,
+          "var_crnd": 0.0077124966580851525,
+          "n": 135
+        },
+        "depression": {
+          "mean_crnd": 0.9411506464415579,
+          "std_crnd": 0.03903176985852984,
+          "var_crnd": 0.0015234790582892383,
+          "n": 167
+        },
+        "normal": {
+          "mean_crnd": 0.9621427317152327,
+          "std_crnd": 0.02515953330138496,
+          "var_crnd": 0.0006330021159434987,
+          "n": 146
+        },
+        "personality disorder": {
+          "mean_crnd": 0.7765596849235028,
+          "std_crnd": 0.11446727912801398,
+          "var_crnd": 0.013102757990970665,
+          "n": 124
+        },
+        "stress": {
+          "mean_crnd": 0.8339823699269255,
+          "std_crnd": 0.10403138029071064,
+          "var_crnd": 0.010822528085190459,
+          "n": 138
+        },
+        "suicidal": {
+          "mean_crnd": 0.9256686636982604,
+          "std_crnd": 0.05189999476889121,
+          "var_crnd": 0.002693609457010935,
+          "n": 114
+        }
+      }
+    },
+    "mantel_test_results": {
+      "medical_abstracts": {
+        "mantel_r": -0.6335596394300097,
+        "p_value": 0.8898,
+        "n_permutations": 9999
+      },
+      "mimic_iv_ed_demo": {
+        "mantel_r": -0.45427446920975084,
+        "p_value": 0.916,
+        "n_permutations": 9999
+      },
+      "clinical_patient_triage_nl": {
+        "mantel_r": -0.04648571461138379,
+        "p_value": 0.568,
+        "n_permutations": 9999
+      },
+      "ohsumed_single": {
+        "mantel_r": -0.39652336839736907,
+        "p_value": 0.8857,
+        "n_permutations": 9999
+      },
+      "mental_health_conditions": {
+        "mantel_r": 0.17748754677401407,
+        "p_value": 0.1204,
+        "n_permutations": 9999
+      }
+    },
+    "kendall_tau_d_gap_vs_f1_gap": {
+      "medical_abstracts": {
+        "kendall_tau": -0.06666666666666667,
+        "p_value": 0.8618005952380953,
+        "ci_low": -0.6,
+        "ci_high": 0.4761904761904761,
+        "n_pairs": 10
+      },
+      "mimic_iv_ed_demo": {
+        "kendall_tau": -0.33333333333333337,
+        "p_value": 1.0,
+        "ci_low": -0.9999999999999999,
+        "ci_high": 0.9999999999999999,
+        "n_pairs": 3
+      },
+      "clinical_patient_triage_nl": {
+        "kendall_tau": 1.0,
+        "p_value": 0.3333333333333333,
+        "ci_low": 0.9999999999999999,
+        "ci_high": 1.0,
+        "n_pairs": 3
+      },
+      "ohsumed_single": {
+        "kendall_tau": -0.08737095686938733,
+        "p_value": 0.45372541122467214,
+        "ci_low": -0.32343520665739217,
+        "ci_high": 0.15192710709884724,
+        "n_pairs": 36
+      },
+      "mental_health_conditions": {
+        "kendall_tau": -0.08571428571428572,
+        "p_value": 0.6119326072720337,
+        "ci_low": -0.3368188646016782,
+        "ci_high": 0.1677803186410009,
+        "n_pairs": 21
+      },
+      "pooled": {
+        "kendall_tau": 0.2591817363768771,
+        "p_value": 0.0011820014876890703,
+        "n_pairs": 73
+      }
+    },
+    "crnd_prediction_improvement": {
+      "delta_accuracy": 0.0,
+      "model_a_accuracy": 0.684931506849315,
+      "model_b_accuracy": 0.684931506849315,
+      "n_samples": 73
+    },
+    "high_overlap_identification": {
+      "per_threshold": {
+        "threshold_0.4": {
+          "precision": 0.2,
+          "recall": 0.5,
+          "f1": 0.28571428571428575,
+          "tp": 2,
+          "fp": 8,
+          "fn": 2
+        },
+        "threshold_0.5": {
+          "precision": 0.3333333333333333,
+          "recall": 0.25,
+          "f1": 0.28571428571428575,
+          "tp": 1,
+          "fp": 2,
+          "fn": 3
+        },
+        "threshold_0.6": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 1,
+          "fn": 4
+        },
+        "threshold_0.7": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 4
+        }
+      },
+      "best_threshold": 0.4,
+      "best_precision": 0.2,
+      "best_recall": 0.5,
+      "best_f1": 0.28571428571428575,
+      "n_true_hard": 4,
+      "n_total_pairs": 73
+    },
+    "clinical_profiles": {
+      "medical_abstracts": {
+        "Cardiovascular_diseases": "Class Cardiovascular_diseases: best separated from [Digestive_system_diseases in llm_zeroshot (D=0.21), Neoplasms in sentence_transformer (D=0.15), Nervous_system_diseases in llm_zeroshot (D=0.17)] mean CRND=0.88 (+-0.05), indicating stable cross-representation behavior.",
+        "Digestive_system_diseases": "Class Digestive_system_diseases: best separated from [Cardiovascular_diseases in llm_zeroshot (D=0.21), Nervous_system_diseases in llm_zeroshot (D=0.26)] overlaps most with [General_pathological_conditions in tfidf (D=0.84), Neoplasms in tfidf (D=0.61), Nervous_system_diseases in tfidf (D=0.82)] mean CRND=0.90 (+-0.05), indicating stable cross-representation behavior.",
+        "General_pathological_conditions": "Class General_pathological_conditions: overlaps most with [Digestive_system_diseases in tfidf (D=0.84), Neoplasms in llm_zeroshot (D=0.70), Nervous_system_diseases in tfidf (D=0.83)] mean CRND=0.91 (+-0.05), indicating stable cross-representation behavior.",
+        "Neoplasms": "Class Neoplasms: best separated from [Cardiovascular_diseases in sentence_transformer (D=0.15)] overlaps most with [Digestive_system_diseases in tfidf (D=0.61), General_pathological_conditions in llm_zeroshot (D=0.70), Nervous_system_diseases in tfidf (D=0.62)] mean CRND=0.89 (+-0.05), indicating stable cross-representation behavior.",
+        "Nervous_system_diseases": "Class Nervous_system_diseases: best separated from [Cardiovascular_diseases in llm_zeroshot (D=0.17), Digestive_system_diseases in llm_zeroshot (D=0.26)] overlaps most with [Digestive_system_diseases in tfidf (D=0.82), General_pathological_conditions in tfidf (D=0.83), Neoplasms in tfidf (D=0.62)] mean CRND=0.90 (+-0.05), indicating stable cross-representation behavior."
+      },
+      "mental_health_conditions": {
+        "anxiety": "Class anxiety: best separated from [bipolar in llm_zeroshot (D=0.08), depression in tfidf (D=0.20), normal in sentence_transformer (D=0.14)] overlaps most with [stress in tfidf (D=0.70)] mean CRND=0.85 (+-0.09), indicating ambiguous cross-representation behavior.",
+        "bipolar": "Class bipolar: best separated from [anxiety in llm_zeroshot (D=0.08), depression in llm_zeroshot (D=0.14), normal in sentence_transformer (D=0.06)] overlaps most with [stress in sentence_transformer (D=0.68)] mean CRND=0.84 (+-0.09), indicating ambiguous cross-representation behavior.",
+        "depression": "Class depression: best separated from [anxiety in tfidf (D=0.20), bipolar in llm_zeroshot (D=0.14), normal in sentence_transformer (D=0.26)] overlaps most with [suicidal in sentence_transformer (D=0.81)] mean CRND=0.94 (+-0.04), indicating stable cross-representation behavior.",
+        "normal": "Class normal: best separated from [anxiety in sentence_transformer (D=0.14), bipolar in sentence_transformer (D=0.06), depression in sentence_transformer (D=0.26)] overlaps most with [personality disorder in llm_zeroshot (D=0.77)] mean CRND=0.96 (+-0.03), indicating stable cross-representation behavior.",
+        "personality disorder": "Class personality disorder: best separated from [anxiety in llm_zeroshot (D=0.24), bipolar in sentence_transformer (D=0.27), depression in sentence_transformer (D=0.10)] overlaps most with [normal in llm_zeroshot (D=0.77), suicidal in llm_zeroshot (D=0.63)] mean CRND=0.78 (+-0.11), indicating ambiguous cross-representation behavior.",
+        "stress": "Class stress: best separated from [bipolar in llm_zeroshot (D=0.12), depression in tfidf (D=0.11), normal in sentence_transformer (D=0.07)] overlaps most with [anxiety in tfidf (D=0.70), bipolar in sentence_transformer (D=0.68), suicidal in llm_zeroshot (D=0.64)] mean CRND=0.83 (+-0.10), indicating ambiguous cross-representation behavior.",
+        "suicidal": "Class suicidal: best separated from [anxiety in tfidf (D=0.16), bipolar in llm_zeroshot (D=0.17), normal in sentence_transformer (D=0.28)] overlaps most with [depression in sentence_transformer (D=0.81), personality disorder in llm_zeroshot (D=0.63), stress in llm_zeroshot (D=0.64)] mean CRND=0.93 (+-0.05), indicating stable cross-representation behavior."
+      }
+    },
+    "human_deferral_pairs": {
+      "medical_abstracts": {
+        "count": 1,
+        "pairs": [
+          {
+            "pair": "Digestive_system_diseases__vs__General_pathological_conditions",
+            "min_d": 0.5323768294933044,
+            "boundary_crnd": 0.9143866276396275
+          }
+        ]
+      },
+      "mimic_iv_ed_demo": {
+        "count": 1,
+        "pairs": [
+          {
+            "pair": "ESI-2__vs__ESI-3",
+            "min_d": 0.6231723179411467,
+            "boundary_crnd": 0.928366264989072
+          }
+        ]
+      },
+      "clinical_patient_triage_nl": {
+        "count": 0,
+        "pairs": []
+      },
+      "ohsumed_single": {
+        "count": 0,
+        "pairs": []
+      },
+      "mental_health_conditions": {
+        "count": 0,
+        "pairs": []
+      }
+    },
+    "ecological_vs_ml_comparison": {
+      "spearman_d_vs_inv_fisher": {
+        "rho": 0.3627027027027027,
+        "p_value": 0.001383902134828487
+      },
+      "spearman_d_vs_bhattacharyya": {
+        "rho": 0.5011415939163903,
+        "p_value": 6.591158467290843e-07
+      },
+      "partial_spearman_d_controlling_fisher": {
+        "rho": 0.5889466640510302,
+        "p_value": 2.730118019345787e-08
+      },
+      "partial_spearman_fisher_controlling_d": {
+        "rho": 0.6422713024077114,
+        "p_value": 5.267777997007273e-10
+      },
+      "n_pairs_pooled": 88
+    }
+  },
+  "metrics_agg": {
+    "mean_d_gap_across_datasets": 0.36791545513832885,
+    "frac_uniformly_high_d_pairs": 0.03409090909090909,
+    "mean_mantel_r": -0.27067112897489987,
+    "mean_mantel_p": 0.67598,
+    "kendall_tau_d_gap_vs_f1_gap_pooled": 0.2591817363768771,
+    "crnd_improves_prediction_delta": 0.0,
+    "high_overlap_precision_at_best_threshold": 0.2,
+    "spearman_schoener_vs_fisher_pooled": 0.3627027027027027,
+    "spearman_schoener_vs_bhattacharyya_pooled": 0.5011415939163903,
+    "schoener_unique_partial_spearman": 0.5889466640510302,
+    "num_human_deferral_pairs_total": 2.0,
+    "num_datasets": 5.0,
+    "num_class_pairs_total": 88.0
+  },
+  "datasets": [
+    {
+      "dataset": "medical_abstracts",
+      "examples": [
+        {
+          "input": "Tissue changes around loose prostheses. A canine model to investigate the effects of an antiinflammatory agent. The aseptically loosened prosthesis provided a means for investigating the in vivo and in vitro activity of the cells associated with the loosening process in seven dogs. The cells were isolated and maintained in culture for sufficient periods of time so that their biologic activity could be studied as well as the effect of different agents added to the cells in vivo or in vitro. The b",
+          "output": "General_pathological_conditions",
+          "predict_d_gap_profile": "Class General_pathological_conditions: D-gap range [0.235, 0.347] across 4 pairs. Best separation space: llm_zeroshot. Mean class CRND: 0.909 (var=0.0022). Instance CRND_k10: 0.899.",
+          "predict_suitability_label": "llm_zeroshot",
+          "eval_instance_crnd_k10": 0.8991228070175439,
+          "eval_class_mean_crnd": 0.909390663264028,
+          "eval_class_crnd_variance": 0.0022069282220417846,
+          "eval_min_d_gap_for_class": 0.23511571860385638,
+          "eval_max_d_gap_for_class": 0.3471800089954573,
+          "metadata_dataset": "medical_abstracts",
+          "metadata_row_index": 0,
+          "metadata_boundary_proximity": 0.43333333333333335
+        },
+        {
+          "input": "Neuropeptide Y and neuron-specific enolase levels in benign and malignant pheochromocytomas. Neuron-specific enolase (NSE) is the isoform of enolase, a glycolytic enzyme found in the neuroendocrine system. Neuropeptide Y (NPY) is a peptide recently discovered in the peripheral and central nervous systems. Serum NSE and plasma NPY levels have been reported to be increased in some patients with pheochromocytoma. The authors evaluated whether the measurement of these molecules could help to discrim",
+          "output": "Neoplasms",
+          "predict_d_gap_profile": "Class Neoplasms: D-gap range [0.157, 0.241] across 4 pairs. Best separation space: sentence_transformer. Mean class CRND: 0.891 (var=0.0029). Instance CRND_k10: 0.917.",
+          "predict_suitability_label": "sentence_transformer",
+          "eval_instance_crnd_k10": 0.9166666666666666,
+          "eval_class_mean_crnd": 0.8914759100391212,
+          "eval_class_crnd_variance": 0.002850800022852412,
+          "eval_min_d_gap_for_class": 0.1571964346897725,
+          "eval_max_d_gap_for_class": 0.24060629479974316,
+          "metadata_dataset": "medical_abstracts",
+          "metadata_row_index": 1,
+          "metadata_boundary_proximity": 0.35000000000000003
+        },
+        {
+          "input": "Sexually transmitted diseases of the colon, rectum, and anus. The challenge of the nineties. During the past two decades, an explosive growth in both the prevalence and types of sexually transmitted diseases has occurred. Up to 55 percent of homosexual men with anorectal complaints have gonorrhea; 80 percent of the patients with syphilis are homosexuals. Chlamydia is found in 15 percent of asymptomatic homosexual men, and up to one third of homosexuals have active anorectal herpes simplex virus.",
+          "output": "Digestive_system_diseases",
+          "predict_d_gap_profile": "Class Digestive_system_diseases: D-gap range [0.157, 0.551] across 4 pairs. Best separation space: llm_zeroshot. Mean class CRND: 0.902 (var=0.0023). Instance CRND_k10: 0.963.",
+          "predict_suitability_label": "llm_zeroshot",
+          "eval_instance_crnd_k10": 0.962962962962963,
+          "eval_class_mean_crnd": 0.9020400324532906,
+          "eval_class_crnd_variance": 0.0023234105670753773,
+          "eval_min_d_gap_for_class": 0.1571964346897725,
+          "eval_max_d_gap_for_class": 0.5512536470029953,
+          "metadata_dataset": "medical_abstracts",
+          "metadata_row_index": 2,
+          "metadata_boundary_proximity": 0.5833333333333334
+        }
+      ]
+    },
+    {
+      "dataset": "mimic_iv_ed_demo",
+      "examples": [
+        {
+          "input": "Chief complaint: Abd pain, LEAKING ASCITES",
+          "output": "ESI-2",
+          "predict_d_gap_profile": "Class ESI-2: D-gap range [0.225, 0.404] across 3 pairs. Best separation space: llm_zeroshot. Mean class CRND: 0.882 (var=0.0045). Instance CRND_k10: 0.854.",
+          "predict_suitability_label": "llm_zeroshot",
+          "eval_instance_crnd_k10": 0.8538011695906433,
+          "eval_class_mean_crnd": 0.8817895887840059,
+          "eval_class_crnd_variance": 0.004506622608765752,
+          "eval_min_d_gap_for_class": 0.2254167201561369,
+          "eval_max_d_gap_for_class": 0.4043841257344041,
+          "metadata_dataset": "mimic_iv_ed_demo",
+          "metadata_row_index": 15,
+          "metadata_boundary_proximity": 0.7666666666666666
+        },
+        {
+          "input": "Chief complaint: Dizziness, Diplopia",
+          "output": "ESI-2",
+          "predict_d_gap_profile": "Class ESI-2: D-gap range [0.225, 0.404] across 3 pairs. Best separation space: llm_zeroshot. Mean class CRND: 0.882 (var=0.0045). Instance CRND_k10: 0.854.",
+          "predict_suitability_label": "llm_zeroshot",
+          "eval_instance_crnd_k10": 0.8538011695906433,
+          "eval_class_mean_crnd": 0.8817895887840059,
+          "eval_class_crnd_variance": 0.004506622608765752,
+          "eval_min_d_gap_for_class": 0.2254167201561369,
+          "eval_max_d_gap_for_class": 0.4043841257344041,
+          "metadata_dataset": "mimic_iv_ed_demo",
+          "metadata_row_index": 16,
+          "metadata_boundary_proximity": 0.25
+        },
+        {
+          "input": "Chief complaint: Abd pain. Vitals: HR 72, RR 18, BP 98/48, Temp 98.8, O2 90%, Pain 13/10",
+          "output": "ESI-2",
+          "predict_d_gap_profile": "Class ESI-2: D-gap range [0.225, 0.404] across 3 pairs. Best separation space: llm_zeroshot. Mean class CRND: 0.882 (var=0.0045). Instance CRND_k10: 0.945.",
+          "predict_suitability_label": "llm_zeroshot",
+          "eval_instance_crnd_k10": 0.9454191033138402,
+          "eval_class_mean_crnd": 0.8817895887840059,
+          "eval_class_crnd_variance": 0.004506622608765752,
+          "eval_min_d_gap_for_class": 0.2254167201561369,
+          "eval_max_d_gap_for_class": 0.4043841257344041,
+          "metadata_dataset": "mimic_iv_ed_demo",
+          "metadata_row_index": 17,
+          "metadata_boundary_proximity": 0.44999999999999996
+        }
+      ]
+    },
+    {
+      "dataset": "clinical_patient_triage_nl",
+      "examples": [
+        {
+          "input": "Patient presents with persistent dry cough and low-grade fever for 5 days. Age: 34. Vital signs: Stable. Primary complaint: Respiratory_Distress",
+          "output": "Mild",
+          "predict_d_gap_profile": "Class Mild: D-gap range [0.365, 0.562] across 5 pairs. Best separation space: tfidf. Mean class CRND: 0.508 (var=0.0000). Instance CRND_k10: 0.867.",
+          "predict_suitability_label": "tfidf",
+          "eval_instance_crnd_k10": 0.8671023965141612,
+          "eval_class_mean_crnd": 0.5084838533114395,
+          "eval_class_crnd_variance": 0.0,
+          "eval_min_d_gap_for_class": 0.36453965097000707,
+          "eval_max_d_gap_for_class": 0.5616144560410494,
+          "metadata_dataset": "clinical_patient_triage_nl",
+          "metadata_row_index": 0,
+          "metadata_boundary_proximity": 1.0
+        },
+        {
+          "input": "Sudden onset of acute chest pain radiating to left arm with diaphoresis. Age: 58. Vital signs: Unstable. Primary complaint: Cardiac_Event",
+          "output": "Critical",
+          "predict_d_gap_profile": "Class Critical: D-gap range [0.496, 0.938] across 5 pairs. Best separation space: tfidf. Mean class CRND: 0.404 (var=0.0049). Instance CRND_k10: 0.816.",
+          "predict_suitability_label": "tfidf",
+          "eval_instance_crnd_k10": 0.8157894736842105,
+          "eval_class_mean_crnd": 0.40358539295737367,
+          "eval_class_crnd_variance": 0.0048590017953825376,
+          "eval_min_d_gap_for_class": 0.495501446287022,
+          "eval_max_d_gap_for_class": 0.9381360883360113,
+          "metadata_dataset": "clinical_patient_triage_nl",
+          "metadata_row_index": 1,
+          "metadata_boundary_proximity": 0.9166666666666666
+        },
+        {
+          "input": "Minor laceration on right forearm caused by kitchen knife; bleeding controlled. Age: 22. Vital signs: Stable. Primary complaint: Trauma_Minor",
+          "output": "Low",
+          "predict_d_gap_profile": "Class Low: D-gap range [0.342, 0.686] across 5 pairs. Best separation space: tfidf. Mean class CRND: 0.515 (var=0.0007). Instance CRND_k10: 0.769.",
+          "predict_suitability_label": "tfidf",
+          "eval_instance_crnd_k10": 0.7685185185185185,
+          "eval_class_mean_crnd": 0.5153688655604365,
+          "eval_class_crnd_variance": 0.0006777432272824148,
+          "eval_min_d_gap_for_class": 0.3416115604214027,
+          "eval_max_d_gap_for_class": 0.6855489586822743,
+          "metadata_dataset": "clinical_patient_triage_nl",
+          "metadata_row_index": 2,
+          "metadata_boundary_proximity": 0.8166666666666668
+        }
+      ]
+    },
+    {
+      "dataset": "ohsumed_single",
+      "examples": [
+        {
+          "input": "Superficial cultures in neonatal sepsis evaluations. Impact on antibiotic decision making.\n The authors performed a retrospective analysis of neonatal superficial cultures and their effect on antimicrobial decision making during a nine-month period at Nashville General Hospital.\n They obtained and reviewed charts of infants (n = 66) having paired superficial (skin and/or gastric aspirate) and deep (blood and cerebrospinal fluid) cultures for the evaluation of early-onset sepsis.\n Superficial cul",
+          "output": "Bacterial_Infections_and_Mycoses",
+          "predict_d_gap_profile": "Class Bacterial_Infections_and_Mycoses: D-gap range [0.299, 0.620] across 8 pairs. Best separation space: llm_zeroshot. Mean class CRND: 0.863 (var=0.0050). Instance CRND_k10: 0.887.",
+          "predict_suitability_label": "llm_zeroshot",
+          "eval_instance_crnd_k10": 0.8865955739020754,
+          "eval_class_mean_crnd": 0.8630241630647038,
+          "eval_class_crnd_variance": 0.004969103723902002,
+          "eval_min_d_gap_for_class": 0.29880568323376167,
+          "eval_max_d_gap_for_class": 0.619670988087349,
+          "metadata_dataset": "ohsumed_single",
+          "metadata_row_index": 0,
+          "metadata_boundary_proximity": 0.13333333333333333
+        },
+        {
+          "input": "Catheter-related sepsis: prospective, randomized study of three methods of long-term catheter maintenance.\n We studied the infectious risk of different methods of managing vascular catheters during long-term use.\n Consecutive surgical ICU patients requiring triple lumen catheters, pulmonary artery catheters, or arterial catheters for greater than 7 days were prospectively randomized to one of three management groups: a) percutaneous (PERC) puncture with every 7-day catheter change at a new site,",
+          "output": "Bacterial_Infections_and_Mycoses",
+          "predict_d_gap_profile": "Class Bacterial_Infections_and_Mycoses: D-gap range [0.299, 0.620] across 8 pairs. Best separation space: llm_zeroshot. Mean class CRND: 0.863 (var=0.0050). Instance CRND_k10: 0.867.",
+          "predict_suitability_label": "llm_zeroshot",
+          "eval_instance_crnd_k10": 0.8671023965141612,
+          "eval_class_mean_crnd": 0.8630241630647038,
+          "eval_class_crnd_variance": 0.004969103723902002,
+          "eval_min_d_gap_for_class": 0.29880568323376167,
+          "eval_max_d_gap_for_class": 0.619670988087349,
+          "metadata_dataset": "ohsumed_single",
+          "metadata_row_index": 1,
+          "metadata_boundary_proximity": 0.25
+        },
+        {
+          "input": "Effect of blood transfusion on oxygen consumption in pediatric septic shock.\n Treatment plans for pediatric septic shock advocate increasing oxygen consumption (VO2).\n Recent studies in septic shock indicate that improving oxygen delivery (DO2) by increasing blood flow will increase VO2.\n We prospectively examined the effect on VO2 of improving DO2 by increasing oxygen content (CO2) with blood transfusion in eight hemodynamically stable septic shock patients.\n Transfusion consisted of 8 to 10 ml",
+          "output": "Bacterial_Infections_and_Mycoses",
+          "predict_d_gap_profile": "Class Bacterial_Infections_and_Mycoses: D-gap range [0.299, 0.620] across 8 pairs. Best separation space: llm_zeroshot. Mean class CRND: 0.863 (var=0.0050). Instance CRND_k10: 0.793.",
+          "predict_suitability_label": "llm_zeroshot",
+          "eval_instance_crnd_k10": 0.7930283224400871,
+          "eval_class_mean_crnd": 0.8630241630647038,
+          "eval_class_crnd_variance": 0.004969103723902002,
+          "eval_min_d_gap_for_class": 0.29880568323376167,
+          "eval_max_d_gap_for_class": 0.619670988087349,
+          "metadata_dataset": "ohsumed_single",
+          "metadata_row_index": 2,
+          "metadata_boundary_proximity": 0.3333333333333333
+        }
+      ]
+    },
+    {
+      "dataset": "mental_health_conditions",
+      "examples": [
+        {
+          "input": "i cannot believe people actually perceive me, and think about me. i cannot believe i am real? i do not know, its just weird. i want to cease out of existence, i feel like i am going to explode, all of these feelings and emotions bottled up, i just want to fucking explode but i cannot even fucking cry, i am so mad at myself, i hate myself , hate myself so much perception",
+          "output": "depression",
+          "predict_d_gap_profile": "Class depression: D-gap range [0.051, 0.337] across 6 pairs. Best separation space: tfidf. Mean class CRND: 0.941 (var=0.0015). Instance CRND_k10: 1.000.",
+          "predict_suitability_label": "tfidf",
+          "eval_instance_crnd_k10": 1.0,
+          "eval_class_mean_crnd": 0.9411506464415579,
+          "eval_class_crnd_variance": 0.0015234790582892383,
+          "eval_min_d_gap_for_class": 0.05130098720083365,
+          "eval_max_d_gap_for_class": 0.33707120452132877,
+          "metadata_dataset": "mental_health_conditions",
+          "metadata_row_index": 48569,
+          "metadata_boundary_proximity": 0.5333333333333333
+        },
+        {
+          "input": "consider how you can incorporate metaphors and imagery into the thought to provide depth and vividness.\n\nin the labyrinthine maze of my mind, a cacophony of contradictory selves wrestle and clash, a tempestuous symphony of unquenchable desires and insatiable cravings. the dark recesses of my psyche, an uncharted territory littered with shattered shards of past traumas, mirror the twisted, gnarled roots of a vengeful, manipulative willow tree; an eternal witness to the endless struggle for contro",
+          "output": "personality disorder",
+          "predict_d_gap_profile": "Class personality disorder: D-gap range [0.233, 0.739] across 6 pairs. Best separation space: llm_zeroshot. Mean class CRND: 0.777 (var=0.0131). Instance CRND_k10: 0.945.",
+          "predict_suitability_label": "llm_zeroshot",
+          "eval_instance_crnd_k10": 0.9454191033138402,
+          "eval_class_mean_crnd": 0.7765596849235028,
+          "eval_class_crnd_variance": 0.013102757990970665,
+          "eval_min_d_gap_for_class": 0.23272865667398046,
+          "eval_max_d_gap_for_class": 0.7387619718275695,
+          "metadata_dataset": "mental_health_conditions",
+          "metadata_row_index": 97343,
+          "metadata_boundary_proximity": 0.31666666666666665
+        },
+        {
+          "input": "monologue:\n(breaths in deeply, eyes darting around the room, searching for an escape route)\noh god, what's happening? why do i feel so... uneasy? am i being followed? is it the quiet that's making me so nervous? no, that's ridiculous. it's just my overactive imagination.\n(looks at phone, debates calling someone, then immediately regrets the idea)\nbut what if it's not just my imagination? what if there's something out there, lurking in the shadows, waiting for me to let my guard down?\n(heart race",
+          "output": "anxiety",
+          "predict_d_gap_profile": "Class anxiety: D-gap range [0.051, 0.481] across 6 pairs. Best separation space: llm_zeroshot. Mean class CRND: 0.852 (var=0.0078). Instance CRND_k10: 0.928.",
+          "predict_suitability_label": "llm_zeroshot",
+          "eval_instance_crnd_k10": 0.9278752436647173,
+          "eval_class_mean_crnd": 0.8520485039501484,
+          "eval_class_crnd_variance": 0.007837851575132415,
+          "eval_min_d_gap_for_class": 0.05130098720083365,
+          "eval_max_d_gap_for_class": 0.4813408122244919,
+          "metadata_dataset": "mental_health_conditions",
+          "metadata_row_index": 99861,
+          "metadata_boundary_proximity": 0.23333333333333336
+        }
+      ]
+    }
+  ]
+}

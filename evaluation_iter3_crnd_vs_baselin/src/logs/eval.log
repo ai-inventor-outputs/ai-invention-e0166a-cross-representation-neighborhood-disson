@@ -1,0 +1,86 @@
+2026-02-16 22:55:31.990 | INFO     | __main__:main:914 - ============================================================
+2026-02-16 22:55:31.990 | INFO     | __main__:main:915 - CRND vs Baselines Head-to-Head Evaluation
+2026-02-16 22:55:31.990 | INFO     | __main__:main:916 - ============================================================
+2026-02-16 22:55:31.990 | INFO     | __main__:load_exp_id1:103 - Loading exp_id1 from /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_2/gen_art/exp_id1_it2__opus/full_method_out.json
+2026-02-16 22:55:32.045 | INFO     | __main__:load_exp_id1:105 - Loaded exp_id1 metadata keys: ['method_name', 'description', 'baseline_name', 'baseline_description', 'feature_spaces', 'k_values', 'noise_rates', 'n_noise_seeds', 'pca_dims_tested', 'schoeners_d_matrices', 'noise_detection_results', 'crnd_per_class', 'crnd_boundary_stratification', 'pca_explained_variance', 'niche_overlap_profile_comparison', 'llm_model', 'llm_sample_per_dataset', 'llm_total_cost_usd', 'llm_calls_made', 'llm_calls_failed', 'runtime_seconds', 'phase_timings', 'max_examples_per_dataset', 'llm_input_tokens', 'llm_output_tokens']
+2026-02-16 22:55:32.046 | INFO     | __main__:load_exp_id3:111 - Loading exp_id3 from /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/full_method_out.json
+2026-02-16 22:55:32.047 | INFO     | __main__:load_exp_id3:115 - Loaded exp_id3: 5 datasets, 90 trials
+2026-02-16 22:55:32.047 | INFO     | __main__:main:927 - Extracting CRND aggregated metrics from exp_id1...
+2026-02-16 22:55:32.047 | INFO     | __main__:main:929 - CRND datasets: ['medical_abstracts', 'mimic_iv_ed_demo', 'clinical_patient_triage_nl', 'ohsumed_single', 'mental_health_conditions']
+2026-02-16 22:55:32.047 | INFO     | __main__:main:931 - Extracting baseline trial-level metrics from exp_id3...
+2026-02-16 22:55:32.052 | INFO     | __main__:main:933 - Baseline datasets: ['medical_abstracts', 'mimic_iv_ed_demo', 'clinical_patient_triage_nl', 'ohsumed_single', 'mental_health_conditions']
+2026-02-16 22:55:32.052 | INFO     | __main__:main:935 - Computing baseline aggregates...
+2026-02-16 22:55:32.092 | INFO     | __main__:main:941 - ============================================================
+2026-02-16 22:55:32.092 | INFO     | __main__:main:942 - SUMMARY: CRND AUC vs Best Baseline AUC
+2026-02-16 22:55:32.092 | INFO     | __main__:main:943 - ------------------------------------------------------------
+2026-02-16 22:55:32.092 | INFO     | __main__:main:957 -   medical_abstracts                   NR=0.05: CRND=0.5110 | Best=cleanlab_avg=0.8936 | Δ=-0.3826
+2026-02-16 22:55:32.092 | INFO     | __main__:main:957 -   medical_abstracts                   NR=0.1: CRND=0.4972 | Best=cleanlab_embed=0.8824 | Δ=-0.3852
+2026-02-16 22:55:32.092 | INFO     | __main__:main:957 -   medical_abstracts                   NR=0.2: CRND=0.5023 | Best=cleanlab_avg=0.8748 | Δ=-0.3725
+2026-02-16 22:55:32.093 | INFO     | __main__:main:957 -   mimic_iv_ed_demo                    NR=0.05: CRND=0.5289 | Best=kdn_combined=0.8162 | Δ=-0.2873
+2026-02-16 22:55:32.093 | INFO     | __main__:main:957 -   mimic_iv_ed_demo                    NR=0.1: CRND=0.4810 | Best=kdn_avg=0.8282 | Δ=-0.3472
+2026-02-16 22:55:32.093 | INFO     | __main__:main:957 -   mimic_iv_ed_demo                    NR=0.2: CRND=0.5083 | Best=kdn_avg=0.8297 | Δ=-0.3215
+2026-02-16 22:55:32.093 | INFO     | __main__:main:957 -   clinical_patient_triage_nl          NR=0.05: CRND=0.4433 | Best=kdn_tfidf=0.8433 | Δ=-0.4000
+2026-02-16 22:55:32.093 | INFO     | __main__:main:957 -   clinical_patient_triage_nl          NR=0.1: CRND=0.5000 | Best=kdn_tfidf=0.6524 | Δ=-0.1524
+2026-02-16 22:55:32.093 | INFO     | __main__:main:957 -   clinical_patient_triage_nl          NR=0.2: CRND=0.5060 | Best=kdn_tfidf=0.7013 | Δ=-0.1953
+2026-02-16 22:55:32.093 | INFO     | __main__:main:957 -   ohsumed_single                      NR=0.05: CRND=0.4875 | Best=cleanlab_avg=0.9741 | Δ=-0.4866
+2026-02-16 22:55:32.093 | INFO     | __main__:main:957 -   ohsumed_single                      NR=0.1: CRND=0.5062 | Best=cleanlab_avg=0.9735 | Δ=-0.4673
+2026-02-16 22:55:32.093 | INFO     | __main__:main:957 -   ohsumed_single                      NR=0.2: CRND=0.5014 | Best=cleanlab_avg=0.9687 | Δ=-0.4674
+2026-02-16 22:55:32.093 | INFO     | __main__:main:957 -   mental_health_conditions            NR=0.05: CRND=0.4806 | Best=cleanlab_avg=0.9809 | Δ=-0.5003
+2026-02-16 22:55:32.093 | INFO     | __main__:main:957 -   mental_health_conditions            NR=0.1: CRND=0.5075 | Best=cleanlab_avg=0.9778 | Δ=-0.4703
+2026-02-16 22:55:32.093 | INFO     | __main__:main:957 -   mental_health_conditions            NR=0.2: CRND=0.4991 | Best=cleanlab_avg=0.9730 | Δ=-0.4739
+2026-02-16 22:55:32.094 | INFO     | __main__:main:961 - ============================================================
+2026-02-16 22:55:32.094 | INFO     | __main__:main:966 - Computing statistical comparisons (Welch t, Bootstrap CI, Cohen's d, Wilcoxon)...
+2026-02-16 22:55:58.546 | INFO     | __main__:main:968 - Statistical comparisons complete.
+2026-02-16 22:55:58.546 | INFO     | __main__:main:973 - Running DerSimonian-Laird meta-analysis...
+2026-02-16 22:55:58.547 | INFO     | __main__:main:976 -   NR=0.05: pooled d=-8.361 [-12.448, -4.273], I²=93.6%, Q p=0.0000
+2026-02-16 22:55:58.547 | INFO     | __main__:main:976 -   NR=0.1: pooled d=-13.395 [-20.775, -6.015], I²=95.8%, Q p=0.0000
+2026-02-16 22:55:58.547 | INFO     | __main__:main:976 -   NR=0.2: pooled d=-13.345 [-21.397, -5.294], I²=95.5%, Q p=0.0000
+2026-02-16 22:55:58.547 | INFO     | __main__:main:985 - Analyzing boundary vs interior CRND stratification (Gap G6)...
+2026-02-16 22:55:58.548 | INFO     | __main__:main:988 -   medical_abstracts                  : interior=0.8811, boundary=0.9030, d=0.415
+2026-02-16 22:55:58.548 | INFO     | __main__:main:988 -   mimic_iv_ed_demo                   : interior=0.8663, boundary=0.8860, d=0.307
+2026-02-16 22:55:58.548 | INFO     | __main__:main:988 -   clinical_patient_triage_nl         : interior=0.0000, boundary=0.4860, d=0.000
+2026-02-16 22:55:58.548 | INFO     | __main__:main:988 -   ohsumed_single                     : interior=0.8561, boundary=0.8951, d=0.510
+2026-02-16 22:55:58.548 | INFO     | __main__:main:988 -   mental_health_conditions           : interior=0.8327, boundary=0.9575, d=1.382
+2026-02-16 22:55:58.548 | INFO     | __main__:main:996 - Analyzing Schoener's D 2D vs 5D sensitivity (Gap G5)...
+2026-02-16 22:55:58.553 | INFO     | __main__:main:1000 -   medical_abstracts         llm_zeroshot             : MAD=0.3301, r=0.6684643442851375
+2026-02-16 22:55:58.553 | INFO     | __main__:main:1000 -   medical_abstracts         sentence_transformer     : MAD=0.2737, r=0.6489512240218864
+2026-02-16 22:55:58.554 | INFO     | __main__:main:1000 -   medical_abstracts         tfidf                    : MAD=0.2404, r=0.9316935295392829
+2026-02-16 22:55:58.554 | INFO     | __main__:main:1000 -   mimic_iv_ed_demo          llm_zeroshot             : MAD=0.1751, r=0.9764881875592453
+2026-02-16 22:55:58.554 | INFO     | __main__:main:1000 -   mimic_iv_ed_demo          sentence_transformer     : MAD=0.3350, r=0.664493262752467
+2026-02-16 22:55:58.554 | INFO     | __main__:main:1000 -   mimic_iv_ed_demo          tfidf                    : MAD=0.2713, r=0.8596606913364073
+2026-02-16 22:55:58.554 | INFO     | __main__:main:1000 -   clinical_patient_triage_nl llm_zeroshot             : MAD=0.2443, r=0.11453847477893493
+2026-02-16 22:55:58.554 | INFO     | __main__:main:1000 -   clinical_patient_triage_nl sentence_transformer     : MAD=0.4446, r=-0.4389216829367224
+2026-02-16 22:55:58.554 | INFO     | __main__:main:1000 -   clinical_patient_triage_nl tfidf                    : MAD=0.3094, r=0.1783225810470739
+2026-02-16 22:55:58.554 | INFO     | __main__:main:1000 -   ohsumed_single            llm_zeroshot             : MAD=0.1742, r=0.46157914628499863
+2026-02-16 22:55:58.554 | INFO     | __main__:main:1000 -   ohsumed_single            sentence_transformer     : MAD=0.2650, r=0.6881936153768207
+2026-02-16 22:55:58.554 | INFO     | __main__:main:1000 -   ohsumed_single            tfidf                    : MAD=0.3460, r=0.9368431974961721
+2026-02-16 22:55:58.554 | INFO     | __main__:main:1000 -   mental_health_conditions  llm_zeroshot             : MAD=0.3597, r=0.17930578045765924
+2026-02-16 22:55:58.555 | INFO     | __main__:main:1000 -   mental_health_conditions  sentence_transformer     : MAD=0.1900, r=0.6895473147522856
+2026-02-16 22:55:58.555 | INFO     | __main__:main:1000 -   mental_health_conditions  tfidf                    : MAD=0.2353, r=0.634918180732352
+2026-02-16 22:55:58.555 | INFO     | __main__:main:1008 - Analyzing niche overlap profile agreement...
+2026-02-16 22:55:58.555 | INFO     | __main__:main:1014 - Analyzing per-class CRND distributions (Gap G3)...
+2026-02-16 22:55:58.564 | INFO     | __main__:main:1017 -   medical_abstracts                  : range=0.0279, KW H=49.73644700984596, p=4.098588920637007e-10
+2026-02-16 22:55:58.564 | INFO     | __main__:main:1017 -   mimic_iv_ed_demo                   : range=0.1082, KW H=10.68432575940426, p=0.013561252052902558
+2026-02-16 22:55:58.565 | INFO     | __main__:main:1017 -   clinical_patient_triage_nl         : range=0.1204, KW H=11.214887934646, p=0.047281979704537624
+2026-02-16 22:55:58.565 | INFO     | __main__:main:1017 -   ohsumed_single                     : range=0.0848, KW H=43.781645281312194, p=6.256347275107596e-07
+2026-02-16 22:55:58.565 | INFO     | __main__:main:1017 -   mental_health_conditions           : range=0.1856, KW H=399.9749160299925, p=2.830539399289339e-83
+2026-02-16 22:55:58.565 | INFO     | __main__:main:1025 - Analyzing computational costs...
+2026-02-16 22:55:58.565 | INFO     | __main__:main:1027 -   CRND: 651.6s, Baselines: 112.2s, Ratio: 5.8x
+2026-02-16 22:55:58.565 | INFO     | __main__:main:1036 - Building evaluation output...
+2026-02-16 22:55:58.586 | INFO     | __main__:main:1101 - Saved evaluation output to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_3/gen_art/eval_id1_it3__opus/eval_out.json
+2026-02-16 22:55:58.586 | INFO     | __main__:main:1102 -   File size: 264.5 KB
+2026-02-16 22:55:58.586 | INFO     | __main__:main:1105 - Total evaluation time: 26.6s
+2026-02-16 22:55:58.586 | INFO     | __main__:main:1110 - ============================================================
+2026-02-16 22:55:58.586 | INFO     | __main__:main:1111 - KEY RESULTS
+2026-02-16 22:55:58.586 | INFO     | __main__:main:1112 - ============================================================
+2026-02-16 22:55:58.587 | INFO     | __main__:main:1113 -   Overall CRND mean AUC:        0.4973
+2026-02-16 22:55:58.587 | INFO     | __main__:main:1114 -   Overall best baseline AUC:     0.8780
+2026-02-16 22:55:58.587 | INFO     | __main__:main:1115 -   Overall delta AUC:             -0.3807
+2026-02-16 22:55:58.587 | INFO     | __main__:main:1116 -   Pooled Cohen's d:              -11.700
+2026-02-16 22:55:58.587 | INFO     | __main__:main:1117 -   Significant comparisons:       14/15
+2026-02-16 22:55:58.587 | INFO     | __main__:main:1118 -   SC1 hypothesis supported:      False
+2026-02-16 22:55:58.587 | INFO     | __main__:main:1119 -   Boundary avg Cohen's d:        0.523
+2026-02-16 22:55:58.587 | INFO     | __main__:main:1120 -   Schoener D 2D-5D avg r:        0.546
+2026-02-16 22:55:58.587 | INFO     | __main__:main:1121 -   Datasets with class CRND diff: 5
+2026-02-16 22:55:58.587 | INFO     | __main__:main:1122 -   CRND/baseline cost ratio:      5.8x
+2026-02-16 22:55:58.587 | INFO     | __main__:main:1123 - ============================================================

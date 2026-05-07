@@ -1,0 +1,509 @@
+{
+  "datasets": [
+    {
+      "dataset": "medical_abstracts",
+      "examples": [
+        {
+          "input": "Pharmacomechanical thrombolysis and angioplasty in the management of clotted hemodialysis grafts: early and late clinical results. The results of pharmacomechanical thrombolysis and angioplasty of 121 thrombosed hemodialysis grafts were reviewed. The initial pharmacomechanical method (used in 65 cases) employed clot maceration with hook-shaped catheters and clot lacing with highly concentrated urokinase. The current technique (used in 56 cases) consisted of pulsed-spray injection of urokinase into the clot. All fully treated grafts (117 cases) underwent complete or near-complete thrombolysis, and 93% remained patent after 1 day. Mean time for pulsed-spray lysis was 46 minutes +/- 21. One patient (less than 1%) had gastrointestinal bleeding and received a transfusion; minor complications occurred in 3% of patients. Primary and secondary graft patency rates for both methods at 1 year were 26% and 51%, respectively. While graft age and results of angioplasty did not influence future graft patency, shorter intervals between graft thromboses was predictive of earlier subsequent graft failure. Results suggest that pharmacomechanical thrombolysis and angioplasty provide rapid, consistent, and safe recanalization of clotted hemodialysis grafts and represent a promising additional therapeutic approach to long-term graft management.",
+          "output": "cardiovascular diseases",
+          "metadata_fold": 3,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 0,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 4
+        },
+        {
+          "input": "Sodium sensitive and sodium retaining hypertension. The differences between sodium sensitive and sodium retaining hypertension were theoretically considered using a water tank model of body fluid volume-blood pressure regulation. If an outlet valve is attached to a tank with a base area corresponding to the reciprocal of total peripheral resistance (TPR) and water is poured into this tank at a rate corresponding to the amount of Na+ intake, then equilibrium should be achieved at a certain water level, volume and output from the outlet, which represent mean arterial pressure (MAP), cardiac output (CO) and urinary Na+ excretion. The height of the outlet from the tank bottom and the size cross-sectional area, of the outlet correspond to the x-intercept and slope of the renal function (pressure-natriuresis) curve, respectively. In both nonsodium sensitive hypertension, due to the shift of the curve toward a higher blood pressure level (elevated height of the outlet) without change in the slope (size of the outlet), and sodium sensitive hypertension, due to the depressed slope of the curve (reduced outlet size), not only MAP (water level) but also CO (water volume) are increased, resulting in sodium retaining hypertension, if TPR (reciprocal of base area) remained unchanged, while CO is relatively unchanged, resulting in nonsodium retaining hypertension, if TPR is elevated. Thus, the MAP and its sensitivity to sodium intake is determined by the renal function curve. Since body fluid volume is determined by both the renal function curve and TPR, however, changes in TPR during the development of hypertension is a major factor in determining whether or not the body fluid volume has to change only a small amount or a large amount. Therefore, the sodium sensitivity of blood pressure and sodium retention must be considered separately.",
+          "output": "cardiovascular diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 1,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 4
+        },
+        {
+          "input": "Antihypertensive drugs and glucose metabolism: comparison between a diuretic, a beta-blocker and felodipine, a new calcium antagonist in subjects with arterial hypertension and diabetes. Felodipine, a new antihypertensive calcium antagonist, was compared with metoprolol, a beta-blocker, and hydrochlorothiazide, a diuretic, with respect to glucose tolerance in a randomized double-blind cross-over study consisting of 11 patients, of age range 50-70 years, who had developed diabetes during antihypertensive treatment. Each treatment period lasted for 10 weeks. The blood pressure was similar irrespective of treatment. Serum glucose levels during the oral glucose tolerance test were significantly lower when the patients were treated with felodipine than when they were taking hydrochlorothiazide. Serum insulin levels appeared to decrease at an earlier stage of the test when the patients were treated with felodipine, the calcium antagonist, than with the other two antihypertensive substances, which suggests that glucose tolerance is impaired to a lesser extent during treatment with the calcium antagonist. Glucose tolerance was never completely normalized with any of the drugs tested.",
+          "output": "cardiovascular diseases",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 2,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 4
+        },
+        {
+          "input": "Tongue ischemia from a soft-drink can: report of case. A young girl was brought to the emergency department because her tongue became entrapped while she was drinking from an aluminum soft-drink can. A dental drill was used to remove the can. The tongue was observed for 48 hours, during which an ischemic area recovered spontaneously.",
+          "output": "cardiovascular diseases",
+          "metadata_fold": 3,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 3,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 4
+        },
+        {
+          "input": "Splenic artery aneurysm rupture [published erratum appears in Am J Emerg Med 1991 Mar;9(2):205] Splenic artery aneurysms are rare and usually asymptomatic. However, rupture can produce severe abdominal pain and prove lethal. Two cases of ruptured splenic artery aneurysm are presented. In one, cocaine injection occurred immediately prior to the onset of symptoms and may have precipitated the event.",
+          "output": "cardiovascular diseases",
+          "metadata_fold": 4,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 4,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 4
+        },
+        {
+          "input": "Dialysis-induced alterations in left ventricular filling: mechanisms and clinical significance. Quantitative two-dimensional (2-D) and Doppler echocardiography were used to determine whether hemodialysis results in alterations in left ventricular (LV) diastolic filling that might contribute to dialysis-induced hypotension, as well as to assess whether any hemodynamic variables or indices of diastolic filling might be used to identify which patients were at the greatest risk of becoming hemodynamically unstable during dialysis. Sixteen male patients undergoing routine maintenance hemodialysis for end-stage renal disease were prospectively studied before and after hemodialysis. Following hemodialysis there was a significant prolongation (P less than 0.05) in LV isovolumetric relaxation time (IVRT), as well as a significant reduction in the rate and extent of early rapid ventricular filling (P less than 0.005); in contrast, late atrial-assisted filling did not change significantly. A multiple stepwise linear regression analysis of predialysis hemodynamic parameters and noninvasive indices of LV filling showed that there was a significant independent inverse relationship between the frequency of dialysis-related hypotensive episodes and the duration of early LV filling (r = -0.81; P less than 0.001). These results suggest that hemodialysis results in discrete alterations in early LV filling, with no significant compensatory increase in late atrial-assisted ventricular filling. Further, patients with the shortest early LV filling times appeared to have the greatest predilection for becoming hemodynamically unstable during dialysis.",
+          "output": "cardiovascular diseases",
+          "metadata_fold": 4,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 5,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 4
+        },
+        {
+          "input": "Catheterization of coronary artery bypass graft from the descending aorta. The increasing frequency of reoperation for coronary artery disease has led to the use of a variety of grafts. This report describes the catheter technique for selective opacification of a saphenous vein graft from the descending thoracic aorta to the posterior coronary circulation.",
+          "output": "cardiovascular diseases",
+          "metadata_fold": 3,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 6,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 4
+        },
+        {
+          "input": "Improved survival and reduced myocardial necrosis with cardiopulmonary bypass reperfusion in a canine model of coronary occlusion and cardiac arrest. STUDY QUESTION: Does cardiopulmonary bypass (CPB) improve resuscitation rates and limit infarct size after cardiac arrest and acute myocardial infarction? DESIGN: Controlled randomized trial with all animals undergoing left anterior descending coronary artery occlusion and subsequent ventricular fibrillation and resuscitation. All animals were supported for four hours after resuscitation in an intensive care setting. INTERVENTION: Group 1 (eight) was resuscitated with standard external CPR and advanced life support. Group 2 (eight) was resuscitated with CPB. MEASUREMENTS AND MAIN RESULTS: Group hemodynamic, resuscitation variables, number resuscitated, and number of four-hour survivors were compared. Ischemic and necrotic myocardial weights were determined with histochemical staining techniques in four-hour survivors. Infarct size was measured as the ratio of necrotic weight to ischemic weight. Significantly fewer dogs were resuscitated in group 1 (four of eight) than in group 2 (eight of eight) (P less than .05). Group 2 survivors required significantly less epinephrine and lidocaine than group 1 survivors (P less than .05) and higher aortic diastolic and coronary perfusion pressures after CPB (P less than .001). The ratio of myocardial necrotic weight to ischemic weight at four hours was 0.82 +/- 0.25 in group 1 and 0.22 +/- 0.25 in group 2 (P less than .05). However, collateral blood flow was not measured in this study. CONCLUSION: This pilot study further substantiates the improvement in resuscitation rates obtainable with CPB. CPB may also limit infarct size during the postresuscitation period and requires further study.",
+          "output": "cardiovascular diseases",
+          "metadata_fold": 4,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 7,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 4
+        },
+        {
+          "input": "Psychosomatic factors in borderline hypertensive subjects and offspring of hypertensive parents. Psychosomatic factors, sympathoneural and sympathoadrenal as well as cardiovascular mechanisms, were studied in 24 patients 18-24 years of age with borderline hypertension, 50 age-matched normotensive offspring of hypertensive parents, and 49 controls with no family history of hypertension. They were compared by projective and questionnaire-based psychological tests and their circulatory and neurohormonal reactivity to mental (Stroop color-word conflict test and arithmetic test) and physical stressors (orthostasis and bicycle ergometry test) were measured. Borderline hypertensive subjects externalized aggression less (p less than 0.05) but internalized it more (p less than 0.05) and were more submissive (p less than 0.05) when compared with controls. Offspring of hypertensive parents showed a similar but weaker pattern. Both risk groups reported more positive interactions with their parents (genetic risk subjects versus controls, p less than 0.05; borderline hypertensive patients versus controls, p = 0.08) and had higher state-anxiety levels (p less than 0.05). There were more subjective symptoms of beta-adrenergic receptor-mediated functions (e.g., tachycardia, tremor) in borderline hypertensive subjects and offspring of hypertensive parents, elevated heart rates (analysis of repeated measures, p less than 0.001), and enhanced plasma norepinephrine concentrations (p less than 0.05) when compared with controls. These findings in subjects at risk for the development of hypertension suggest that psychosomatic factors and sympathetic overactivity are involved in the early phase of hypertension.",
+          "output": "cardiovascular diseases",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 8,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 4
+        },
+        {
+          "input": "Protein phosphorylation during ischemia. Many investigations have shown that calcium and adenosine triphosphate are crucial to central nervous system functions. It is probable that alterations of these substances during central nervous system ischemia are involved in the processes that cause irreversible neural damage. Calcium regulates several protein kinases that are responsible for phosphorylation of proteins vital for many central nervous system functions. Using a rabbit spinal cord ischemia model, we found protein kinase C and calcium/calmodulin-dependent kinase were severely affected during the first hour of ischemia. Protein kinase A was not significantly affected. The time course of lost protein kinase C enzyme activity closely corresponded to irreversible loss of neurologic function, and there is evidence that protein kinase C inhibitor activity is generated. Also, drugs that inhibit protein kinase C increased neurologic damage when administered during the early phases of ischemia. These results suggest that protein phosphorylation, particularly by protein kinase C, is critical to maintenance of neurologic function.",
+          "output": "cardiovascular diseases",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 9,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 4
+        },
+        {
+          "input": "Sexually transmitted diseases of the colon, rectum, and anus. The challenge of the nineties. During the past two decades, an explosive growth in both the prevalence and types of sexually transmitted diseases has occurred. Up to 55 percent of homosexual men with anorectal complaints have gonorrhea; 80 percent of the patients with syphilis are homosexuals. Chlamydia is found in 15 percent of asymptomatic homosexual men, and up to one third of homosexuals have active anorectal herpes simplex virus. In addition, a host of parasites, bacterial, viral, and protozoan are all rampant in the homosexual population. Furthermore, the global epidemic of AIDS has produced a plethora of colorectal manifestations. Acute cytomegalovirus ileocolitis is the most common indication for emergency abdominal surgery in the homosexual AIDS population. Along with cryptosporidia and isospora, the patient may present to the colorectal surgeon with bloody diarrhea and weight loss before the diagnosis of human immunodeficiency virus (HIV) disease. Other patients may present with colorectal Kaposi's sarcoma or anorectal lymphoma, and consequently will be found to have seropositivity for HIV. However, in addition to these protean manifestations, one third of patients with AIDS consult the colorectal surgeon with either condylomata acuminata, anorectal sepsis, or proctitis before the diagnosis of HIV disease. Although aggressive anorectal surgery is associated with reasonable surgical results in some asymptomatic HIV positive patients, the same procedures in AIDS (symptomatic HIV positive) patients will often be met with disastrous results. It is incumbent upon the surgeon, therefore, to recognize the manifestations of HIV disease and diagnose these conditions accordingly.",
+          "output": "digestive system diseases",
+          "metadata_fold": 3,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 10,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 2
+        },
+        {
+          "input": "The management of postoperative chylous ascites. A case report and literature review. Chylous ascites remains rare as a complication of surgical intervention. Although therapeutic manoeuvres to control chylous ascites have been developed over the past 20 years, its pathophysiology is poorly understood. Conservative approaches involving dietary restriction of long-chain triglycerides and salt, together with multiple paracenteses, are still the therapies of choice. Persistent chylous ascites may be treated surgically by ligation of leaking lymphatics or implantation of a peritoneovenous shunt once the lymphatic anatomy has been defined by preoperative investigations. We report a case of chylous ascites developing after laparotomy and duodenotomy for obscure gastrointestinal bleeding, which did not respond adequately to medical therapy and was successfully managed by the insertion of a peritoneovenous shunt.",
+          "output": "digestive system diseases",
+          "metadata_fold": 4,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 11,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 2
+        },
+        {
+          "input": "Gallbladder perforation: correlation of cholescintigraphic and sonographic findings with the Niemeier classification. We retrospectively analyzed the cholescintigrams and sonograms of 36 consecutive patients with gallbladder perforation to (a) determine the sensitivity of each for the preoperative detection of gallbladder perforation and (b) correlate the findings with the modified Niemeier classification. Cholescintigraphic criteria of perforation (free spill, pericholecystic hepatic activity, and scintigraphic gallstone ileus sign) were detected in 14 of 28 (50%) cases, while sonographic criteria of perforation (pericholecystic fluid or pneumobilia with gallstones) were present in 18% (4 of 22) of patients (p less than 0.05). Cholescintigraphic patterns of perforation associated with the Niemeier classification were: Type I (acute free perforation), 3 of 7 scans demonstrated free spill; Type II (subacute pericholecystic abscess), 9 of 19 scans showed pericholecystic activity; and Type III (chronic cholecystoenteric fistula), 1 of 3 scans showed a scintigraphic gallstone ileus. Thus, although cholescintigraphy appears superior to sonography, both modalities are relatively insensitive for the detection of gallbladder perforation.",
+          "output": "digestive system diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 12,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 2
+        },
+        {
+          "input": "Insulin resistance in noncirrhotic idiopathic portal hypertension. To explore further the pathogenesis of glucose intolerance and insulin resistance observed in patients with cirrhosis and portal hypertension, we studied a 35-year-old woman with presinusoidal portal hypertension without cirrhosis due to nodular regenerative hyperplasia of the liver. After oral glucose ingestion, glucose tolerance remained normal; however, this occurred at the expense of a markedly hyperinsulinemic plasma response, suggesting the presence of insulin resistance. To examine this question more directly, we performed a stepwise euglycemic insulin clamp study in combination with an infusion of [6-3H]glucose and [1-14C]palmitate and indirect calorimetry. The ability of insulin to promote total body (primarily muscle) glucose uptake was markedly impaired, whereas its effect to suppress hepatic glucose production was normal compared with results obtained in nine healthy subjects. Moreover, insulin failed to normally suppress plasma free fatty acid turnover and oxidation in this patient. This informative case demonstrates that portal hypertension alone, without hepatic dysfunction from cirrhosis, is associated with impaired insulin-mediated glucose and plasma free fatty acid metabolism and may also play a predominant role in the development of insulin resistance in many cirrhotic patients.",
+          "output": "digestive system diseases",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 13,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 2
+        },
+        {
+          "input": "Acute gastroenteritis in infants under 6 months old. Sixty two babies under the age of 6 months who were admitted with gastroenteritis completed a study of gradual refeeding compared with abrupt refeeding after a period of rehydration. There was no difference in the incidence of recurrence of diarrhoea due to lactose intolerance, effect on weight, or duration of hospital stay. Twenty six babies (42%) had recurrence of diarrhoea after refeeding, all of whom settled with the introduction of a lactose free soya based formula. Well nourished babies under 6 months of age with mild to moderately severe gastroenteritis can be fed immediately with full strength milk feeds after rehydration. The introduction of a lactose free soya based preparation may provide an alternative to repeated attempts at regrading with cows' milk feeds in those patients with lactose intolerance.",
+          "output": "digestive system diseases",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 14,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 2
+        },
+        {
+          "input": "Feasibility of digital teleradiology for imaging evaluation of patients with acute right upper quadrant abdominal pain. To assess the utility of a commercially available digital teleradiology system in evaluating patients with acute pain in the right upper quadrant, hard-copy images from 100 examinations (50 hepatobiliary scintigrams and 50 sonograms of the right upper quadrant) were digitized, transmitted via standard telephone lines, and viewed remotely on a video monitor. Video and hard-copy interpretations were then compared for degree of concordance. For the scintigraphic studies, hard-copy and video images were equal in demonstrating gallbladder and bile duct activity. Video images failed to depict the presence of bowel activity in one case. Gallstones were depicted equally well on hard-copy and video sonographic images. The video interpreters overestimated the presence of abnormal hepatic parenchyma and overlooked one case of right hydronephrosis. The video interpretations of the scintigrams and sonograms showed an overall error rate of 4%, comparable to the rate obtained when radiographs are interpreted remotely with digital teleradiology systems.",
+          "output": "digestive system diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 15,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 2
+        },
+        {
+          "input": "Palliation of malignant esophageal obstruction. Progressive dysphagia is common in patients with advanced esophageal carcinoma. Multiple nonsurgical techniques are available to provide palliation and improved nutrition. Simple dilatation is the oldest technique and newer methods may offer greater efficacy. Laser therapy now provides an excellent opportunity to treat obstructing tumors. Placement of an esophageal prosthesis may become particularly useful when dilatation must be performed too frequently or has become ineffective or in the patient with an esophageal-pulmonary fistula. Newer techniques including BICAP tumor probe, intracavitary radiotherapy, or absolute alcohol injection offer promise. This review discusses the advantages and disadvantages of these different palliative techniques for patients with the extremely poor prognosis associated with esophageal cancer.",
+          "output": "digestive system diseases",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 16,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 2
+        },
+        {
+          "input": "Systemic hemodynamic and cardiac function changes in patients undergoing orthotopic liver transplantation. The objective of this study was to determine the changes in systemic hemodynamics (systemic vascular resistance [SVR], cardiac output [CO], systemic blood pressure [SBP]) and cardiac function (pulmonary artery pressure [PAP] and pulmonary wedge pressure [PWP]) during the 96 hours following orthotopic liver transplantation (OLT) and correlate these with changes in hepatic and renal function and patient outcome. The study took place in a 12-bed medical respiratory intensive care unit in a large teaching hospital. Twenty-one patients had OLT performed over a 21.5-month period (January 1988 to October 15, 1989) for end stage liver disease (ESLD) from a variety of causes. A flow-directed right heart catheter and an indwelling arterial cannula were inserted for hemodynamic monitoring over a 96-hour postoperative period. Liver and renal function studies, total serum calcium, serum albumin, and fluid balance were determined daily. The SVR increased significantly to 12.8 +/- 0.6 U at 48 hours compared with immediate (less than 8 hours) postoperative levels (p less than 0.05) and remained elevated for 96 hours. The CO fell progressively and was significantly lower than baseline values from 64 to 96 hours. There was significant inverse correlation between the increase in SVR and the fall in CO (r = .85, p less than 0.01). The SBP was stable except for a small, but significant fall at 16 and 24 hours postoperatively. The PWP increased significantly from a baseline value of 12.5 +/- 0.9 mm Hg to 15 +/- 0.9 mm Hg at 32 hours and remained elevated through 96 hours (p less than 0.05). The serum bilirubin level fell progressively postoperatively and the prothrombin time and partial thromboplastin time (PTT) shortened significantly. Bile flow increased progressively from 107 +/- 120 ml/24 hours at the end of the first 24 hours to 188 +/- 125 ml/24 hours by 96 hours postoperatively. Five patients died from nine to 43 days postoperatively. These patients' hemodynamic parameters were not significantly different from the patients who survived. Successful OLT is associated with a rapid increase in SVR and a fall in CO without changes in SBP. These findings tend to parallel the improvement found in results of liver function tests. However, there is no correlation between the improvement in the hemodynamic state and long-term survival.",
+          "output": "digestive system diseases",
+          "metadata_fold": 4,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 17,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 2
+        },
+        {
+          "input": "Therapy for acute infectious diarrhea in children. This article reviews current recommendations of therapy with antidiarrheal compounds and antimicrobial agents for acute infectious diarrhea in children. In most infants and children with acute infectious diarrhea, treatment with antidiarrheal compounds is not indicated. Many of these compounds interfere with identification of enteropathogens in stool specimens, and the antimotility class has an overdose potential. Antimicrobial therapy is given to reduce symptoms and to prevent the spread of infection by decreasing fecal shedding of organisms. Although effective therapy is not available for patients with enteric viruses, Cryptosporidium, and Microsporidium, therapy is useful for children with amebiasis, antimicrobial-associated colitis, cholera, giardiasis, various forms of Escherichia coli diarrhea and Salmonella disease, isosporiasis, shigellosis, and strongyloidiasis. For several other conditions, antimicrobial therapy is of questionable benefit (infection with Campylobacter jejuni or Yersinia enterocolitica, intestinal salmonellosis and enterohemorrhagic E. coli infection). Compounds such as the fluoroquinolones, which are effective in the treatment of acute infectious diarrhea in adults, are not approved for use in children because of potential side effects. Many bacterial, viral, and parasitic organisms cause acute infectious diarrhea; appropriate antimicrobial therapy requires the accurate, rapid identification of the offending enteropathogen. In children with an underlying illness such as acquired immunodeficiency syndrome, manifestations may be prolonged, severe, and recurrent despite appropriate therapy.",
+          "output": "digestive system diseases",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 18,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 2
+        },
+        {
+          "input": "The management of pseudomyxoma peritonei. The management of nine patients with pseudomyxoma peritonei was reviewed. Aggressive surgical resection of tumor is the standard of treatment, with many patients requiring multiple laparotomies. Chemotherapy, including the use of cisplatin is not effective. Long-term nutritional support provides a better quality of survival for select patients.",
+          "output": "digestive system diseases",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 19,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 2
+        },
+        {
+          "input": "Tissue changes around loose prostheses. A canine model to investigate the effects of an antiinflammatory agent. The aseptically loosened prosthesis provided a means for investigating the in vivo and in vitro activity of the cells associated with the loosening process in seven dogs. The cells were isolated and maintained in culture for sufficient periods of time so that their biologic activity could be studied as well as the effect of different agents added to the cells in vivo or in vitro. The biologic response as determined by interleukin-1 and prostaglandin E2 activity paralleled the roentgenographic appearance of loosening and the technetium images and observations made at the time of revision surgery. The correlation between clinical, roentgenographic, histologic, and biochemical loosening indicates that the canine model is suitable for investigating the mechanisms of prosthetic failure. A canine model permits the study of possible nonsurgical therapeutic interventions with the ultimate hope of stopping or slowing the loosening process.",
+          "output": "general pathological conditions",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 20,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 5
+        },
+        {
+          "input": "Color Doppler diagnosis of mechanical prosthetic mitral regurgitation: usefulness of the flow convergence region proximal to the regurgitant orifice. In prosthetic or paravalvular prosthetic mitral regurgitation, transthoracic color Doppler flow mapping can sometimes fail to detect the regurgitant jet within the left atrium because of the shadowing by the prosthetic valve. To overcome this limitation, we assessed the utility of color Doppler visualization of the flow convergence region (FCR) proximal to the regurgitant orifice in 20 consecutive patients with mechanical prosthetic mitral regurgitation documented by surgery and cardiac catheterization (13 of 20 patients). In addition, we studied 33 patients with normally functioning mitral prostheses. Doppler studies were performed in the apical, subcostal, and parasternal long-axis views. An FCR was detected in 95% (19 of 20) of patients with prosthetic mitral regurgitation. A jet area in the left atrium was detected in 60% (12 of 20) of patients. In 18 of 19 patients with Doppler-detected FCR, the site of the leak was correctly identified by observing the location of the FCR. A trivial jet area was detected in eight patients with a normally functioning mitral prosthesis; in none was an FCR identified. Thus color Doppler visualization of the FCR proximal to the regurgitant orifice is superior to the jet area in the diagnosis of mechanical prosthetic mitral regurgitation. Moreover, FCR permits localization of the site of the leak with good accuracy.",
+          "output": "general pathological conditions",
+          "metadata_fold": 3,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 21,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 5
+        },
+        {
+          "input": "Noninvasive diagnosis of right-sided extracardiac conduit obstruction by combined magnetic resonance imaging and continuous-wave Doppler echocardiography. Right-sided extracardiac conduits are frequently complicated by obstruction over time. We compared the utility of two-dimensional and Doppler echocardiography and magnetic resonance imaging in the diagnosis of postoperative right-sided obstruction with cardiac catheterization and angiography in 10 patients with xenograft or homograft conduits. Correlation (r = 0.95) between continuous-wave Doppler estimates and catheter pullback pressure gradients across the conduits was excellent. Echocardiography could only visualize five of 10 conduits in their entirety. Magnetic resonance imaging visualized all conduits and showed statistically significant (kappa = 0.58) agreement with angiography in the localization and estimation of severity of a variety of right-sided obstructions in these patients. However, flow voids created by the metallic ring around xenograft valves led to a false negative diagnosis of valvular stenosis in four patients when magnetic resonance imaging was used alone. Doppler studies correctly indicated obstruction in these patients. The combination of magnetic resonance imaging studies and continuous-wave Doppler echocardiography can be useful to noninvasively evaluate right-sided obstruction in postoperative patients with right-sided extracardiac conduits.",
+          "output": "general pathological conditions",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 22,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 5
+        },
+        {
+          "input": "Closure of a bronchopleural fistula with bronchoscopic instillation of tetracycline. Persistent bronchopleural fistulas (BPF) due to infection, trauma, or thoracic surgical procedures are often difficult to manage. We report a patient with fulminant Staphylococcus aureus pneumonia complicated by chronic BPF formation which prevented weaning from mechanical ventilation due to severe air leak. Fistula closure was obtained by instillation of tetracycline into the fistula via a fiberoptic bronchoscope using a balloon catheter and blood clot occlusion technique. This closed the BPF and allowed successful weaning from mechanical ventilation.",
+          "output": "general pathological conditions",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 23,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 5
+        },
+        {
+          "input": "In vitro and in vivo effects within the coronary sinus of nonarcing and arcing shocks using a new system of low-energy DC ablation. DC shocks within the coronary sinus have been abandoned because of the risk of cardiac rupture and tamponade. Catheter ablation using DC energy to electrodes straddling the ostium of the coronary sinus, when used clinically, has been reported to result in cardiac tamponade in as many as 16% of patients. A new system of energy delivery maximizes voltage while decreasing the undesirable effects caused by barotrauma. This system includes 1) a low-energy ablation power supply with a brief time-constant capacitive discharge that delivers up to 40 J and 3,000 V and 2) a low-energy ablation catheter with a contoured distal electrode. We performed in vitro and in vivo studies of this new system and compared arcing shocks with nonarcing shocks. Ablations were performed using unipolar distal shocks (D) and unipolar shocks to both electrodes made electrically common (P-D). In vitro studies were done in a large tank filled with physiological saline while recording voltage, current, and pressure. High-speed cinematography (32,000 frames/sec) of shocks of 10-40 J permitted detailed analysis of the vapor globe. Anodal shocks of less than 20 J showed no arcing or only minimal vapor globe formation. For D and P-D anodal shocks of 40 J, the diameters of the vapor globe were 31 and 22 mm, respectively, corresponding to pressure recordings of 11 and 4.9 atm. The pressure rise lasted less than 50 mu sec. In vivo studies involved 18 dogs that received nonarcing shocks (one to six shocks of 15 J) and 18 dogs that received arcing shocks (one to three shocks of 40 J). Each group was divided between D and P-D shocks; catheter ablation was performed at a mean +/- SEM distance of 2.94 +/- 0.92 cm within the coronary sinus. All dogs tolerated the procedure without cardiac rupture or tamponade. When killed 2-4 days later, the dogs had edema and hyperemia or hemorrhage in the area of the coronary sinus. We compared the effects of multiple (three to six) nonarcing shocks with the effects of one to three arcing shocks. Disruption or rupture of the coronary sinus within the epicardial fat space occurred in two of 12 dogs (17%) with multiple nonarcing shocks but in 13 of 18 dogs (72%) with arcing shocks (p less than 0.003). Occlusion of the coronary sinus occurred in two of 12 dogs (17%) with multiple nonarcing shocks and in nine of 18 dogs (50%) with arcing shocks (p less than 0.06).(ABSTRACT TRUNCATED AT 400 WORDS).",
+          "output": "general pathological conditions",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 24,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 5
+        },
+        {
+          "input": "Ear involvement in the yellow nail syndrome. Recognized features of the yellow nail syndrome include yellow nails, lymphedema, and pleural effusions. We report a patient with the additional feature of keratosis obturans, which may be a manifestation of this syndrome in the external ear.",
+          "output": "general pathological conditions",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 25,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 5
+        },
+        {
+          "input": "Hepatic injury associated with small bowel bacterial overgrowth in rats is prevented by metronidazole and tetracycline. Susceptible rat strains develop hepatobiliary injury following the surgical creation of self-filling blind loops that cause small bowel bacterial overgrowth. Luminal bacteria or their cell wall polymers were implicated in the pathogenesis of the lesions because sham-operated rats and rats with self-emptying blind loops, having only slightly increased bacterial counts, did not develop hepatic injury. In this study, antibiotics with different spectra of activities were continuously administered starting 1 day or 22 days after surgery to determine which intestinal flora may be responsible for the development of hepatic injury in rats with small bowel bacterial overgrowth. Four weeks following surgery, Lewis rats with self-filling blind loops receiving no antibiotics had elevated liver histology scores (8.2 +/- 1.3 vs. 0.7 +/- 0.4) and plasma aspartate aminotransferase levels (269 +/- 171 vs. 84 +/- 24) compared with sham-operated rats, P less than 0.001. Oral gentamicin as well as oral and intraperitoneal polymyxin B, which binds endotoxin, did not prevent hepatic injury in rats with self-filling blind loops. However, oral metronidazole and tetracycline therapy continuously administered beginning 1 day after surgery diminished hepatic injury (histology score 3.0 +/- 1.8, 2.9 +/- 1.1; aspartate aminotransferase 87 +/- 25, 98 +/- 34; respectively P less than 0.001 compared with self-filling blind loops receiving no antibiotics). Metronidazole also protected Wistar rats that require 12 weeks to develop hepatic injury following experimentally induced small bowel bacterial overgrowth compared with rats with self-filling blind loops that received no antibiotic treatment (histology score 10.4 +/- 1.3 vs. 0.7 +/- 1.1, and aspartate aminotransferase 273 +/- 239 vs. 76 +/- 20, P less than 0.001). When rats started metronidazole therapy 22 days after self-filling blind loop surgery, elevated aspartate aminotransferase values decreased to normal during the next 77 days and final histology scores were normal. All rats with self-filling blind loops had negative peritoneal, liver, spleen, and blood cultures but approximately 75% of mesenteric lymph node cultures were positive irrespective of antibiotic treatment. Because Bacteroides species have been implicated in causing vitamin B12 and disaccharidase deficiencies in rats with self-filling blind loops, we documented the presence or absence of these organisms from blind loops using selective culture techniques. Metronidazole and tetracycline eliminated Bacteroides sp. from blind loops, but polymyxin B and gentamicin did not.(ABSTRACT TRUNCATED AT 400 WORDS).",
+          "output": "general pathological conditions",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 26,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 5
+        },
+        {
+          "input": "Polyneuropathy, ophthalmoplegia, leukoencephalopathy, and intestinal pseudo-obstruction: POLIP syndrome. We describe 5 individuals (from three separate families) with a progressive neurological disorder characterized by sensorimotor peripheral polyneuropathy, cranial neuropathies (external ophthalmoplegia, deafness), and the syndrome of chronic intestinal pseudo-obstruction. Magnetic resonance imaging showed widespread abnormality of the cerebral and cerebellar white matter in the 2 patients studied. Autopsy examination in 3 revealed widespread endoneurial fibrosis and demyelination in the peripheral nervous system, possibly secondary to axonal atrophy, and poorly defined changes in cerebral white matter (leukoencephalopathy). The cranial nerves and spinal roots were less severely involved and the neurons in the brainstem and spinal cord were intact. The fatal gastrointestinal dysmotility was due to a severe visceral neuropathy. We suggest that these patients manifested a hereditary disorder with distinctive clinical, radiological, and neuropathological features, and propose the acronym POLIP to emphasize the distinctive tetrad of polyneuropathy, ophthalmoplegia, leukoencephalopathy, and intestinal pseudo-obstruction.",
+          "output": "general pathological conditions",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 27,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 5
+        },
+        {
+          "input": "Ptychotropism as a cutaneous feature of the CHILD syndrome. The hallmark of the CHILD syndrome is a unilateral ichthyosiform nevus that displays a pronounced affinity for the body folds. For this phenomenon the term ptychotropism is proposed. The expression is composed from the Greek words ptyche (fold) and trope (a turning). It is concluded that the cutaneous lesions of the CHILD nevus are determined by two factors, lyonization and ptychotropism. The phenomenon of ptychotropism constitutes an additional argument to distinguish the CHILD nevus from the inflammatory linear verrucous epidermal nevus because the latter is not ptychotropic.",
+          "output": "general pathological conditions",
+          "metadata_fold": 3,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 28,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 5
+        },
+        {
+          "input": "Long-term follow-up comparing subclavian flap angioplasty to resection with modified oblique end-to-end anastomosis The definitive surgical procedure for correction of aortic coarctation remains controversial. Therefore, we retrospectively reviewed a total of 56 children under 4 years of age with coarctation repair between 1977 and 1986. Thirty-four had the subclavian flap angioplasty technique and 22 had resection with oblique end-to-end anastomosis. The group was further subdivided to include only the 23 infants less than 3 months of age--eight infants with resection with oblique end-to-end anastomosis (less than or equal to 3ETE) and 15 infants with subclavian flap angioplasty (greater than or equal to 3SFA). The remaining 33 patients older than 3 months of age were divided into 14 patients with resection and oblique end-to-end anastomosis (greater than 3ETE) and 19 patients with the subclavian flap angioplasty technique (greater than 3SFA). The overall mortality was not significantly different between techniques. Postoperative hypertension was significantly more prevalent with end-to-end anastomosis than with the subclavian flap angioplasty technique (p less than 0.01). Seven patients had recurrent coarctation. The 6-year actuarial freedom from recoarctation was 93% +/- 6% in the less than or equal to 3SFA group compared with 53% +/- 20% in the less than or equal to 3ETE group (p less than 0.02), but there was no significant difference in those children operated on at a later age regarding the type of coarctation repair. Therefore, we recommend subclavian flap angioplasty in patients less than 3 months of age. In those older than 3 months either procedure is safe and the risk of recoarctation is similar.",
+          "output": "general pathological conditions",
+          "metadata_fold": 4,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 29,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 5
+        },
+        {
+          "input": "Neuropeptide Y and neuron-specific enolase levels in benign and malignant pheochromocytomas. Neuron-specific enolase (NSE) is the isoform of enolase, a glycolytic enzyme found in the neuroendocrine system. Neuropeptide Y (NPY) is a peptide recently discovered in the peripheral and central nervous systems. Serum NSE and plasma NPY levels have been reported to be increased in some patients with pheochromocytoma. The authors evaluated whether the measurement of these molecules could help to discriminate between benign and malignant forms of pheochromocytoma. The NSE levels were normal in all patients with benign pheochromocytoma (n = 13) and elevated in one half of those with malignant pheochromocytoma (n = 13). Plasma NPY levels were on the average significantly higher in the malignant (177.1 +/- 38.9 pmol/l, n = 16) than in the benign forms of the disease (15.7 +/- 389 pmol/l, n = 24). However, there was no difference in the percentage of patients with elevated NPY levels. These results show that determination of serum NSE may be useful for distinguishing between malignant and benign pheochromocytoma; the measurement of plasma NPY is not useful for differentiating the two kinds of tumors.",
+          "output": "neoplasms",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 30,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 1
+        },
+        {
+          "input": "Lipolytic factors associated with murine and human cancer cachexia. We have identified a lipolytic factor in extracts of a cachexia-inducing murine carcinoma (MAC16) that shows characteristics of an acidic peptide and appears to be composed of three fractions of apparent molecular weights corresponding to 3 kd, 1.5 kd, and 0.7 kd, as determined by exclusion chromatography. Material with identical chromatographic and molecular weight characteristics was also present in the serum of patients with clinical cancer cachexia but absent from normal serum, even under conditions of starvation. The MAC16 lipid factor, when injected into animals bearing the non-cachexia-inducing tumor MAC13, was capable of inducing weight loss without a significant reduction in food intake. Similar lipolytic material, although in lower concentration, was also found in the MAC13 tumor extracts. These findings suggest that cachexia may arise from the enhanced expression of a lipolytic factor associated with tumor cells.",
+          "output": "neoplasms",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 31,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 1
+        },
+        {
+          "input": "Imaging bone tumors in the 1990s. Progress in bone tumor management has occurred as a result of cooperation among surgeons, oncologists, pathologists, and radiologists. During the 1990s radiologists will contribute to care of patients with bone tumors in major ways. Tumor detection and preliminary diagnosis will be accomplished by radiography. Tumor local extent will be assessed by magnetic resonance imaging (MRI) and to a lesser degree by computed tomography (CT). Distant spread of malignancy will be documented by radionuclide scintigraphy (skeleton) and by CT (lungs). The combined estimate of local extent and distant spread will assure adequate staging before definitive management decisions. Preoperative closed percutaneous biopsy for histologic diagnosis will be accomplished on an outpatient basis under fluoroscopic or CT guidance. Arteriography will be employed for delivery of local chemotherapy. Some combination of arteriography, MRI, and MR spectroscopy will be used to evaluate tumor response. After limb-salvage surgery, MRI will sequentially assess the tumor bed; bone scintigraphy and CT will detect skeletal and pulmonary metastases. The radiologist's role will undergo continuous redefinition.",
+          "output": "neoplasms",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 32,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 1
+        },
+        {
+          "input": "Utility of frozen-section evaluation of lymph nodes in the staging of bronchogenic carcinoma at mediastinoscopy and thoracotomy. We conducted a retrospective analysis of the utility of frozen-section diagnoses in determining lymph node status at mediastinoscopy in 122 consecutive patients with bronchogenic carcinoma. Thirty-five of 122 patients had one or more lymph nodes with frozen-section evaluation positive for metastatic carcinoma. Subsequent nodal sections not in the original frozen-section study revealed metastatic carcinoma in two additional patients. The false-negative rate was 1.6%. Sensitivity was 94.6%. Predictive value of negative frozen-section evaluation results was 97.7%. Because there were no false-positive frozen-section results, specificity and predictive value for positive results of frozen-section evaluation were 100%. The statuses of individual lymph nodes from these 122 patients were also evaluated. Six hundred twenty lymph nodes were sampled from the mediastinum at mediastinoscopy. Frozen-sections in 47 lymph nodes were positive. Subsequent nodal sections not in the original frozen-sections examination revealed metastatic carcinoma in four additional lymph nodes. The false-negative rate was 0.6%. Sensitivity was 92.2%. Predictive value of negative results from frozen-section evaluation was 99.3%. Because there were no false-positive frozen-section results, specificity and predictive value for positive results of frozen-section examination were 100%. We conclude that frozen-section evaluation of lymph nodes at mediastinoscopy reliably indicates lymph node status, thus enabling the physician to decide whether to proceed to thoracotomy. Thus staging of the carcinoma and definitive surgery can be accomplished during a single anesthetic procedure. Combining mediastinoscopy and thoracotomy with frozen-section diagnostic control also reduces both the length and cost of hospitalization.",
+          "output": "neoplasms",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 33,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 1
+        },
+        {
+          "input": "Left ventricular fibroma: echocardiographic diagnosis and successful surgical excision in three cases. The management of three patients with left ventricular fibromas is outlined. All were asymptomatic children. Routine chest radiography suggested cardiac masses. M-mode and two-dimensional echocardiography were valuable adjuncts to conventional angiography in assessing these children. Electrocardiographic changes, present in all cases, were shown to regress postoperatively. We stress the importance of these noninvasive aids in the initial investigation and outline our operative methods of reconstruction.",
+          "output": "neoplasms",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 34,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 1
+        },
+        {
+          "input": "Chondrosarcoma of the jaws: clinical findings, histopathology, and treatment. Three cases of chondrosarcoma involving the jaws are presented, one in the maxilla and two in the mandible. The salient points of clinical presentation elucidated by this series of cases are that a widened periodontal ligament space is present in chondrosarcomas as well as in osteosarcomas, and that a slowly increasing diastema may be the earliest clinical sign. The most important lesson to be learned from the histopathology is that one should not accept a diagnosis of a benign cartilaginous tumor of the jaws. Treatment of these lesions should consist of wide surgical excision and consideration of adjunctive or palliative radiotherapy, especially in the maxilla. It should also be noted that recurrences may develop 10 to 20 years later, and follow-up should be lifelong.",
+          "output": "neoplasms",
+          "metadata_fold": 3,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 35,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 1
+        },
+        {
+          "input": "A modified rhombic transposition flap and its application in dermatology. A modified rhombic transposition flap based around a circular primary defect is described. We have found it to be a versatile design that produces good cosmetic results with a low incidence of postoperative complications. It has become the most frequently used transposition flap in our dermatologic practice.",
+          "output": "neoplasms",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 36,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 1
+        },
+        {
+          "input": "Clear cell adenocarcinoma of the vagina and cervix. A report of the Central Netherlands Registry with emphasis on early detection and prognosis. The Central Netherlands Registry (CNR) of women with vaginal or cervical clear cell adenocarcinoma (CCAC) was established in 1985. An overview is presented of clinical and pathologic data of 55 patients who were registered at the CNR until July 1, 1988. All Netherlands Departments of Pathology (NDP) maintain a patient registry and 95% of the Institutes are connected with a Central Archive via a computer network. The histologic slides and clinical status were reviewed at the CNR. Twenty-five tumors were classified as vaginal carcinoma and 30 as cervical carcinoma. The mean age of the patients was 22 years. Fifty-five percent of patients (63% of patients with known maternal history) were exposed to diethylstilbestrol (DES) in utero. The majority of cases was initially diagnosed after 1980. Cytologic examination before the initial histologic diagnosis indicated that cervical tumors were detected in 80% of cases, but vaginal tumors were detected only in 33% of cases. It was concluded that an examination of DES-exposed women should consist of colposcopic inspection of the cervix and vagina, cytologic examination of the cervix and four quadrants of the vagina, and careful palpation of the cervix and the entire vaginal wall. The most important prognostic parameter for patients with CCAC was stage and grade of nuclear atypia. The results of a statistical analysis showed that these features were the most effective to distinguish between nonsurvivors and patients surviving more than 5 years.",
+          "output": "neoplasms",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 37,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 1
+        },
+        {
+          "input": "Dilatation in the duplex kidney: 3 unusual cases. Dilatation in the upper limb of a duplex ureter is usually secondary to obstruction and may be associated with a ureterocele. By contrast, vesicoureteric reflux is the usual cause of a dilated lower moiety ureter. We report 3 cases in which unusual or complex causes of dilatation of 1 limb of a duplex ureter were demonstrated.",
+          "output": "neoplasms",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 38,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 1
+        },
+        {
+          "input": "Microcystic adnexal carcinoma following radiotherapy in childhood. A 36-year-old man was treated by radiotherapy for tinea capitis many years before discovery of microcystic adnexal carcinoma (MAC). Because of patient's refusal of any surgical intervention, we were able to follow the natural course of this tumor for 13 years. This case emphasizes the typical slow development of (MAC). The implication of the association of MAC and radiotherapy are discussed.",
+          "output": "neoplasms",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 39,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 1
+        },
+        {
+          "input": "Does carotid restenosis predict an increased risk of late symptoms, stroke, or death? The identification of carotid restenosis as an unexpected late complication of carotid endarterectomy has prompted concerns regarding its importance as a source of new cerebral symptoms, stroke, and death. To investigate these concerns, we analyzed a consecutive series of 507 patients undergoing 566 carotid endarterectomies, each documented as technically satisfactory. Post-operative duplex Doppler examination data at 3 days, 1, 3, 6, 12 months, and annually thereafter in 484 arteries (85.5%) permitted classification of these arteries according to the most severe degree of postoperative stenosis: normal (n = 306); 1% to 19% (n = 89); 20% to 50% (n = 40); more than 50% (n = 49, including 8 occluded). The incidence of more than 50% restenosis was 14.5% in female and 7.7% in male patients (p = 0.003). Life table analyses to 10 years revealed a significantly greater life expectancy among those with restenosis (p = 0.05). Stroke was also less likely in patients with restenosis, although this difference did not reach statistical significance. When survival and stroke were both endpoints, the likelihood of patients with more than 50% restenosis remaining alive and stroke free was also greater than the less than 20% stenotic group (p = 0.03). Thus patients with carotid restenosis were less likely than patients with normal postoperative scans to have late symptoms, stroke, or early death.",
+          "output": "nervous system diseases",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 40,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 3
+        },
+        {
+          "input": "The shoulder in multiple epiphyseal dysplasia. One hundred shoulders were assessed in 50 patients with multiple epiphyseal dysplasia, of which one-third were found to have bilateral symptoms. Two distinct clinical and radiological groups emerged. Those with minor epiphyseal abnormalities developed painful osteoarthritis in middle age, but retained shoulder movement until the secondary changes were advanced. Those with 'hatchet head' shoulders likewise became painful in the fifth and sixth decades but had minimal glenohumeral movement from an early stage.",
+          "output": "nervous system diseases",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 41,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 3
+        },
+        {
+          "input": "Effects of lactulose and lactitol on protein digestion and metabolism in conventional and germ free animal models: relevance of the results to their use in the treatment of portosystemic encephalopathy. Protein digestion and metabolism have been studied in laboratory rats and miniature pigs to investigate the mechanisms of action of lactulose and lactitol when used in the treatment of patients with portosystemic encephalopathy. Lactulose (beta-D-galactopyranosyl-(1----4)-beta-D-fructofuranose) and lactitol (beta-D-galactopyranosyl-(1----4)-D-glucitol) increased the excretion of nitrogenous material in the faeces and decreased nitrogen excretion in the urine in a similar degree to that reported for human patients. In studies with germ free rats given lactulose no such effect was observed, suggesting that, for lactulose at least, these effects are mediated by the gut flora. Measurement of the alpha-, epsilon-diaminopimelic acid content of the faeces confirmed that the enhancement of faecal nitrogen was due to an increased contribution from bacteria. The similarity in the results for lactulose and lactitol suggests that, from the perspective of protein metabolism, lactitol acts in a similar way to lactulose in the treatment of portosystemic encephalopathy.",
+          "output": "nervous system diseases",
+          "metadata_fold": 3,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 42,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 3
+        },
+        {
+          "input": "Pregnancy in a patient with treated Wilson's disease: a case report. Pregnancy should have a successful outcome in a patient with treated Wilson's disease if complications are excluded before conception. Chelating treatment must be maintained, although there is some concern about its teratogenicity. We describe the course of pregnancy in a patient followed up in our department.",
+          "output": "nervous system diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 43,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 3
+        },
+        {
+          "input": "Bimanual simultaneous motor performance and impaired ability to shift attention in Parkinson's disease. The ability to share time and to shift attention between bimanual simultaneous motor tasks were studied in 18 patients with Parkinson's disease (PD) and 19 age- and intelligence-matched controls. The task consisted of drawing triangles with the dominant hand and squeezing a rubber bulb with the nondominant hand. Motor performance was measured using the variables: amplitude of squeezing, frequency of squeezing and velocity of drawing triangles. After eliminating variance due to baseline differences in single-handed performance, the bimanual simultaneous performance of PD and controls turned out to be similar to the frequency of squeezing and the velocity of drawing triangles. The amplitude of squeezing, however, differed between the two groups: it was significantly reduced in PD. Arguably the disturbance in the bimanual performance of PD patients was not due to a disorder of time sharing, but to a decreased ability to shift attention from the visually cued task to the non visually cued task. The results agree with current evidence that PD patients are more impaired when they have to rely upon internal control for the regulation of shifting attention than when external cues are available.",
+          "output": "nervous system diseases",
+          "metadata_fold": 4,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 44,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 3
+        },
+        {
+          "input": "Cognitive and behavioural impairment among elderly people in institutions providing different levels of care. OBJECTIVE: To compare the prevalence and degree of cognitive and behavioural impairment in elderly patients in institutions providing different levels of care. DESIGN: Prevalence study. SETTING: A nursing home, a home for the aged and psychogeriatric wards in a provincial psychiatric hospital. PATIENTS: Only subjects 65 years of age or older were eligible for inclusion. A random sample was selected comprising 25% of the residents in the nursing home and the home for the aged; of the 119 asked to participate 95 agreed (44 in the nursing home and 51 in the home for the aged). All 50 on the psychogeriatric wards agreed to participate. MAIN OUTCOME MEASURES: The Mini-Mental State Examination (MMSE) and the Kingston Dementia Rating Scale (KDRS). RESULTS: An MMSE score of less than 24 (cognitive impairment) was given to 37 (84%) of the residents in the nursing home, 43 (84%) of those in the home for the aged and 48 (96%) of the patients in the psychiatric hospital; the corresponding numbers for a KDRS score of more than 0 (cognitive impairment) were 41 (93%), 48 (94%) and 50 (100%). The seven patients receiving the highest level of care at the home for the aged (special care) had more behavioural problems than those in the psychiatric hospital did (p less than 0.001). CONCLUSIONS: Cognitive and behavioural impairment was widespread in the three institutions regardless of the level of care. When planning services and allocating resources government funding agencies should consider the degree and prevalence of such impairment among elderly people in institutions.",
+          "output": "nervous system diseases",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 45,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 3
+        },
+        {
+          "input": "Primary intratemporal tumours of the facial nerve: diagnosis and treatment. Benign primary tumours of the facial nerve are uncommon. A slowly progressive facial palsy should be considered the result of a nerve tumour until proven otherwise. Improvements in diagnostic imaging techniques of the temporal bone have increased the possibility of a correct pre-operative diagnosis but facial nerve tumours remain a frequently ignored or misdiagnosed entity as a consequence of their subtle and protean clinical manifestations. A series of 12 cases of primary facial nerve tumours is presented. The clinical features, diagnostic modalities and treatment are discussed in relation to a review of the literature.",
+          "output": "nervous system diseases",
+          "metadata_fold": 3,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 46,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 3
+        },
+        {
+          "input": "Skin and epidural recording of spinal somatosensory evoked potentials following median nerve stimulation: correlation between the absence of spinal N13 and impaired pain sense. A clinical lesion study and intraoperative epidural recordings were made to test the origin and clinical significance of the spinal N13 and P13 of somatosensory evoked potentials (SEP) that follow median nerve stimulation. Intraoperatively, the respective peak latencies of spinal P13 and N13 coincided with those of the N1 component of the dorsal cord potential and its phase reversed positivity. On both the ventral and dorsal sides of the cervical epidural space, maximal amplitude was at the C5 vertebral level to which nerve input from the C6 dermatome is the main contributor. The modality of sensory impairment in the hand dermatome was examined in selected patients with cervical lesions, who showed such normal conventional SEP components as Erb N9, far-field P9, P11, P14, N18 and cortical N20, with or without loss of spinal N13. Statistically, the loss of spinal N13 was associated with decrease of pain sensation in the C6 dermatome. This was interpreted as being due to damage to the central grey matter of the cord, including the dorsal horn. Our results suggest the spinal N13 and P13 originate from the same source in the C6 spinal cord segment and that they are good indicators for the detection of centromedullary cervical cord damage.",
+          "output": "nervous system diseases",
+          "metadata_fold": 3,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 47,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 3
+        },
+        {
+          "input": "Effects of MK-801 on recovery from sensorimotor cortex lesions. Histologic evidence suggests that drugs acting as noncompetitive antagonists at the N-methyl-D-aspartate receptor can have beneficial or pathologic effects on central nervous system neurons. In the present experiments we examined the effects of MK-801 on recovery of behavioral function after unilateral lesions in the rat somatic sensorimotor cortex. In the first experiment, rats with unilateral sensorimotor cortex lesions were given either MK-801 (1 mg/kg) or saline 12-16 hours after surgery. Additional injections were given on postoperative days 2, 4, and 6. Behavioral tests measured somatosensory asymmetries (i.e., bilateral tactile stimulation tests) and forelimb placing. After creation of sensorimotor cortex lesions, rats showed an ipsilateral somatosensory bias and an impairment in placing the contralateral forelimb. Rats treated with MK-801 recovered slightly faster than saline-treated animals as measured by a bilateral tactile stimulation test (p less than 0.05). In contrast, there was no significant difference between the groups in the recovery of forelimb placing. In a second experiment, rats with sensorimotor cortex lesions were treated with a single injection of MK-801 after behavioral recovery. Twenty hours after the MK-801 injection, rats with sensorimotor cortex lesions showed a reinstatement of the placing deficits. The impairment endured for at least 7 days after injection. These behavioral data support the idea that MK-801 can have either beneficial or detrimental effects when administered after brain damage.",
+          "output": "nervous system diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 48,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 3
+        },
+        {
+          "input": "Magnetic resonance imaging and tomographic evaluation of occlusal appliance treatment for advanced internal derangement of the temporomandibular joint. This study evaluates the positional relationship of the disc and mandibular condyle in patients with late opening clicks treated with appliance therapy. A total of 30 joints (18 patients) were studied. Twenty-seven of these 30 joints were treated with the appliance until the joints were silent to auscultation. The patients were then evaluated with axial corrected tomography and magnetic resonance imaging (MRI) in the centric occlusion position and with their bite appliance (Sved-type) in place. Comparisons were made between condyle position in centric occlusion and with the appliance in place. Magnetic resonance imaging was then used to evaluate disc positional changes. Each imaging procedure was made in the same sagittal plane. Only changes in condyle positioning could be identified. Evidence of disc repositioning with the appliance in place was seen in only three MRI examinations. The remaining 27 joints continued to exhibit disc displacement with various changes in disc morphology. It is concluded that the concept of \"disc capture\" is a clinical term only, and that such perceived clinical success should not lead to the assumption that an actual change in intra-articular anatomic relationships has occurred. Joint noises may decrease because joint space is increased, allowing smoother condylar translation beyond disc surface irregularities and positional abnormalities.",
+          "output": "nervous system diseases",
+          "metadata_fold": 4,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 49,
+          "metadata_source": "TimSchopf/medical_abstracts",
+          "metadata_original_label": 3
+        }
+      ]
+    }
+  ]
+}
