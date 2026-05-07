@@ -1,0 +1,583 @@
+2026-02-20 07:41:21.372 | INFO     | __main__:main:1317 - ============================================================
+2026-02-20 07:41:21.373 | INFO     | __main__:main:1318 - CRND + Schoener's D Experiment — Starting
+2026-02-20 07:41:21.374 | INFO     | __main__:main:1319 - Workspace: /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260219_220558/3_invention_loop/iter_6/gen_art/exp_id1_it6__opus
+2026-02-20 07:41:21.374 | INFO     | __main__:main:1320 - MAX_SAMPLE_N: 300
+2026-02-20 07:41:21.374 | INFO     | __main__:main:1321 - ============================================================
+2026-02-20 07:41:21.375 | INFO     | __main__:load_all_datasets:102 - Loading dependency data files...
+2026-02-20 07:41:22.345 | INFO     | __main__:load_all_datasets:160 -   medical_abstracts: N=300, classes=5, dist={'Neoplasms': 62, 'General_pathological_conditions': 107, 'Cardiovascular_diseases': 74, 'Digestive_system_diseases': 26, 'Nervous_system_diseases': 31}
+2026-02-20 07:41:22.346 | INFO     | __main__:load_all_datasets:160 -   mimic_iv_ed_demo: N=207, classes=4, dist={'ESI-2': 97, 'ESI-1': 18, 'ESI-4': 2, 'ESI-3': 90}
+2026-02-20 07:41:22.348 | INFO     | __main__:load_all_datasets:160 -   ohsumed_single: N=300, classes=21, dist={'Bacterial_Infections_and_Mycoses': 11, 'Virus_Diseases': 3, 'Neoplasms': 52, 'Musculoskeletal_Diseases': 9, 'Digestive_System_Diseases': 12, 'Stomatognathic_Diseases': 4, 'Respiratory_Tract_Diseases': 8, 'Nervous_System_Diseases': 27, 'Eye_Diseases': 4, 'Urologic_and_Male_Genital_Diseases': 14, 'Female_Genital_Diseases_and_Pregnancy_Complications': 10, 'Cardiovascular_Diseases': 49, 'Hemic_and_Lymphatic_Diseases': 6, 'Neonatal_Diseases_and_Abnormalities': 4, 'Skin_and_Connective_Tissue_Diseases': 9, 'Nutritional_and_Metabolic_Diseases': 13, 'Endocrine_Diseases': 4, 'Immunologic_Diseases': 11, 'Disorders_of_Environmental_Origin': 21, 'Pathological_Conditions_Signs_and_Symptoms': 27, 'Parasitic_Diseases': 2}
+2026-02-20 07:41:22.352 | INFO     | __main__:load_all_datasets:160 -   mental_health_conditions: N=300, classes=7, dist={'suicidal': 30, 'anxiety': 58, 'personality disorder': 31, 'bipolar': 44, 'stress': 38, 'normal': 49, 'depression': 50}
+2026-02-20 07:41:22.355 | INFO     | __main__:load_all_datasets:160 -   medical_abstracts_v2: N=300, classes=5, dist={'neoplasms': 62, 'general pathological conditions': 107, 'cardiovascular diseases': 74, 'digestive system diseases': 26, 'nervous system diseases': 31}
+2026-02-20 07:41:22.357 | INFO     | __main__:load_all_datasets:160 -   medical_transcriptions: N=300, classes=5, dist={'surgical': 134, 'neurology_psychiatry': 21, 'radiology_consults_obgyn': 78, 'internal_medicine': 45, 'cardiovascular_pulmonary': 22}
+2026-02-20 07:41:22.357 | INFO     | __main__:load_all_datasets:162 - Loaded 6 datasets total
+2026-02-20 07:41:22.368 | INFO     | __main__:build_all_feature_spaces:358 - ============================================================
+2026-02-20 07:41:22.368 | INFO     | __main__:build_all_feature_spaces:359 - PHASE 1: Building feature spaces
+2026-02-20 07:41:22.368 | INFO     | __main__:build_all_feature_spaces:360 - ============================================================
+2026-02-20 07:41:26.146 | INFO     | __main__:build_all_feature_spaces:364 - Loading sentence-transformer model (all-MiniLM-L6-v2)...
+2026-02-20 07:41:29.054 | INFO     | __main__:build_all_feature_spaces:366 - Sentence-transformer loaded
+2026-02-20 07:41:29.054 | INFO     | __main__:build_all_feature_spaces:370 - Building features for medical_abstracts (N=300)...
+2026-02-20 07:41:29.134 | INFO     | __main__:build_all_feature_spaces:375 -   TF-IDF: shape (300, 4396)
+2026-02-20 07:41:42.370 | INFO     | __main__:build_all_feature_spaces:379 -   Embed: shape (300, 384)
+2026-02-20 07:47:06.520 | WARNING  | __main__:build_llm_features:286 - LLM time limit (180s) reached at idx=100
+2026-02-20 07:47:06.520 | INFO     | __main__:build_llm_features:307 - LLM features [medical_abstracts]: 100 success, 0 fail, total_calls=100, cost=$0.0021
+2026-02-20 07:47:06.520 | INFO     | __main__:build_all_feature_spaces:383 -   LLM: shape (300, 5)
+2026-02-20 07:47:06.521 | INFO     | __main__:build_all_feature_spaces:388 -   LLM feature variance: 0.145005
+2026-02-20 07:47:06.521 | INFO     | __main__:build_all_feature_spaces:401 -   Features built in 337.5s
+2026-02-20 07:47:06.521 | INFO     | __main__:build_all_feature_spaces:370 - Building features for mimic_iv_ed_demo (N=207)...
+2026-02-20 07:47:06.528 | INFO     | __main__:build_all_feature_spaces:375 -   TF-IDF: shape (207, 553)
+2026-02-20 07:47:09.812 | INFO     | __main__:build_all_feature_spaces:379 -   Embed: shape (207, 384)
+2026-02-20 07:50:46.535 | WARNING  | __main__:build_llm_features:286 - LLM time limit (180s) reached at idx=100
+2026-02-20 07:50:46.535 | INFO     | __main__:build_llm_features:307 - LLM features [mimic_iv_ed_demo]: 100 success, 0 fail, total_calls=200, cost=$0.0030
+2026-02-20 07:50:46.535 | INFO     | __main__:build_all_feature_spaces:383 -   LLM: shape (207, 4)
+2026-02-20 07:50:46.535 | INFO     | __main__:build_all_feature_spaces:388 -   LLM feature variance: 0.007176
+2026-02-20 07:50:46.536 | INFO     | __main__:build_all_feature_spaces:401 -   Features built in 220.0s
+2026-02-20 07:50:46.536 | INFO     | __main__:build_all_feature_spaces:370 - Building features for ohsumed_single (N=300)...
+2026-02-20 07:50:46.622 | INFO     | __main__:build_all_feature_spaces:375 -   TF-IDF: shape (300, 4094)
+2026-02-20 07:51:01.878 | INFO     | __main__:build_all_feature_spaces:379 -   Embed: shape (300, 384)
+2026-02-20 08:05:05.706 | WARNING  | __main__:build_llm_features:286 - LLM time limit (180s) reached at idx=50
+2026-02-20 08:05:05.706 | INFO     | __main__:build_llm_features:307 - LLM features [ohsumed_single]: 3 success, 47 fail, total_calls=299, cost=$0.0072
+2026-02-20 08:05:05.707 | WARNING  | __main__:build_llm_features:314 - High LLM failure rate (47/150). Using proxy.
+2026-02-20 08:05:05.707 | INFO     | __main__:_build_proxy_llm_features:322 - Building proxy LLM features via cross-val LogReg on TF-IDF
+2026-02-20 08:05:05.739 | INFO     | __main__:build_all_feature_spaces:383 -   LLM: shape (300, 21)
+2026-02-20 08:05:05.739 | INFO     | __main__:build_all_feature_spaces:388 -   LLM feature variance: 0.000000
+2026-02-20 08:05:05.739 | INFO     | __main__:build_all_feature_spaces:390 -   LLM features truly uniform — building label-based proxy
+2026-02-20 08:05:13.305 | INFO     | __main__:build_all_feature_spaces:394 -   LLM proxy: shape (300, 21)
+2026-02-20 08:05:13.306 | INFO     | __main__:build_all_feature_spaces:401 -   Features built in 866.8s
+2026-02-20 08:05:13.306 | INFO     | __main__:build_all_feature_spaces:370 - Building features for mental_health_conditions (N=300)...
+2026-02-20 08:05:13.378 | INFO     | __main__:build_all_feature_spaces:375 -   TF-IDF: shape (300, 1739)
+2026-02-20 08:05:21.593 | INFO     | __main__:build_all_feature_spaces:379 -   Embed: shape (300, 384)
+2026-02-20 08:08:41.497 | WARNING  | __main__:build_llm_features:286 - LLM time limit (180s) reached at idx=100
+2026-02-20 08:08:41.497 | INFO     | __main__:build_llm_features:307 - LLM features [mental_health_conditions]: 100 success, 0 fail, total_calls=399, cost=$0.0085
+2026-02-20 08:08:41.498 | INFO     | __main__:build_all_feature_spaces:383 -   LLM: shape (300, 7)
+2026-02-20 08:08:41.498 | INFO     | __main__:build_all_feature_spaces:388 -   LLM feature variance: 0.110737
+2026-02-20 08:08:41.499 | INFO     | __main__:build_all_feature_spaces:401 -   Features built in 208.2s
+2026-02-20 08:08:41.499 | INFO     | __main__:build_all_feature_spaces:370 - Building features for medical_abstracts_v2 (N=300)...
+2026-02-20 08:08:41.599 | INFO     | __main__:build_all_feature_spaces:375 -   TF-IDF: shape (300, 4396)
+2026-02-20 08:09:14.372 | INFO     | __main__:build_all_feature_spaces:379 -   Embed: shape (300, 384)
+2026-02-20 08:12:33.407 | WARNING  | __main__:build_llm_features:286 - LLM time limit (180s) reached at idx=100
+2026-02-20 08:12:33.407 | INFO     | __main__:build_llm_features:307 - LLM features [medical_abstracts_v2]: 100 success, 0 fail, total_calls=499, cost=$0.0105
+2026-02-20 08:12:33.407 | INFO     | __main__:build_all_feature_spaces:383 -   LLM: shape (300, 5)
+2026-02-20 08:12:33.407 | INFO     | __main__:build_all_feature_spaces:388 -   LLM feature variance: 0.145493
+2026-02-20 08:12:33.407 | INFO     | __main__:build_all_feature_spaces:401 -   Features built in 231.9s
+2026-02-20 08:12:33.407 | INFO     | __main__:build_all_feature_spaces:370 - Building features for medical_transcriptions (N=300)...
+2026-02-20 08:12:33.882 | INFO     | __main__:build_all_feature_spaces:375 -   TF-IDF: shape (300, 5000)
+2026-02-20 08:13:26.309 | INFO     | __main__:build_all_feature_spaces:379 -   Embed: shape (300, 384)
+2026-02-20 08:17:08.701 | WARNING  | __main__:build_llm_features:286 - LLM time limit (180s) reached at idx=100
+2026-02-20 08:17:08.701 | INFO     | __main__:build_llm_features:307 - LLM features [medical_transcriptions]: 100 success, 0 fail, total_calls=599, cost=$0.0130
+2026-02-20 08:17:08.701 | INFO     | __main__:build_all_feature_spaces:383 -   LLM: shape (300, 5)
+2026-02-20 08:17:08.702 | INFO     | __main__:build_all_feature_spaces:388 -   LLM feature variance: 0.192737
+2026-02-20 08:17:08.705 | INFO     | __main__:build_all_feature_spaces:401 -   Features built in 275.3s
+2026-02-20 08:17:08.706 | INFO     | __main__:run_phase2:454 - ============================================================
+2026-02-20 08:17:08.706 | INFO     | __main__:run_phase2:455 - PHASE 2: Computing CRND scores
+2026-02-20 08:17:08.707 | INFO     | __main__:run_phase2:456 - ============================================================
+2026-02-20 08:17:08.708 | INFO     | __main__:run_phase2:462 - Computing k-NN for medical_abstracts...
+2026-02-20 08:17:11.688 | INFO     | __main__:run_phase2:478 -   k=5: mean_CRND=0.9176, median=0.9167, std=0.0600
+2026-02-20 08:17:11.688 | INFO     | __main__:run_phase2:478 -   k=10: mean_CRND=0.9131, median=0.9236, std=0.0474
+2026-02-20 08:17:11.688 | INFO     | __main__:run_phase2:478 -   k=20: mean_CRND=0.8960, median=0.9032, std=0.0421
+2026-02-20 08:17:11.688 | INFO     | __main__:run_phase2:483 -   Done in 3.0s
+2026-02-20 08:17:11.688 | INFO     | __main__:run_phase2:462 - Computing k-NN for mimic_iv_ed_demo...
+2026-02-20 08:17:12.388 | INFO     | __main__:run_phase2:478 -   k=5: mean_CRND=0.9421, median=0.9630, std=0.0562
+2026-02-20 08:17:12.389 | INFO     | __main__:run_phase2:478 -   k=10: mean_CRND=0.9365, median=0.9412, std=0.0392
+2026-02-20 08:17:12.389 | INFO     | __main__:run_phase2:478 -   k=20: mean_CRND=0.9044, median=0.9084, std=0.0470
+2026-02-20 08:17:12.389 | INFO     | __main__:run_phase2:483 -   Done in 0.7s
+2026-02-20 08:17:12.389 | INFO     | __main__:run_phase2:462 - Computing k-NN for ohsumed_single...
+2026-02-20 08:17:14.183 | INFO     | __main__:run_phase2:478 -   k=5: mean_CRND=0.8969, median=0.9167, std=0.0847
+2026-02-20 08:17:14.184 | INFO     | __main__:run_phase2:478 -   k=10: mean_CRND=0.8806, median=0.8991, std=0.0797
+2026-02-20 08:17:14.184 | INFO     | __main__:run_phase2:478 -   k=20: mean_CRND=0.8522, median=0.8718, std=0.0841
+2026-02-20 08:17:14.185 | INFO     | __main__:run_phase2:483 -   Done in 1.8s
+2026-02-20 08:17:14.185 | INFO     | __main__:run_phase2:462 - Computing k-NN for mental_health_conditions...
+2026-02-20 08:17:15.141 | INFO     | __main__:run_phase2:478 -   k=5: mean_CRND=0.9297, median=0.9630, std=0.0634
+2026-02-20 08:17:15.144 | INFO     | __main__:run_phase2:478 -   k=10: mean_CRND=0.9148, median=0.9236, std=0.0674
+2026-02-20 08:17:15.144 | INFO     | __main__:run_phase2:478 -   k=20: mean_CRND=0.8997, median=0.9081, std=0.0560
+2026-02-20 08:17:15.144 | INFO     | __main__:run_phase2:483 -   Done in 1.0s
+2026-02-20 08:17:15.144 | INFO     | __main__:run_phase2:462 - Computing k-NN for medical_abstracts_v2...
+2026-02-20 08:17:16.748 | INFO     | __main__:run_phase2:478 -   k=5: mean_CRND=0.9179, median=0.9167, std=0.0594
+2026-02-20 08:17:16.748 | INFO     | __main__:run_phase2:478 -   k=10: mean_CRND=0.9123, median=0.9236, std=0.0498
+2026-02-20 08:17:16.749 | INFO     | __main__:run_phase2:478 -   k=20: mean_CRND=0.8977, median=0.9032, std=0.0422
+2026-02-20 08:17:16.749 | INFO     | __main__:run_phase2:483 -   Done in 1.6s
+2026-02-20 08:17:16.750 | INFO     | __main__:run_phase2:462 - Computing k-NN for medical_transcriptions...
+2026-02-20 08:17:18.989 | INFO     | __main__:run_phase2:478 -   k=5: mean_CRND=0.8872, median=0.9167, std=0.0861
+2026-02-20 08:17:18.994 | INFO     | __main__:run_phase2:478 -   k=10: mean_CRND=0.8900, median=0.9041, std=0.0712
+2026-02-20 08:17:18.994 | INFO     | __main__:run_phase2:478 -   k=20: mean_CRND=0.8870, median=0.8947, std=0.0520
+2026-02-20 08:17:18.998 | INFO     | __main__:run_phase2:483 -   Done in 2.2s
+2026-02-20 08:17:18.999 | INFO     | __main__:run_phase3:616 - ============================================================
+2026-02-20 08:17:18.999 | INFO     | __main__:run_phase3:617 - PHASE 3: Computing Schoener's D niche overlap
+2026-02-20 08:17:18.999 | INFO     | __main__:run_phase3:618 - ============================================================
+2026-02-20 08:17:19.000 | INFO     | __main__:run_phase3:623 - Schoener's D for medical_abstracts (classes=5)...
+2026-02-20 08:17:22.370 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_2d: explained_var=0.022
+2026-02-20 08:17:25.416 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_5d: explained_var=0.046
+2026-02-20 08:17:36.711 | DEBUG    | __main__:run_phase3:653 -   embed/pca_2d: explained_var=0.123
+2026-02-20 08:17:47.184 | DEBUG    | __main__:run_phase3:653 -   embed/pca_5d: explained_var=0.221
+2026-02-20 08:17:48.595 | DEBUG    | __main__:run_phase3:653 -   llm/pca_2d: explained_var=0.730
+2026-02-20 08:17:49.997 | DEBUG    | __main__:run_phase3:653 -   llm/pca_5d: explained_var=1.000
+2026-02-20 08:17:49.997 | INFO     | __main__:run_phase3:674 -   Done in 31.0s
+2026-02-20 08:17:49.997 | INFO     | __main__:run_phase3:623 - Schoener's D for mimic_iv_ed_demo (classes=4)...
+2026-02-20 08:17:51.815 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_2d: explained_var=0.049
+2026-02-20 08:17:53.312 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_5d: explained_var=0.113
+2026-02-20 08:18:10.778 | DEBUG    | __main__:run_phase3:653 -   embed/pca_2d: explained_var=0.163
+2026-02-20 08:18:21.590 | DEBUG    | __main__:run_phase3:653 -   embed/pca_5d: explained_var=0.333
+2026-02-20 08:18:21.974 | DEBUG    | __main__:run_phase3:653 -   llm/pca_2d: explained_var=1.000
+2026-02-20 08:18:22.326 | DEBUG    | __main__:run_phase3:653 -   llm/pca_5d: explained_var=1.000
+2026-02-20 08:18:22.326 | INFO     | __main__:run_phase3:674 -   Done in 32.3s
+2026-02-20 08:18:22.326 | INFO     | __main__:run_phase3:623 - Schoener's D for ohsumed_single (classes=21)...
+2026-02-20 08:18:42.968 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_2d: explained_var=0.022
+2026-02-20 08:19:00.512 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_5d: explained_var=0.045
+2026-02-20 08:19:28.071 | DEBUG    | __main__:run_phase3:653 -   embed/pca_2d: explained_var=0.120
+2026-02-20 08:19:51.905 | DEBUG    | __main__:run_phase3:653 -   embed/pca_5d: explained_var=0.221
+2026-02-20 08:20:09.906 | DEBUG    | __main__:run_phase3:653 -   llm/pca_2d: explained_var=0.905
+2026-02-20 08:20:20.968 | DEBUG    | __main__:run_phase3:653 -   llm/pca_5d: explained_var=0.977
+2026-02-20 08:20:20.969 | INFO     | __main__:run_phase3:674 -   Done in 118.6s
+2026-02-20 08:20:20.970 | INFO     | __main__:run_phase3:623 - Schoener's D for mental_health_conditions (classes=7)...
+2026-02-20 08:20:25.819 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_2d: explained_var=0.044
+2026-02-20 08:20:29.949 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_5d: explained_var=0.087
+2026-02-20 08:20:49.139 | DEBUG    | __main__:run_phase3:653 -   embed/pca_2d: explained_var=0.183
+2026-02-20 08:21:01.715 | DEBUG    | __main__:run_phase3:653 -   embed/pca_5d: explained_var=0.308
+2026-02-20 08:21:05.087 | DEBUG    | __main__:run_phase3:653 -   llm/pca_2d: explained_var=0.590
+2026-02-20 08:21:07.483 | DEBUG    | __main__:run_phase3:653 -   llm/pca_5d: explained_var=0.950
+2026-02-20 08:21:07.484 | INFO     | __main__:run_phase3:674 -   Done in 46.5s
+2026-02-20 08:21:07.485 | INFO     | __main__:run_phase3:623 - Schoener's D for medical_abstracts_v2 (classes=5)...
+2026-02-20 08:21:11.278 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_2d: explained_var=0.022
+2026-02-20 08:21:14.918 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_5d: explained_var=0.046
+2026-02-20 08:21:30.954 | DEBUG    | __main__:run_phase3:653 -   embed/pca_2d: explained_var=0.123
+2026-02-20 08:21:39.321 | DEBUG    | __main__:run_phase3:653 -   embed/pca_5d: explained_var=0.221
+2026-02-20 08:21:40.541 | DEBUG    | __main__:run_phase3:653 -   llm/pca_2d: explained_var=0.743
+2026-02-20 08:21:41.621 | DEBUG    | __main__:run_phase3:653 -   llm/pca_5d: explained_var=1.000
+2026-02-20 08:21:41.622 | INFO     | __main__:run_phase3:674 -   Done in 34.1s
+2026-02-20 08:21:41.622 | INFO     | __main__:run_phase3:623 - Schoener's D for medical_transcriptions (classes=5)...
+2026-02-20 08:21:45.437 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_2d: explained_var=0.048
+2026-02-20 08:21:48.830 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_5d: explained_var=0.085
+2026-02-20 08:22:00.722 | DEBUG    | __main__:run_phase3:653 -   embed/pca_2d: explained_var=0.141
+2026-02-20 08:22:16.391 | DEBUG    | __main__:run_phase3:653 -   embed/pca_5d: explained_var=0.258
+2026-02-20 08:22:18.201 | DEBUG    | __main__:run_phase3:653 -   llm/pca_2d: explained_var=0.891
+2026-02-20 08:22:19.687 | DEBUG    | __main__:run_phase3:653 -   llm/pca_5d: explained_var=1.000
+2026-02-20 08:22:19.688 | INFO     | __main__:run_phase3:674 -   Done in 38.1s
+2026-02-20 08:22:19.688 | INFO     | __main__:run_phase4:688 - ============================================================
+2026-02-20 08:22:19.689 | INFO     | __main__:run_phase4:689 - PHASE 4: Per-class CRND analysis
+2026-02-20 08:22:19.689 | INFO     | __main__:run_phase4:690 - ============================================================
+2026-02-20 08:22:19.690 | INFO     | __main__:run_phase4:695 - Per-class analysis for medical_abstracts...
+2026-02-20 08:22:19.700 | INFO     | __main__:run_phase4:770 -   Kruskal-Wallis: H=11.33, p=0.0231
+2026-02-20 08:22:19.719 | INFO     | __main__:run_phase4:695 - Per-class analysis for mimic_iv_ed_demo...
+2026-02-20 08:22:19.734 | INFO     | __main__:run_phase4:770 -   Kruskal-Wallis: H=1.87, p=0.5988
+2026-02-20 08:22:19.735 | INFO     | __main__:run_phase4:695 - Per-class analysis for ohsumed_single...
+2026-02-20 08:22:20.246 | INFO     | __main__:run_phase4:770 -   Kruskal-Wallis: H=53.12, p=0.0001
+2026-02-20 08:22:20.264 | INFO     | __main__:run_phase4:695 - Per-class analysis for mental_health_conditions...
+2026-02-20 08:22:20.307 | INFO     | __main__:run_phase4:770 -   Kruskal-Wallis: H=86.29, p=0.0000
+2026-02-20 08:22:20.310 | INFO     | __main__:run_phase4:695 - Per-class analysis for medical_abstracts_v2...
+2026-02-20 08:22:20.335 | INFO     | __main__:run_phase4:770 -   Kruskal-Wallis: H=15.37, p=0.0040
+2026-02-20 08:22:20.335 | INFO     | __main__:run_phase4:695 - Per-class analysis for medical_transcriptions...
+2026-02-20 08:22:20.351 | INFO     | __main__:run_phase4:770 -   Kruskal-Wallis: H=35.23, p=0.0000
+2026-02-20 08:22:20.355 | INFO     | __main__:run_phase5:788 - ============================================================
+2026-02-20 08:22:20.356 | INFO     | __main__:run_phase5:789 - PHASE 5: Noise detection benchmarks
+2026-02-20 08:22:20.356 | INFO     | __main__:run_phase5:790 - ============================================================
+2026-02-20 08:22:20.356 | INFO     | __main__:run_phase5:795 - Noise detection for medical_abstracts (N=300)...
+2026-02-20 08:29:16.775 | INFO     | __main__:run_phase5:921 -   Done in 416.4s
+2026-02-20 08:29:16.776 | INFO     | __main__:run_phase5:930 -   @10% noise: CRND_AUC=0.500, kDN_AUC=0.842, CL_AUC=0.844, Random_AUC=0.474
+2026-02-20 08:29:16.777 | INFO     | __main__:run_phase5:795 - Noise detection for mimic_iv_ed_demo (N=207)...
+2026-02-20 08:30:12.000 | INFO     | __main__:run_phase5:921 -   Done in 55.2s
+2026-02-20 08:30:12.001 | INFO     | __main__:run_phase5:930 -   @10% noise: CRND_AUC=0.538, kDN_AUC=0.860, CL_AUC=0.871, Random_AUC=0.498
+2026-02-20 08:30:12.001 | INFO     | __main__:run_phase5:795 - Noise detection for ohsumed_single (N=300)...
+2026-02-20 08:40:57.836 | INFO     | __main__:main:1317 - ============================================================
+2026-02-20 08:40:57.837 | INFO     | __main__:main:1318 - CRND + Schoener's D Experiment — Starting
+2026-02-20 08:40:57.837 | INFO     | __main__:main:1319 - Workspace: /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260219_220558/3_invention_loop/iter_6/gen_art/exp_id1_it6__opus
+2026-02-20 08:40:57.837 | INFO     | __main__:main:1320 - MAX_SAMPLE_N: 10
+2026-02-20 08:40:57.837 | INFO     | __main__:main:1321 - ============================================================
+2026-02-20 08:40:57.837 | INFO     | __main__:load_all_datasets:102 - Loading dependency data files...
+2026-02-20 08:40:58.927 | WARNING  | __main__:load_all_datasets:146 - Skipping medical_abstracts: N=10, classes=4 (too small)
+2026-02-20 08:40:58.927 | INFO     | __main__:load_all_datasets:160 -   mimic_iv_ed_demo: N=207, classes=4, dist={'ESI-2': 97, 'ESI-1': 18, 'ESI-4': 2, 'ESI-3': 90}
+2026-02-20 08:40:58.929 | WARNING  | __main__:load_all_datasets:146 - Skipping ohsumed_single: N=10, classes=8 (too small)
+2026-02-20 08:40:58.933 | WARNING  | __main__:load_all_datasets:146 - Skipping mental_health_conditions: N=10, classes=7 (too small)
+2026-02-20 08:40:58.936 | WARNING  | __main__:load_all_datasets:146 - Skipping medical_abstracts_v2: N=10, classes=4 (too small)
+2026-02-20 08:40:58.938 | WARNING  | __main__:load_all_datasets:146 - Skipping medical_transcriptions: N=10, classes=4 (too small)
+2026-02-20 08:40:58.938 | INFO     | __main__:load_all_datasets:162 - Loaded 1 datasets total
+2026-02-20 08:40:58.952 | ERROR    | __main__:main:1326 - Only 1 datasets loaded — need at least 3
+2026-02-20 08:41:06.827 | INFO     | __main__:main:1317 - ============================================================
+2026-02-20 08:41:06.827 | INFO     | __main__:main:1318 - CRND + Schoener's D Experiment — Starting
+2026-02-20 08:41:06.827 | INFO     | __main__:main:1319 - Workspace: /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260219_220558/3_invention_loop/iter_6/gen_art/exp_id1_it6__opus
+2026-02-20 08:41:06.827 | INFO     | __main__:main:1320 - MAX_SAMPLE_N: 60
+2026-02-20 08:41:06.827 | INFO     | __main__:main:1321 - ============================================================
+2026-02-20 08:41:06.827 | INFO     | __main__:load_all_datasets:102 - Loading dependency data files...
+2026-02-20 08:41:07.862 | INFO     | __main__:load_all_datasets:160 -   medical_abstracts: N=60, classes=5, dist={'General_pathological_conditions': 21, 'Cardiovascular_diseases': 17, 'Neoplasms': 12, 'Digestive_system_diseases': 6, 'Nervous_system_diseases': 4}
+2026-02-20 08:41:07.862 | INFO     | __main__:load_all_datasets:160 -   mimic_iv_ed_demo: N=207, classes=4, dist={'ESI-2': 97, 'ESI-1': 18, 'ESI-4': 2, 'ESI-3': 90}
+2026-02-20 08:41:07.865 | INFO     | __main__:load_all_datasets:160 -   ohsumed_single: N=60, classes=20, dist={'Bacterial_Infections_and_Mycoses': 1, 'Virus_Diseases': 1, 'Neoplasms': 9, 'Respiratory_Tract_Diseases': 3, 'Nervous_System_Diseases': 7, 'Female_Genital_Diseases_and_Pregnancy_Complications': 3, 'Cardiovascular_Diseases': 9, 'Hemic_and_Lymphatic_Diseases': 1, 'Neonatal_Diseases_and_Abnormalities': 1, 'Skin_and_Connective_Tissue_Diseases': 1, 'Nutritional_and_Metabolic_Diseases': 3, 'Immunologic_Diseases': 5, 'Disorders_of_Environmental_Origin': 4, 'Pathological_Conditions_Signs_and_Symptoms': 5, 'Musculoskeletal_Diseases': 1, 'Digestive_System_Diseases': 2, 'Stomatognathic_Diseases': 1, 'Eye_Diseases': 1, 'Urologic_and_Male_Genital_Diseases': 1, 'Endocrine_Diseases': 1}
+2026-02-20 08:41:07.869 | INFO     | __main__:load_all_datasets:160 -   mental_health_conditions: N=60, classes=7, dist={'personality disorder': 5, 'suicidal': 6, 'anxiety': 12, 'stress': 12, 'normal': 10, 'depression': 8, 'bipolar': 7}
+2026-02-20 08:41:07.873 | INFO     | __main__:load_all_datasets:160 -   medical_abstracts_v2: N=60, classes=5, dist={'general pathological conditions': 21, 'cardiovascular diseases': 17, 'neoplasms': 12, 'digestive system diseases': 6, 'nervous system diseases': 4}
+2026-02-20 08:41:07.875 | INFO     | __main__:load_all_datasets:160 -   medical_transcriptions: N=60, classes=5, dist={'surgical': 30, 'radiology_consults_obgyn': 14, 'neurology_psychiatry': 1, 'internal_medicine': 12, 'cardiovascular_pulmonary': 3}
+2026-02-20 08:41:07.875 | INFO     | __main__:load_all_datasets:162 - Loaded 6 datasets total
+2026-02-20 08:41:07.887 | INFO     | __main__:build_all_feature_spaces:358 - ============================================================
+2026-02-20 08:41:07.887 | INFO     | __main__:build_all_feature_spaces:359 - PHASE 1: Building feature spaces
+2026-02-20 08:41:07.887 | INFO     | __main__:build_all_feature_spaces:360 - ============================================================
+2026-02-20 08:41:11.662 | INFO     | __main__:build_all_feature_spaces:364 - Loading sentence-transformer model (all-MiniLM-L6-v2)...
+2026-02-20 08:41:16.677 | INFO     | __main__:build_all_feature_spaces:366 - Sentence-transformer loaded
+2026-02-20 08:41:16.678 | INFO     | __main__:build_all_feature_spaces:370 - Building features for medical_abstracts (N=60)...
+2026-02-20 08:41:16.697 | INFO     | __main__:build_all_feature_spaces:375 -   TF-IDF: shape (60, 903)
+2026-02-20 08:41:20.500 | INFO     | __main__:build_all_feature_spaces:379 -   Embed: shape (60, 384)
+2026-02-20 08:41:29.630 | INFO     | __main__:build_llm_features:307 - LLM features [medical_abstracts]: 5 success, 0 fail, total_calls=5, cost=$0.0001
+2026-02-20 08:41:29.631 | INFO     | __main__:build_all_feature_spaces:383 -   LLM: shape (60, 5)
+2026-02-20 08:41:29.631 | INFO     | __main__:build_all_feature_spaces:388 -   LLM feature variance: 0.039634
+2026-02-20 08:41:29.631 | INFO     | __main__:build_all_feature_spaces:401 -   Features built in 13.0s
+2026-02-20 08:41:29.631 | INFO     | __main__:build_all_feature_spaces:370 - Building features for mimic_iv_ed_demo (N=207)...
+2026-02-20 08:41:29.638 | INFO     | __main__:build_all_feature_spaces:375 -   TF-IDF: shape (207, 553)
+2026-02-20 08:41:35.202 | INFO     | __main__:build_all_feature_spaces:379 -   Embed: shape (207, 384)
+2026-02-20 08:41:45.201 | INFO     | __main__:build_llm_features:307 - LLM features [mimic_iv_ed_demo]: 5 success, 0 fail, total_calls=10, cost=$0.0002
+2026-02-20 08:41:45.201 | INFO     | __main__:build_all_feature_spaces:383 -   LLM: shape (207, 4)
+2026-02-20 08:41:45.201 | INFO     | __main__:build_all_feature_spaces:388 -   LLM feature variance: 0.000000
+2026-02-20 08:41:45.202 | INFO     | __main__:build_all_feature_spaces:390 -   LLM features truly uniform — building label-based proxy
+2026-02-20 08:41:46.168 | INFO     | __main__:build_all_feature_spaces:394 -   LLM proxy: shape (207, 4)
+2026-02-20 08:41:46.169 | INFO     | __main__:build_all_feature_spaces:401 -   Features built in 16.5s
+2026-02-20 08:41:46.169 | INFO     | __main__:build_all_feature_spaces:370 - Building features for ohsumed_single (N=60)...
+2026-02-20 08:41:46.238 | INFO     | __main__:build_all_feature_spaces:375 -   TF-IDF: shape (60, 875)
+2026-02-20 08:41:51.691 | INFO     | __main__:build_all_feature_spaces:379 -   Embed: shape (60, 384)
+2026-02-20 08:43:21.696 | INFO     | __main__:build_llm_features:307 - LLM features [ohsumed_single]: 2 success, 3 fail, total_calls=18, cost=$0.0005
+2026-02-20 08:43:21.696 | WARNING  | __main__:build_llm_features:314 - High LLM failure rate (3/5). Using proxy.
+2026-02-20 08:43:21.697 | INFO     | __main__:_build_proxy_llm_features:322 - Building proxy LLM features via cross-val LogReg on TF-IDF
+2026-02-20 08:43:21.715 | INFO     | __main__:build_all_feature_spaces:383 -   LLM: shape (60, 20)
+2026-02-20 08:43:21.716 | INFO     | __main__:build_all_feature_spaces:388 -   LLM feature variance: 0.000000
+2026-02-20 08:43:21.716 | INFO     | __main__:build_all_feature_spaces:390 -   LLM features truly uniform — building label-based proxy
+2026-02-20 08:43:25.673 | INFO     | __main__:build_all_feature_spaces:394 -   LLM proxy: shape (60, 20)
+2026-02-20 08:43:25.673 | INFO     | __main__:build_all_feature_spaces:401 -   Features built in 99.5s
+2026-02-20 08:43:25.673 | INFO     | __main__:build_all_feature_spaces:370 - Building features for mental_health_conditions (N=60)...
+2026-02-20 08:43:25.683 | INFO     | __main__:build_all_feature_spaces:375 -   TF-IDF: shape (60, 332)
+2026-02-20 08:43:33.774 | INFO     | __main__:build_all_feature_spaces:379 -   Embed: shape (60, 384)
+2026-02-20 08:43:45.273 | INFO     | __main__:build_llm_features:307 - LLM features [mental_health_conditions]: 5 success, 0 fail, total_calls=23, cost=$0.0005
+2026-02-20 08:43:45.273 | INFO     | __main__:build_all_feature_spaces:383 -   LLM: shape (60, 7)
+2026-02-20 08:43:45.274 | INFO     | __main__:build_all_feature_spaces:388 -   LLM feature variance: 0.045577
+2026-02-20 08:43:45.274 | INFO     | __main__:build_all_feature_spaces:401 -   Features built in 19.6s
+2026-02-20 08:43:45.274 | INFO     | __main__:build_all_feature_spaces:370 - Building features for medical_abstracts_v2 (N=60)...
+2026-02-20 08:43:45.318 | INFO     | __main__:build_all_feature_spaces:375 -   TF-IDF: shape (60, 903)
+2026-02-20 08:43:54.508 | INFO     | __main__:build_all_feature_spaces:379 -   Embed: shape (60, 384)
+2026-02-20 08:44:07.005 | INFO     | __main__:build_llm_features:307 - LLM features [medical_abstracts_v2]: 5 success, 0 fail, total_calls=28, cost=$0.0007
+2026-02-20 08:44:07.005 | INFO     | __main__:build_all_feature_spaces:383 -   LLM: shape (60, 5)
+2026-02-20 08:44:07.007 | INFO     | __main__:build_all_feature_spaces:388 -   LLM feature variance: 0.039667
+2026-02-20 08:44:07.007 | INFO     | __main__:build_all_feature_spaces:401 -   Features built in 21.7s
+2026-02-20 08:44:07.007 | INFO     | __main__:build_all_feature_spaces:370 - Building features for medical_transcriptions (N=60)...
+2026-02-20 08:44:07.055 | INFO     | __main__:build_all_feature_spaces:375 -   TF-IDF: shape (60, 2591)
+2026-02-20 08:44:17.745 | INFO     | __main__:build_all_feature_spaces:379 -   Embed: shape (60, 384)
+2026-02-20 08:44:43.095 | INFO     | __main__:build_llm_features:307 - LLM features [medical_transcriptions]: 5 success, 0 fail, total_calls=33, cost=$0.0008
+2026-02-20 08:44:43.095 | INFO     | __main__:build_all_feature_spaces:383 -   LLM: shape (60, 5)
+2026-02-20 08:44:43.096 | INFO     | __main__:build_all_feature_spaces:388 -   LLM feature variance: 0.051307
+2026-02-20 08:44:43.096 | INFO     | __main__:build_all_feature_spaces:401 -   Features built in 36.1s
+2026-02-20 08:44:43.096 | INFO     | __main__:run_phase2:454 - ============================================================
+2026-02-20 08:44:43.096 | INFO     | __main__:run_phase2:455 - PHASE 2: Computing CRND scores
+2026-02-20 08:44:43.096 | INFO     | __main__:run_phase2:456 - ============================================================
+2026-02-20 08:44:43.096 | INFO     | __main__:run_phase2:462 - Computing k-NN for medical_abstracts...
+2026-02-20 08:44:43.281 | INFO     | __main__:run_phase2:478 -   k=5: mean_CRND=0.8875, median=0.9167, std=0.0674
+2026-02-20 08:44:43.282 | INFO     | __main__:run_phase2:478 -   k=10: mean_CRND=0.8554, median=0.8634, std=0.0508
+2026-02-20 08:44:43.282 | INFO     | __main__:run_phase2:478 -   k=20: mean_CRND=0.7486, median=0.7388, std=0.0450
+2026-02-20 08:44:43.282 | INFO     | __main__:run_phase2:483 -   Done in 0.2s
+2026-02-20 08:44:43.282 | INFO     | __main__:run_phase2:462 - Computing k-NN for mimic_iv_ed_demo...
+2026-02-20 08:44:43.555 | INFO     | __main__:run_phase2:478 -   k=5: mean_CRND=0.9371, median=0.9630, std=0.0558
+2026-02-20 08:44:43.555 | INFO     | __main__:run_phase2:478 -   k=10: mean_CRND=0.9290, median=0.9412, std=0.0451
+2026-02-20 08:44:43.555 | INFO     | __main__:run_phase2:478 -   k=20: mean_CRND=0.9032, median=0.9151, std=0.0465
+2026-02-20 08:44:43.556 | INFO     | __main__:run_phase2:483 -   Done in 0.3s
+2026-02-20 08:44:43.556 | INFO     | __main__:run_phase2:462 - Computing k-NN for ohsumed_single...
+2026-02-20 08:44:44.029 | INFO     | __main__:run_phase2:478 -   k=5: mean_CRND=0.8897, median=0.8843, std=0.0481
+2026-02-20 08:44:44.029 | INFO     | __main__:run_phase2:478 -   k=10: mean_CRND=0.8397, median=0.8414, std=0.0552
+2026-02-20 08:44:44.029 | INFO     | __main__:run_phase2:478 -   k=20: mean_CRND=0.7343, median=0.7348, std=0.0394
+2026-02-20 08:44:44.030 | INFO     | __main__:run_phase2:483 -   Done in 0.5s
+2026-02-20 08:44:44.030 | INFO     | __main__:run_phase2:462 - Computing k-NN for mental_health_conditions...
+2026-02-20 08:44:44.204 | INFO     | __main__:run_phase2:478 -   k=5: mean_CRND=0.8993, median=0.9167, std=0.0608
+2026-02-20 08:44:44.204 | INFO     | __main__:run_phase2:478 -   k=10: mean_CRND=0.8668, median=0.8755, std=0.0591
+2026-02-20 08:44:44.204 | INFO     | __main__:run_phase2:478 -   k=20: mean_CRND=0.7526, median=0.7568, std=0.0462
+2026-02-20 08:44:44.204 | INFO     | __main__:run_phase2:483 -   Done in 0.2s
+2026-02-20 08:44:44.204 | INFO     | __main__:run_phase2:462 - Computing k-NN for medical_abstracts_v2...
+2026-02-20 08:44:44.458 | INFO     | __main__:run_phase2:478 -   k=5: mean_CRND=0.8875, median=0.9167, std=0.0674
+2026-02-20 08:44:44.458 | INFO     | __main__:run_phase2:478 -   k=10: mean_CRND=0.8514, median=0.8613, std=0.0534
+2026-02-20 08:44:44.459 | INFO     | __main__:run_phase2:478 -   k=20: mean_CRND=0.7486, median=0.7388, std=0.0450
+2026-02-20 08:44:44.459 | INFO     | __main__:run_phase2:483 -   Done in 0.3s
+2026-02-20 08:44:44.459 | INFO     | __main__:run_phase2:462 - Computing k-NN for medical_transcriptions...
+2026-02-20 08:44:44.767 | INFO     | __main__:run_phase2:478 -   k=5: mean_CRND=0.8740, median=0.8796, std=0.0697
+2026-02-20 08:44:44.779 | INFO     | __main__:run_phase2:478 -   k=10: mean_CRND=0.8450, median=0.8519, std=0.0478
+2026-02-20 08:44:44.780 | INFO     | __main__:run_phase2:478 -   k=20: mean_CRND=0.7313, median=0.7511, std=0.0855
+2026-02-20 08:44:44.780 | INFO     | __main__:run_phase2:483 -   Done in 0.3s
+2026-02-20 08:44:44.780 | INFO     | __main__:run_phase3:616 - ============================================================
+2026-02-20 08:44:44.780 | INFO     | __main__:run_phase3:617 - PHASE 3: Computing Schoener's D niche overlap
+2026-02-20 08:44:44.780 | INFO     | __main__:run_phase3:618 - ============================================================
+2026-02-20 08:44:44.780 | INFO     | __main__:run_phase3:623 - Schoener's D for medical_abstracts (classes=5)...
+2026-02-20 08:44:45.476 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_2d: explained_var=0.064
+2026-02-20 08:44:46.290 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_5d: explained_var=0.144
+2026-02-20 08:44:48.925 | DEBUG    | __main__:run_phase3:653 -   embed/pca_2d: explained_var=0.158
+2026-02-20 08:44:52.193 | DEBUG    | __main__:run_phase3:653 -   embed/pca_5d: explained_var=0.290
+2026-02-20 08:44:53.174 | DEBUG    | __main__:run_phase3:653 -   llm/pca_2d: explained_var=0.840
+2026-02-20 08:44:54.188 | DEBUG    | __main__:run_phase3:653 -   llm/pca_5d: explained_var=1.000
+2026-02-20 08:44:54.188 | INFO     | __main__:run_phase3:674 -   Done in 9.4s
+2026-02-20 08:44:54.188 | INFO     | __main__:run_phase3:623 - Schoener's D for mimic_iv_ed_demo (classes=4)...
+2026-02-20 08:44:55.594 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_2d: explained_var=0.049
+2026-02-20 08:44:56.793 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_5d: explained_var=0.113
+2026-02-20 08:45:10.367 | DEBUG    | __main__:run_phase3:653 -   embed/pca_2d: explained_var=0.163
+2026-02-20 08:45:25.104 | DEBUG    | __main__:run_phase3:653 -   embed/pca_5d: explained_var=0.333
+2026-02-20 08:45:25.543 | DEBUG    | __main__:run_phase3:653 -   llm/pca_2d: explained_var=1.000
+2026-02-20 08:45:25.779 | DEBUG    | __main__:run_phase3:653 -   llm/pca_5d: explained_var=1.000
+2026-02-20 08:45:25.779 | INFO     | __main__:run_phase3:674 -   Done in 31.6s
+2026-02-20 08:45:25.780 | INFO     | __main__:run_phase3:623 - Schoener's D for ohsumed_single (classes=20)...
+2026-02-20 08:45:26.783 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_2d: explained_var=0.062
+2026-02-20 08:45:28.093 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_5d: explained_var=0.142
+2026-02-20 08:45:32.500 | DEBUG    | __main__:run_phase3:653 -   embed/pca_2d: explained_var=0.151
+2026-02-20 08:45:35.156 | DEBUG    | __main__:run_phase3:653 -   embed/pca_5d: explained_var=0.294
+2026-02-20 08:45:36.879 | DEBUG    | __main__:run_phase3:653 -   llm/pca_2d: explained_var=0.988
+2026-02-20 08:45:38.713 | DEBUG    | __main__:run_phase3:653 -   llm/pca_5d: explained_var=0.998
+2026-02-20 08:45:38.713 | INFO     | __main__:run_phase3:674 -   Done in 12.9s
+2026-02-20 08:45:38.713 | INFO     | __main__:run_phase3:623 - Schoener's D for mental_health_conditions (classes=7)...
+2026-02-20 08:45:44.052 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_2d: explained_var=0.110
+2026-02-20 08:45:51.173 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_5d: explained_var=0.219
+2026-02-20 08:46:01.713 | DEBUG    | __main__:run_phase3:653 -   embed/pca_2d: explained_var=0.195
+2026-02-20 08:46:09.400 | DEBUG    | __main__:run_phase3:653 -   embed/pca_5d: explained_var=0.353
+2026-02-20 08:46:13.285 | DEBUG    | __main__:run_phase3:653 -   llm/pca_2d: explained_var=0.738
+2026-02-20 08:46:16.198 | DEBUG    | __main__:run_phase3:653 -   llm/pca_5d: explained_var=1.000
+2026-02-20 08:46:16.199 | INFO     | __main__:run_phase3:674 -   Done in 37.5s
+2026-02-20 08:46:16.199 | INFO     | __main__:run_phase3:623 - Schoener's D for medical_abstracts_v2 (classes=5)...
+2026-02-20 08:46:17.543 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_2d: explained_var=0.064
+2026-02-20 08:46:18.795 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_5d: explained_var=0.144
+2026-02-20 08:46:25.818 | DEBUG    | __main__:run_phase3:653 -   embed/pca_2d: explained_var=0.158
+2026-02-20 08:46:31.023 | DEBUG    | __main__:run_phase3:653 -   embed/pca_5d: explained_var=0.290
+2026-02-20 08:46:31.870 | DEBUG    | __main__:run_phase3:653 -   llm/pca_2d: explained_var=0.840
+2026-02-20 08:46:32.716 | DEBUG    | __main__:run_phase3:653 -   llm/pca_5d: explained_var=1.000
+2026-02-20 08:46:32.716 | INFO     | __main__:run_phase3:674 -   Done in 16.5s
+2026-02-20 08:46:32.717 | INFO     | __main__:run_phase3:623 - Schoener's D for medical_transcriptions (classes=5)...
+2026-02-20 08:46:34.740 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_2d: explained_var=0.093
+2026-02-20 08:46:36.685 | DEBUG    | __main__:run_phase3:653 -   tfidf/pca_5d: explained_var=0.186
+2026-02-20 08:46:41.140 | DEBUG    | __main__:run_phase3:653 -   embed/pca_2d: explained_var=0.151
+2026-02-20 08:46:44.890 | DEBUG    | __main__:run_phase3:653 -   embed/pca_5d: explained_var=0.323
+2026-02-20 08:46:45.379 | DEBUG    | __main__:run_phase3:653 -   llm/pca_2d: explained_var=1.000
+2026-02-20 08:46:45.895 | DEBUG    | __main__:run_phase3:653 -   llm/pca_5d: explained_var=1.000
+2026-02-20 08:46:45.896 | INFO     | __main__:run_phase3:674 -   Done in 13.2s
+2026-02-20 08:46:45.896 | INFO     | __main__:run_phase4:688 - ============================================================
+2026-02-20 08:46:45.896 | INFO     | __main__:run_phase4:689 - PHASE 4: Per-class CRND analysis
+2026-02-20 08:46:45.896 | INFO     | __main__:run_phase4:690 - ============================================================
+2026-02-20 08:46:45.896 | INFO     | __main__:run_phase4:695 - Per-class analysis for medical_abstracts...
+2026-02-20 08:46:45.909 | INFO     | __main__:run_phase4:770 -   Kruskal-Wallis: H=3.13, p=0.5370
+2026-02-20 08:46:45.909 | INFO     | __main__:run_phase4:695 - Per-class analysis for mimic_iv_ed_demo...
+2026-02-20 08:46:45.923 | INFO     | __main__:run_phase4:770 -   Kruskal-Wallis: H=2.02, p=0.5691
+2026-02-20 08:46:45.948 | INFO     | __main__:run_phase4:695 - Per-class analysis for ohsumed_single...
+2026-02-20 08:46:46.024 | INFO     | __main__:run_phase4:770 -   Kruskal-Wallis: H=4.59, p=0.8682
+2026-02-20 08:46:46.025 | INFO     | __main__:run_phase4:695 - Per-class analysis for mental_health_conditions...
+2026-02-20 08:46:46.043 | INFO     | __main__:run_phase4:770 -   Kruskal-Wallis: H=17.49, p=0.0076
+2026-02-20 08:46:46.043 | INFO     | __main__:run_phase4:695 - Per-class analysis for medical_abstracts_v2...
+2026-02-20 08:46:46.051 | INFO     | __main__:run_phase4:770 -   Kruskal-Wallis: H=2.91, p=0.5729
+2026-02-20 08:46:46.052 | INFO     | __main__:run_phase4:695 - Per-class analysis for medical_transcriptions...
+2026-02-20 08:46:46.059 | INFO     | __main__:run_phase4:770 -   Kruskal-Wallis: H=4.58, p=0.2053
+2026-02-20 08:46:46.060 | INFO     | __main__:run_phase5:788 - ============================================================
+2026-02-20 08:46:46.060 | INFO     | __main__:run_phase5:789 - PHASE 5: Noise detection benchmarks
+2026-02-20 08:46:46.060 | INFO     | __main__:run_phase5:790 - ============================================================
+2026-02-20 08:46:46.060 | INFO     | __main__:run_phase5:795 - Noise detection for medical_abstracts (N=60)...
+2026-02-20 08:47:01.698 | INFO     | __main__:run_phase5:921 -   Done in 15.6s
+2026-02-20 08:47:01.698 | INFO     | __main__:run_phase5:930 -   @10% noise: CRND_AUC=0.475, kDN_AUC=0.818, CL_AUC=0.807, Random_AUC=0.380
+2026-02-20 08:47:01.698 | INFO     | __main__:run_phase5:795 - Noise detection for mimic_iv_ed_demo (N=207)...
+2026-02-20 08:47:45.279 | INFO     | __main__:run_phase5:921 -   Done in 43.6s
+2026-02-20 08:47:45.280 | INFO     | __main__:run_phase5:930 -   @10% noise: CRND_AUC=0.542, kDN_AUC=0.852, CL_AUC=0.871, Random_AUC=0.498
+2026-02-20 08:47:45.280 | INFO     | __main__:run_phase5:795 - Noise detection for ohsumed_single (N=60)...
+2026-02-20 08:49:03.529 | INFO     | __main__:run_phase5:921 -   Done in 78.2s
+2026-02-20 08:49:03.529 | INFO     | __main__:run_phase5:930 -   @10% noise: CRND_AUC=0.457, kDN_AUC=0.794, CL_AUC=0.576, Random_AUC=0.572
+2026-02-20 08:49:03.529 | INFO     | __main__:run_phase5:795 - Noise detection for mental_health_conditions (N=60)...
+2026-02-20 08:49:19.932 | INFO     | __main__:run_phase5:921 -   Done in 16.4s
+2026-02-20 08:49:19.933 | INFO     | __main__:run_phase5:930 -   @10% noise: CRND_AUC=0.407, kDN_AUC=0.829, CL_AUC=0.675, Random_AUC=0.591
+2026-02-20 08:49:19.933 | INFO     | __main__:run_phase5:795 - Noise detection for medical_abstracts_v2 (N=60)...
+2026-02-20 08:49:38.440 | INFO     | __main__:run_phase5:921 -   Done in 18.5s
+2026-02-20 08:49:38.440 | INFO     | __main__:run_phase5:930 -   @10% noise: CRND_AUC=0.481, kDN_AUC=0.818, CL_AUC=0.807, Random_AUC=0.380
+2026-02-20 08:49:38.440 | INFO     | __main__:run_phase5:795 - Noise detection for medical_transcriptions (N=60)...
+2026-02-20 08:52:01.358 | INFO     | __main__:run_phase5:921 -   Done in 142.9s
+2026-02-20 08:52:01.358 | INFO     | __main__:run_phase5:930 -   @10% noise: CRND_AUC=0.431, kDN_AUC=0.866, CL_AUC=0.852, Random_AUC=0.380
+2026-02-20 08:52:01.358 | INFO     | __main__:run_phase6:948 - ============================================================
+2026-02-20 08:52:01.358 | INFO     | __main__:run_phase6:949 - PHASE 6: Cross-dataset generalization analysis
+2026-02-20 08:52:01.358 | INFO     | __main__:run_phase6:950 - ============================================================
+2026-02-20 08:52:01.366 | INFO     | __main__:run_phase6:1054 - Phase 6 complete
+2026-02-20 08:52:01.366 | INFO     | __main__:assemble_output:1095 - Assembling output...
+2026-02-20 08:52:01.438 | INFO     | __main__:main:1364 - Output written to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260219_220558/3_invention_loop/iter_6/gen_art/exp_id1_it6__opus/method_out.json
+2026-02-20 08:52:01.438 | INFO     | __main__:main:1368 - Output size: 1.0 MB
+2026-02-20 08:52:01.444 | INFO     | __main__:main:1373 - JSON validation passed
+2026-02-20 08:52:01.445 | INFO     | __main__:main:1377 - Total runtime: 654.5s (10.9 min)
+2026-02-20 08:52:01.445 | INFO     | __main__:main:1378 - LLM calls: 33, LLM cost: $0.0008
+2026-02-20 08:52:01.445 | SUCCESS  | __main__:main:1379 - Pipeline complete!
+2026-02-20 08:54:09.618 | INFO     | __main__:main:1345 - ============================================================
+2026-02-20 08:54:09.619 | INFO     | __main__:main:1346 - CRND + Schoener's D Experiment — Starting
+2026-02-20 08:54:09.619 | INFO     | __main__:main:1347 - Workspace: /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260219_220558/3_invention_loop/iter_6/gen_art/exp_id1_it6__opus
+2026-02-20 08:54:09.619 | INFO     | __main__:main:1348 - MAX_SAMPLE_N: 300
+2026-02-20 08:54:09.619 | INFO     | __main__:main:1349 - ============================================================
+2026-02-20 08:54:09.619 | INFO     | __main__:load_all_datasets:102 - Loading dependency data files...
+2026-02-20 08:54:10.847 | INFO     | __main__:load_all_datasets:160 -   medical_abstracts: N=300, classes=5, dist={'Neoplasms': 62, 'General_pathological_conditions': 107, 'Cardiovascular_diseases': 74, 'Digestive_system_diseases': 26, 'Nervous_system_diseases': 31}
+2026-02-20 08:54:10.848 | INFO     | __main__:load_all_datasets:160 -   mimic_iv_ed_demo: N=207, classes=4, dist={'ESI-2': 97, 'ESI-1': 18, 'ESI-4': 2, 'ESI-3': 90}
+2026-02-20 08:54:10.851 | INFO     | __main__:load_all_datasets:160 -   ohsumed_single: N=300, classes=21, dist={'Bacterial_Infections_and_Mycoses': 11, 'Virus_Diseases': 3, 'Neoplasms': 52, 'Musculoskeletal_Diseases': 9, 'Digestive_System_Diseases': 12, 'Stomatognathic_Diseases': 4, 'Respiratory_Tract_Diseases': 8, 'Nervous_System_Diseases': 27, 'Eye_Diseases': 4, 'Urologic_and_Male_Genital_Diseases': 14, 'Female_Genital_Diseases_and_Pregnancy_Complications': 10, 'Cardiovascular_Diseases': 49, 'Hemic_and_Lymphatic_Diseases': 6, 'Neonatal_Diseases_and_Abnormalities': 4, 'Skin_and_Connective_Tissue_Diseases': 9, 'Nutritional_and_Metabolic_Diseases': 13, 'Endocrine_Diseases': 4, 'Immunologic_Diseases': 11, 'Disorders_of_Environmental_Origin': 21, 'Pathological_Conditions_Signs_and_Symptoms': 27, 'Parasitic_Diseases': 2}
+2026-02-20 08:54:10.857 | INFO     | __main__:load_all_datasets:160 -   mental_health_conditions: N=300, classes=7, dist={'suicidal': 30, 'anxiety': 58, 'personality disorder': 31, 'bipolar': 44, 'stress': 38, 'normal': 49, 'depression': 50}
+2026-02-20 08:54:10.862 | INFO     | __main__:load_all_datasets:160 -   medical_abstracts_v2: N=300, classes=5, dist={'neoplasms': 62, 'general pathological conditions': 107, 'cardiovascular diseases': 74, 'digestive system diseases': 26, 'nervous system diseases': 31}
+2026-02-20 08:54:10.864 | INFO     | __main__:load_all_datasets:160 -   medical_transcriptions: N=300, classes=5, dist={'surgical': 134, 'neurology_psychiatry': 21, 'radiology_consults_obgyn': 78, 'internal_medicine': 45, 'cardiovascular_pulmonary': 22}
+2026-02-20 08:54:10.865 | INFO     | __main__:load_all_datasets:162 - Loaded 6 datasets total
+2026-02-20 08:54:10.878 | INFO     | __main__:build_all_feature_spaces:380 - ============================================================
+2026-02-20 08:54:10.879 | INFO     | __main__:build_all_feature_spaces:381 - PHASE 1: Building feature spaces
+2026-02-20 08:54:10.879 | INFO     | __main__:build_all_feature_spaces:382 - ============================================================
+2026-02-20 08:54:15.593 | INFO     | __main__:build_all_feature_spaces:386 - Loading sentence-transformer model (all-MiniLM-L6-v2)...
+2026-02-20 08:54:19.231 | INFO     | __main__:build_all_feature_spaces:388 - Sentence-transformer loaded
+2026-02-20 08:54:19.231 | INFO     | __main__:build_all_feature_spaces:392 - Building features for medical_abstracts (N=300)...
+2026-02-20 08:54:19.387 | INFO     | __main__:build_all_feature_spaces:397 -   TF-IDF: shape (300, 4396)
+2026-02-20 08:55:13.713 | INFO     | __main__:build_all_feature_spaces:401 -   Embed: shape (300, 384)
+2026-02-20 09:00:18.652 | WARNING  | __main__:build_llm_features:306 - LLM time limit (300s) reached at idx=140
+2026-02-20 09:00:18.652 | INFO     | __main__:build_llm_features:341 - LLM features [medical_abstracts]: 140 success, 0 fail, total_calls=140, cost=$0.0029
+2026-02-20 09:00:18.652 | INFO     | __main__:build_all_feature_spaces:411 -   LLM: shape (300, 5)
+2026-02-20 09:00:18.652 | INFO     | __main__:build_all_feature_spaces:416 -   LLM feature variance: 0.213709
+2026-02-20 09:00:18.652 | INFO     | __main__:build_all_feature_spaces:429 -   Features built in 359.4s
+2026-02-20 09:00:18.652 | INFO     | __main__:build_all_feature_spaces:392 - Building features for mimic_iv_ed_demo (N=207)...
+2026-02-20 09:00:18.659 | INFO     | __main__:build_all_feature_spaces:397 -   TF-IDF: shape (207, 553)
+2026-02-20 09:00:22.198 | INFO     | __main__:build_all_feature_spaces:401 -   Embed: shape (207, 384)
+2026-02-20 09:05:09.403 | INFO     | __main__:build_llm_features:341 - LLM features [mimic_iv_ed_demo]: 150 success, 0 fail, total_calls=290, cost=$0.0043
+2026-02-20 09:05:09.403 | INFO     | __main__:build_all_feature_spaces:411 -   LLM: shape (207, 4)
+2026-02-20 09:05:09.403 | INFO     | __main__:build_all_feature_spaces:416 -   LLM feature variance: 0.003606
+2026-02-20 09:05:09.403 | INFO     | __main__:build_all_feature_spaces:429 -   Features built in 290.8s
+2026-02-20 09:05:09.403 | INFO     | __main__:build_all_feature_spaces:392 - Building features for ohsumed_single (N=300)...
+2026-02-20 09:05:09.494 | INFO     | __main__:build_all_feature_spaces:397 -   TF-IDF: shape (300, 4094)
+2026-02-20 09:05:30.634 | INFO     | __main__:build_all_feature_spaces:401 -   Embed: shape (300, 384)
+2026-02-20 09:13:15.998 | WARNING  | __main__:build_llm_features:306 - LLM time limit (300s) reached at idx=60
+2026-02-20 09:13:15.998 | INFO     | __main__:build_llm_features:341 - LLM features [ohsumed_single]: 59 success, 1 fail, total_calls=351, cost=$0.0066
+2026-02-20 09:13:15.998 | INFO     | __main__:build_all_feature_spaces:411 -   LLM: shape (300, 21)
+2026-02-20 09:13:15.999 | INFO     | __main__:build_all_feature_spaces:416 -   LLM feature variance: 0.105207
+2026-02-20 09:13:15.999 | INFO     | __main__:build_all_feature_spaces:429 -   Features built in 486.6s
+2026-02-20 09:13:15.999 | INFO     | __main__:build_all_feature_spaces:392 - Building features for mental_health_conditions (N=300)...
+2026-02-20 09:13:16.027 | INFO     | __main__:build_all_feature_spaces:397 -   TF-IDF: shape (300, 1739)
+2026-02-20 09:13:26.986 | INFO     | __main__:build_all_feature_spaces:401 -   Embed: shape (300, 384)
+2026-02-20 09:18:10.148 | INFO     | __main__:build_llm_features:341 - LLM features [mental_health_conditions]: 150 success, 0 fail, total_calls=501, cost=$0.0086
+2026-02-20 09:18:10.148 | INFO     | __main__:build_all_feature_spaces:411 -   LLM: shape (300, 7)
+2026-02-20 09:18:10.148 | INFO     | __main__:build_all_feature_spaces:416 -   LLM feature variance: 0.166710
+2026-02-20 09:18:10.148 | INFO     | __main__:build_all_feature_spaces:429 -   Features built in 294.1s
+2026-02-20 09:18:10.148 | INFO     | __main__:build_all_feature_spaces:392 - Building features for medical_abstracts_v2 (N=300)...
+2026-02-20 09:18:10.231 | INFO     | __main__:build_all_feature_spaces:397 -   TF-IDF: shape (300, 4396)
+2026-02-20 09:18:28.318 | INFO     | __main__:build_all_feature_spaces:401 -   Embed: shape (300, 384)
+2026-02-20 09:23:03.708 | INFO     | __main__:build_llm_features:341 - LLM features [medical_abstracts_v2]: 150 success, 0 fail, total_calls=651, cost=$0.0115
+2026-02-20 09:23:03.709 | INFO     | __main__:build_all_feature_spaces:411 -   LLM: shape (300, 5)
+2026-02-20 09:23:03.710 | INFO     | __main__:build_all_feature_spaces:416 -   LLM feature variance: 0.238320
+2026-02-20 09:23:03.711 | INFO     | __main__:build_all_feature_spaces:429 -   Features built in 293.6s
+2026-02-20 09:23:03.712 | INFO     | __main__:build_all_feature_spaces:392 - Building features for medical_transcriptions (N=300)...
+2026-02-20 09:23:03.973 | INFO     | __main__:build_all_feature_spaces:397 -   TF-IDF: shape (300, 5000)
+2026-02-20 09:23:20.258 | INFO     | __main__:build_all_feature_spaces:401 -   Embed: shape (300, 384)
+2026-02-20 09:27:41.903 | INFO     | __main__:build_llm_features:341 - LLM features [medical_transcriptions]: 150 success, 0 fail, total_calls=801, cost=$0.0153
+2026-02-20 09:27:41.905 | INFO     | __main__:build_all_feature_spaces:411 -   LLM: shape (300, 5)
+2026-02-20 09:27:41.905 | INFO     | __main__:build_all_feature_spaces:416 -   LLM feature variance: 0.280427
+2026-02-20 09:27:41.906 | INFO     | __main__:build_all_feature_spaces:429 -   Features built in 278.2s
+2026-02-20 09:27:41.907 | INFO     | __main__:run_phase2:482 - ============================================================
+2026-02-20 09:27:41.907 | INFO     | __main__:run_phase2:483 - PHASE 2: Computing CRND scores
+2026-02-20 09:27:41.908 | INFO     | __main__:run_phase2:484 - ============================================================
+2026-02-20 09:27:41.909 | INFO     | __main__:run_phase2:490 - Computing k-NN for medical_abstracts...
+2026-02-20 09:27:42.926 | INFO     | __main__:run_phase2:506 -   k=5: mean_CRND=0.9161, median=0.9167, std=0.0640
+2026-02-20 09:27:42.927 | INFO     | __main__:run_phase2:506 -   k=10: mean_CRND=0.9098, median=0.9167, std=0.0522
+2026-02-20 09:27:42.927 | INFO     | __main__:run_phase2:506 -   k=20: mean_CRND=0.8896, median=0.8991, std=0.0501
+2026-02-20 09:27:42.928 | INFO     | __main__:run_phase2:511 -   Done in 1.0s
+2026-02-20 09:27:42.931 | INFO     | __main__:run_phase2:490 - Computing k-NN for mimic_iv_ed_demo...
+2026-02-20 09:27:43.158 | INFO     | __main__:run_phase2:506 -   k=5: mean_CRND=0.9422, median=0.9630, std=0.0561
+2026-02-20 09:27:43.159 | INFO     | __main__:run_phase2:506 -   k=10: mean_CRND=0.9364, median=0.9412, std=0.0394
+2026-02-20 09:27:43.159 | INFO     | __main__:run_phase2:506 -   k=20: mean_CRND=0.9042, median=0.9084, std=0.0477
+2026-02-20 09:27:43.160 | INFO     | __main__:run_phase2:511 -   Done in 0.2s
+2026-02-20 09:27:43.160 | INFO     | __main__:run_phase2:490 - Computing k-NN for ohsumed_single...
+2026-02-20 09:27:43.877 | INFO     | __main__:run_phase2:506 -   k=5: mean_CRND=0.9179, median=0.9167, std=0.0632
+2026-02-20 09:27:43.879 | INFO     | __main__:run_phase2:506 -   k=10: mean_CRND=0.9113, median=0.9167, std=0.0476
+2026-02-20 09:27:43.880 | INFO     | __main__:run_phase2:506 -   k=20: mean_CRND=0.8973, median=0.8993, std=0.0381
+2026-02-20 09:27:43.881 | INFO     | __main__:run_phase2:511 -   Done in 0.7s
+2026-02-20 09:27:43.882 | INFO     | __main__:run_phase2:490 - Computing k-NN for mental_health_conditions...
+2026-02-20 09:27:44.313 | INFO     | __main__:run_phase2:506 -   k=5: mean_CRND=0.9256, median=0.9444, std=0.0665
+2026-02-20 09:27:44.313 | INFO     | __main__:run_phase2:506 -   k=10: mean_CRND=0.9069, median=0.9167, std=0.0728
+2026-02-20 09:27:44.313 | INFO     | __main__:run_phase2:506 -   k=20: mean_CRND=0.8881, median=0.8989, std=0.0633
+2026-02-20 09:27:44.313 | INFO     | __main__:run_phase2:511 -   Done in 0.4s
+2026-02-20 09:27:44.313 | INFO     | __main__:run_phase2:490 - Computing k-NN for medical_abstracts_v2...
+2026-02-20 09:27:45.488 | INFO     | __main__:run_phase2:506 -   k=5: mean_CRND=0.9186, median=0.9167, std=0.0614
+2026-02-20 09:27:45.488 | INFO     | __main__:run_phase2:506 -   k=10: mean_CRND=0.9104, median=0.9167, std=0.0531
+2026-02-20 09:27:45.489 | INFO     | __main__:run_phase2:506 -   k=20: mean_CRND=0.8888, median=0.8989, std=0.0510
+2026-02-20 09:27:45.489 | INFO     | __main__:run_phase2:511 -   Done in 1.2s
+2026-02-20 09:27:45.489 | INFO     | __main__:run_phase2:490 - Computing k-NN for medical_transcriptions...
+2026-02-20 09:27:46.708 | INFO     | __main__:run_phase2:506 -   k=5: mean_CRND=0.8835, median=0.9167, std=0.0903
+2026-02-20 09:27:46.709 | INFO     | __main__:run_phase2:506 -   k=10: mean_CRND=0.8859, median=0.8991, std=0.0719
+2026-02-20 09:27:46.709 | INFO     | __main__:run_phase2:506 -   k=20: mean_CRND=0.8793, median=0.8889, std=0.0580
+2026-02-20 09:27:46.710 | INFO     | __main__:run_phase2:511 -   Done in 1.2s
+2026-02-20 09:27:46.710 | INFO     | __main__:run_phase3:644 - ============================================================
+2026-02-20 09:27:46.710 | INFO     | __main__:run_phase3:645 - PHASE 3: Computing Schoener's D niche overlap
+2026-02-20 09:27:46.710 | INFO     | __main__:run_phase3:646 - ============================================================
+2026-02-20 09:27:46.710 | INFO     | __main__:run_phase3:651 - Schoener's D for medical_abstracts (classes=5)...
+2026-02-20 09:27:52.225 | DEBUG    | __main__:run_phase3:681 -   tfidf/pca_2d: explained_var=0.022
+2026-02-20 09:27:53.720 | DEBUG    | __main__:run_phase3:681 -   tfidf/pca_5d: explained_var=0.046
+2026-02-20 09:27:56.141 | DEBUG    | __main__:run_phase3:681 -   embed/pca_2d: explained_var=0.123
+2026-02-20 09:27:58.946 | DEBUG    | __main__:run_phase3:681 -   embed/pca_5d: explained_var=0.221
+2026-02-20 09:27:59.709 | DEBUG    | __main__:run_phase3:681 -   llm/pca_2d: explained_var=0.745
+2026-02-20 09:27:59.872 | DEBUG    | __main__:run_phase3:681 -   llm/pca_5d: explained_var=1.000
+2026-02-20 09:27:59.873 | INFO     | __main__:run_phase3:702 -   Done in 13.2s
+2026-02-20 09:27:59.874 | INFO     | __main__:run_phase3:651 - Schoener's D for mimic_iv_ed_demo (classes=4)...
+2026-02-20 09:28:00.507 | DEBUG    | __main__:run_phase3:681 -   tfidf/pca_2d: explained_var=0.049
+2026-02-20 09:28:00.901 | DEBUG    | __main__:run_phase3:681 -   tfidf/pca_5d: explained_var=0.113
+2026-02-20 09:28:04.721 | DEBUG    | __main__:run_phase3:681 -   embed/pca_2d: explained_var=0.163
+2026-02-20 09:28:08.189 | DEBUG    | __main__:run_phase3:681 -   embed/pca_5d: explained_var=0.333
+2026-02-20 09:28:08.331 | DEBUG    | __main__:run_phase3:681 -   llm/pca_2d: explained_var=1.000
+2026-02-20 09:28:08.431 | DEBUG    | __main__:run_phase3:681 -   llm/pca_5d: explained_var=1.000
+2026-02-20 09:28:08.432 | INFO     | __main__:run_phase3:702 -   Done in 8.6s
+2026-02-20 09:28:08.433 | INFO     | __main__:run_phase3:651 - Schoener's D for ohsumed_single (classes=21)...
+2026-02-20 09:28:13.693 | DEBUG    | __main__:run_phase3:681 -   tfidf/pca_2d: explained_var=0.022
+2026-02-20 09:28:18.647 | DEBUG    | __main__:run_phase3:681 -   tfidf/pca_5d: explained_var=0.045
+2026-02-20 09:28:26.939 | DEBUG    | __main__:run_phase3:681 -   embed/pca_2d: explained_var=0.120
+2026-02-20 09:28:32.538 | DEBUG    | __main__:run_phase3:681 -   embed/pca_5d: explained_var=0.221
+2026-02-20 09:28:37.777 | DEBUG    | __main__:run_phase3:681 -   llm/pca_2d: explained_var=0.354
+2026-02-20 09:28:39.233 | DEBUG    | __main__:run_phase3:681 -   llm/pca_5d: explained_var=0.649
+2026-02-20 09:28:39.233 | INFO     | __main__:run_phase3:702 -   Done in 30.8s
+2026-02-20 09:28:39.236 | INFO     | __main__:run_phase3:651 - Schoener's D for mental_health_conditions (classes=7)...
+2026-02-20 09:28:40.889 | DEBUG    | __main__:run_phase3:681 -   tfidf/pca_2d: explained_var=0.044
+2026-02-20 09:28:42.320 | DEBUG    | __main__:run_phase3:681 -   tfidf/pca_5d: explained_var=0.087
+2026-02-20 09:28:45.927 | DEBUG    | __main__:run_phase3:681 -   embed/pca_2d: explained_var=0.183
+2026-02-20 09:28:48.749 | DEBUG    | __main__:run_phase3:681 -   embed/pca_5d: explained_var=0.308
+2026-02-20 09:28:49.660 | DEBUG    | __main__:run_phase3:681 -   llm/pca_2d: explained_var=0.624
+2026-02-20 09:28:50.171 | DEBUG    | __main__:run_phase3:681 -   llm/pca_5d: explained_var=0.961
+2026-02-20 09:28:50.171 | INFO     | __main__:run_phase3:702 -   Done in 10.9s
+2026-02-20 09:28:50.172 | INFO     | __main__:run_phase3:651 - Schoener's D for medical_abstracts_v2 (classes=5)...
+2026-02-20 09:28:52.007 | DEBUG    | __main__:run_phase3:681 -   tfidf/pca_2d: explained_var=0.022
+2026-02-20 09:28:55.615 | DEBUG    | __main__:run_phase3:681 -   tfidf/pca_5d: explained_var=0.046
+2026-02-20 09:29:06.724 | DEBUG    | __main__:run_phase3:681 -   embed/pca_2d: explained_var=0.123
+2026-02-20 09:29:10.271 | DEBUG    | __main__:run_phase3:681 -   embed/pca_5d: explained_var=0.221
+2026-02-20 09:29:11.151 | DEBUG    | __main__:run_phase3:681 -   llm/pca_2d: explained_var=0.765
+2026-02-20 09:29:11.421 | DEBUG    | __main__:run_phase3:681 -   llm/pca_5d: explained_var=1.000
+2026-02-20 09:29:11.422 | INFO     | __main__:run_phase3:702 -   Done in 21.2s
+2026-02-20 09:29:11.422 | INFO     | __main__:run_phase3:651 - Schoener's D for medical_transcriptions (classes=5)...
+2026-02-20 09:29:12.971 | DEBUG    | __main__:run_phase3:681 -   tfidf/pca_2d: explained_var=0.048
+2026-02-20 09:29:14.172 | DEBUG    | __main__:run_phase3:681 -   tfidf/pca_5d: explained_var=0.085
+2026-02-20 09:29:15.232 | DEBUG    | __main__:run_phase3:681 -   embed/pca_2d: explained_var=0.141
+2026-02-20 09:29:22.953 | DEBUG    | __main__:run_phase3:681 -   embed/pca_5d: explained_var=0.258
+2026-02-20 09:29:24.066 | DEBUG    | __main__:run_phase3:681 -   llm/pca_2d: explained_var=0.876
+2026-02-20 09:29:24.683 | DEBUG    | __main__:run_phase3:681 -   llm/pca_5d: explained_var=1.000
+2026-02-20 09:29:24.685 | INFO     | __main__:run_phase3:702 -   Done in 13.3s
+2026-02-20 09:29:24.686 | INFO     | __main__:run_phase4:716 - ============================================================
+2026-02-20 09:29:24.686 | INFO     | __main__:run_phase4:717 - PHASE 4: Per-class CRND analysis
+2026-02-20 09:29:24.686 | INFO     | __main__:run_phase4:718 - ============================================================
+2026-02-20 09:29:24.686 | INFO     | __main__:run_phase4:723 - Per-class analysis for medical_abstracts...
+2026-02-20 09:29:24.696 | INFO     | __main__:run_phase4:798 -   Kruskal-Wallis: H=14.64, p=0.0055
+2026-02-20 09:29:24.714 | INFO     | __main__:run_phase4:723 - Per-class analysis for mimic_iv_ed_demo...
+2026-02-20 09:29:24.722 | INFO     | __main__:run_phase4:798 -   Kruskal-Wallis: H=2.10, p=0.5515
+2026-02-20 09:29:24.722 | INFO     | __main__:run_phase4:723 - Per-class analysis for ohsumed_single...
+2026-02-20 09:29:24.904 | INFO     | __main__:run_phase4:798 -   Kruskal-Wallis: H=34.80, p=0.0212
+2026-02-20 09:29:24.904 | INFO     | __main__:run_phase4:723 - Per-class analysis for mental_health_conditions...
+2026-02-20 09:29:24.920 | INFO     | __main__:run_phase4:798 -   Kruskal-Wallis: H=81.30, p=0.0000
+2026-02-20 09:29:24.920 | INFO     | __main__:run_phase4:723 - Per-class analysis for medical_abstracts_v2...
+2026-02-20 09:29:24.929 | INFO     | __main__:run_phase4:798 -   Kruskal-Wallis: H=12.60, p=0.0134
+2026-02-20 09:29:24.929 | INFO     | __main__:run_phase4:723 - Per-class analysis for medical_transcriptions...
+2026-02-20 09:29:24.937 | INFO     | __main__:run_phase4:798 -   Kruskal-Wallis: H=41.17, p=0.0000
+2026-02-20 09:29:24.937 | INFO     | __main__:run_phase5:816 - ============================================================
+2026-02-20 09:29:24.938 | INFO     | __main__:run_phase5:817 - PHASE 5: Noise detection benchmarks
+2026-02-20 09:29:24.938 | INFO     | __main__:run_phase5:818 - ============================================================
+2026-02-20 09:29:24.938 | INFO     | __main__:run_phase5:823 - Noise detection for medical_abstracts (N=300)...
+2026-02-20 09:32:37.398 | INFO     | __main__:run_phase5:949 -   Done in 192.5s
+2026-02-20 09:32:37.398 | INFO     | __main__:run_phase5:958 -   @10% noise: CRND_AUC=0.482, kDN_AUC=0.850, CL_AUC=0.850, Random_AUC=0.474
+2026-02-20 09:32:37.399 | INFO     | __main__:run_phase5:823 - Noise detection for mimic_iv_ed_demo (N=207)...
+2026-02-20 09:32:57.552 | INFO     | __main__:run_phase5:949 -   Done in 20.2s
+2026-02-20 09:32:57.552 | INFO     | __main__:run_phase5:958 -   @10% noise: CRND_AUC=0.539, kDN_AUC=0.860, CL_AUC=0.871, Random_AUC=0.498
+2026-02-20 09:32:57.552 | INFO     | __main__:run_phase5:823 - Noise detection for ohsumed_single (N=300)...
+2026-02-20 09:37:03.759 | INFO     | __main__:run_phase5:949 -   Done in 246.2s
+2026-02-20 09:37:03.759 | INFO     | __main__:run_phase5:958 -   @10% noise: CRND_AUC=0.505, kDN_AUC=0.885, CL_AUC=0.792, Random_AUC=0.500
+2026-02-20 09:37:03.759 | INFO     | __main__:run_phase5:823 - Noise detection for mental_health_conditions (N=300)...
+2026-02-20 09:40:25.147 | INFO     | __main__:run_phase5:949 -   Done in 201.4s
+2026-02-20 09:40:25.147 | INFO     | __main__:run_phase5:958 -   @10% noise: CRND_AUC=0.483, kDN_AUC=0.942, CL_AUC=0.957, Random_AUC=0.525
+2026-02-20 09:40:25.148 | INFO     | __main__:run_phase5:823 - Noise detection for medical_abstracts_v2 (N=300)...
+2026-02-20 09:43:41.616 | INFO     | __main__:run_phase5:949 -   Done in 196.5s
+2026-02-20 09:43:41.617 | INFO     | __main__:run_phase5:958 -   @10% noise: CRND_AUC=0.505, kDN_AUC=0.843, CL_AUC=0.848, Random_AUC=0.474
+2026-02-20 09:43:41.617 | INFO     | __main__:run_phase5:823 - Noise detection for medical_transcriptions (N=300)...
+2026-02-20 09:47:14.856 | INFO     | __main__:run_phase5:949 -   Done in 213.2s
+2026-02-20 09:47:14.857 | INFO     | __main__:run_phase5:958 -   @10% noise: CRND_AUC=0.501, kDN_AUC=0.865, CL_AUC=0.825, Random_AUC=0.474
+2026-02-20 09:47:14.857 | INFO     | __main__:run_phase6:976 - ============================================================
+2026-02-20 09:47:14.857 | INFO     | __main__:run_phase6:977 - PHASE 6: Cross-dataset generalization analysis
+2026-02-20 09:47:14.858 | INFO     | __main__:run_phase6:978 - ============================================================
+2026-02-20 09:47:14.865 | INFO     | __main__:run_phase6:1082 - Phase 6 complete
+2026-02-20 09:47:14.866 | INFO     | __main__:assemble_output:1123 - Assembling output...
+2026-02-20 09:47:14.997 | INFO     | __main__:main:1392 - Output written to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260219_220558/3_invention_loop/iter_6/gen_art/exp_id1_it6__opus/method_out.json
+2026-02-20 09:47:14.997 | INFO     | __main__:main:1396 - Output size: 3.3 MB
+2026-02-20 09:47:15.011 | INFO     | __main__:main:1401 - JSON validation passed
+2026-02-20 09:47:15.011 | INFO     | __main__:main:1405 - Total runtime: 3185.2s (53.1 min)
+2026-02-20 09:47:15.011 | INFO     | __main__:main:1406 - LLM calls: 801, LLM cost: $0.0153
+2026-02-20 09:47:15.011 | SUCCESS  | __main__:main:1407 - Pipeline complete!

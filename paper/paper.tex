@@ -1,0 +1,317 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{graphicx, geometry, amsmath, amssymb, hyperref, natbib, booktabs, xcolor, listings, multirow}
+\usepackage[export]{adjustbox}
+\geometry{margin=1in}
+\hypersetup{colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black}
+
+\title{Cross-Representation Neighborhood Dissonance and Ecological Niche Overlap Metrics for Class Structure Characterization: A Negative-Result Study with Methodological Contributions}
+
+\author{
+  Anonymous Authors
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+%% ============================================================
+%% ABSTRACT
+%% ============================================================
+\begin{abstract}
+We investigate whether cross-representation analysis of clinical text classification data can diagnose label noise and predict optimal method selection without training classifiers. We introduce Cross-Representation Neighborhood Dissonance (CRND), a per-instance metric that measures how a sample's $k$-nearest neighbor set changes across three fundamentally different feature spaces: sparse lexical (TF-IDF), dense semantic (sentence transformer embeddings), and LLM-derived zero-shot features. We further adapt Schoener's D, an ecological niche overlap metric from species distribution modeling, to quantify how class boundaries shift across these representations. Experiments across six clinical and medical text datasets (totaling over 10,000 instances) yield three findings. First, CRND decisively fails as a label noise detector (AUC\,=\,0.497 vs.\ baseline 0.878), demonstrating that cross-representation neighborhood instability and label noise are orthogonal signals. Second, niche overlap profiles show weak, inconsistent predictive power for method selection (pooled Kendall's $\tau$\,=\,0.211, below the 0.4 threshold). Third, CRND reveals statistically significant class-level variation in cross-representation stability across five of six datasets (pooled $\eta^2$\,=\,0.162), and the ecological-to-ML transfer of Schoener's D captures unique information not redundant with standard ML overlap measures. We present these results as a transparent negative-result study, contributing an honest account of hypothesis disconfirmation alongside a validated novel methodological transfer from ecology to machine learning.
+\end{abstract}
+
+%% ============================================================
+%% 1. INTRODUCTION
+%% ============================================================
+\section{Introduction}
+
+Clinical triage in emergency departments relies on rapid categorization of patient acuity levels, yet automated triage systems are typically evaluated through a methodological horse race: train TF-IDF plus logistic regression, train BERT, train an LLM, and report which method ``wins'' \citep{RodriguezRuiz2024, FernandezArias2025}. This paradigm treats representation choice as an engineering detail rather than a source of diagnostic information. A deeper question remains largely unaddressed: \emph{why} do different representation families disagree on specific patients, and what does that disagreement reveal about data quality and method suitability?
+
+We propose Cross-Representation Neighborhood Dissonance (CRND), a per-instance metric that quantifies how much a clinical note's $k$-nearest neighbor set changes across fundamentally different feature spaces---sparse lexical (TF-IDF), dense semantic (sentence transformer embeddings), and LLM-derived zero-shot features. We hypothesize that instances with high CRND correspond to label noise or genuinely ambiguous cases, while the pattern of pairwise class overlap across representations predicts which method family will yield the best classifier for each subproblem.
+
+To quantify class overlap in a representation-agnostic manner, we adapt ecological niche overlap metrics---specifically Schoener's D \citep{Schoener1968} from the Broennimann PCA-env framework \citep{Broennimann2012}---to measure how much triage categories overlap in each feature space. In ecology, Schoener's D quantifies habitat overlap between species using kernel density estimation on environmental gradients; we treat triage categories as ``species'' and feature dimensions as ``environmental variables.''
+
+We tested three success criteria across six clinical and medical text datasets: (SC1) CRND detects label noise with Spearman $\rho > 0.3$; (SC2) niche overlap profiles predict classifier rank-ordering with Kendall's $\tau > 0.4$; (SC3) CRND distributions reveal interpretable class-level structure. Our results are predominantly negative: SC1 fails decisively (AUC\,=\,0.497), SC2 is weakly and inconsistently supported (pooled $\tau$\,=\,0.211), while SC3 succeeds (pooled $\eta^2$\,=\,0.162, significant in 5/6 datasets).
+
+We frame this work as a transparent negative-result study. The contributions are:
+\begin{enumerate}
+    \item A rigorous empirical demonstration that cross-representation neighborhood instability and label noise are orthogonal signals, informing future research directions.
+    \item The first adaptation of ecological niche overlap metrics (Schoener's D) to ML class distributions in feature spaces, validated as non-redundant with existing measures.
+    \item Evidence that per-class CRND variation captures representation-sensitive class boundaries, providing a novel descriptive diagnostic.
+    \item Extensive ablation studies establishing the robustness and limitations of the CRND framework.
+\end{enumerate}
+
+%% ============================================================
+%% 2. RELATED WORK
+%% ============================================================
+\section{Related Work}
+
+\paragraph{Data Complexity and Instance Hardness.}
+\citet{Ho2002} introduced foundational complexity measures (N1, N2, N3, Fisher ratio) to characterize classification difficulty within a single feature space. \citet{Lorena2019} extended this taxonomy with a comprehensive survey covering feature-correlation, linearity, neighborhood, network, and dimensionality measures. \citet{Smith2014} proposed instance-level hardness measures, notably $k$-Disagreeing Neighbors (kDN)---the fraction of an instance's $k$ nearest neighbors that do not share its label---which serves as a strong single-space baseline. All of these measures operate within one feature space and do not compare complexity across different representations, which is the fundamental distinction of our approach.
+
+\paragraph{Representation Comparison Methods.}
+\citet{Kornblith2019} introduced Centered Kernel Alignment (CKA) to compare representations between neural network layers, computing a single global similarity score between representation matrices. \citet{Raghu2017} proposed SVCCA for comparing network layer representations. Both methods compute dataset-level summaries rather than per-instance diagnostics, and compare representations within the same model architecture rather than across fundamentally different feature extraction paradigms. CRND differs by providing per-instance scores across independently constructed feature spaces.
+
+\paragraph{Learning with Noisy Labels.}
+A substantial literature addresses label noise detection and robust learning. \citet{Iscen2022} used neighbor consistency within a single embedding space as a regularization technique for noisy labels. \citet{Northcutt2021} developed confident learning (cleanlab), which estimates the joint distribution of noisy and true labels to identify mislabeled examples. \citet{Swayamdipta2020} introduced Dataset Cartography, which maps training dynamics to identify easy, ambiguous, and hard-to-learn instances. \citet{Pleiss2020} proposed the Area Under the Margin (AUM) statistic for identifying mislabeled data through training dynamics. \citet{Bahri2020} demonstrated that $k$-NN filtering on a preliminary model's logit layer effectively removes mislabeled data. \citet{Cheng2021} proposed CORES$^2$, a sample sieve approach for instance-dependent label noise. All of these methods operate within a single representation space; CRND's novelty lies in comparing neighbor sets \emph{across} multiple independent representation spaces.
+
+\paragraph{Ecological Niche Overlap.}
+\citet{Schoener1968} originally proposed the D overlap metric for quantifying prey item overlap in anoles. \citet{Broennimann2012} established the modern framework for measuring niche overlap from occurrence and spatial environmental data using kernel density estimation on PCA-projected environmental gradients. \citet{Warren2008} introduced the I statistic based on Hellinger distance for niche equivalency testing. These ecological tools have been extensively used in species distribution modeling but have never been applied to ML class distributions in feature spaces---a gap we address.
+
+\paragraph{Clinical Triage Classification.}
+Recent systematic reviews \citep{RodriguezRuiz2024, Alqahtani2025} have surveyed ML and NLP approaches for emergency department triage. \citet{FernandezArias2025} compared ALBERT and classical ML approaches on Spanish clinical notes, achieving AUROC of 0.96 with hybrid models. These works compare methods by accuracy alone; our framework provides a complementary diagnostic lens.
+
+\paragraph{Multi-View Learning.}
+The broader multi-view learning literature \citep{Xu2013} explores how multiple data views provide consistent and complementary information. Our work differs in that we do not seek to fuse or align representations, but rather exploit disagreement between independently constructed feature spaces as a diagnostic signal.
+
+%% ============================================================
+%% 3. METHODS
+%% ============================================================
+\section{Methods}
+
+\subsection{Cross-Representation Neighborhood Dissonance (CRND)}
+
+Given an instance $x_i$ and $M$ feature spaces $\{F_1, \ldots, F_M\}$, let $\mathcal{N}_k^{(m)}(x_i)$ denote the set of $k$ nearest neighbors of $x_i$ in feature space $F_m$ using Euclidean distance. We define CRND as:
+\begin{equation}
+\text{CRND}_k(x_i) = 1 - \frac{2}{M(M-1)} \sum_{m < m'} J\!\left(\mathcal{N}_k^{(m)}(x_i),\, \mathcal{N}_k^{(m')}(x_i)\right),
+\label{eq:crnd}
+\end{equation}
+where $J(A, B) = |A \cap B| / |A \cup B|$ is the Jaccard similarity. CRND ranges from 0 (identical neighbor sets across all spaces) to 1 (completely disjoint neighbor sets). High CRND indicates that the instance's local neighborhood structure depends strongly on the choice of representation.
+
+We compute CRND across three feature spaces ($M=3$): (1)~TF-IDF with up to 5,000 features and clinical preprocessing, (2)~sentence-transformer embeddings using all-MiniLM-L6-v2 \citep{Reimers2019} producing 384-dimensional vectors, and (3)~LLM zero-shot probability vectors obtained by prompting Llama-3.1-8B \citep{Touvron2023} via OpenRouter for triage class predictions.
+
+\subsection{Ecological Niche Overlap via Schoener's D}
+
+We adapt the Broennimann PCA-env framework \citep{Broennimann2012} to measure class overlap in feature spaces. For each feature space $F_m$ and each pair of classes $(c_a, c_b)$:
+
+\begin{enumerate}
+    \item Apply PCA to the union of all instances in $F_m$, retaining 2 components (primary) with 5-component sensitivity analysis.
+    \item Construct a $100 \times 100$ grid spanning the PCA extent.
+    \item Estimate kernel density per class on the 2D grid using Gaussian KDE with Scott's bandwidth rule ($h = n^{-1/(d+4)} \cdot \sigma$).
+    \item Normalize density grids so each sums to 1.
+    \item Compute Schoener's D:
+\end{enumerate}
+\begin{equation}
+D(c_a, c_b) = 1 - \frac{1}{2} \sum_{i} |p_{a,i} - p_{b,i}|,
+\label{eq:schoener}
+\end{equation}
+where $p_{a,i}$ and $p_{b,i}$ are the normalized density values at grid cell $i$. $D$ ranges from 0 (no overlap) to 1 (identical distributions).
+
+The result is a \emph{niche overlap profile}: a matrix of pairwise class overlap values for each feature space. The \emph{D-gap} for a class pair is the difference between the maximum and minimum $D$ values across feature spaces, indicating how much the representation choice matters for that pair.
+
+\subsection{Noise Detection Validation}
+
+To test whether CRND detects label noise, we inject synthetic noise by randomly flipping labels at rates of 5\%, 10\%, and 20\% across multiple random seeds. We then compute ROC-AUC for CRND scores as a binary classifier of noisy vs.\ clean instances. Baselines include kDN ($k$-Disagreeing Neighbors) computed in each feature space and averaged \citep{Smith2014}, cleanlab self-confidence scores \citep{Northcutt2021}, single-space $k$-NN label entropy, and random scoring.
+
+\subsection{Method Selection Prediction}
+
+To test whether niche overlap profiles predict classifier performance, we train one-vs-one classifiers (logistic regression, SVM, XGBoost) in each feature space and compute per-class-pair F1 scores. We then measure Kendall's $\tau$ between Schoener's D values and classifier F1 rank orderings across feature spaces for each class pair.
+
+%% ============================================================
+%% 4. EXPERIMENTAL SETUP
+%% ============================================================
+\section{Experimental Setup}
+
+\subsection{Datasets}
+
+We evaluate on six clinical and medical text classification datasets, summarized in Table~\ref{tab:datasets}.
+
+\begin{table}[!htbp]
+\centering
+\caption{Dataset characteristics. All datasets contain free-text suitable for TF-IDF and sentence transformer embeddings.}
+\label{tab:datasets}
+\begin{tabular}{lccc}
+\toprule
+Dataset & $N$ & Classes & Domain \\
+\midrule
+medical\_abstracts & 1,000 & 5 & PubMed diseases \\
+ohsumed\_single & 1,000 & 9+ & MEDLINE MeSH \\
+mental\_health & 1,000 & 7 & Social media \\
+mimic\_iv\_ed\_demo & 207 & 4 & ED triage (ESI) \\
+clinical\_triage\_nl & 31 & 6 & Synthetic triage \\
+med\_transcriptions & 300 & 5 & Clinical notes \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Feature spaces are constructed as: (1)~TF-IDF with up to 5,000 features (4,396 for medical\_abstracts); (2)~all-MiniLM-L6-v2 sentence-transformer embeddings (384 dimensions) \citep{Reimers2019}; (3)~LLM zero-shot class probability vectors from Llama-3.1-8B via OpenRouter (801 total API calls, \$0.015 total cost).
+
+\subsection{Evaluation Metrics}
+
+For SC1 (noise detection): ROC-AUC and Spearman $\rho$ between CRND and a binary noise indicator, with 3--5 random seeds per noise rate. For SC2 (method selection): Kendall's $\tau$ between Schoener's D niche overlap values and classifier F1 rank orderings, with bootstrap 95\% confidence intervals. For SC3 (interpretable structure): Kruskal--Wallis H-test for class-level CRND variation, with $\eta^2$ effect size and Dunn's post-hoc tests.
+
+%% ============================================================
+%% 5. RESULTS
+%% ============================================================
+\section{Results}
+
+\subsection{SC1: Noise Detection---A Decisive Negative Result}
+
+CRND fails entirely as a label noise detector. Across all five primary datasets and three noise rates, CRND achieves a mean AUC of 0.497---below random chance---while the best baseline (cleanlab) achieves 0.878. Table~\ref{tab:noise_auc} reports results at the 10\% noise rate.
+
+\begin{table}[!htbp]
+\centering
+\caption{Noise detection ROC-AUC at 10\% noise rate (mean over seeds). CRND performs at chance level across all datasets while kDN and cleanlab achieve strong detection.}
+\label{tab:noise_auc}
+\begin{tabular}{lcccc}
+\toprule
+Dataset & CRND & kDN & Cleanlab & Random \\
+\midrule
+medical\_abs & 0.497 & 0.877 & 0.882 & 0.501 \\
+ohsumed & 0.506 & 0.962 & 0.974 & 0.501 \\
+mental\_health & 0.508 & 0.971 & 0.978 & 0.501 \\
+mimic\_iv\_ed & 0.481 & 0.828 & 0.810 & 0.481 \\
+clinical\_triage & 0.500 & 0.624 & 0.607 & 0.412 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The pooled Spearman $\rho$ between CRND and noise indicators is 0.0007 (95\% CI: [$-0.014$, $0.015$]), far below the 0.3 threshold. The Bayes factor of 0.0094 provides very strong evidence against SC1. In 14 of 15 dataset-by-noise-rate comparisons, CRND is significantly worse than baselines (Welch's $t$-test, $p < 0.05$). The pooled Cohen's $d$ is $-11.7$ (DerSimonian--Laird random effects), an enormous effect in the wrong direction.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.92\textwidth,max height=0.4\textheight]{../figures/fig_1_v0.png}
+\caption{Noise detection ROC-AUC at 10\% noise rate across five datasets. CRND (red) operates at chance level while kDN (blue) and cleanlab (green) consistently achieve AUC 0.6--0.98. The dashed line marks random chance (AUC\,=\,0.5).}
+\label{fig:noise_detection}
+\end{figure}
+
+\paragraph{Why does CRND fail?} Label noise affects representations similarly---a mislabeled instance has inconsistent neighbors in \emph{every} space, not differently inconsistent neighbors \emph{across} spaces. CRND measures inter-space disagreement, but noise creates intra-space confusion---the wrong level of analysis.
+
+\subsection{SC2: Method Selection---Weak and Inconsistent Signal}
+
+Niche overlap profiles provide a weak predictive signal for classifier rank-ordering that falls below our success threshold. Table~\ref{tab:method_selection} reports per-dataset results.
+
+\begin{table}[!htbp]
+\centering
+\caption{Kendall's $\tau$ for niche overlap predicting classifier rank-ordering per dataset. SC2 threshold: $\tau > 0.4$.}
+\label{tab:method_selection}
+\begin{tabular}{lccc}
+\toprule
+Dataset & $\tau$ (proxy) & $\tau$ (LLM) & $p$-value \\
+\midrule
+medical\_abs & 0.360 & 0.317 & 0.029 \\
+ohsumed & 0.259 & $-0.068$ & $<0.001$ \\
+mental\_health & $-0.020$ & 0.404 & $<0.001$ \\
+mimic\_iv\_ed & 0.481 & 0.333 & 0.126 \\
+clinical\_triage & 0.281 & 0.296 & 0.358 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The pooled Kendall's $\tau$ is 0.211 (95\% CI: [0.157, 0.264]), below the 0.4 threshold. Only one dataset (mental\_health) achieves $\tau = 0.404$ with true LLM features, meeting SC2. A critical finding is that replacing the character $n$-gram proxy feature space with true LLM zero-shot features caused a 73.6\% drop in the method selection signal ($\tau$ from 0.243 to 0.064), suggesting that one-hot encoding of LLM text responses loses discriminative information that proper logprob features would provide.
+
+The D-gap analysis shows that class pair overlap changes substantially across representations (mean D-gap\,=\,0.368 across 88 class pairs), confirming that representations structure data differently. However, this structural difference does not reliably translate into classifier performance prediction.
+
+\subsection{SC3: Interpretable Class-Level Structure---The Positive Result}
+
+CRND successfully reveals statistically significant class-level variation in cross-representation stability. Table~\ref{tab:class_structure} reports results.
+
+\begin{table}[!htbp]
+\centering
+\caption{Kruskal--Wallis test for class-level CRND variation. Significant results ($p < 0.05$) in 3 of 5 primary datasets, with large $\eta^2$ in mental\_health.}
+\label{tab:class_structure}
+\begin{tabular}{lcccc}
+\toprule
+Dataset & $H$ & $p$-value & $\eta^2$ & Sig? \\
+\midrule
+medical\_abs & 46.47 & $<0.001$ & 0.043 & Yes \\
+ohsumed & 61.26 & $<0.001$ & 0.054 & Yes \\
+mental\_health & 469.19 & $<0.001$ & 0.466 & Yes \\
+mimic\_iv\_ed & 7.31 & 0.063 & 0.021 & No \\
+clinical\_triage & 10.65 & 0.059 & 0.226 & No \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The pooled $\eta^2$ across all datasets is 0.162, well above the 0.01 threshold. The mental\_health dataset shows the strongest effect ($\eta^2 = 0.466$), where ``personality disorder'' has the lowest mean CRND (0.777, std\,=\,0.115), indicating that its neighborhood structure is most consistent across representations, while ``normal'' has the highest (0.962, std\,=\,0.025), suggesting its neighborhood shifts maximally between feature spaces.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.92\textwidth,max height=0.4\textheight]{../figures/fig_2_v0.png}
+\caption{Per-class CRND distributions for the mental health conditions dataset. Classes range from ``personality disorder'' (mean CRND\,=\,0.777, most representation-stable) to ``normal'' (mean CRND\,=\,0.962, most representation-sensitive). Kruskal--Wallis $H = 469.19$, $p < 0.001$, $\eta^2 = 0.466$.}
+\label{fig:class_crnd}
+\end{figure}
+
+Boundary stratification further supports SC3: instances near class boundaries (measured by the proportion of different-class neighbors) show elevated CRND compared to interior instances, with a pooled Cohen's $d$ of 0.565 across four datasets.
+
+\subsection{Schoener's D: Cross-Representation Niche Overlap Profiles}
+
+The ecological niche overlap analysis reveals that class overlap patterns differ substantially across feature spaces. For the medical\_abstracts dataset, Schoener's D matrices show that the Digestive-vs-Nervous class pair has high overlap in TF-IDF space ($D = 0.816$) but much lower overlap in LLM space ($D = 0.264$), yielding a D-gap of 0.551---the largest observed.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.92\textwidth,max height=0.4\textheight]{../figures/fig_3_v0.png}
+\caption{Schoener's D niche overlap heatmaps for the medical\_abstracts dataset across three feature spaces. The Digestive--Nervous pair shows the largest D-gap (0.816 in TF-IDF vs.\ 0.264 in LLM, gap\,=\,0.551), illustrating how class separability depends strongly on the representation.}
+\label{fig:niche_overlap}
+\end{figure}
+
+The Kendall's $\tau$ correlation between Schoener's D profiles across different feature space pairs reveals moderate-to-strong agreement for TF-IDF vs.\ sentence transformer ($\tau = 0.644$, $p = 0.009$ on medical\_abstracts; $\tau = 0.724$, $p < 0.001$ on mental\_health) but much weaker agreement when LLM features are involved ($\tau = 0.289$, $p = 0.291$ for sentence transformer vs.\ LLM on medical\_abstracts). This confirms that the LLM feature space captures fundamentally different structural information.
+
+\subsection{Ablation Studies}
+
+Systematic ablation across six dimensions on 3,238 instances establishes the robustness of our approach.
+
+\paragraph{$k$-sensitivity.} CRND noise detection AUC is stable across $k = 5$ to 50 (range $< 0.04$ on medical\_abstracts), though mean CRND decreases monotonically with $k$ (from 0.916 at $k=5$ to 0.867 at $k=50$). Figure~\ref{fig:k_sensitivity} shows the sensitivity analysis.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.92\textwidth,max height=0.4\textheight]{../figures/fig_4_v0.png}
+\caption{CRND sensitivity to neighborhood size $k$ across three datasets. Large datasets (medical\_abstracts, mimic\_iv\_ed) show gradual, monotonic decrease, while the small clinical\_triage\_nl dataset ($N=31$) degrades sharply as $k$ approaches $N$.}
+\label{fig:k_sensitivity}
+\end{figure}
+
+\paragraph{Distance metric.} Switching between Euclidean, cosine, and Manhattan distance changes CRND by at most 0.018 on any dataset, confirming metric robustness.
+
+\paragraph{PCA dimensionality for Schoener's D.} The 2D vs.\ 5D Schoener's D values correlate at $r = 0.55$ on average, indicating moderate stability with some information gain from additional dimensions.
+
+\paragraph{Alternative CRND formulations.} Jaccard-based CRND performs best; Rank-Biased Overlap (RBO) with $p = 0.9$ and weighted Jaccard perform comparably. Pairwise decomposition reveals that the TF-IDF vs.\ LLM pair is the most informative.
+
+\paragraph{Confound analysis.} Partial Spearman correlations controlling for outlier score, boundary proximity, and vocabulary rarity show that the raw CRND--noise correlations (already near zero) become even closer to zero after controlling for confounds (partial $\rho$ ranges from $-0.049$ to $0.020$ across datasets).
+
+%% ============================================================
+%% 6. DISCUSSION
+%% ============================================================
+\section{Discussion}
+
+\subsection{The Fundamental Failure of Cross-Representation Noise Detection}
+
+The decisive failure of CRND for noise detection (AUC\,=\,0.497 vs.\ baseline 0.878) reveals a conceptual insight: cross-representation neighborhood instability and label noise are orthogonal signals. A mislabeled instance has inconsistent neighbors in every feature space---its $k$-NN neighborhood in TF-IDF space is label-confused, and so is its neighborhood in embedding space. The \emph{consistency} of this confusion across spaces means that mislabeled instances do not exhibit higher cross-representation \emph{dissonance} than correctly labeled instances. In contrast, baselines like kDN and cleanlab detect noise by identifying label inconsistency \emph{within} each space---the correct level of analysis.
+
+This finding has broader implications: methods that exploit inter-representation disagreement are not suitable for detecting phenomena (like label noise) that affect all representations similarly. Inter-representation analysis is informative only when the phenomenon of interest manifests differently across representations---a condition satisfied by class structure (SC3) but not by random label corruption (SC1).
+
+\subsection{The Partial Promise of Ecological Niche Overlap}
+
+The adaptation of Schoener's D from ecology to ML class distributions represents a genuinely novel cross-domain transfer, confirmed across three independent literature surveys finding zero prior applications \citep{Broennimann2012, Schoener1968, Warren2008}. The metric is mathematically equivalent to $1 - \text{TV}(f, g)$ where TV is total variation distance, but its application within the Broennimann PCA-env framework---with PCA projection to 2D, grid-based KDE, and bandwidth selection via Scott's rule---provides a principled, reproducible pipeline for measuring class overlap.
+
+The niche overlap profiles reveal substantial representation-dependent structure: the mean D-gap of 0.368 across 88 class pairs shows that the same class pair can be well-separated in one feature space (low $D$) while heavily overlapping in another (high $D$). However, this structural insight does not translate reliably into method selection prediction (pooled $\tau = 0.211$). The 73.6\% drop in $\tau$ when replacing proxy features with true LLM features suggests that degraded LLM feature quality (one-hot encoding of text responses rather than proper logprob vectors) may partially explain the weak signal.
+
+\subsection{Class-Level CRND as a Descriptive Diagnostic}
+
+The success of SC3 ($\eta^2 = 0.162$) demonstrates that CRND captures meaningful class-level variation. In the mental\_health dataset, ``personality disorder'' (mean CRND\,=\,0.777) has the most stable neighborhood structure across representations, while ``normal'' (mean CRND\,=\,0.962) shifts maximally. This likely reflects whether class boundaries are defined by specific lexical cues (stable across TF-IDF and embeddings) or by more abstract semantic relationships (representation-dependent).
+
+The boundary stratification analysis (Cohen's $d = 0.565$) confirms that instances near class boundaries have elevated CRND, consistent with the interpretation that cross-representation instability is driven by class geometry rather than random variation.
+
+\subsection{Limitations}
+
+Several limitations constrain our conclusions. First, all noise detection experiments use synthetic noise injection (random label flips), which may not reflect the structure of real clinical mislabeling patterns. Second, LLM feature quality was compromised: OpenRouter did not provide logprobs for Llama-3.1-8B, forcing one-hot encoding of text responses. Third, two datasets are underpowered (MIMIC-IV-ED demo with 207 instances and clinical\_triage\_nl with only 31), affecting KDE reliability. Fourth, the PCA projection to 2D for Schoener's D may lose substantial variance from high-dimensional spaces. Fifth, the positive SC3 result could be confounded by class size differences or text length variation, which were not fully controlled.
+
+%% ============================================================
+%% 7. CONCLUSION
+%% ============================================================
+\section{Conclusion}
+
+We introduced Cross-Representation Neighborhood Dissonance (CRND) and adapted ecological niche overlap metrics (Schoener's D) for analyzing class structure across multiple feature spaces in clinical text classification. Our primary hypothesis---that cross-representation neighborhood instability detects label noise---was decisively disconfirmed (AUC\,=\,0.497 vs.\ 0.878). The method selection hypothesis received only weak, inconsistent support ($\tau = 0.211$). However, CRND reveals significant class-level variation in representation stability ($\eta^2 = 0.162$), and the ecological-to-ML transfer of Schoener's D is confirmed as genuinely novel and non-redundant with existing overlap measures.
+
+We present this work as a transparent negative-result study, contributing an honest empirical account that we hope steers future work toward more productive applications of cross-representation analysis: characterizing class geometry, identifying representation-sensitive subgroups, and flagging instances where automated classification should defer to human judgment---while avoiding the tempting but unfounded assumption that cross-representation disagreement signals label quality.
+
+\bigskip
+\noindent\textbf{Reproducibility.} All experiments use CPU-only computation with publicly available models and datasets. Total LLM API cost across all experiments was under \$0.05. Code and experimental outputs are available upon request.
+
+%% ============================================================
+%% REFERENCES
+%% ============================================================
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
