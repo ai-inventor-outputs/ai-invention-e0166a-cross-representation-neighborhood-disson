@@ -1,0 +1,2628 @@
+{
+  "metadata": {
+    "method_name": "CRND_Ablation_Robustness",
+    "description": "Systematic ablation of CRND: k-sensitivity, PCA dimensionality, distance metrics, alternative formulations, confound controls",
+    "k_values_tested": [
+      5,
+      10,
+      15
+    ],
+    "pca_dims_tested": [
+      2,
+      3,
+      5
+    ],
+    "distance_metrics_tested": [
+      "euclidean",
+      "cosine",
+      "manhattan"
+    ],
+    "crnd_formulations_tested": [
+      "jaccard",
+      "rbo_p09",
+      "weighted_jaccard"
+    ],
+    "confounds_tested": [
+      "outlier_score",
+      "boundary_score",
+      "vocab_rarity"
+    ],
+    "noise_rate": 0.1,
+    "n_seeds": 5,
+    "datasets_used": [
+      "medical_abstracts",
+      "mimic_iv_ed_demo",
+      "clinical_patient_triage_nl"
+    ],
+    "max_examples_per_dataset": 1000,
+    "k_sensitivity_results": {
+      "medical_abstracts": {
+        "5": {
+          "mean_auc": 0.49613,
+          "std_auc": 0.014883,
+          "mean_crnd": 0.915877,
+          "std_crnd": 0.071141
+        },
+        "10": {
+          "mean_auc": 0.494884,
+          "std_auc": 0.019097,
+          "mean_crnd": 0.907227,
+          "std_crnd": 0.058574
+        },
+        "15": {
+          "mean_auc": 0.502576,
+          "std_auc": 0.013558,
+          "mean_crnd": 0.902882,
+          "std_crnd": 0.053209
+        },
+        "20": {
+          "mean_auc": 0.49516,
+          "std_auc": 0.020402,
+          "mean_crnd": 0.896803,
+          "std_crnd": 0.052086
+        },
+        "30": {
+          "mean_auc": 0.496154,
+          "std_auc": 0.022389,
+          "mean_crnd": 0.886325,
+          "std_crnd": 0.054591
+        },
+        "50": {
+          "mean_auc": 0.500094,
+          "std_auc": 0.016593,
+          "mean_crnd": 0.867022,
+          "std_crnd": 0.060153
+        }
+      },
+      "mimic_iv_ed_demo": {
+        "5": {
+          "mean_auc": 0.517594,
+          "std_auc": 0.082635,
+          "mean_crnd": 0.928891,
+          "std_crnd": 0.057546
+        },
+        "10": {
+          "mean_auc": 0.51254,
+          "std_auc": 0.088358,
+          "mean_crnd": 0.911934,
+          "std_crnd": 0.056724
+        },
+        "15": {
+          "mean_auc": 0.495668,
+          "std_auc": 0.069165,
+          "mean_crnd": 0.897852,
+          "std_crnd": 0.059441
+        },
+        "20": {
+          "mean_auc": 0.46631,
+          "std_auc": 0.066312,
+          "mean_crnd": 0.880874,
+          "std_crnd": 0.057754
+        },
+        "30": {
+          "mean_auc": 0.497353,
+          "std_auc": 0.083437,
+          "mean_crnd": 0.85246,
+          "std_crnd": 0.054442
+        },
+        "50": {
+          "mean_auc": 0.486203,
+          "std_auc": 0.084182,
+          "mean_crnd": 0.796303,
+          "std_crnd": 0.044509
+        }
+      },
+      "clinical_patient_triage_nl": {
+        "5": {
+          "mean_auc": 0.659524,
+          "std_auc": 0.157503,
+          "mean_crnd": 0.833291,
+          "std_crnd": 0.103913
+        },
+        "10": {
+          "mean_auc": 0.584524,
+          "std_auc": 0.118535,
+          "mean_crnd": 0.728664,
+          "std_crnd": 0.079142
+        },
+        "15": {
+          "mean_auc": 0.453571,
+          "std_auc": 0.132961,
+          "mean_crnd": 0.621376,
+          "std_crnd": 0.060936
+        },
+        "20": {
+          "mean_auc": 0.432143,
+          "std_auc": 0.10986,
+          "mean_crnd": 0.474516,
+          "std_crnd": 0.049099
+        },
+        "30": {
+          "mean_auc": 0.484524,
+          "std_auc": 0.147619,
+          "mean_crnd": 0.006937,
+          "std_crnd": 0.015819
+        }
+      },
+      "ohsumed_single": {
+        "5": {
+          "mean_auc": 0.535871,
+          "std_auc": 0.02953,
+          "mean_crnd": 0.879224,
+          "std_crnd": 0.105637
+        },
+        "10": {
+          "mean_auc": 0.530281,
+          "std_auc": 0.030612,
+          "mean_crnd": 0.876097,
+          "std_crnd": 0.082712
+        },
+        "15": {
+          "mean_auc": 0.534603,
+          "std_auc": 0.031235,
+          "mean_crnd": 0.86817,
+          "std_crnd": 0.078696
+        },
+        "20": {
+          "mean_auc": 0.540998,
+          "std_auc": 0.032007,
+          "mean_crnd": 0.86381,
+          "std_crnd": 0.077446
+        },
+        "30": {
+          "mean_auc": 0.528449,
+          "std_auc": 0.024355,
+          "mean_crnd": 0.854642,
+          "std_crnd": 0.074375
+        },
+        "50": {
+          "mean_auc": 0.518501,
+          "std_auc": 0.01526,
+          "mean_crnd": 0.83633,
+          "std_crnd": 0.07122
+        }
+      },
+      "mental_health_conditions": {
+        "5": {
+          "mean_auc": 0.501966,
+          "std_auc": 0.026894,
+          "mean_crnd": 0.974857,
+          "std_crnd": 0.050578
+        },
+        "10": {
+          "mean_auc": 0.4989,
+          "std_auc": 0.033994,
+          "mean_crnd": 0.968247,
+          "std_crnd": 0.050757
+        },
+        "15": {
+          "mean_auc": 0.514527,
+          "std_auc": 0.03942,
+          "mean_crnd": 0.941764,
+          "std_crnd": 0.05052
+        },
+        "20": {
+          "mean_auc": 0.517532,
+          "std_auc": 0.036915,
+          "mean_crnd": 0.917944,
+          "std_crnd": 0.063814
+        },
+        "30": {
+          "mean_auc": 0.520367,
+          "std_auc": 0.025469,
+          "mean_crnd": 0.883064,
+          "std_crnd": 0.086368
+        },
+        "50": {
+          "mean_auc": 0.522018,
+          "std_auc": 0.020999,
+          "mean_crnd": 0.831373,
+          "std_crnd": 0.120916
+        }
+      }
+    },
+    "pca_dimensionality_results": {
+      "medical_abstracts": {
+        "tfidf": {
+          "2": {
+            "D_matrix": [
+              [
+                1.0,
+                0.4297,
+                0.57
+              ],
+              [
+                0.4297,
+                1.0,
+                0.7302
+              ],
+              [
+                0.57,
+                0.7302,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.015
+          },
+          "3": {
+            "D_matrix": [
+              [
+                1.0,
+                0.407,
+                0.5622
+              ],
+              [
+                0.407,
+                1.0,
+                0.6749
+              ],
+              [
+                0.5622,
+                0.6749,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.0212
+          },
+          "5": {
+            "D_matrix": [
+              [
+                1.0,
+                0.6409,
+                0.7514
+              ],
+              [
+                0.6409,
+                1.0,
+                0.7746
+              ],
+              [
+                0.7514,
+                0.7746,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.0308
+          },
+          "10": {
+            "D_matrix": [
+              [
+                1.0,
+                0.7209,
+                0.7573
+              ],
+              [
+                0.7209,
+                1.0,
+                0.819
+              ],
+              [
+                0.7573,
+                0.819,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.0518
+          },
+          "20": {
+            "D_matrix": [
+              [
+                1.0,
+                0.6608,
+                0.7775
+              ],
+              [
+                0.6608,
+                1.0,
+                0.7826
+              ],
+              [
+                0.7775,
+                0.7826,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.0839
+          }
+        },
+        "sentence_transformer": {
+          "2": {
+            "D_matrix": [
+              [
+                1.0,
+                0.3276,
+                0.5243
+              ],
+              [
+                0.3276,
+                1.0,
+                0.779
+              ],
+              [
+                0.5243,
+                0.779,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.1002
+          },
+          "3": {
+            "D_matrix": [
+              [
+                1.0,
+                0.2908,
+                0.5127
+              ],
+              [
+                0.2908,
+                1.0,
+                0.6133
+              ],
+              [
+                0.5127,
+                0.6133,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.1359
+          },
+          "5": {
+            "D_matrix": [
+              [
+                1.0,
+                0.5772,
+                0.724
+              ],
+              [
+                0.5772,
+                1.0,
+                0.7439
+              ],
+              [
+                0.724,
+                0.7439,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.193
+          },
+          "10": {
+            "D_matrix": [
+              [
+                1.0,
+                0.6383,
+                0.7705
+              ],
+              [
+                0.6383,
+                1.0,
+                0.7715
+              ],
+              [
+                0.7705,
+                0.7715,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.2934
+          },
+          "20": {
+            "D_matrix": [
+              [
+                1.0,
+                0.721,
+                0.7952
+              ],
+              [
+                0.721,
+                1.0,
+                0.8139
+              ],
+              [
+                0.7952,
+                0.8139,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.4194
+          }
+        },
+        "llm_zeroshot": {
+          "2": {
+            "D_matrix": [
+              [
+                1.0,
+                0.207,
+                0.3679
+              ],
+              [
+                0.207,
+                1.0,
+                0.2444
+              ],
+              [
+                0.3679,
+                0.2444,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.7635
+          },
+          "3": {
+            "D_matrix": [
+              [
+                1.0,
+                0.1236,
+                0.3268
+              ],
+              [
+                0.1236,
+                1.0,
+                0.1677
+              ],
+              [
+                0.3268,
+                0.1677,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.9292
+          },
+          "5": {
+            "D_matrix": [
+              [
+                1.0,
+                0.273,
+                0.5346
+              ],
+              [
+                0.273,
+                1.0,
+                0.3016
+              ],
+              [
+                0.5346,
+                0.3016,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 1.0
+          }
+        }
+      },
+      "mimic_iv_ed_demo": {
+        "tfidf": {
+          "2": {
+            "D_matrix": [
+              [
+                1.0,
+                0.6209,
+                0.5374
+              ],
+              [
+                0.6209,
+                1.0,
+                0.8691
+              ],
+              [
+                0.5374,
+                0.8691,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.0491
+          },
+          "3": {
+            "D_matrix": [
+              [
+                1.0,
+                0.5099,
+                0.4305
+              ],
+              [
+                0.5099,
+                1.0,
+                0.8081
+              ],
+              [
+                0.4305,
+                0.8081,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.0721
+          },
+          "5": {
+            "D_matrix": [
+              [
+                1.0,
+                0.6815,
+                0.6125
+              ],
+              [
+                0.6815,
+                1.0,
+                0.8116
+              ],
+              [
+                0.6125,
+                0.8116,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.1132
+          },
+          "10": {
+            "D_matrix": [
+              [
+                1.0,
+                0.6586,
+                0.6231
+              ],
+              [
+                0.6586,
+                1.0,
+                0.8053
+              ],
+              [
+                0.6231,
+                0.8053,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.1968
+          },
+          "20": {
+            "D_matrix": [
+              [
+                1.0,
+                0.6845,
+                0.6742
+              ],
+              [
+                0.6845,
+                1.0,
+                0.8323
+              ],
+              [
+                0.6742,
+                0.8323,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.3238
+          }
+        },
+        "sentence_transformer": {
+          "2": {
+            "D_matrix": [
+              [
+                1.0,
+                0.7588,
+                0.4694
+              ],
+              [
+                0.7588,
+                1.0,
+                0.6304
+              ],
+              [
+                0.4694,
+                0.6304,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.1627
+          },
+          "3": {
+            "D_matrix": [
+              [
+                1.0,
+                0.5226,
+                0.3386
+              ],
+              [
+                0.5226,
+                1.0,
+                0.6201
+              ],
+              [
+                0.3386,
+                0.6201,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.2224
+          },
+          "5": {
+            "D_matrix": [
+              [
+                1.0,
+                0.5728,
+                0.5326
+              ],
+              [
+                0.5728,
+                1.0,
+                0.7695
+              ],
+              [
+                0.5326,
+                0.7695,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.3334
+          },
+          "10": {
+            "D_matrix": [
+              [
+                1.0,
+                0.6528,
+                0.5809
+              ],
+              [
+                0.6528,
+                1.0,
+                0.7632
+              ],
+              [
+                0.5809,
+                0.7632,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.5064
+          },
+          "20": {
+            "D_matrix": [
+              [
+                1.0,
+                0.7151,
+                0.6719
+              ],
+              [
+                0.7151,
+                1.0,
+                0.7803
+              ],
+              [
+                0.6719,
+                0.7803,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.6862
+          }
+        },
+        "llm_zeroshot": {
+          "2": {
+            "D_matrix": [
+              [
+                1.0,
+                0.1206,
+                0.0253
+              ],
+              [
+                0.1206,
+                1.0,
+                0.6688
+              ],
+              [
+                0.0253,
+                0.6688,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.8786
+          },
+          "3": {
+            "D_matrix": [
+              [
+                1.0,
+                0.0755,
+                0.0276
+              ],
+              [
+                0.0755,
+                1.0,
+                0.2726
+              ],
+              [
+                0.0276,
+                0.2726,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 1.0
+          }
+        }
+      },
+      "clinical_patient_triage_nl": {
+        "tfidf": {
+          "2": {
+            "D_matrix": [
+              [
+                1.0,
+                0.0028,
+                0.0005
+              ],
+              [
+                0.0028,
+                1.0,
+                0.1001
+              ],
+              [
+                0.0005,
+                0.1001,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.2798
+          },
+          "3": {
+            "D_matrix": [
+              [
+                1.0,
+                null,
+                null
+              ],
+              [
+                null,
+                1.0,
+                0.0676
+              ],
+              [
+                null,
+                0.0676,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.3584
+          },
+          "5": {
+            "D_matrix": [
+              [
+                1.0,
+                0.0203,
+                0.2424
+              ],
+              [
+                0.0203,
+                1.0,
+                0.3856
+              ],
+              [
+                0.2424,
+                0.3856,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.4977
+          },
+          "10": {
+            "D_matrix": [
+              [
+                1.0,
+                0.3318,
+                0.5015
+              ],
+              [
+                0.3318,
+                1.0,
+                0.5616
+              ],
+              [
+                0.5015,
+                0.5616,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.7518
+          },
+          "20": {
+            "D_matrix": [
+              [
+                1.0,
+                0.3895,
+                0.3719
+              ],
+              [
+                0.3895,
+                1.0,
+                0.5973
+              ],
+              [
+                0.3719,
+                0.5973,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.9809
+          }
+        },
+        "sentence_transformer": {
+          "2": {
+            "D_matrix": [
+              [
+                1.0,
+                0.1629,
+                0.1913
+              ],
+              [
+                0.1629,
+                1.0,
+                0.8533
+              ],
+              [
+                0.1913,
+                0.8533,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.1717
+          },
+          "3": {
+            "D_matrix": [
+              [
+                1.0,
+                null,
+                null
+              ],
+              [
+                null,
+                1.0,
+                0.676
+              ],
+              [
+                null,
+                0.676,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.2361
+          },
+          "5": {
+            "D_matrix": [
+              [
+                1.0,
+                0.6076,
+                0.4509
+              ],
+              [
+                0.6076,
+                1.0,
+                0.7043
+              ],
+              [
+                0.4509,
+                0.7043,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.3496
+          },
+          "10": {
+            "D_matrix": [
+              [
+                1.0,
+                0.6398,
+                0.5339
+              ],
+              [
+                0.6398,
+                1.0,
+                0.6294
+              ],
+              [
+                0.5339,
+                0.6294,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.5746
+          },
+          "20": {
+            "D_matrix": [
+              [
+                1.0,
+                0.554,
+                0.422
+              ],
+              [
+                0.554,
+                1.0,
+                0.3762
+              ],
+              [
+                0.422,
+                0.3762,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.8605
+          }
+        },
+        "llm_zeroshot": {
+          "2": {
+            "D_matrix": [
+              [
+                1.0,
+                0.05,
+                0.0233
+              ],
+              [
+                0.05,
+                1.0,
+                0.0653
+              ],
+              [
+                0.0233,
+                0.0653,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.7317
+          },
+          "3": {
+            "D_matrix": [
+              [
+                1.0,
+                null,
+                null
+              ],
+              [
+                null,
+                1.0,
+                0.0224
+              ],
+              [
+                null,
+                0.0224,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.9044
+          },
+          "5": {
+            "D_matrix": [
+              [
+                1.0,
+                0.0646,
+                0.1193
+              ],
+              [
+                0.0646,
+                1.0,
+                0.1329
+              ],
+              [
+                0.1193,
+                0.1329,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 1.0
+          }
+        }
+      },
+      "ohsumed_single": {
+        "tfidf": {
+          "2": {
+            "D_matrix": [
+              [
+                1.0,
+                0.8297,
+                0.6357
+              ],
+              [
+                0.8297,
+                1.0,
+                0.5765
+              ],
+              [
+                0.6357,
+                0.5765,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.0159
+          },
+          "3": {
+            "D_matrix": [
+              [
+                1.0,
+                0.7107,
+                0.6157
+              ],
+              [
+                0.7107,
+                1.0,
+                0.5081
+              ],
+              [
+                0.6157,
+                0.5081,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.0223
+          },
+          "5": {
+            "D_matrix": [
+              [
+                1.0,
+                0.7588,
+                0.6209
+              ],
+              [
+                0.7588,
+                1.0,
+                0.5885
+              ],
+              [
+                0.6209,
+                0.5885,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.033
+          },
+          "10": {
+            "D_matrix": [
+              [
+                1.0,
+                0.6911,
+                0.5626
+              ],
+              [
+                0.6911,
+                1.0,
+                0.5649
+              ],
+              [
+                0.5626,
+                0.5649,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.0542
+          },
+          "20": {
+            "D_matrix": [
+              [
+                1.0,
+                0.7192,
+                0.676
+              ],
+              [
+                0.7192,
+                1.0,
+                0.5943
+              ],
+              [
+                0.676,
+                0.5943,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.0878
+          }
+        },
+        "sentence_transformer": {
+          "2": {
+            "D_matrix": [
+              [
+                1.0,
+                0.5361,
+                0.3702
+              ],
+              [
+                0.5361,
+                1.0,
+                0.4687
+              ],
+              [
+                0.3702,
+                0.4687,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.1062
+          },
+          "3": {
+            "D_matrix": [
+              [
+                1.0,
+                0.1708,
+                0.2853
+              ],
+              [
+                0.1708,
+                1.0,
+                0.234
+              ],
+              [
+                0.2853,
+                0.234,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.1412
+          },
+          "5": {
+            "D_matrix": [
+              [
+                1.0,
+                0.3364,
+                0.4794
+              ],
+              [
+                0.3364,
+                1.0,
+                0.2089
+              ],
+              [
+                0.4794,
+                0.2089,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.1999
+          },
+          "10": {
+            "D_matrix": [
+              [
+                1.0,
+                0.4726,
+                0.2992
+              ],
+              [
+                0.4726,
+                1.0,
+                0.2433
+              ],
+              [
+                0.2992,
+                0.2433,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.3047
+          },
+          "20": {
+            "D_matrix": [
+              [
+                1.0,
+                0.6848,
+                0.3978
+              ],
+              [
+                0.6848,
+                1.0,
+                0.4341
+              ],
+              [
+                0.3978,
+                0.4341,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.4316
+          }
+        },
+        "llm_zeroshot": {
+          "2": {
+            "D_matrix": [
+              [
+                1.0,
+                0.1823,
+                0.1668
+              ],
+              [
+                0.1823,
+                1.0,
+                0.4889
+              ],
+              [
+                0.1668,
+                0.4889,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.7064
+          },
+          "3": {
+            "D_matrix": [
+              [
+                1.0,
+                0.0549,
+                0.1118
+              ],
+              [
+                0.0549,
+                1.0,
+                0.0501
+              ],
+              [
+                0.1118,
+                0.0501,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.7717
+          },
+          "5": {
+            "D_matrix": [
+              [
+                1.0,
+                0.1792,
+                0.1466
+              ],
+              [
+                0.1792,
+                1.0,
+                0.0311
+              ],
+              [
+                0.1466,
+                0.0311,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.8823
+          }
+        }
+      },
+      "mental_health_conditions": {
+        "tfidf": {
+          "2": {
+            "D_matrix": [
+              [
+                1.0,
+                0.5637,
+                0.2686
+              ],
+              [
+                0.5637,
+                1.0,
+                0.2495
+              ],
+              [
+                0.2686,
+                0.2495,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.0275
+          },
+          "3": {
+            "D_matrix": [
+              [
+                1.0,
+                0.2008,
+                0.146
+              ],
+              [
+                0.2008,
+                1.0,
+                0.2085
+              ],
+              [
+                0.146,
+                0.2085,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.038
+          },
+          "5": {
+            "D_matrix": [
+              [
+                1.0,
+                0.2073,
+                0.2965
+              ],
+              [
+                0.2073,
+                1.0,
+                0.21
+              ],
+              [
+                0.2965,
+                0.21,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.0537
+          },
+          "10": {
+            "D_matrix": [
+              [
+                1.0,
+                0.3738,
+                0.4487
+              ],
+              [
+                0.3738,
+                1.0,
+                0.2821
+              ],
+              [
+                0.4487,
+                0.2821,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.0817
+          },
+          "20": {
+            "D_matrix": [
+              [
+                1.0,
+                0.5213,
+                0.5506
+              ],
+              [
+                0.5213,
+                1.0,
+                0.4482
+              ],
+              [
+                0.5506,
+                0.4482,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.1226
+          }
+        },
+        "sentence_transformer": {
+          "2": {
+            "D_matrix": [
+              [
+                1.0,
+                0.4394,
+                0.2569
+              ],
+              [
+                0.4394,
+                1.0,
+                0.2674
+              ],
+              [
+                0.2569,
+                0.2674,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.1629
+          },
+          "3": {
+            "D_matrix": [
+              [
+                1.0,
+                0.3811,
+                0.243
+              ],
+              [
+                0.3811,
+                1.0,
+                0.2455
+              ],
+              [
+                0.243,
+                0.2455,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.2073
+          },
+          "5": {
+            "D_matrix": [
+              [
+                1.0,
+                0.3696,
+                0.3149
+              ],
+              [
+                0.3696,
+                1.0,
+                0.5509
+              ],
+              [
+                0.3149,
+                0.5509,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.2769
+          },
+          "10": {
+            "D_matrix": [
+              [
+                1.0,
+                0.4582,
+                0.4093
+              ],
+              [
+                0.4582,
+                1.0,
+                0.5901
+              ],
+              [
+                0.4093,
+                0.5901,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.371
+          },
+          "20": {
+            "D_matrix": [
+              [
+                1.0,
+                0.5376,
+                0.4977
+              ],
+              [
+                0.5376,
+                1.0,
+                0.6509
+              ],
+              [
+                0.4977,
+                0.6509,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.4821
+          }
+        },
+        "llm_zeroshot": {
+          "2": {
+            "D_matrix": [
+              [
+                1.0,
+                0.137,
+                0.1925
+              ],
+              [
+                0.137,
+                1.0,
+                0.2134
+              ],
+              [
+                0.1925,
+                0.2134,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.549
+          },
+          "3": {
+            "D_matrix": [
+              [
+                1.0,
+                0.0847,
+                0.1783
+              ],
+              [
+                0.0847,
+                1.0,
+                0.1157
+              ],
+              [
+                0.1783,
+                0.1157,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.7381
+          },
+          "5": {
+            "D_matrix": [
+              [
+                1.0,
+                0.3226,
+                0.2246
+              ],
+              [
+                0.3226,
+                1.0,
+                0.2006
+              ],
+              [
+                0.2246,
+                0.2006,
+                1.0
+              ]
+            ],
+            "explained_variance_cumulative": 0.9863
+          }
+        }
+      }
+    },
+    "pca_stability_analysis": {
+      "medical_abstracts": {
+        "tfidf": {
+          "2": {
+            "pearson_r": 0.6029,
+            "p_value": 0.065061,
+            "ref_dim": 20
+          },
+          "3": {
+            "pearson_r": 0.6872,
+            "p_value": 0.028112,
+            "ref_dim": 20
+          },
+          "5": {
+            "pearson_r": 0.8801,
+            "p_value": 0.00078,
+            "ref_dim": 20
+          },
+          "10": {
+            "pearson_r": 0.8712,
+            "p_value": 0.001027,
+            "ref_dim": 20
+          }
+        },
+        "sentence_transformer": {
+          "2": {
+            "pearson_r": 0.4034,
+            "p_value": 0.247628,
+            "ref_dim": 20
+          },
+          "3": {
+            "pearson_r": 0.5834,
+            "p_value": 0.076668,
+            "ref_dim": 20
+          },
+          "5": {
+            "pearson_r": 0.9799,
+            "p_value": 1e-06,
+            "ref_dim": 20
+          },
+          "10": {
+            "pearson_r": 0.9767,
+            "p_value": 1e-06,
+            "ref_dim": 20
+          }
+        },
+        "llm_zeroshot": {
+          "2": {
+            "pearson_r": 0.3995,
+            "p_value": 0.252674,
+            "ref_dim": 5
+          },
+          "3": {
+            "pearson_r": 0.7223,
+            "p_value": 0.018319,
+            "ref_dim": 5
+          }
+        }
+      },
+      "mimic_iv_ed_demo": {
+        "tfidf": {
+          "2": {
+            "pearson_r": 0.9884,
+            "p_value": 0.0002,
+            "ref_dim": 20
+          },
+          "3": {
+            "pearson_r": 0.9716,
+            "p_value": 0.001199,
+            "ref_dim": 20
+          },
+          "5": {
+            "pearson_r": 0.9987,
+            "p_value": 2e-06,
+            "ref_dim": 20
+          },
+          "10": {
+            "pearson_r": 0.9996,
+            "p_value": 0.0,
+            "ref_dim": 20
+          }
+        },
+        "sentence_transformer": {
+          "2": {
+            "pearson_r": 0.972,
+            "p_value": 0.001163,
+            "ref_dim": 20
+          },
+          "3": {
+            "pearson_r": 0.9712,
+            "p_value": 0.001232,
+            "ref_dim": 20
+          },
+          "5": {
+            "pearson_r": 0.9892,
+            "p_value": 0.000175,
+            "ref_dim": 20
+          },
+          "10": {
+            "pearson_r": 0.9975,
+            "p_value": 9e-06,
+            "ref_dim": 20
+          }
+        },
+        "llm_zeroshot": {
+          "2": {
+            "pearson_r": 0.9942,
+            "p_value": 5e-05,
+            "ref_dim": 3
+          }
+        }
+      },
+      "clinical_patient_triage_nl": {
+        "tfidf": {
+          "2": {
+            "pearson_r": 0.7198,
+            "p_value": 0.002479,
+            "ref_dim": 20
+          },
+          "3": {
+            "pearson_r": 0.727,
+            "p_value": 0.002133,
+            "ref_dim": 20
+          },
+          "5": {
+            "pearson_r": 0.881,
+            "p_value": 1.4e-05,
+            "ref_dim": 20
+          },
+          "10": {
+            "pearson_r": 0.981,
+            "p_value": 0.0,
+            "ref_dim": 20
+          }
+        },
+        "sentence_transformer": {
+          "2": {
+            "pearson_r": 0.6813,
+            "p_value": 0.005164,
+            "ref_dim": 20
+          },
+          "3": {
+            "pearson_r": 0.5376,
+            "p_value": 0.038738,
+            "ref_dim": 20
+          },
+          "5": {
+            "pearson_r": 0.9311,
+            "p_value": 0.0,
+            "ref_dim": 20
+          },
+          "10": {
+            "pearson_r": 0.9563,
+            "p_value": 0.0,
+            "ref_dim": 20
+          }
+        },
+        "llm_zeroshot": {
+          "2": {
+            "pearson_r": 0.7767,
+            "p_value": 0.000659,
+            "ref_dim": 5
+          },
+          "3": {
+            "pearson_r": 0.7531,
+            "p_value": 0.001191,
+            "ref_dim": 5
+          }
+        }
+      },
+      "ohsumed_single": {
+        "tfidf": {
+          "2": {
+            "pearson_r": 0.8804,
+            "p_value": 0.0,
+            "ref_dim": 20
+          },
+          "3": {
+            "pearson_r": 0.8774,
+            "p_value": 0.0,
+            "ref_dim": 20
+          },
+          "5": {
+            "pearson_r": 0.9527,
+            "p_value": 0.0,
+            "ref_dim": 20
+          },
+          "10": {
+            "pearson_r": 0.9744,
+            "p_value": 0.0,
+            "ref_dim": 20
+          }
+        },
+        "sentence_transformer": {
+          "2": {
+            "pearson_r": 0.7221,
+            "p_value": 1e-06,
+            "ref_dim": 20
+          },
+          "3": {
+            "pearson_r": 0.6196,
+            "p_value": 5.6e-05,
+            "ref_dim": 20
+          },
+          "5": {
+            "pearson_r": 0.8716,
+            "p_value": 0.0,
+            "ref_dim": 20
+          },
+          "10": {
+            "pearson_r": 0.9543,
+            "p_value": 0.0,
+            "ref_dim": 20
+          }
+        },
+        "llm_zeroshot": {
+          "2": {
+            "pearson_r": 0.4244,
+            "p_value": 0.009881,
+            "ref_dim": 5
+          },
+          "3": {
+            "pearson_r": 0.5111,
+            "p_value": 0.001445,
+            "ref_dim": 5
+          }
+        }
+      },
+      "mental_health_conditions": {
+        "tfidf": {
+          "2": {
+            "pearson_r": 0.6338,
+            "p_value": 0.002037,
+            "ref_dim": 20
+          },
+          "3": {
+            "pearson_r": 0.6147,
+            "p_value": 0.003026,
+            "ref_dim": 20
+          },
+          "5": {
+            "pearson_r": 0.6325,
+            "p_value": 0.002092,
+            "ref_dim": 20
+          },
+          "10": {
+            "pearson_r": 0.7446,
+            "p_value": 0.000108,
+            "ref_dim": 20
+          }
+        },
+        "sentence_transformer": {
+          "2": {
+            "pearson_r": 0.1189,
+            "p_value": 0.60783,
+            "ref_dim": 20
+          },
+          "3": {
+            "pearson_r": 0.3906,
+            "p_value": 0.080008,
+            "ref_dim": 20
+          },
+          "5": {
+            "pearson_r": 0.758,
+            "p_value": 6.9e-05,
+            "ref_dim": 20
+          },
+          "10": {
+            "pearson_r": 0.8718,
+            "p_value": 0.0,
+            "ref_dim": 20
+          }
+        },
+        "llm_zeroshot": {
+          "2": {
+            "pearson_r": 0.4446,
+            "p_value": 0.04344,
+            "ref_dim": 5
+          },
+          "3": {
+            "pearson_r": 0.6859,
+            "p_value": 0.000599,
+            "ref_dim": 5
+          }
+        }
+      }
+    },
+    "distance_metric_results": {
+      "medical_abstracts": {
+        "euclidean": {
+          "mean_auc": 0.494884,
+          "std_auc": 0.019097,
+          "mean_crnd": 0.907227,
+          "std_crnd": 0.058574
+        },
+        "cosine": {
+          "mean_auc": 0.495669,
+          "std_auc": 0.021212,
+          "mean_crnd": 0.907345,
+          "std_crnd": 0.058339
+        },
+        "manhattan": {
+          "mean_auc": 0.498894,
+          "std_auc": 0.043383,
+          "mean_crnd": 0.976333,
+          "std_crnd": 0.024683
+        }
+      },
+      "mimic_iv_ed_demo": {
+        "euclidean": {
+          "mean_auc": 0.51254,
+          "std_auc": 0.088358,
+          "mean_crnd": 0.911934,
+          "std_crnd": 0.056724
+        },
+        "cosine": {
+          "mean_auc": 0.511765,
+          "std_auc": 0.086295,
+          "mean_crnd": 0.912099,
+          "std_crnd": 0.056339
+        },
+        "manhattan": {
+          "mean_auc": 0.509786,
+          "std_auc": 0.07732,
+          "mean_crnd": 0.935746,
+          "std_crnd": 0.04919
+        }
+      },
+      "clinical_patient_triage_nl": {
+        "euclidean": {
+          "mean_auc": 0.584524,
+          "std_auc": 0.118535,
+          "mean_crnd": 0.728664,
+          "std_crnd": 0.079142
+        },
+        "cosine": {
+          "mean_auc": 0.54881,
+          "std_auc": 0.135076,
+          "mean_crnd": 0.732535,
+          "std_crnd": 0.074044
+        },
+        "manhattan": {
+          "mean_auc": 0.515476,
+          "std_auc": 0.07929,
+          "mean_crnd": 0.746309,
+          "std_crnd": 0.082877
+        }
+      },
+      "ohsumed_single": {
+        "euclidean": {
+          "mean_auc": 0.530281,
+          "std_auc": 0.030612,
+          "mean_crnd": 0.876097,
+          "std_crnd": 0.082712
+        },
+        "cosine": {
+          "mean_auc": 0.530016,
+          "std_auc": 0.030515,
+          "mean_crnd": 0.876138,
+          "std_crnd": 0.082935
+        },
+        "manhattan": {
+          "mean_auc": 0.518302,
+          "std_auc": 0.022101,
+          "mean_crnd": 0.963118,
+          "std_crnd": 0.040421
+        }
+      },
+      "mental_health_conditions": {
+        "euclidean": {
+          "mean_auc": 0.4989,
+          "std_auc": 0.033994,
+          "mean_crnd": 0.968247,
+          "std_crnd": 0.050757
+        },
+        "cosine": {
+          "mean_auc": 0.516428,
+          "std_auc": 0.024183,
+          "mean_crnd": 0.905421,
+          "std_crnd": 0.087546
+        },
+        "manhattan": {
+          "mean_auc": 0.516032,
+          "std_auc": 0.03192,
+          "mean_crnd": 0.968912,
+          "std_crnd": 0.049578
+        }
+      }
+    },
+    "formulation_comparison": {
+      "medical_abstracts": {
+        "jaccard": {
+          "mean_auc": 0.502576,
+          "std_auc": 0.013558,
+          "mean_crnd": 0.902882
+        },
+        "rbo_p09": {
+          "mean_auc": 0.489002,
+          "std_auc": 0.017904,
+          "mean_crnd": 0.894088
+        },
+        "weighted_jaccard": {
+          "mean_auc": 0.487592,
+          "std_auc": 0.010589,
+          "mean_crnd": 0.820592
+        }
+      },
+      "mimic_iv_ed_demo": {
+        "jaccard": {
+          "mean_auc": 0.517594,
+          "std_auc": 0.082635,
+          "mean_crnd": 0.928891
+        },
+        "rbo_p09": {
+          "mean_auc": 0.550267,
+          "std_auc": 0.077203,
+          "mean_crnd": 0.959139
+        },
+        "weighted_jaccard": {
+          "mean_auc": 0.535187,
+          "std_auc": 0.076343,
+          "mean_crnd": 0.892401
+        }
+      },
+      "clinical_patient_triage_nl": {
+        "jaccard": {
+          "mean_auc": 0.659524,
+          "std_auc": 0.157503,
+          "mean_crnd": 0.833291
+        },
+        "rbo_p09": {
+          "mean_auc": 0.570238,
+          "std_auc": 0.144504,
+          "mean_crnd": 0.918949
+        },
+        "weighted_jaccard": {
+          "mean_auc": 0.641667,
+          "std_auc": 0.172204,
+          "mean_crnd": 0.763545
+        }
+      },
+      "ohsumed_single": {
+        "jaccard": {
+          "mean_auc": 0.540998,
+          "std_auc": 0.032007,
+          "mean_crnd": 0.86381
+        },
+        "rbo_p09": {
+          "mean_auc": 0.531129,
+          "std_auc": 0.024192,
+          "mean_crnd": 0.841908
+        },
+        "weighted_jaccard": {
+          "mean_auc": 0.535191,
+          "std_auc": 0.02807,
+          "mean_crnd": 0.738863
+        }
+      },
+      "mental_health_conditions": {
+        "jaccard": {
+          "mean_auc": 0.522018,
+          "std_auc": 0.020999,
+          "mean_crnd": 0.831373
+        },
+        "rbo_p09": {
+          "mean_auc": 0.507271,
+          "std_auc": 0.035461,
+          "mean_crnd": 0.927184
+        },
+        "weighted_jaccard": {
+          "mean_auc": 0.522016,
+          "std_auc": 0.028337,
+          "mean_crnd": 0.743698
+        }
+      }
+    },
+    "pairwise_decomposition": {
+      "medical_abstracts": {
+        "tfidf_vs_sentence_transformer": {
+          "mean_auc": 0.499807,
+          "std_auc": 0.026582,
+          "mean_crnd": 0.803058
+        },
+        "tfidf_vs_llm_zeroshot": {
+          "mean_auc": 0.505239,
+          "std_auc": 0.021958,
+          "mean_crnd": 0.952077
+        },
+        "sentence_transformer_vs_llm_zeroshot": {
+          "mean_auc": 0.496713,
+          "std_auc": 0.026772,
+          "mean_crnd": 0.953511
+        }
+      },
+      "mimic_iv_ed_demo": {
+        "tfidf_vs_sentence_transformer": {
+          "mean_auc": 0.49484,
+          "std_auc": 0.0859,
+          "mean_crnd": 0.848727
+        },
+        "tfidf_vs_llm_zeroshot": {
+          "mean_auc": 0.511444,
+          "std_auc": 0.076172,
+          "mean_crnd": 0.964382
+        },
+        "sentence_transformer_vs_llm_zeroshot": {
+          "mean_auc": 0.530508,
+          "std_auc": 0.032903,
+          "mean_crnd": 0.973564
+        }
+      },
+      "clinical_patient_triage_nl": {
+        "tfidf_vs_sentence_transformer": {
+          "mean_auc": 0.545238,
+          "std_auc": 0.089847,
+          "mean_crnd": 0.84767
+        },
+        "tfidf_vs_llm_zeroshot": {
+          "mean_auc": 0.655952,
+          "std_auc": 0.134866,
+          "mean_crnd": 0.772657
+        },
+        "sentence_transformer_vs_llm_zeroshot": {
+          "mean_auc": 0.559524,
+          "std_auc": 0.138628,
+          "mean_crnd": 0.879544
+        }
+      },
+      "ohsumed_single": {
+        "tfidf_vs_sentence_transformer": {
+          "mean_auc": 0.530714,
+          "std_auc": 0.034161,
+          "mean_crnd": 0.76986
+        },
+        "tfidf_vs_llm_zeroshot": {
+          "mean_auc": 0.540847,
+          "std_auc": 0.022107,
+          "mean_crnd": 0.917851
+        },
+        "sentence_transformer_vs_llm_zeroshot": {
+          "mean_auc": 0.533472,
+          "std_auc": 0.032232,
+          "mean_crnd": 0.903719
+        }
+      },
+      "mental_health_conditions": {
+        "tfidf_vs_sentence_transformer": {
+          "mean_auc": 0.524793,
+          "std_auc": 0.020719,
+          "mean_crnd": 0.82044
+        },
+        "tfidf_vs_llm_zeroshot": {
+          "mean_auc": 0.515969,
+          "std_auc": 0.022533,
+          "mean_crnd": 0.851827
+        },
+        "sentence_transformer_vs_llm_zeroshot": {
+          "mean_auc": 0.521466,
+          "std_auc": 0.018183,
+          "mean_crnd": 0.82185
+        }
+      }
+    },
+    "confound_analysis": {
+      "medical_abstracts": {
+        "raw_spearman": {
+          "rho": 0.013317,
+          "p_value": 0.674042
+        },
+        "partial_outlier": {
+          "rho": 0.00465,
+          "p_value": 0.883289
+        },
+        "partial_boundary": {
+          "rho": 0.015279,
+          "p_value": 0.629563
+        },
+        "partial_vocab_rarity": {
+          "rho": 0.014611,
+          "p_value": 0.644626
+        },
+        "partial_all": {
+          "rho": -0.000635,
+          "p_value": 0.984015
+        }
+      },
+      "mimic_iv_ed_demo": {
+        "raw_spearman": {
+          "rho": -0.085501,
+          "p_value": 0.220598
+        },
+        "partial_outlier": {
+          "rho": -0.071727,
+          "p_value": 0.305586
+        },
+        "partial_boundary": {
+          "rho": -0.072536,
+          "p_value": 0.300149
+        },
+        "partial_vocab_rarity": {
+          "rho": -0.064351,
+          "p_value": 0.358123
+        },
+        "partial_all": {
+          "rho": -0.04938,
+          "p_value": 0.483068
+        }
+      },
+      "clinical_patient_triage_nl": {
+        "raw_spearman": {
+          "rho": 0.116619,
+          "p_value": 0.532126
+        },
+        "partial_outlier": {
+          "rho": 0.060083,
+          "p_value": 0.752466
+        },
+        "partial_boundary": {
+          "rho": 0.116787,
+          "p_value": 0.538821
+        },
+        "partial_vocab_rarity": {
+          "rho": 0.095369,
+          "p_value": 0.616155
+        },
+        "partial_all": {
+          "rho": -0.046107,
+          "p_value": 0.815782
+        }
+      },
+      "ohsumed_single": {
+        "raw_spearman": {
+          "rho": 0.031264,
+          "p_value": 0.323313
+        },
+        "partial_outlier": {
+          "rho": 0.019797,
+          "p_value": 0.531973
+        },
+        "partial_boundary": {
+          "rho": 0.031042,
+          "p_value": 0.327019
+        },
+        "partial_vocab_rarity": {
+          "rho": 0.03118,
+          "p_value": 0.324858
+        },
+        "partial_all": {
+          "rho": 0.020369,
+          "p_value": 0.520611
+        }
+      },
+      "mental_health_conditions": {
+        "raw_spearman": {
+          "rho": 0.024826,
+          "p_value": 0.432917
+        },
+        "partial_outlier": {
+          "rho": 0.005019,
+          "p_value": 0.8741
+        },
+        "partial_boundary": {
+          "rho": 0.02148,
+          "p_value": 0.497675
+        },
+        "partial_vocab_rarity": {
+          "rho": 0.033611,
+          "p_value": 0.288552
+        },
+        "partial_all": {
+          "rho": 0.002368,
+          "p_value": 0.940476
+        }
+      }
+    },
+    "baseline_results": {
+      "medical_abstracts": {
+        "knn_anomaly_tfidf": {
+          "mean_auc": 0.508622,
+          "std_auc": 0.013036,
+          "mean_score": 1.314133
+        },
+        "knn_anomaly_sentence_transformer": {
+          "mean_auc": 0.511567,
+          "std_auc": 0.015865,
+          "mean_score": 1.082125
+        },
+        "knn_anomaly_llm_zeroshot": {
+          "mean_auc": 0.491676,
+          "std_auc": 0.02663,
+          "mean_score": 0.017193
+        },
+        "random_baseline": {
+          "mean_auc": 0.501831,
+          "std_auc": 0.01722
+        }
+      },
+      "mimic_iv_ed_demo": {
+        "knn_anomaly_tfidf": {
+          "mean_auc": 0.476631,
+          "std_auc": 0.077535,
+          "mean_score": 1.165883
+        },
+        "knn_anomaly_sentence_transformer": {
+          "mean_auc": 0.498984,
+          "std_auc": 0.043915,
+          "mean_score": 0.509961
+        },
+        "knn_anomaly_llm_zeroshot": {
+          "mean_auc": 0.491604,
+          "std_auc": 0.030546,
+          "mean_score": 0.024785
+        },
+        "random_baseline": {
+          "mean_auc": 0.522513,
+          "std_auc": 0.071839
+        }
+      },
+      "clinical_patient_triage_nl": {
+        "knn_anomaly_tfidf": {
+          "mean_auc": 0.517857,
+          "std_auc": 0.081788,
+          "mean_score": 0.959063
+        },
+        "knn_anomaly_sentence_transformer": {
+          "mean_auc": 0.690476,
+          "std_auc": 0.144828,
+          "mean_score": 1.089418
+        },
+        "knn_anomaly_llm_zeroshot": {
+          "mean_auc": 0.354762,
+          "std_auc": 0.12803,
+          "mean_score": 0.198907
+        },
+        "random_baseline": {
+          "mean_auc": 0.485714,
+          "std_auc": 0.174379
+        }
+      },
+      "ohsumed_single": {
+        "knn_anomaly_tfidf": {
+          "mean_auc": 0.523138,
+          "std_auc": 0.014677,
+          "mean_score": 1.317799
+        },
+        "knn_anomaly_sentence_transformer": {
+          "mean_auc": 0.521404,
+          "std_auc": 0.025281,
+          "mean_score": 1.07306
+        },
+        "knn_anomaly_llm_zeroshot": {
+          "mean_auc": 0.48954,
+          "std_auc": 0.015166,
+          "mean_score": 0.020966
+        },
+        "random_baseline": {
+          "mean_auc": 0.501831,
+          "std_auc": 0.01722
+        }
+      },
+      "mental_health_conditions": {
+        "knn_anomaly_tfidf": {
+          "mean_auc": 0.509856,
+          "std_auc": 0.021059,
+          "mean_score": 1.240519
+        },
+        "knn_anomaly_sentence_transformer": {
+          "mean_auc": 0.512707,
+          "std_auc": 0.015257,
+          "mean_score": 0.954894
+        },
+        "knn_anomaly_llm_zeroshot": {
+          "mean_auc": 0.478924,
+          "std_auc": 0.014205,
+          "mean_score": 0.030733
+        },
+        "random_baseline": {
+          "mean_auc": 0.501831,
+          "std_auc": 0.01722
+        }
+      }
+    },
+    "optimal_k_recommendation": 5,
+    "pca_stability_threshold": 2,
+    "best_crnd_formulation": "jaccard",
+    "most_informative_pair": "tfidf_vs_llm_zeroshot",
+    "runtime_seconds": 526.0,
+    "phase_timings": {
+      "medical_abstracts_phase1": 70.8,
+      "medical_abstracts_phase2": 2.0,
+      "medical_abstracts_phase3": 30.4,
+      "medical_abstracts_phase4": 3.0,
+      "medical_abstracts_phase5": 0.5,
+      "medical_abstracts_phase6": 1.2,
+      "medical_abstracts_baseline": 0.3,
+      "mimic_iv_ed_demo_phase1": 41.8,
+      "mimic_iv_ed_demo_phase2": 0.3,
+      "mimic_iv_ed_demo_phase3": 8.8,
+      "mimic_iv_ed_demo_phase4": 0.3,
+      "mimic_iv_ed_demo_phase5": 0.1,
+      "mimic_iv_ed_demo_phase6": 0.1,
+      "mimic_iv_ed_demo_baseline": 0.1,
+      "clinical_patient_triage_nl_phase1": 20.2,
+      "clinical_patient_triage_nl_phase2": 1.1,
+      "clinical_patient_triage_nl_phase3": 23.6,
+      "clinical_patient_triage_nl_phase4": 0.2,
+      "clinical_patient_triage_nl_phase5": 0.1,
+      "clinical_patient_triage_nl_phase6": 0.1,
+      "clinical_patient_triage_nl_baseline": 0.1,
+      "ohsumed_single_phase1": 77.4,
+      "ohsumed_single_phase2": 2.9,
+      "ohsumed_single_phase3": 114.2,
+      "ohsumed_single_phase4": 4.4,
+      "ohsumed_single_phase5": 0.7,
+      "ohsumed_single_phase6": 1.3,
+      "ohsumed_single_baseline": 0.5,
+      "mental_health_conditions_phase1": 46.7,
+      "mental_health_conditions_phase2": 2.6,
+      "mental_health_conditions_phase3": 57.2,
+      "mental_health_conditions_phase4": 3.0,
+      "mental_health_conditions_phase5": 1.0,
+      "mental_health_conditions_phase6": 0.7,
+      "mental_health_conditions_baseline": 0.3
+    },
+    "llm_model": "meta-llama/llama-3.1-8b-instruct",
+    "llm_total_cost_usd": 0.0009,
+    "llm_call_count": 50
+  },
+  "datasets": [
+    {
+      "dataset": "medical_abstracts",
+      "examples": [
+        {
+          "input": "Tissue changes around loose prostheses. A canine model to investigate the effects of an antiinflammatory agent. The aseptically loosened prosthesis provided a means for investigating the in vivo and i...",
+          "output": "General_pathological_conditions",
+          "predict_crnd_best_k": "0.9333",
+          "predict_crnd_rbo": "0.9327",
+          "predict_crnd_weighted_jaccard": "0.8986",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 0,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts",
+          "metadata_crnd_k5": 0.963,
+          "metadata_crnd_k10": 0.9167,
+          "metadata_crnd_k15": 0.9333,
+          "metadata_crnd_k20": 0.9412,
+          "metadata_crnd_k30": 0.9412,
+          "metadata_crnd_k50": 0.9399,
+          "metadata_crnd_rbo_p09": 0.9327,
+          "metadata_crnd_weighted_jaccard": 0.8986,
+          "metadata_crnd_pairwise_tfidf_vs_sentence_transformer": 0.8,
+          "metadata_crnd_pairwise_tfidf_vs_llm_zeroshot": 1.0,
+          "metadata_crnd_pairwise_sentence_transformer_vs_llm_zeroshot": 1.0,
+          "metadata_outlier_score": 1.0603,
+          "metadata_boundary_score": 0.7965,
+          "metadata_vocab_rarity_score": 4.6937
+        },
+        {
+          "input": "Neuropeptide Y and neuron-specific enolase levels in benign and malignant pheochromocytomas. Neuron-specific enolase (NSE) is the isoform of enolase, a glycolytic enzyme found in the neuroendocrine sy...",
+          "output": "Neoplasms",
+          "predict_crnd_best_k": "0.8871",
+          "predict_crnd_rbo": "0.8284",
+          "predict_crnd_weighted_jaccard": "0.7483",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 1,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts",
+          "metadata_crnd_k5": 0.7778,
+          "metadata_crnd_k10": 0.9167,
+          "metadata_crnd_k15": 0.8871,
+          "metadata_crnd_k20": 0.9207,
+          "metadata_crnd_k30": 0.9277,
+          "metadata_crnd_k50": 0.9365,
+          "metadata_crnd_rbo_p09": 0.8284,
+          "metadata_crnd_weighted_jaccard": 0.7483,
+          "metadata_crnd_pairwise_tfidf_vs_sentence_transformer": 0.6957,
+          "metadata_crnd_pairwise_tfidf_vs_llm_zeroshot": 1.0,
+          "metadata_crnd_pairwise_sentence_transformer_vs_llm_zeroshot": 0.9655,
+          "metadata_outlier_score": 0.998,
+          "metadata_boundary_score": 0.8652,
+          "metadata_vocab_rarity_score": 4.248
+        },
+        {
+          "input": "Sexually transmitted diseases of the colon, rectum, and anus. The challenge of the nineties. During the past two decades, an explosive growth in both the prevalence and types of sexually transmitted d...",
+          "output": "Digestive_system_diseases",
+          "predict_crnd_best_k": "0.963",
+          "predict_crnd_rbo": "0.9612",
+          "predict_crnd_weighted_jaccard": "0.9681",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 2,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts",
+          "metadata_crnd_k5": 0.9167,
+          "metadata_crnd_k10": 0.963,
+          "metadata_crnd_k15": 0.963,
+          "metadata_crnd_k20": 0.9469,
+          "metadata_crnd_k30": 0.9339,
+          "metadata_crnd_k50": 0.9112,
+          "metadata_crnd_rbo_p09": 0.9612,
+          "metadata_crnd_weighted_jaccard": 0.9681,
+          "metadata_crnd_pairwise_tfidf_vs_sentence_transformer": 0.8889,
+          "metadata_crnd_pairwise_tfidf_vs_llm_zeroshot": 1.0,
+          "metadata_crnd_pairwise_sentence_transformer_vs_llm_zeroshot": 1.0,
+          "metadata_outlier_score": 0.9979,
+          "metadata_boundary_score": 0.9773,
+          "metadata_vocab_rarity_score": 4.5669
+        }
+      ]
+    },
+    {
+      "dataset": "mimic_iv_ed_demo",
+      "examples": [
+        {
+          "input": "Chief complaint: Abd pain, LEAKING ASCITES",
+          "output": "ESI-2",
+          "predict_crnd_best_k": "0.7831",
+          "predict_crnd_rbo": "0.9179",
+          "predict_crnd_weighted_jaccard": "0.7495",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 15,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10005866",
+          "metadata_stay_id": "34558830",
+          "metadata_crnd_k5": 0.7831,
+          "metadata_crnd_k10": 0.8538,
+          "metadata_crnd_k15": 0.7548,
+          "metadata_crnd_k20": 0.7185,
+          "metadata_crnd_k30": 0.7652,
+          "metadata_crnd_k50": 0.7894,
+          "metadata_crnd_rbo_p09": 0.9179,
+          "metadata_crnd_weighted_jaccard": 0.7495,
+          "metadata_crnd_pairwise_tfidf_vs_sentence_transformer": 0.5714,
+          "metadata_crnd_pairwise_tfidf_vs_llm_zeroshot": 0.8889,
+          "metadata_crnd_pairwise_sentence_transformer_vs_llm_zeroshot": 0.8889,
+          "metadata_outlier_score": 0.6752,
+          "metadata_boundary_score": 0.6752,
+          "metadata_vocab_rarity_score": 3.202
+        },
+        {
+          "input": "Chief complaint: Dizziness, Diplopia",
+          "output": "ESI-2",
+          "predict_crnd_best_k": "0.7037",
+          "predict_crnd_rbo": "0.814",
+          "predict_crnd_weighted_jaccard": "0.553",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 16,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10014354",
+          "metadata_stay_id": "34820898",
+          "metadata_crnd_k5": 0.7037,
+          "metadata_crnd_k10": 0.8621,
+          "metadata_crnd_k15": 0.8859,
+          "metadata_crnd_k20": 0.8989,
+          "metadata_crnd_k30": 0.8534,
+          "metadata_crnd_k50": 0.814,
+          "metadata_crnd_rbo_p09": 0.814,
+          "metadata_crnd_weighted_jaccard": 0.553,
+          "metadata_crnd_pairwise_tfidf_vs_sentence_transformer": 0.3333,
+          "metadata_crnd_pairwise_tfidf_vs_llm_zeroshot": 0.8889,
+          "metadata_crnd_pairwise_sentence_transformer_vs_llm_zeroshot": 0.8889,
+          "metadata_outlier_score": 0.6931,
+          "metadata_boundary_score": 0.6214,
+          "metadata_vocab_rarity_score": 0.0
+        },
+        {
+          "input": "Chief complaint: Abd pain. Vitals: HR 72, RR 18, BP 98/48, Temp 98.8, O2 90%, Pain 13/10",
+          "output": "ESI-2",
+          "predict_crnd_best_k": "0.963",
+          "predict_crnd_rbo": "0.9896",
+          "predict_crnd_weighted_jaccard": "0.9743",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 17,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10016810",
+          "metadata_stay_id": "35758326",
+          "metadata_crnd_k5": 0.963,
+          "metadata_crnd_k10": 0.963,
+          "metadata_crnd_k15": 0.898,
+          "metadata_crnd_k20": 0.8677,
+          "metadata_crnd_k30": 0.8348,
+          "metadata_crnd_k50": 0.8277,
+          "metadata_crnd_rbo_p09": 0.9896,
+          "metadata_crnd_weighted_jaccard": 0.9743,
+          "metadata_crnd_pairwise_tfidf_vs_sentence_transformer": 0.8889,
+          "metadata_crnd_pairwise_tfidf_vs_llm_zeroshot": 1.0,
+          "metadata_crnd_pairwise_sentence_transformer_vs_llm_zeroshot": 1.0,
+          "metadata_outlier_score": 0.4307,
+          "metadata_boundary_score": 0.4097,
+          "metadata_vocab_rarity_score": 1.7805
+        }
+      ]
+    },
+    {
+      "dataset": "clinical_patient_triage_nl",
+      "examples": [
+        {
+          "input": "Patient presents with persistent dry cough and low-grade fever for 5 days. Age: 34. Vital signs: Stable. Primary complaint: Respiratory_Distress",
+          "output": "Mild",
+          "predict_crnd_best_k": "0.8796",
+          "predict_crnd_rbo": "0.9084",
+          "predict_crnd_weighted_jaccard": "0.8072",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 0,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8001",
+          "metadata_crnd_k5": 0.8796,
+          "metadata_crnd_k10": 0.8621,
+          "metadata_crnd_k15": 0.7392,
+          "metadata_crnd_k20": 0.5007,
+          "metadata_crnd_k30": 0.0,
+          "metadata_crnd_rbo_p09": 0.9084,
+          "metadata_crnd_weighted_jaccard": 0.8072,
+          "metadata_crnd_pairwise_tfidf_vs_sentence_transformer": 0.8889,
+          "metadata_crnd_pairwise_tfidf_vs_llm_zeroshot": 0.75,
+          "metadata_crnd_pairwise_sentence_transformer_vs_llm_zeroshot": 1.0,
+          "metadata_outlier_score": 0.85,
+          "metadata_boundary_score": 0.7325,
+          "metadata_vocab_rarity_score": 3.1753
+        },
+        {
+          "input": "Sudden onset of acute chest pain radiating to left arm with diaphoresis. Age: 58. Vital signs: Unstable. Primary complaint: Cardiac_Event",
+          "output": "Critical",
+          "predict_crnd_best_k": "0.8796",
+          "predict_crnd_rbo": "0.9023",
+          "predict_crnd_weighted_jaccard": "0.835",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 1,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8002",
+          "metadata_crnd_k5": 0.8796,
+          "metadata_crnd_k10": 0.6627,
+          "metadata_crnd_k15": 0.6107,
+          "metadata_crnd_k20": 0.5185,
+          "metadata_crnd_k30": 0.0,
+          "metadata_crnd_rbo_p09": 0.9023,
+          "metadata_crnd_weighted_jaccard": 0.835,
+          "metadata_crnd_pairwise_tfidf_vs_sentence_transformer": 1.0,
+          "metadata_crnd_pairwise_tfidf_vs_llm_zeroshot": 0.75,
+          "metadata_crnd_pairwise_sentence_transformer_vs_llm_zeroshot": 0.8889,
+          "metadata_outlier_score": 0.8881,
+          "metadata_boundary_score": 0.8734,
+          "metadata_vocab_rarity_score": 2.9888
+        },
+        {
+          "input": "Minor laceration on right forearm caused by kitchen knife; bleeding controlled. Age: 22. Vital signs: Stable. Primary complaint: Trauma_Minor",
+          "output": "Low",
+          "predict_crnd_best_k": "0.9259",
+          "predict_crnd_rbo": "0.9278",
+          "predict_crnd_weighted_jaccard": "0.8684",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 2,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8003",
+          "metadata_crnd_k5": 0.9259,
+          "metadata_crnd_k10": 0.7467,
+          "metadata_crnd_k15": 0.5693,
+          "metadata_crnd_k20": 0.4667,
+          "metadata_crnd_k30": 0.043,
+          "metadata_crnd_rbo_p09": 0.9278,
+          "metadata_crnd_weighted_jaccard": 0.8684,
+          "metadata_crnd_pairwise_tfidf_vs_sentence_transformer": 0.8889,
+          "metadata_crnd_pairwise_tfidf_vs_llm_zeroshot": 0.8889,
+          "metadata_crnd_pairwise_sentence_transformer_vs_llm_zeroshot": 1.0,
+          "metadata_outlier_score": 0.6089,
+          "metadata_boundary_score": 0.6471,
+          "metadata_vocab_rarity_score": 2.674
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "datasets": [
+    {
+      "dataset": "medical_abstracts",
+      "examples": [
+        {
+          "input": "Tissue changes around loose prostheses. A canine model to investigate the effects of an antiinflammatory agent. The aseptically loosened prosthesis provided a means for investigating the in vivo and in vitro activity of the cells associated with the loosening process in seven dogs. The cells were isolated and maintained in culture for sufficient periods of time so that their biologic activity could be studied as well as the effect of different agents added to the cells in vivo or in vitro. The biologic response as determined by interleukin-1 and prostaglandin E2 activity paralleled the roentgenographic appearance of loosening and the technetium images and observations made at the time of revision surgery. The correlation between clinical, roentgenographic, histologic, and biochemical loosening indicates that the canine model is suitable for investigating the mechanisms of prosthetic failure. A canine model permits the study of possible nonsurgical therapeutic interventions with the ultimate hope of stopping or slowing the loosening process.",
+          "output": "General_pathological_conditions",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 0,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Neuropeptide Y and neuron-specific enolase levels in benign and malignant pheochromocytomas. Neuron-specific enolase (NSE) is the isoform of enolase, a glycolytic enzyme found in the neuroendocrine system. Neuropeptide Y (NPY) is a peptide recently discovered in the peripheral and central nervous systems. Serum NSE and plasma NPY levels have been reported to be increased in some patients with pheochromocytoma. The authors evaluated whether the measurement of these molecules could help to discriminate between benign and malignant forms of pheochromocytoma. The NSE levels were normal in all patients with benign pheochromocytoma (n = 13) and elevated in one half of those with malignant pheochromocytoma (n = 13). Plasma NPY levels were on the average significantly higher in the malignant (177.1 +/- 38.9 pmol/l, n = 16) than in the benign forms of the disease (15.7 +/- 389 pmol/l, n = 24). However, there was no difference in the percentage of patients with elevated NPY levels. These results show that determination of serum NSE may be useful for distinguishing between malignant and benign pheochromocytoma; the measurement of plasma NPY is not useful for differentiating the two kinds of tumors.",
+          "output": "Neoplasms",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 1,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Sexually transmitted diseases of the colon, rectum, and anus. The challenge of the nineties. During the past two decades, an explosive growth in both the prevalence and types of sexually transmitted diseases has occurred. Up to 55 percent of homosexual men with anorectal complaints have gonorrhea; 80 percent of the patients with syphilis are homosexuals. Chlamydia is found in 15 percent of asymptomatic homosexual men, and up to one third of homosexuals have active anorectal herpes simplex virus. In addition, a host of parasites, bacterial, viral, and protozoan are all rampant in the homosexual population. Furthermore, the global epidemic of AIDS has produced a plethora of colorectal manifestations. Acute cytomegalovirus ileocolitis is the most common indication for emergency abdominal surgery in the homosexual AIDS population. Along with cryptosporidia and isospora, the patient may present to the colorectal surgeon with bloody diarrhea and weight loss before the diagnosis of human immunodeficiency virus (HIV) disease. Other patients may present with colorectal Kaposi's sarcoma or anorectal lymphoma, and consequently will be found to have seropositivity for HIV. However, in addition to these protean manifestations, one third of patients with AIDS consult the colorectal surgeon with either condylomata acuminata, anorectal sepsis, or proctitis before the diagnosis of HIV disease. Although aggressive anorectal surgery is associated with reasonable surgical results in some asymptomatic HIV positive patients, the same procedures in AIDS (symptomatic HIV positive) patients will often be met with disastrous results. It is incumbent upon the surgeon, therefore, to recognize the manifestations of HIV disease and diagnose these conditions accordingly.",
+          "output": "Digestive_system_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 2,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        }
+      ]
+    },
+    {
+      "dataset": "mimic_iv_ed_demo",
+      "examples": [
+        {
+          "input": "Chief complaint: Abd pain, LEAKING ASCITES",
+          "output": "ESI-2",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 15,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10005866",
+          "metadata_stay_id": "34558830"
+        },
+        {
+          "input": "Chief complaint: Dizziness, Diplopia",
+          "output": "ESI-2",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 16,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10014354",
+          "metadata_stay_id": "34820898"
+        },
+        {
+          "input": "Chief complaint: Abd pain. Vitals: HR 72, RR 18, BP 98/48, Temp 98.8, O2 90%, Pain 13/10",
+          "output": "ESI-2",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 17,
+          "metadata_source": "physionet/mimic-iv-ed-demo/2.2",
+          "metadata_subject_id": "10016810",
+          "metadata_stay_id": "35758326"
+        }
+      ]
+    },
+    {
+      "dataset": "clinical_patient_triage_nl",
+      "examples": [
+        {
+          "input": "Patient presents with persistent dry cough and low-grade fever for 5 days. Age: 34. Vital signs: Stable. Primary complaint: Respiratory_Distress",
+          "output": "Mild",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 0,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8001"
+        },
+        {
+          "input": "Sudden onset of acute chest pain radiating to left arm with diaphoresis. Age: 58. Vital signs: Unstable. Primary complaint: Cardiac_Event",
+          "output": "Critical",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 1,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8002"
+        },
+        {
+          "input": "Minor laceration on right forearm caused by kitchen knife; bleeding controlled. Age: 22. Vital signs: Stable. Primary complaint: Trauma_Minor",
+          "output": "Low",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 2,
+          "metadata_source": "huggingface/Shoriful025/clinical_patient_triage_natural_language",
+          "metadata_record_id": "CLN-8003"
+        }
+      ]
+    },
+    {
+      "dataset": "ohsumed_single",
+      "examples": [
+        {
+          "input": "Superficial cultures in neonatal sepsis evaluations. Impact on antibiotic decision making.\n The authors performed a retrospective analysis of neonatal superficial cultures and their effect on antimicrobial decision making during a nine-month period at Nashville General Hospital.\n They obtained and reviewed charts of infants (n = 66) having paired superficial (skin and/or gastric aspirate) and deep (blood and cerebrospinal fluid) cultures for the evaluation of early-onset sepsis.\n Superficial cultures were positive for pathogens (any streptococcus or enteric gram-negative) in 15% (10/66) of cases.\n Antimicrobial decision making was affected in only one of these cases, and in a seemingly inappropriate manner.\n In summary, there was no evidence or review that superficial cultures used in sepsis evaluation influenced physician antimicrobial decision making; in one case they may have led to unnecessary antibiotic exposure.",
+          "output": "Bacterial_Infections_and_Mycoses",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 23,
+          "metadata_row_index": 0,
+          "metadata_source": "huggingface/joao-luz/ohsumed-single"
+        },
+        {
+          "input": "Catheter-related sepsis: prospective, randomized study of three methods of long-term catheter maintenance.\n We studied the infectious risk of different methods of managing vascular catheters during long-term use.\n Consecutive surgical ICU patients requiring triple lumen catheters, pulmonary artery catheters, or arterial catheters for greater than 7 days were prospectively randomized to one of three management groups: a) percutaneous (PERC) puncture with every 7-day catheter change at a new site, b) no weekly change (NWC) with a new site when changed, or c) guidewire exchange (GWX) with every 7-day catheter change at the same site.\n In all groups, a catheter change was mandatory for a positive blood culture, skin site infection, or sepsis without a likely source.\n Cultures were obtained when clinically indicated and at the time of every catheter change.\n Catheter-related sepsis (CRS) was defined as a positive blood culture and catheter culture with the same organism.\n A total of 112 patients met evaluation criteria.\n There were no intergroup differences in age, primary diagnosis, severity of injury or illness, number of study days, number of protocol violations, route of catheterization, number of catheters present/patient day, catheter sepsis rate, or bacteremia rate.\n The NWC group demonstrated an increased number of days/catheter, fewer catheter/subcutaneous tract segment cultures/patient, and a reduced incidence of catheter tip colonization.\n These results occurred in a setting where the number of CRS episodes/patient was 0.17 for GWX, 0.22 for PERC, and 0.16 for NWC.\n We conclude that there is no difference in infectious risk between these three methods of long-term catheter management.\n The method with the least complications and expense should be used.",
+          "output": "Bacterial_Infections_and_Mycoses",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 23,
+          "metadata_row_index": 1,
+          "metadata_source": "huggingface/joao-luz/ohsumed-single"
+        },
+        {
+          "input": "Effect of blood transfusion on oxygen consumption in pediatric septic shock.\n Treatment plans for pediatric septic shock advocate increasing oxygen consumption (VO2).\n Recent studies in septic shock indicate that improving oxygen delivery (DO2) by increasing blood flow will increase VO2.\n We prospectively examined the effect on VO2 of improving DO2 by increasing oxygen content (CO2) with blood transfusion in eight hemodynamically stable septic shock patients.\n Transfusion consisted of 8 to 10 ml/kg of packed RBC over 1 to 2 h.\n Hemodynamic and oxygen transport measurements were obtained before and after blood transfusion.\n Transfusion significantly (p less than .05) increased Hgb and Hct from 10.2 +/- 0.8 g/dl and 30 +/- 2% to 13.2 +/- 1.4 g/dl and 39 +/- 4%, respectively (mean +/- SD).\n DO2 significantly (p less than .05) increased after transfusion (599 +/- 65 to 818 +/- 189 ml/min.m2), but VO2 did not change (166 +/- 68 to 176 +/- 74 ml/min.m2; NS).\n In pediatric septic shock patients, increasing CO2 by blood transfusion may not increase VO2.",
+          "output": "Bacterial_Infections_and_Mycoses",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 23,
+          "metadata_row_index": 2,
+          "metadata_source": "huggingface/joao-luz/ohsumed-single"
+        }
+      ]
+    },
+    {
+      "dataset": "mental_health_conditions",
+      "examples": [
+        {
+          "input": "i cannot believe people actually perceive me, and think about me. i cannot believe i am real? i do not know, its just weird. i want to cease out of existence, i feel like i am going to explode, all of these feelings and emotions bottled up, i just want to fucking explode but i cannot even fucking cry, i am so mad at myself, i hate myself , hate myself so much perception",
+          "output": "depression",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 48569,
+          "metadata_source": "huggingface/sai1908/Mental_Health_Condition_Classification"
+        },
+        {
+          "input": "consider how you can incorporate metaphors and imagery into the thought to provide depth and vividness.\n\nin the labyrinthine maze of my mind, a cacophony of contradictory selves wrestle and clash, a tempestuous symphony of unquenchable desires and insatiable cravings. the dark recesses of my psyche, an uncharted territory littered with shattered shards of past traumas, mirror the twisted, gnarled roots of a vengeful, manipulative willow tree; an eternal witness to the endless struggle for control and identity. and as i navigate the treacherous waters of self-discovery, my cha",
+          "output": "personality disorder",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 97343,
+          "metadata_source": "huggingface/sai1908/Mental_Health_Condition_Classification"
+        },
+        {
+          "input": "monologue:\n(breaths in deeply, eyes darting around the room, searching for an escape route)\noh god, what's happening? why do i feel so... uneasy? am i being followed? is it the quiet that's making me so nervous? no, that's ridiculous. it's just my overactive imagination.\n(looks at phone, debates calling someone, then immediately regrets the idea)\nbut what if it's not just my imagination? what if there's something out there, lurking in the shadows, waiting for me to let my guard down?\n(heart races, palms sweat)\nand what about the",
+          "output": "anxiety",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 99861,
+          "metadata_source": "huggingface/sai1908/Mental_Health_Condition_Classification"
+        }
+      ]
+    }
+  ]
+}

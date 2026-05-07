@@ -1,0 +1,1826 @@
+2026-02-16 22:56:12.810 | INFO     | __main__:main:1052 - ============================================================
+2026-02-16 22:56:12.811 | INFO     | __main__:main:1053 - Cross-Representation Method Selection Validation (Iter 3)
+2026-02-16 22:56:12.811 | INFO     | __main__:main:1054 - ============================================================
+2026-02-16 22:56:12.811 | INFO     | __main__:main:1059 - MAX_EXAMPLES_PER_DATASET = 3
+2026-02-16 22:56:12.811 | INFO     | __main__:load_and_sample_data:93 - Loading data from /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-16 22:56:13.528 | INFO     | __main__:load_and_sample_data:129 -   medical_abstracts: 3 examples, 3 classes
+2026-02-16 22:56:13.529 | INFO     | __main__:load_and_sample_data:129 -   mimic_iv_ed_demo: 3 examples, 3 classes
+2026-02-16 22:56:13.529 | INFO     | __main__:load_and_sample_data:129 -   clinical_patient_triage_nl: 3 examples, 3 classes
+2026-02-16 22:56:13.535 | INFO     | __main__:load_and_sample_data:129 -   ohsumed_single: 3 examples, 3 classes
+2026-02-16 22:56:13.549 | INFO     | __main__:load_and_sample_data:129 -   mental_health_conditions: 3 examples, 3 classes
+2026-02-16 22:56:13.558 | INFO     | __main__:main:1080 - 
+============================================================
+2026-02-16 22:56:13.559 | INFO     | __main__:main:1081 - Processing dataset: medical_abstracts (3 examples)
+2026-02-16 22:56:13.559 | INFO     | __main__:main:1082 - ============================================================
+2026-02-16 22:56:13.559 | INFO     | __main__:main:1093 - Class pairs: 3
+2026-02-16 22:56:13.559 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 3 texts
+2026-02-16 22:56:13.561 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (3, 245)
+2026-02-16 22:56:17.448 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 3 texts
+2026-02-16 22:56:21.865 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (3, 384)
+2026-02-16 22:56:21.866 | INFO     | __main__:build_llm_features:351 - Building LLM features for 3 texts (starting at 0, 3 classes)
+2026-02-16 22:56:27.339 | INFO     | __main__:build_llm_features:389 - LLM features complete: 3 texts, logprobs available: False (0/3)
+2026-02-16 22:56:27.339 | INFO     | __main__:compute_knn_and_crnd:423 - Computing k-NN with k=2
+2026-02-16 22:56:27.341 | INFO     | __main__:compute_knn_and_crnd:435 -   tfidf: neighbors shape (3, 2)
+2026-02-16 22:56:27.363 | INFO     | __main__:compute_knn_and_crnd:435 -   sbert: neighbors shape (3, 2)
+2026-02-16 22:56:27.366 | INFO     | __main__:compute_knn_and_crnd:435 -   llm: neighbors shape (3, 2)
+2026-02-16 22:56:27.366 | INFO     | __main__:compute_knn_and_crnd:456 -   CRND k=2: mean=0.2963, std=0.2095
+2026-02-16 22:56:27.367 | INFO     | __main__:compute_knn_and_crnd:423 - Computing k-NN with k=2
+2026-02-16 22:56:27.369 | INFO     | __main__:compute_knn_and_crnd:435 -   tfidf: neighbors shape (3, 2)
+2026-02-16 22:56:27.370 | INFO     | __main__:compute_knn_and_crnd:435 -   sbert: neighbors shape (3, 2)
+2026-02-16 22:56:27.372 | INFO     | __main__:compute_knn_and_crnd:435 -   llm: neighbors shape (3, 2)
+2026-02-16 22:56:27.372 | INFO     | __main__:compute_knn_and_crnd:456 -   CRND k=2: mean=0.2963, std=0.2095
+2026-02-16 22:56:27.372 | INFO     | __main__:compute_niche_overlap_all:586 - Computing niche overlap for tfidf (3 pairs)
+2026-02-16 22:56:27.372 | INFO     | __main__:compute_niche_overlap_all:586 - Computing niche overlap for sbert (3 pairs)
+2026-02-16 22:56:27.372 | INFO     | __main__:compute_niche_overlap_all:586 - Computing niche overlap for llm (3 pairs)
+2026-02-16 22:56:27.373 | INFO     | __main__:train_classifiers_ovo:625 - Training classifiers for tfidf
+2026-02-16 22:56:27.373 | INFO     | __main__:train_classifiers_ovo:625 - Training classifiers for sbert
+2026-02-16 22:56:27.373 | INFO     | __main__:train_classifiers_ovo:625 - Training classifiers for llm
+2026-02-16 22:56:27.373 | INFO     | __main__:train_baseline_multiclass:696 - Baseline multi-class classification for tfidf
+2026-02-16 22:56:27.373 | INFO     | __main__:train_baseline_multiclass:696 - Baseline multi-class classification for sbert
+2026-02-16 22:56:27.374 | INFO     | __main__:train_baseline_multiclass:696 - Baseline multi-class classification for llm
+2026-02-16 22:56:27.374 | WARNING  | __main__:compute_kendall_tau:771 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 22:56:27.374 | INFO     | __main__:main:1169 - Dataset medical_abstracts complete. Elapsed: 15s
+2026-02-16 22:56:27.374 | INFO     | __main__:main:1080 - 
+============================================================
+2026-02-16 22:56:27.374 | INFO     | __main__:main:1081 - Processing dataset: mimic_iv_ed_demo (3 examples)
+2026-02-16 22:56:27.374 | INFO     | __main__:main:1082 - ============================================================
+2026-02-16 22:56:27.374 | INFO     | __main__:main:1093 - Class pairs: 3
+2026-02-16 22:56:27.374 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 3 texts
+2026-02-16 22:56:27.375 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (3, 26)
+2026-02-16 22:56:27.376 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 3 texts
+2026-02-16 22:56:31.943 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (3, 384)
+2026-02-16 22:56:31.943 | INFO     | __main__:build_llm_features:351 - Building LLM features for 3 texts (starting at 0, 3 classes)
+2026-02-16 22:56:37.672 | INFO     | __main__:build_llm_features:389 - LLM features complete: 3 texts, logprobs available: False (0/3)
+2026-02-16 22:56:37.672 | INFO     | __main__:compute_knn_and_crnd:423 - Computing k-NN with k=2
+2026-02-16 22:56:37.674 | INFO     | __main__:compute_knn_and_crnd:435 -   tfidf: neighbors shape (3, 2)
+2026-02-16 22:56:37.676 | INFO     | __main__:compute_knn_and_crnd:435 -   sbert: neighbors shape (3, 2)
+2026-02-16 22:56:37.677 | INFO     | __main__:compute_knn_and_crnd:435 -   llm: neighbors shape (3, 2)
+2026-02-16 22:56:37.678 | INFO     | __main__:compute_knn_and_crnd:456 -   CRND k=2: mean=0.1481, std=0.2095
+2026-02-16 22:56:37.678 | INFO     | __main__:compute_knn_and_crnd:423 - Computing k-NN with k=2
+2026-02-16 22:56:37.679 | INFO     | __main__:compute_knn_and_crnd:435 -   tfidf: neighbors shape (3, 2)
+2026-02-16 22:56:37.681 | INFO     | __main__:compute_knn_and_crnd:435 -   sbert: neighbors shape (3, 2)
+2026-02-16 22:56:37.682 | INFO     | __main__:compute_knn_and_crnd:435 -   llm: neighbors shape (3, 2)
+2026-02-16 22:56:37.683 | INFO     | __main__:compute_knn_and_crnd:456 -   CRND k=2: mean=0.1481, std=0.2095
+2026-02-16 22:56:37.683 | INFO     | __main__:compute_niche_overlap_all:586 - Computing niche overlap for tfidf (3 pairs)
+2026-02-16 22:56:37.683 | INFO     | __main__:compute_niche_overlap_all:586 - Computing niche overlap for sbert (3 pairs)
+2026-02-16 22:56:37.683 | INFO     | __main__:compute_niche_overlap_all:586 - Computing niche overlap for llm (3 pairs)
+2026-02-16 22:56:37.683 | INFO     | __main__:train_classifiers_ovo:625 - Training classifiers for tfidf
+2026-02-16 22:56:37.683 | INFO     | __main__:train_classifiers_ovo:625 - Training classifiers for sbert
+2026-02-16 22:56:37.684 | INFO     | __main__:train_classifiers_ovo:625 - Training classifiers for llm
+2026-02-16 22:56:37.684 | INFO     | __main__:train_baseline_multiclass:696 - Baseline multi-class classification for tfidf
+2026-02-16 22:56:37.684 | INFO     | __main__:train_baseline_multiclass:696 - Baseline multi-class classification for sbert
+2026-02-16 22:56:37.684 | INFO     | __main__:train_baseline_multiclass:696 - Baseline multi-class classification for llm
+2026-02-16 22:56:37.684 | WARNING  | __main__:compute_kendall_tau:771 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 22:56:37.684 | INFO     | __main__:main:1169 - Dataset mimic_iv_ed_demo complete. Elapsed: 25s
+2026-02-16 22:56:37.684 | INFO     | __main__:main:1080 - 
+============================================================
+2026-02-16 22:56:37.684 | INFO     | __main__:main:1081 - Processing dataset: clinical_patient_triage_nl (3 examples)
+2026-02-16 22:56:37.684 | INFO     | __main__:main:1082 - ============================================================
+2026-02-16 22:56:37.684 | INFO     | __main__:main:1093 - Class pairs: 3
+2026-02-16 22:56:37.685 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 3 texts
+2026-02-16 22:56:37.687 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (3, 41)
+2026-02-16 22:56:37.687 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 3 texts
+2026-02-16 22:56:41.759 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (3, 384)
+2026-02-16 22:56:41.760 | INFO     | __main__:build_llm_features:351 - Building LLM features for 3 texts (starting at 0, 3 classes)
+2026-02-16 22:56:45.311 | INFO     | __main__:build_llm_features:389 - LLM features complete: 3 texts, logprobs available: False (0/3)
+2026-02-16 22:56:45.311 | INFO     | __main__:compute_knn_and_crnd:423 - Computing k-NN with k=2
+2026-02-16 22:56:45.313 | INFO     | __main__:compute_knn_and_crnd:435 -   tfidf: neighbors shape (3, 2)
+2026-02-16 22:56:45.314 | INFO     | __main__:compute_knn_and_crnd:435 -   sbert: neighbors shape (3, 2)
+2026-02-16 22:56:45.315 | INFO     | __main__:compute_knn_and_crnd:435 -   llm: neighbors shape (3, 2)
+2026-02-16 22:56:45.316 | INFO     | __main__:compute_knn_and_crnd:456 -   CRND k=2: mean=0.1481, std=0.2095
+2026-02-16 22:56:45.316 | INFO     | __main__:compute_knn_and_crnd:423 - Computing k-NN with k=2
+2026-02-16 22:56:45.317 | INFO     | __main__:compute_knn_and_crnd:435 -   tfidf: neighbors shape (3, 2)
+2026-02-16 22:56:45.318 | INFO     | __main__:compute_knn_and_crnd:435 -   sbert: neighbors shape (3, 2)
+2026-02-16 22:56:45.320 | INFO     | __main__:compute_knn_and_crnd:435 -   llm: neighbors shape (3, 2)
+2026-02-16 22:56:45.320 | INFO     | __main__:compute_knn_and_crnd:456 -   CRND k=2: mean=0.1481, std=0.2095
+2026-02-16 22:56:45.320 | INFO     | __main__:compute_niche_overlap_all:586 - Computing niche overlap for tfidf (3 pairs)
+2026-02-16 22:56:45.320 | INFO     | __main__:compute_niche_overlap_all:586 - Computing niche overlap for sbert (3 pairs)
+2026-02-16 22:56:45.320 | INFO     | __main__:compute_niche_overlap_all:586 - Computing niche overlap for llm (3 pairs)
+2026-02-16 22:56:45.320 | INFO     | __main__:train_classifiers_ovo:625 - Training classifiers for tfidf
+2026-02-16 22:56:45.320 | INFO     | __main__:train_classifiers_ovo:625 - Training classifiers for sbert
+2026-02-16 22:56:45.320 | INFO     | __main__:train_classifiers_ovo:625 - Training classifiers for llm
+2026-02-16 22:56:45.321 | INFO     | __main__:train_baseline_multiclass:696 - Baseline multi-class classification for tfidf
+2026-02-16 22:56:45.321 | INFO     | __main__:train_baseline_multiclass:696 - Baseline multi-class classification for sbert
+2026-02-16 22:56:45.321 | INFO     | __main__:train_baseline_multiclass:696 - Baseline multi-class classification for llm
+2026-02-16 22:56:45.321 | WARNING  | __main__:compute_kendall_tau:771 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 22:56:45.321 | INFO     | __main__:main:1169 - Dataset clinical_patient_triage_nl complete. Elapsed: 33s
+2026-02-16 22:56:45.321 | INFO     | __main__:main:1080 - 
+============================================================
+2026-02-16 22:56:45.321 | INFO     | __main__:main:1081 - Processing dataset: ohsumed_single (3 examples)
+2026-02-16 22:56:45.321 | INFO     | __main__:main:1082 - ============================================================
+2026-02-16 22:56:45.321 | INFO     | __main__:main:1093 - Class pairs: 3
+2026-02-16 22:56:45.321 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 3 texts
+2026-02-16 22:56:45.323 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (3, 252)
+2026-02-16 22:56:45.323 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 3 texts
+2026-02-16 22:56:48.235 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (3, 384)
+2026-02-16 22:56:48.235 | INFO     | __main__:build_llm_features:351 - Building LLM features for 3 texts (starting at 0, 3 classes)
+2026-02-16 22:56:52.324 | INFO     | __main__:build_llm_features:389 - LLM features complete: 3 texts, logprobs available: False (0/3)
+2026-02-16 22:56:52.324 | INFO     | __main__:compute_knn_and_crnd:423 - Computing k-NN with k=2
+2026-02-16 22:56:52.326 | INFO     | __main__:compute_knn_and_crnd:435 -   tfidf: neighbors shape (3, 2)
+2026-02-16 22:56:52.327 | INFO     | __main__:compute_knn_and_crnd:435 -   sbert: neighbors shape (3, 2)
+2026-02-16 22:56:52.329 | INFO     | __main__:compute_knn_and_crnd:435 -   llm: neighbors shape (3, 2)
+2026-02-16 22:56:52.329 | INFO     | __main__:compute_knn_and_crnd:456 -   CRND k=2: mean=0.0000, std=0.0000
+2026-02-16 22:56:52.329 | INFO     | __main__:compute_knn_and_crnd:423 - Computing k-NN with k=2
+2026-02-16 22:56:52.331 | INFO     | __main__:compute_knn_and_crnd:435 -   tfidf: neighbors shape (3, 2)
+2026-02-16 22:56:52.333 | INFO     | __main__:compute_knn_and_crnd:435 -   sbert: neighbors shape (3, 2)
+2026-02-16 22:56:52.335 | INFO     | __main__:compute_knn_and_crnd:435 -   llm: neighbors shape (3, 2)
+2026-02-16 22:56:52.335 | INFO     | __main__:compute_knn_and_crnd:456 -   CRND k=2: mean=0.0000, std=0.0000
+2026-02-16 22:56:52.335 | INFO     | __main__:compute_niche_overlap_all:586 - Computing niche overlap for tfidf (3 pairs)
+2026-02-16 22:56:52.335 | INFO     | __main__:compute_niche_overlap_all:586 - Computing niche overlap for sbert (3 pairs)
+2026-02-16 22:56:52.335 | INFO     | __main__:compute_niche_overlap_all:586 - Computing niche overlap for llm (3 pairs)
+2026-02-16 22:56:52.335 | INFO     | __main__:train_classifiers_ovo:625 - Training classifiers for tfidf
+2026-02-16 22:56:52.336 | INFO     | __main__:train_classifiers_ovo:625 - Training classifiers for sbert
+2026-02-16 22:56:52.336 | INFO     | __main__:train_classifiers_ovo:625 - Training classifiers for llm
+2026-02-16 22:56:52.336 | INFO     | __main__:train_baseline_multiclass:696 - Baseline multi-class classification for tfidf
+2026-02-16 22:56:52.336 | INFO     | __main__:train_baseline_multiclass:696 - Baseline multi-class classification for sbert
+2026-02-16 22:56:52.336 | INFO     | __main__:train_baseline_multiclass:696 - Baseline multi-class classification for llm
+2026-02-16 22:56:52.336 | WARNING  | __main__:compute_kendall_tau:771 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 22:56:52.337 | INFO     | __main__:main:1169 - Dataset ohsumed_single complete. Elapsed: 40s
+2026-02-16 22:56:52.337 | INFO     | __main__:main:1080 - 
+============================================================
+2026-02-16 22:56:52.337 | INFO     | __main__:main:1081 - Processing dataset: mental_health_conditions (3 examples)
+2026-02-16 22:56:52.337 | INFO     | __main__:main:1082 - ============================================================
+2026-02-16 22:56:52.337 | INFO     | __main__:main:1093 - Class pairs: 3
+2026-02-16 22:56:52.337 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 3 texts
+2026-02-16 22:56:52.338 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (3, 82)
+2026-02-16 22:56:52.339 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 3 texts
+2026-02-16 22:56:55.327 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (3, 384)
+2026-02-16 22:56:55.328 | INFO     | __main__:build_llm_features:351 - Building LLM features for 3 texts (starting at 0, 3 classes)
+2026-02-16 22:56:58.198 | INFO     | __main__:build_llm_features:389 - LLM features complete: 3 texts, logprobs available: False (0/3)
+2026-02-16 22:56:58.198 | INFO     | __main__:compute_knn_and_crnd:423 - Computing k-NN with k=2
+2026-02-16 22:56:58.200 | INFO     | __main__:compute_knn_and_crnd:435 -   tfidf: neighbors shape (3, 2)
+2026-02-16 22:56:58.201 | INFO     | __main__:compute_knn_and_crnd:435 -   sbert: neighbors shape (3, 2)
+2026-02-16 22:56:58.203 | INFO     | __main__:compute_knn_and_crnd:435 -   llm: neighbors shape (3, 2)
+2026-02-16 22:56:58.203 | INFO     | __main__:compute_knn_and_crnd:456 -   CRND k=2: mean=0.1481, std=0.2095
+2026-02-16 22:56:58.203 | INFO     | __main__:compute_knn_and_crnd:423 - Computing k-NN with k=2
+2026-02-16 22:56:58.204 | INFO     | __main__:compute_knn_and_crnd:435 -   tfidf: neighbors shape (3, 2)
+2026-02-16 22:56:58.206 | INFO     | __main__:compute_knn_and_crnd:435 -   sbert: neighbors shape (3, 2)
+2026-02-16 22:56:58.207 | INFO     | __main__:compute_knn_and_crnd:435 -   llm: neighbors shape (3, 2)
+2026-02-16 22:56:58.207 | INFO     | __main__:compute_knn_and_crnd:456 -   CRND k=2: mean=0.1481, std=0.2095
+2026-02-16 22:56:58.207 | INFO     | __main__:compute_niche_overlap_all:586 - Computing niche overlap for tfidf (3 pairs)
+2026-02-16 22:56:58.207 | INFO     | __main__:compute_niche_overlap_all:586 - Computing niche overlap for sbert (3 pairs)
+2026-02-16 22:56:58.207 | INFO     | __main__:compute_niche_overlap_all:586 - Computing niche overlap for llm (3 pairs)
+2026-02-16 22:56:58.208 | INFO     | __main__:train_classifiers_ovo:625 - Training classifiers for tfidf
+2026-02-16 22:56:58.208 | INFO     | __main__:train_classifiers_ovo:625 - Training classifiers for sbert
+2026-02-16 22:56:58.208 | INFO     | __main__:train_classifiers_ovo:625 - Training classifiers for llm
+2026-02-16 22:56:58.208 | INFO     | __main__:train_baseline_multiclass:696 - Baseline multi-class classification for tfidf
+2026-02-16 22:56:58.208 | INFO     | __main__:train_baseline_multiclass:696 - Baseline multi-class classification for sbert
+2026-02-16 22:56:58.208 | INFO     | __main__:train_baseline_multiclass:696 - Baseline multi-class classification for llm
+2026-02-16 22:56:58.208 | WARNING  | __main__:compute_kendall_tau:771 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 22:56:58.208 | INFO     | __main__:main:1169 - Dataset mental_health_conditions complete. Elapsed: 45s
+2026-02-16 22:56:58.209 | INFO     | __main__:main:1173 - 
+Pooled analysis: 15 total class pairs
+2026-02-16 22:56:58.209 | WARNING  | __main__:compute_kendall_tau:771 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 22:56:58.209 | WARNING  | __main__:train_meta_predictor:851 - Too few samples (0) for meta-predictor
+2026-02-16 22:56:58.210 | INFO     | __main__:main:1326 - Saved output to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method_out.json
+2026-02-16 22:56:58.210 | INFO     | __main__:main:1329 - Total examples in output: 15
+2026-02-16 22:56:58.210 | INFO     | __main__:main:1330 - Total LLM calls: 15, cost: $0.0002
+2026-02-16 22:56:58.210 | INFO     | __main__:main:1333 - Total runtime: 45s (0.8min)
+2026-02-16 22:56:58.211 | INFO     | __main__:main:1334 - ============================================================
+2026-02-16 22:56:58.211 | INFO     | __main__:main:1335 - DONE
+2026-02-16 22:57:18.400 | INFO     | __main__:main:1052 - ============================================================
+2026-02-16 22:57:18.401 | INFO     | __main__:main:1053 - Cross-Representation Method Selection Validation (Iter 3)
+2026-02-16 22:57:18.401 | INFO     | __main__:main:1054 - ============================================================
+2026-02-16 22:57:18.401 | INFO     | __main__:main:1059 - MAX_EXAMPLES_PER_DATASET = 10
+2026-02-16 22:57:18.401 | INFO     | __main__:load_and_sample_data:93 - Loading data from /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-16 22:57:19.089 | INFO     | __main__:load_and_sample_data:129 -   medical_abstracts: 9 examples, 5 classes
+2026-02-16 22:57:19.090 | INFO     | __main__:load_and_sample_data:129 -   mimic_iv_ed_demo: 10 examples, 4 classes
+2026-02-16 22:57:19.090 | INFO     | __main__:load_and_sample_data:129 -   clinical_patient_triage_nl: 9 examples, 6 classes
+2026-02-16 22:57:19.099 | INFO     | __main__:load_and_sample_data:129 -   ohsumed_single: 10 examples, 10 classes
+2026-02-16 22:57:19.108 | INFO     | __main__:load_and_sample_data:129 -   mental_health_conditions: 7 examples, 7 classes
+2026-02-16 22:57:19.116 | INFO     | __main__:main:1080 - 
+============================================================
+2026-02-16 22:57:19.116 | INFO     | __main__:main:1081 - Processing dataset: medical_abstracts (9 examples)
+2026-02-16 22:57:19.116 | INFO     | __main__:main:1082 - ============================================================
+2026-02-16 22:57:19.116 | INFO     | __main__:main:1093 - Class pairs: 10
+2026-02-16 22:57:19.116 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 9 texts
+2026-02-16 22:57:19.119 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (9, 612)
+2026-02-16 22:57:22.999 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 9 texts
+2026-02-16 22:57:28.635 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (9, 384)
+2026-02-16 22:57:28.636 | INFO     | __main__:build_llm_features:346 - Resuming LLM features from index 3
+2026-02-16 22:57:28.637 | INFO     | __main__:build_llm_features:351 - Building LLM features for 9 texts (starting at 3, 5 classes)
+2026-02-16 22:57:29.815 | ERROR    | __main__:<module>:1339 - An error has been caught in function '<module>', process 'MainProcess' (1986923), thread 'MainThread' (132795253790528):
+Traceback (most recent call last):
+
+> File "/home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method.py", line 1339, in <module>
+    main()
+    └ <function main at 0x78c69acb1750>
+
+  File "/home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method.py", line 1100, in main
+    X_llm, logprobs_available = build_llm_features(
+                                └ <function build_llm_features at 0x78c69acb1090>
+
+  File "/home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method.py", line 357, in build_llm_features
+    X_llm[i], lp_avail, _ = get_llm_features(texts[i], class_labels)
+    │     │                 │                │     │   └ ['Cardiovascular_diseases', 'Digestive_system_diseases', 'General_pathological_conditions', 'Neoplasms', 'Nervous_system_dise...
+    │     │                 │                │     └ 3
+    │     │                 │                └ ["Hemifacial spasm caused by a spontaneous dissecting aneurysm of the vertebral artery. Case report. The authors describe the...
+    │     │                 └ <function get_llm_features at 0x78c69acb0700>
+    │     └ 3
+    └ array([[0.00980392, 0.00980392, 0.98039216],
+             [0.00980392, 0.00980392, 0.98039216],
+             [0.00980392, 0.00980392, 0.9...
+
+IndexError: index 3 is out of bounds for axis 0 with size 3
+2026-02-16 22:57:59.395 | INFO     | __main__:main:1062 - ============================================================
+2026-02-16 22:57:59.395 | INFO     | __main__:main:1063 - Cross-Representation Method Selection Validation (Iter 3)
+2026-02-16 22:57:59.395 | INFO     | __main__:main:1064 - ============================================================
+2026-02-16 22:57:59.395 | INFO     | __main__:main:1069 - MAX_EXAMPLES_PER_DATASET = 10
+2026-02-16 22:57:59.396 | INFO     | __main__:load_and_sample_data:93 - Loading data from /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-16 22:58:00.060 | INFO     | __main__:load_and_sample_data:129 -   medical_abstracts: 9 examples, 5 classes
+2026-02-16 22:58:00.061 | INFO     | __main__:load_and_sample_data:129 -   mimic_iv_ed_demo: 10 examples, 4 classes
+2026-02-16 22:58:00.061 | INFO     | __main__:load_and_sample_data:129 -   clinical_patient_triage_nl: 9 examples, 6 classes
+2026-02-16 22:58:00.067 | INFO     | __main__:load_and_sample_data:129 -   ohsumed_single: 10 examples, 10 classes
+2026-02-16 22:58:00.076 | INFO     | __main__:load_and_sample_data:129 -   mental_health_conditions: 7 examples, 7 classes
+2026-02-16 22:58:00.084 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 22:58:00.084 | INFO     | __main__:main:1091 - Processing dataset: medical_abstracts (9 examples)
+2026-02-16 22:58:00.084 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 22:58:00.085 | INFO     | __main__:main:1103 - Class pairs: 10
+2026-02-16 22:58:00.085 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 9 texts
+2026-02-16 22:58:00.087 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (9, 612)
+2026-02-16 22:58:03.839 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 9 texts
+2026-02-16 22:58:07.235 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (9, 384)
+2026-02-16 22:58:07.235 | INFO     | __main__:build_llm_features:361 - Building LLM features for 9 texts (starting at 0, 5 classes)
+2026-02-16 22:58:16.352 | INFO     | __main__:build_llm_features:399 - LLM features complete: 9 texts, logprobs available: False (0/9)
+2026-02-16 22:58:16.352 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=8
+2026-02-16 22:58:16.354 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (9, 8)
+2026-02-16 22:58:16.356 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (9, 8)
+2026-02-16 22:58:16.358 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (9, 8)
+2026-02-16 22:58:16.358 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=8: mean=0.0658, std=0.0736
+2026-02-16 22:58:16.358 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=8
+2026-02-16 22:58:16.360 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (9, 8)
+2026-02-16 22:58:16.362 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (9, 8)
+2026-02-16 22:58:16.363 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (9, 8)
+2026-02-16 22:58:16.363 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=8: mean=0.0658, std=0.0736
+2026-02-16 22:58:16.364 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (10 pairs)
+2026-02-16 22:58:16.364 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (10 pairs)
+2026-02-16 22:58:16.364 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (10 pairs)
+2026-02-16 22:58:16.364 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 22:58:16.365 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 22:58:16.365 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 22:58:16.366 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 22:58:16.366 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 22:58:16.366 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 22:58:16.366 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 22:58:16.366 | INFO     | __main__:main:1179 - Dataset medical_abstracts complete. Elapsed: 17s
+2026-02-16 22:58:16.366 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 22:58:16.366 | INFO     | __main__:main:1091 - Processing dataset: mimic_iv_ed_demo (10 examples)
+2026-02-16 22:58:16.366 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 22:58:16.366 | INFO     | __main__:main:1103 - Class pairs: 6
+2026-02-16 22:58:16.366 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 10 texts
+2026-02-16 22:58:16.368 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (10, 67)
+2026-02-16 22:58:16.368 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 10 texts
+2026-02-16 22:58:19.646 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (10, 384)
+2026-02-16 22:58:19.646 | INFO     | __main__:build_llm_features:361 - Building LLM features for 10 texts (starting at 0, 4 classes)
+2026-02-16 22:58:33.262 | INFO     | __main__:build_llm_features:399 - LLM features complete: 10 texts, logprobs available: False (0/10)
+2026-02-16 22:58:33.262 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=9
+2026-02-16 22:58:33.264 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (10, 9)
+2026-02-16 22:58:33.265 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (10, 9)
+2026-02-16 22:58:33.266 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (10, 9)
+2026-02-16 22:58:33.267 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=9: mean=0.1067, std=0.0533
+2026-02-16 22:58:33.267 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=9
+2026-02-16 22:58:33.268 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (10, 9)
+2026-02-16 22:58:33.269 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (10, 9)
+2026-02-16 22:58:33.271 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (10, 9)
+2026-02-16 22:58:33.271 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=9: mean=0.1067, std=0.0533
+2026-02-16 22:58:33.271 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (6 pairs)
+2026-02-16 22:58:33.271 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (6 pairs)
+2026-02-16 22:58:33.271 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (6 pairs)
+2026-02-16 22:58:33.272 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 22:58:33.272 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 22:58:33.272 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 22:58:33.272 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 22:58:33.273 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 22:58:33.273 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 22:58:33.273 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 22:58:33.273 | INFO     | __main__:main:1179 - Dataset mimic_iv_ed_demo complete. Elapsed: 34s
+2026-02-16 22:58:33.273 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 22:58:33.273 | INFO     | __main__:main:1091 - Processing dataset: clinical_patient_triage_nl (9 examples)
+2026-02-16 22:58:33.273 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 22:58:33.273 | INFO     | __main__:main:1103 - Class pairs: 15
+2026-02-16 22:58:33.273 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 9 texts
+2026-02-16 22:58:33.275 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (9, 100)
+2026-02-16 22:58:33.275 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 9 texts
+2026-02-16 22:58:36.728 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (9, 384)
+2026-02-16 22:58:36.728 | INFO     | __main__:build_llm_features:361 - Building LLM features for 9 texts (starting at 0, 6 classes)
+2026-02-16 22:58:47.374 | INFO     | __main__:build_llm_features:399 - LLM features complete: 9 texts, logprobs available: False (0/9)
+2026-02-16 22:58:47.374 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=8
+2026-02-16 22:58:47.376 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (9, 8)
+2026-02-16 22:58:47.377 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (9, 8)
+2026-02-16 22:58:47.379 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (9, 8)
+2026-02-16 22:58:47.379 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=8: mean=0.0823, std=0.0736
+2026-02-16 22:58:47.379 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=8
+2026-02-16 22:58:47.380 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (9, 8)
+2026-02-16 22:58:47.382 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (9, 8)
+2026-02-16 22:58:47.383 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (9, 8)
+2026-02-16 22:58:47.384 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=8: mean=0.0823, std=0.0736
+2026-02-16 22:58:47.384 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (15 pairs)
+2026-02-16 22:58:47.384 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (15 pairs)
+2026-02-16 22:58:47.384 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (15 pairs)
+2026-02-16 22:58:47.385 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 22:58:47.385 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 22:58:47.385 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 22:58:47.386 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 22:58:47.386 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 22:58:47.386 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 22:58:47.386 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 22:58:47.386 | INFO     | __main__:main:1179 - Dataset clinical_patient_triage_nl complete. Elapsed: 48s
+2026-02-16 22:58:47.386 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 22:58:47.386 | INFO     | __main__:main:1091 - Processing dataset: ohsumed_single (10 examples)
+2026-02-16 22:58:47.386 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 22:58:47.386 | INFO     | __main__:main:1103 - Class pairs: 45
+2026-02-16 22:58:47.386 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 10 texts
+2026-02-16 22:58:47.390 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (10, 775)
+2026-02-16 22:58:47.391 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 10 texts
+2026-02-16 22:58:53.094 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (10, 384)
+2026-02-16 22:58:53.094 | INFO     | __main__:build_llm_features:361 - Building LLM features for 10 texts (starting at 0, 10 classes)
+2026-02-16 22:59:07.711 | INFO     | __main__:build_llm_features:399 - LLM features complete: 10 texts, logprobs available: False (0/10)
+2026-02-16 22:59:07.711 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=9
+2026-02-16 22:59:07.713 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (10, 9)
+2026-02-16 22:59:07.714 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (10, 9)
+2026-02-16 22:59:07.716 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (10, 9)
+2026-02-16 22:59:07.717 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=9: mean=0.0533, std=0.0653
+2026-02-16 22:59:07.717 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=9
+2026-02-16 22:59:07.718 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (10, 9)
+2026-02-16 22:59:07.720 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (10, 9)
+2026-02-16 22:59:07.721 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (10, 9)
+2026-02-16 22:59:07.721 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=9: mean=0.0533, std=0.0653
+2026-02-16 22:59:07.721 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (45 pairs)
+2026-02-16 22:59:07.722 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (45 pairs)
+2026-02-16 22:59:07.723 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (45 pairs)
+2026-02-16 22:59:07.723 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 22:59:07.724 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 22:59:07.725 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 22:59:07.725 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 22:59:07.726 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 22:59:07.726 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 22:59:07.726 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 22:59:07.726 | INFO     | __main__:main:1179 - Dataset ohsumed_single complete. Elapsed: 68s
+2026-02-16 22:59:07.727 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 22:59:07.727 | INFO     | __main__:main:1091 - Processing dataset: mental_health_conditions (7 examples)
+2026-02-16 22:59:07.727 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 22:59:07.727 | INFO     | __main__:main:1103 - Class pairs: 21
+2026-02-16 22:59:07.727 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 7 texts
+2026-02-16 22:59:07.730 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (7, 308)
+2026-02-16 22:59:07.730 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 7 texts
+2026-02-16 22:59:12.321 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (7, 384)
+2026-02-16 22:59:12.322 | INFO     | __main__:build_llm_features:361 - Building LLM features for 7 texts (starting at 0, 7 classes)
+2026-02-16 22:59:23.581 | INFO     | __main__:build_llm_features:399 - LLM features complete: 7 texts, logprobs available: False (0/7)
+2026-02-16 22:59:23.581 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=6
+2026-02-16 22:59:23.583 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (7, 6)
+2026-02-16 22:59:23.584 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (7, 6)
+2026-02-16 22:59:23.586 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (7, 6)
+2026-02-16 22:59:23.586 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=6: mean=0.0816, std=0.0943
+2026-02-16 22:59:23.586 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=6
+2026-02-16 22:59:23.587 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (7, 6)
+2026-02-16 22:59:23.589 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (7, 6)
+2026-02-16 22:59:23.590 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (7, 6)
+2026-02-16 22:59:23.591 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=6: mean=0.0816, std=0.0943
+2026-02-16 22:59:23.591 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (21 pairs)
+2026-02-16 22:59:23.591 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (21 pairs)
+2026-02-16 22:59:23.591 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (21 pairs)
+2026-02-16 22:59:23.592 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 22:59:23.592 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 22:59:23.593 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 22:59:23.593 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 22:59:23.593 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 22:59:23.594 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 22:59:23.594 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 22:59:23.594 | INFO     | __main__:main:1179 - Dataset mental_health_conditions complete. Elapsed: 84s
+2026-02-16 22:59:23.594 | INFO     | __main__:main:1183 - 
+Pooled analysis: 97 total class pairs
+2026-02-16 22:59:23.595 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 22:59:23.595 | WARNING  | __main__:train_meta_predictor:861 - Too few samples (0) for meta-predictor
+2026-02-16 22:59:23.600 | INFO     | __main__:main:1336 - Saved output to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method_out.json
+2026-02-16 22:59:23.601 | INFO     | __main__:main:1339 - Total examples in output: 45
+2026-02-16 22:59:23.601 | INFO     | __main__:main:1340 - Total LLM calls: 45, cost: $0.0006
+2026-02-16 22:59:23.601 | INFO     | __main__:main:1343 - Total runtime: 84s (1.4min)
+2026-02-16 22:59:23.601 | INFO     | __main__:main:1344 - ============================================================
+2026-02-16 22:59:23.601 | INFO     | __main__:main:1345 - DONE
+2026-02-16 22:59:38.731 | INFO     | __main__:main:1062 - ============================================================
+2026-02-16 22:59:38.731 | INFO     | __main__:main:1063 - Cross-Representation Method Selection Validation (Iter 3)
+2026-02-16 22:59:38.732 | INFO     | __main__:main:1064 - ============================================================
+2026-02-16 22:59:38.732 | INFO     | __main__:main:1069 - MAX_EXAMPLES_PER_DATASET = 50
+2026-02-16 22:59:38.732 | INFO     | __main__:load_and_sample_data:93 - Loading data from /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-16 22:59:39.425 | INFO     | __main__:load_and_sample_data:129 -   medical_abstracts: 47 examples, 5 classes
+2026-02-16 22:59:39.427 | INFO     | __main__:load_and_sample_data:129 -   mimic_iv_ed_demo: 49 examples, 4 classes
+2026-02-16 22:59:39.427 | INFO     | __main__:load_and_sample_data:129 -   clinical_patient_triage_nl: 31 examples, 6 classes
+2026-02-16 22:59:39.433 | INFO     | __main__:load_and_sample_data:129 -   ohsumed_single: 46 examples, 23 classes
+2026-02-16 22:59:39.443 | INFO     | __main__:load_and_sample_data:129 -   mental_health_conditions: 46 examples, 7 classes
+2026-02-16 22:59:39.452 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 22:59:39.452 | INFO     | __main__:main:1091 - Processing dataset: medical_abstracts (47 examples)
+2026-02-16 22:59:39.452 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 22:59:39.452 | INFO     | __main__:main:1103 - Class pairs: 10
+2026-02-16 22:59:39.452 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 47 texts
+2026-02-16 22:59:39.459 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (47, 2272)
+2026-02-16 22:59:43.297 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 47 texts
+2026-02-16 22:59:47.983 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (47, 384)
+2026-02-16 22:59:47.983 | INFO     | __main__:build_llm_features:361 - Building LLM features for 47 texts (starting at 0, 5 classes)
+2026-02-16 23:01:03.515 | INFO     | __main__:build_llm_features:399 - LLM features complete: 47 texts, logprobs available: False (0/47)
+2026-02-16 23:01:03.516 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-16 23:01:03.518 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (47, 10)
+2026-02-16 23:01:03.520 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (47, 10)
+2026-02-16 23:01:03.521 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (47, 10)
+2026-02-16 23:01:03.522 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.7527, std=0.0857
+2026-02-16 23:01:03.522 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-16 23:01:03.524 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (47, 20)
+2026-02-16 23:01:03.526 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (47, 20)
+2026-02-16 23:01:03.527 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (47, 20)
+2026-02-16 23:01:03.528 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.6529, std=0.0665
+2026-02-16 23:01:03.529 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (10 pairs)
+2026-02-16 23:01:04.527 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.5771, valid pairs=10/10
+2026-02-16 23:01:04.548 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (10 pairs)
+2026-02-16 23:01:04.639 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.3230, valid pairs=10/10
+2026-02-16 23:01:04.640 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (10 pairs)
+2026-02-16 23:01:04.717 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=0.6600, valid pairs=10/10
+2026-02-16 23:01:04.719 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:01:11.582 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.5509, valid pairs=10/10
+2026-02-16 23:01:11.582 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:01:17.814 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.7456, valid pairs=10/10
+2026-02-16 23:01:17.815 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:01:21.698 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.8598, valid pairs=10/10
+2026-02-16 23:01:21.699 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:01:21.941 | INFO     | __main__:train_baseline_multiclass:736 -   tfidf: macro_f1=0.1013
+2026-02-16 23:01:21.941 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:01:22.006 | INFO     | __main__:train_baseline_multiclass:736 -   sbert: macro_f1=0.2078
+2026-02-16 23:01:22.006 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:01:22.032 | INFO     | __main__:train_baseline_multiclass:736 -   llm: macro_f1=0.3468
+2026-02-16 23:01:22.291 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = -0.4000 (p=0.015436), 95% CI: [-0.7333, -0.0267], n_pairs = 10
+2026-02-16 23:01:22.292 | INFO     | __main__:main:1179 - Dataset medical_abstracts complete. Elapsed: 104s
+2026-02-16 23:01:22.292 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:01:22.292 | INFO     | __main__:main:1091 - Processing dataset: mimic_iv_ed_demo (49 examples)
+2026-02-16 23:01:22.292 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:01:22.292 | INFO     | __main__:main:1103 - Class pairs: 6
+2026-02-16 23:01:22.292 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 49 texts
+2026-02-16 23:01:22.295 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (49, 170)
+2026-02-16 23:01:22.295 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 49 texts
+2026-02-16 23:01:28.162 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (49, 384)
+2026-02-16 23:01:28.163 | INFO     | __main__:build_llm_features:361 - Building LLM features for 49 texts (starting at 0, 4 classes)
+2026-02-16 23:02:29.414 | INFO     | __main__:build_llm_features:399 - LLM features complete: 49 texts, logprobs available: False (0/49)
+2026-02-16 23:02:29.414 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-16 23:02:29.416 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (49, 10)
+2026-02-16 23:02:29.418 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (49, 10)
+2026-02-16 23:02:29.420 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (49, 10)
+2026-02-16 23:02:29.421 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.8398, std=0.0509
+2026-02-16 23:02:29.421 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-16 23:02:29.423 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (49, 20)
+2026-02-16 23:02:29.425 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (49, 20)
+2026-02-16 23:02:29.426 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (49, 20)
+2026-02-16 23:02:29.428 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.6921, std=0.0438
+2026-02-16 23:02:29.428 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (6 pairs)
+2026-02-16 23:02:29.443 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.6490, valid pairs=1/6
+2026-02-16 23:02:29.444 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (6 pairs)
+2026-02-16 23:02:29.463 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.5640, valid pairs=1/6
+2026-02-16 23:02:29.464 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (6 pairs)
+2026-02-16 23:02:29.494 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=0.7868, valid pairs=1/6
+2026-02-16 23:02:29.496 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:02:30.724 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.2624, valid pairs=3/6
+2026-02-16 23:02:30.724 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:02:33.265 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.3254, valid pairs=3/6
+2026-02-16 23:02:33.265 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:02:34.187 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.1197, valid pairs=3/6
+2026-02-16 23:02:34.188 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:02:34.188 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:02:34.188 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:02:34.188 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (1) for Kendall's τ
+2026-02-16 23:02:34.188 | INFO     | __main__:main:1179 - Dataset mimic_iv_ed_demo complete. Elapsed: 175s
+2026-02-16 23:02:34.188 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:02:34.188 | INFO     | __main__:main:1091 - Processing dataset: clinical_patient_triage_nl (31 examples)
+2026-02-16 23:02:34.188 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:02:34.188 | INFO     | __main__:main:1103 - Class pairs: 15
+2026-02-16 23:02:34.188 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 31 texts
+2026-02-16 23:02:34.190 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (31, 276)
+2026-02-16 23:02:34.190 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 31 texts
+2026-02-16 23:02:37.402 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (31, 384)
+2026-02-16 23:02:37.403 | INFO     | __main__:build_llm_features:361 - Building LLM features for 31 texts (starting at 0, 6 classes)
+2026-02-16 23:03:10.968 | INFO     | __main__:build_llm_features:399 - LLM features complete: 31 texts, logprobs available: False (0/31)
+2026-02-16 23:03:10.969 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-16 23:03:10.970 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (31, 10)
+2026-02-16 23:03:10.972 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (31, 10)
+2026-02-16 23:03:10.973 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (31, 10)
+2026-02-16 23:03:10.973 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.7493, std=0.0619
+2026-02-16 23:03:10.974 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-16 23:03:10.975 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (31, 20)
+2026-02-16 23:03:10.976 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (31, 20)
+2026-02-16 23:03:10.977 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (31, 20)
+2026-02-16 23:03:10.978 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.5003, std=0.0419
+2026-02-16 23:03:10.978 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (15 pairs)
+2026-02-16 23:03:10.990 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.5494, valid pairs=3/15
+2026-02-16 23:03:10.991 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (15 pairs)
+2026-02-16 23:03:11.002 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.6781, valid pairs=3/15
+2026-02-16 23:03:11.003 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (15 pairs)
+2026-02-16 23:03:11.013 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=0.3435, valid pairs=3/15
+2026-02-16 23:03:11.014 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:03:13.766 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.6441, valid pairs=7/15
+2026-02-16 23:03:13.766 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:03:16.856 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.3711, valid pairs=7/15
+2026-02-16 23:03:16.856 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:03:18.865 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.5589, valid pairs=7/15
+2026-02-16 23:03:18.866 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:03:18.866 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:03:18.866 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:03:19.068 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = -0.1481 (p=0.638101), 95% CI: [-1.0000, 1.0000], n_pairs = 3
+2026-02-16 23:03:19.068 | INFO     | __main__:main:1179 - Dataset clinical_patient_triage_nl complete. Elapsed: 220s
+2026-02-16 23:03:19.068 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:03:19.068 | INFO     | __main__:main:1091 - Processing dataset: ohsumed_single (46 examples)
+2026-02-16 23:03:19.068 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:03:19.068 | INFO     | __main__:main:1103 - Class pairs: 253
+2026-02-16 23:03:19.068 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 46 texts
+2026-02-16 23:03:19.075 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (46, 2236)
+2026-02-16 23:03:19.076 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 46 texts
+2026-02-16 23:03:23.634 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (46, 384)
+2026-02-16 23:03:23.635 | INFO     | __main__:build_llm_features:361 - Building LLM features for 46 texts (starting at 0, 23 classes)
+2026-02-16 23:04:21.209 | INFO     | __main__:build_llm_features:399 - LLM features complete: 46 texts, logprobs available: False (0/46)
+2026-02-16 23:04:21.209 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-16 23:04:21.212 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (46, 10)
+2026-02-16 23:04:21.216 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (46, 10)
+2026-02-16 23:04:21.218 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (46, 10)
+2026-02-16 23:04:21.219 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.8089, std=0.0665
+2026-02-16 23:04:21.219 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-16 23:04:21.226 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (46, 20)
+2026-02-16 23:04:21.230 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (46, 20)
+2026-02-16 23:04:21.232 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (46, 20)
+2026-02-16 23:04:21.233 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.6752, std=0.0513
+2026-02-16 23:04:21.234 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (253 pairs)
+2026-02-16 23:04:21.558 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.2196, valid pairs=3/253
+2026-02-16 23:04:21.603 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (253 pairs)
+2026-02-16 23:04:21.631 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.1674, valid pairs=3/253
+2026-02-16 23:04:21.632 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (253 pairs)
+2026-02-16 23:04:21.643 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=0.6667, valid pairs=3/253
+2026-02-16 23:04:21.644 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:04:23.896 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.7716, valid pairs=5/253
+2026-02-16 23:04:23.896 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:04:25.891 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.8903, valid pairs=5/253
+2026-02-16 23:04:25.891 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:04:27.473 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.7843, valid pairs=5/253
+2026-02-16 23:04:27.474 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:04:27.474 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:04:27.474 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:04:27.699 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = 0.1481 (p=0.638101), 95% CI: [-1.0000, 1.0000], n_pairs = 3
+2026-02-16 23:04:27.699 | INFO     | __main__:main:1179 - Dataset ohsumed_single complete. Elapsed: 289s
+2026-02-16 23:04:27.699 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:04:27.699 | INFO     | __main__:main:1091 - Processing dataset: mental_health_conditions (46 examples)
+2026-02-16 23:04:27.699 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:04:27.699 | INFO     | __main__:main:1103 - Class pairs: 21
+2026-02-16 23:04:27.699 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 46 texts
+2026-02-16 23:04:27.704 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (46, 1138)
+2026-02-16 23:04:27.704 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 46 texts
+2026-02-16 23:04:32.206 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (46, 384)
+2026-02-16 23:04:32.207 | INFO     | __main__:build_llm_features:361 - Building LLM features for 46 texts (starting at 0, 7 classes)
+2026-02-16 23:05:42.398 | INFO     | __main__:build_llm_features:399 - LLM features complete: 46 texts, logprobs available: False (0/46)
+2026-02-16 23:05:42.398 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-16 23:05:42.400 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (46, 10)
+2026-02-16 23:05:42.402 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (46, 10)
+2026-02-16 23:05:42.404 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (46, 10)
+2026-02-16 23:05:42.405 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.7805, std=0.0799
+2026-02-16 23:05:42.406 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-16 23:05:42.408 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (46, 20)
+2026-02-16 23:05:42.410 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (46, 20)
+2026-02-16 23:05:42.412 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (46, 20)
+2026-02-16 23:05:42.413 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.6614, std=0.0572
+2026-02-16 23:05:42.413 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (21 pairs)
+2026-02-16 23:05:42.600 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.1313, valid pairs=21/21
+2026-02-16 23:05:42.601 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (21 pairs)
+2026-02-16 23:05:42.676 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.0511, valid pairs=21/21
+2026-02-16 23:05:42.678 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (21 pairs)
+2026-02-16 23:05:42.758 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=0.9286, valid pairs=21/21
+2026-02-16 23:05:42.759 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:05:52.382 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.8657, valid pairs=21/21
+2026-02-16 23:05:52.383 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:06:03.914 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.9302, valid pairs=21/21
+2026-02-16 23:06:03.914 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:06:11.559 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.8883, valid pairs=21/21
+2026-02-16 23:06:11.559 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:06:11.680 | INFO     | __main__:train_baseline_multiclass:736 -   tfidf: macro_f1=0.3824
+2026-02-16 23:06:11.680 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:06:11.744 | INFO     | __main__:train_baseline_multiclass:736 -   sbert: macro_f1=0.7705
+2026-02-16 23:06:11.745 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:06:11.770 | INFO     | __main__:train_baseline_multiclass:736 -   llm: macro_f1=0.5600
+2026-02-16 23:06:12.009 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = 0.0892 (p=0.429600), 95% CI: [-0.2313, 0.4082], n_pairs = 21
+2026-02-16 23:06:12.010 | INFO     | __main__:main:1179 - Dataset mental_health_conditions complete. Elapsed: 393s
+2026-02-16 23:06:12.010 | INFO     | __main__:main:1183 - 
+Pooled analysis: 305 total class pairs
+2026-02-16 23:06:12.279 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = -0.0482 (p=0.564017), 95% CI: [-0.2895, 0.1856], n_pairs = 38
+2026-02-16 23:06:12.319 | INFO     | __main__:train_meta_predictor:899 - Meta-predictor AUC = 0.3985, n_samples = 38
+2026-02-16 23:06:12.346 | INFO     | __main__:main:1336 - Saved output to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method_out.json
+2026-02-16 23:06:12.346 | INFO     | __main__:main:1339 - Total examples in output: 219
+2026-02-16 23:06:12.346 | INFO     | __main__:main:1340 - Total LLM calls: 219, cost: $0.0035
+2026-02-16 23:06:12.346 | INFO     | __main__:main:1343 - Total runtime: 394s (6.6min)
+2026-02-16 23:06:12.346 | INFO     | __main__:main:1344 - ============================================================
+2026-02-16 23:06:12.346 | INFO     | __main__:main:1345 - DONE
+2026-02-16 23:06:43.473 | INFO     | __main__:main:1062 - ============================================================
+2026-02-16 23:06:43.474 | INFO     | __main__:main:1063 - Cross-Representation Method Selection Validation (Iter 3)
+2026-02-16 23:06:43.474 | INFO     | __main__:main:1064 - ============================================================
+2026-02-16 23:06:43.474 | INFO     | __main__:main:1069 - MAX_EXAMPLES_PER_DATASET = 200
+2026-02-16 23:06:43.474 | INFO     | __main__:load_and_sample_data:93 - Loading data from /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-16 23:06:44.157 | INFO     | __main__:load_and_sample_data:129 -   medical_abstracts: 197 examples, 5 classes
+2026-02-16 23:06:44.158 | INFO     | __main__:load_and_sample_data:129 -   mimic_iv_ed_demo: 197 examples, 4 classes
+2026-02-16 23:06:44.158 | INFO     | __main__:load_and_sample_data:129 -   clinical_patient_triage_nl: 31 examples, 6 classes
+2026-02-16 23:06:44.167 | INFO     | __main__:load_and_sample_data:129 -   ohsumed_single: 190 examples, 23 classes
+2026-02-16 23:06:44.181 | INFO     | __main__:load_and_sample_data:129 -   mental_health_conditions: 197 examples, 7 classes
+2026-02-16 23:06:44.189 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:06:44.190 | INFO     | __main__:main:1091 - Processing dataset: medical_abstracts (197 examples)
+2026-02-16 23:06:44.190 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:06:44.190 | INFO     | __main__:main:1103 - Class pairs: 10
+2026-02-16 23:06:44.190 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 197 texts
+2026-02-16 23:06:44.221 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (197, 5000)
+2026-02-16 23:06:47.971 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 197 texts
+2026-02-16 23:07:00.116 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (197, 384)
+2026-02-16 23:07:00.116 | INFO     | __main__:build_llm_features:361 - Building LLM features for 197 texts (starting at 0, 5 classes)
+2026-02-16 23:07:06.831 | WARNING  | __main__:get_llm_features:314 - LLM call failed (attempt 1): 401 Client Error: Unauthorized for url: https://openrouter.ai/api/v1/chat/completions
+2026-02-16 23:08:11.205 | INFO     | __main__:build_llm_features:372 - LLM features: 50/197 done | logprobs: 0/50 | cost: $0.0010 | calls: 51
+2026-02-16 23:09:13.917 | INFO     | __main__:build_llm_features:372 - LLM features: 100/197 done | logprobs: 0/100 | cost: $0.0021 | calls: 101
+2026-02-16 23:10:19.172 | INFO     | __main__:build_llm_features:372 - LLM features: 150/197 done | logprobs: 0/150 | cost: $0.0032 | calls: 151
+2026-02-16 23:11:14.663 | INFO     | __main__:build_llm_features:399 - LLM features complete: 197 texts, logprobs available: False (0/197)
+2026-02-16 23:11:14.663 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-16 23:11:14.678 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (197, 10)
+2026-02-16 23:11:14.682 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (197, 10)
+2026-02-16 23:11:14.685 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (197, 10)
+2026-02-16 23:11:14.689 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.8798, std=0.0591
+2026-02-16 23:11:14.691 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-16 23:11:14.710 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (197, 20)
+2026-02-16 23:11:14.713 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (197, 20)
+2026-02-16 23:11:14.716 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (197, 20)
+2026-02-16 23:11:14.721 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.8408, std=0.0573
+2026-02-16 23:11:14.723 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (10 pairs)
+2026-02-16 23:11:16.030 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.5623, valid pairs=10/10
+2026-02-16 23:11:16.032 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (10 pairs)
+2026-02-16 23:11:16.177 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.3456, valid pairs=10/10
+2026-02-16 23:11:16.178 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (10 pairs)
+2026-02-16 23:11:16.300 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=0.3070, valid pairs=10/10
+2026-02-16 23:11:16.302 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:11:56.085 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.6517, valid pairs=10/10
+2026-02-16 23:11:56.085 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:12:30.061 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.8250, valid pairs=10/10
+2026-02-16 23:12:30.063 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:12:35.490 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.8398, valid pairs=10/10
+2026-02-16 23:12:35.491 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:12:37.602 | INFO     | __main__:train_baseline_multiclass:736 -   tfidf: macro_f1=0.1858
+2026-02-16 23:12:37.603 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:12:37.807 | INFO     | __main__:train_baseline_multiclass:736 -   sbert: macro_f1=0.3917
+2026-02-16 23:12:37.807 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:12:37.831 | INFO     | __main__:train_baseline_multiclass:736 -   llm: macro_f1=0.4805
+2026-02-16 23:12:38.060 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = 0.2267 (p=0.169923), 95% CI: [-0.1902, 0.6668], n_pairs = 10
+2026-02-16 23:12:38.060 | INFO     | __main__:main:1179 - Dataset medical_abstracts complete. Elapsed: 355s
+2026-02-16 23:12:38.060 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:12:38.060 | INFO     | __main__:main:1091 - Processing dataset: mimic_iv_ed_demo (197 examples)
+2026-02-16 23:12:38.060 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:12:38.060 | INFO     | __main__:main:1103 - Class pairs: 6
+2026-02-16 23:12:38.060 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 197 texts
+2026-02-16 23:12:38.063 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (197, 314)
+2026-02-16 23:12:38.063 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 197 texts
+2026-02-16 23:12:42.180 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (197, 384)
+2026-02-16 23:12:42.180 | INFO     | __main__:build_llm_features:361 - Building LLM features for 197 texts (starting at 0, 4 classes)
+2026-02-16 23:13:43.890 | INFO     | __main__:build_llm_features:372 - LLM features: 50/197 done | logprobs: 0/50 | cost: $0.0045 | calls: 248
+2026-02-16 23:14:46.744 | INFO     | __main__:build_llm_features:372 - LLM features: 100/197 done | logprobs: 0/100 | cost: $0.0049 | calls: 298
+2026-02-16 23:15:44.743 | INFO     | __main__:build_llm_features:372 - LLM features: 150/197 done | logprobs: 0/150 | cost: $0.0052 | calls: 348
+2026-02-16 23:16:42.531 | INFO     | __main__:build_llm_features:399 - LLM features complete: 197 texts, logprobs available: False (0/197)
+2026-02-16 23:16:42.531 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-16 23:16:42.535 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (197, 10)
+2026-02-16 23:16:42.538 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (197, 10)
+2026-02-16 23:16:42.540 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (197, 10)
+2026-02-16 23:16:42.542 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.9230, std=0.0453
+2026-02-16 23:16:42.543 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-16 23:16:42.546 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (197, 20)
+2026-02-16 23:16:42.551 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (197, 20)
+2026-02-16 23:16:42.553 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (197, 20)
+2026-02-16 23:16:42.557 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.8978, std=0.0439
+2026-02-16 23:16:42.557 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (6 pairs)
+2026-02-16 23:16:42.722 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.5783, valid pairs=3/6
+2026-02-16 23:16:42.722 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (6 pairs)
+2026-02-16 23:16:42.805 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.5104, valid pairs=3/6
+2026-02-16 23:16:42.806 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (6 pairs)
+2026-02-16 23:16:42.861 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=0.7119, valid pairs=3/6
+2026-02-16 23:16:42.864 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:16:46.276 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.5307, valid pairs=3/6
+2026-02-16 23:16:46.276 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:17:11.571 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.5608, valid pairs=3/6
+2026-02-16 23:17:11.572 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:17:12.698 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.1906, valid pairs=3/6
+2026-02-16 23:17:12.699 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:17:12.699 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:17:12.699 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:17:12.900 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = 0.3333 (p=0.289918), 95% CI: [-1.0000, 1.0000], n_pairs = 3
+2026-02-16 23:17:12.900 | INFO     | __main__:main:1179 - Dataset mimic_iv_ed_demo complete. Elapsed: 629s
+2026-02-16 23:17:12.900 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:17:12.901 | INFO     | __main__:main:1091 - Processing dataset: clinical_patient_triage_nl (31 examples)
+2026-02-16 23:17:12.901 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:17:12.901 | INFO     | __main__:main:1103 - Class pairs: 15
+2026-02-16 23:17:12.901 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 31 texts
+2026-02-16 23:17:12.902 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (31, 276)
+2026-02-16 23:17:12.903 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 31 texts
+2026-02-16 23:17:16.242 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (31, 384)
+2026-02-16 23:17:16.243 | INFO     | __main__:build_llm_features:361 - Building LLM features for 31 texts (starting at 0, 6 classes)
+2026-02-16 23:17:59.585 | INFO     | __main__:build_llm_features:399 - LLM features complete: 31 texts, logprobs available: False (0/31)
+2026-02-16 23:17:59.588 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-16 23:17:59.590 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (31, 10)
+2026-02-16 23:17:59.595 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (31, 10)
+2026-02-16 23:17:59.601 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (31, 10)
+2026-02-16 23:17:59.604 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.7576, std=0.0592
+2026-02-16 23:17:59.608 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-16 23:17:59.611 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (31, 20)
+2026-02-16 23:17:59.617 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (31, 20)
+2026-02-16 23:17:59.630 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (31, 20)
+2026-02-16 23:17:59.631 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.4977, std=0.0442
+2026-02-16 23:17:59.632 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (15 pairs)
+2026-02-16 23:17:59.868 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.5494, valid pairs=3/15
+2026-02-16 23:17:59.870 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (15 pairs)
+2026-02-16 23:18:00.147 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.6781, valid pairs=3/15
+2026-02-16 23:18:00.162 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (15 pairs)
+2026-02-16 23:18:00.422 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=1.0000, valid pairs=3/15
+2026-02-16 23:18:00.422 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:18:04.443 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.6441, valid pairs=7/15
+2026-02-16 23:18:04.444 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:18:08.743 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.3711, valid pairs=7/15
+2026-02-16 23:18:08.744 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:18:11.412 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.5371, valid pairs=7/15
+2026-02-16 23:18:11.413 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:18:11.413 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:18:11.413 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:18:11.830 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = 0.1111 (p=0.724263), 95% CI: [-0.3333, 0.3333], n_pairs = 3
+2026-02-16 23:18:11.830 | INFO     | __main__:main:1179 - Dataset clinical_patient_triage_nl complete. Elapsed: 688s
+2026-02-16 23:18:11.831 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:18:11.831 | INFO     | __main__:main:1091 - Processing dataset: ohsumed_single (190 examples)
+2026-02-16 23:18:11.831 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:18:11.831 | INFO     | __main__:main:1103 - Class pairs: 253
+2026-02-16 23:18:11.831 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 190 texts
+2026-02-16 23:18:11.861 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (190, 5000)
+2026-02-16 23:18:11.862 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 190 texts
+2026-02-16 23:18:31.548 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (190, 384)
+2026-02-16 23:18:31.549 | INFO     | __main__:build_llm_features:361 - Building LLM features for 190 texts (starting at 0, 23 classes)
+2026-02-16 23:19:33.408 | INFO     | __main__:build_llm_features:372 - LLM features: 50/190 done | logprobs: 0/50 | cost: $0.0074 | calls: 476
+2026-02-16 23:20:46.060 | INFO     | __main__:build_llm_features:372 - LLM features: 100/190 done | logprobs: 0/100 | cost: $0.0090 | calls: 526
+2026-02-16 23:21:46.833 | INFO     | __main__:build_llm_features:372 - LLM features: 150/190 done | logprobs: 0/150 | cost: $0.0106 | calls: 576
+2026-02-16 23:22:39.479 | INFO     | __main__:build_llm_features:399 - LLM features complete: 190 texts, logprobs available: False (0/190)
+2026-02-16 23:22:39.480 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-16 23:22:39.492 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (190, 10)
+2026-02-16 23:22:39.495 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (190, 10)
+2026-02-16 23:22:39.497 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (190, 10)
+2026-02-16 23:22:39.499 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.8644, std=0.0749
+2026-02-16 23:22:39.499 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-16 23:22:39.513 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (190, 20)
+2026-02-16 23:22:39.517 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (190, 20)
+2026-02-16 23:22:39.519 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (190, 20)
+2026-02-16 23:22:39.522 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.8340, std=0.0788
+2026-02-16 23:22:39.522 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (253 pairs)
+2026-02-16 23:22:56.051 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.3108, valid pairs=91/253
+2026-02-16 23:22:56.056 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (253 pairs)
+2026-02-16 23:23:17.902 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.2174, valid pairs=91/253
+2026-02-16 23:23:17.906 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (253 pairs)
+2026-02-16 23:23:19.240 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=0.3781, valid pairs=91/253
+2026-02-16 23:23:19.241 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:25:54.017 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.5434, valid pairs=136/253
+2026-02-16 23:25:54.018 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:27:51.050 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.7129, valid pairs=136/253
+2026-02-16 23:27:51.050 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:28:49.133 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.7180, valid pairs=136/253
+2026-02-16 23:28:49.134 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:28:49.136 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:28:49.137 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:28:49.526 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = -0.0415 (p=0.441768), 95% CI: [-0.2075, 0.1210], n_pairs = 91
+2026-02-16 23:28:49.528 | INFO     | __main__:main:1179 - Dataset ohsumed_single complete. Elapsed: 1326s
+2026-02-16 23:28:49.529 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:28:49.529 | INFO     | __main__:main:1091 - Processing dataset: mental_health_conditions (197 examples)
+2026-02-16 23:28:49.530 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:28:49.531 | INFO     | __main__:main:1103 - Class pairs: 21
+2026-02-16 23:28:49.531 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 197 texts
+2026-02-16 23:28:49.547 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (197, 2655)
+2026-02-16 23:28:49.548 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 197 texts
+2026-02-16 23:29:02.203 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (197, 384)
+2026-02-16 23:29:02.204 | INFO     | __main__:build_llm_features:361 - Building LLM features for 197 texts (starting at 0, 7 classes)
+2026-02-16 23:30:09.290 | INFO     | __main__:build_llm_features:372 - LLM features: 50/197 done | logprobs: 0/50 | cost: $0.0124 | calls: 666
+2026-02-16 23:31:10.759 | INFO     | __main__:build_llm_features:372 - LLM features: 100/197 done | logprobs: 0/100 | cost: $0.0130 | calls: 716
+2026-02-16 23:32:08.892 | WARNING  | __main__:get_llm_features:314 - LLM call failed (attempt 1): 401 Client Error: Unauthorized for url: https://openrouter.ai/api/v1/chat/completions
+2026-02-16 23:32:22.704 | INFO     | __main__:build_llm_features:372 - LLM features: 150/197 done | logprobs: 0/150 | cost: $0.0135 | calls: 767
+2026-02-16 23:33:21.661 | INFO     | __main__:build_llm_features:399 - LLM features complete: 197 texts, logprobs available: False (0/197)
+2026-02-16 23:33:21.661 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-16 23:33:21.681 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (197, 10)
+2026-02-16 23:33:21.704 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (197, 10)
+2026-02-16 23:33:21.714 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (197, 10)
+2026-02-16 23:33:21.716 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.8595, std=0.0870
+2026-02-16 23:33:21.716 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-16 23:33:21.799 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (197, 20)
+2026-02-16 23:33:21.813 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (197, 20)
+2026-02-16 23:33:21.818 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (197, 20)
+2026-02-16 23:33:21.827 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.8155, std=0.1028
+2026-02-16 23:33:21.837 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (21 pairs)
+2026-02-16 23:33:28.040 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.1369, valid pairs=21/21
+2026-02-16 23:33:28.043 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (21 pairs)
+2026-02-16 23:33:54.422 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.1282, valid pairs=21/21
+2026-02-16 23:33:54.423 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (21 pairs)
+2026-02-16 23:33:56.635 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=0.2305, valid pairs=21/21
+2026-02-16 23:33:56.642 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:34:45.995 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.9256, valid pairs=21/21
+2026-02-16 23:34:45.997 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:35:32.408 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.9377, valid pairs=21/21
+2026-02-16 23:35:32.408 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:35:41.102 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.8484, valid pairs=21/21
+2026-02-16 23:35:41.102 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:35:42.224 | INFO     | __main__:train_baseline_multiclass:736 -   tfidf: macro_f1=0.7074
+2026-02-16 23:35:42.224 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:35:42.453 | INFO     | __main__:train_baseline_multiclass:736 -   sbert: macro_f1=0.7259
+2026-02-16 23:35:42.453 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:35:42.483 | INFO     | __main__:train_baseline_multiclass:736 -   llm: macro_f1=0.5163
+2026-02-16 23:35:42.726 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = 0.3810 (p=0.000742), 95% CI: [0.1224, 0.6193], n_pairs = 21
+2026-02-16 23:35:42.727 | INFO     | __main__:main:1179 - Dataset mental_health_conditions complete. Elapsed: 1739s
+2026-02-16 23:35:42.727 | INFO     | __main__:main:1183 - 
+Pooled analysis: 305 total class pairs
+2026-02-16 23:35:43.040 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = 0.0651 (p=0.151767), 95% CI: [-0.0756, 0.1940], n_pairs = 128
+2026-02-16 23:35:43.065 | INFO     | __main__:train_meta_predictor:899 - Meta-predictor AUC = 0.4793, n_samples = 128
+2026-02-16 23:35:43.260 | INFO     | __main__:main:1336 - Saved output to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method_out.json
+2026-02-16 23:35:43.260 | INFO     | __main__:main:1339 - Total examples in output: 812
+2026-02-16 23:35:43.260 | INFO     | __main__:main:1340 - Total LLM calls: 814, cost: $0.0140
+2026-02-16 23:35:43.260 | INFO     | __main__:main:1343 - Total runtime: 1740s (29.0min)
+2026-02-16 23:35:43.260 | INFO     | __main__:main:1344 - ============================================================
+2026-02-16 23:35:43.260 | INFO     | __main__:main:1345 - DONE
+2026-02-16 23:38:34.031 | INFO     | __main__:main:1062 - ============================================================
+2026-02-16 23:38:34.031 | INFO     | __main__:main:1063 - Cross-Representation Method Selection Validation (Iter 3)
+2026-02-16 23:38:34.031 | INFO     | __main__:main:1064 - ============================================================
+2026-02-16 23:38:34.032 | INFO     | __main__:main:1069 - MAX_EXAMPLES_PER_DATASET = 3
+2026-02-16 23:38:34.032 | INFO     | __main__:load_and_sample_data:93 - Loading data from /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-16 23:38:34.909 | INFO     | __main__:load_and_sample_data:129 -   medical_abstracts: 3 examples, 3 classes
+2026-02-16 23:38:34.911 | INFO     | __main__:load_and_sample_data:129 -   mimic_iv_ed_demo: 3 examples, 3 classes
+2026-02-16 23:38:34.912 | INFO     | __main__:load_and_sample_data:129 -   clinical_patient_triage_nl: 3 examples, 3 classes
+2026-02-16 23:38:34.926 | INFO     | __main__:load_and_sample_data:129 -   ohsumed_single: 3 examples, 3 classes
+2026-02-16 23:38:34.947 | INFO     | __main__:load_and_sample_data:129 -   mental_health_conditions: 3 examples, 3 classes
+2026-02-16 23:38:34.965 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:38:34.966 | INFO     | __main__:main:1091 - Processing dataset: medical_abstracts (3 examples)
+2026-02-16 23:38:34.966 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:38:34.966 | INFO     | __main__:main:1103 - Class pairs: 3
+2026-02-16 23:38:34.966 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 3 texts
+2026-02-16 23:38:34.969 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (3, 245)
+2026-02-16 23:38:40.763 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 3 texts
+2026-02-16 23:38:44.599 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (3, 384)
+2026-02-16 23:38:44.600 | INFO     | __main__:build_llm_features:361 - Building LLM features for 3 texts (starting at 0, 3 classes)
+2026-02-16 23:38:49.501 | INFO     | __main__:build_llm_features:399 - LLM features complete: 3 texts, logprobs available: False (0/3)
+2026-02-16 23:38:49.502 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=2
+2026-02-16 23:38:49.503 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (3, 2)
+2026-02-16 23:38:49.505 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (3, 2)
+2026-02-16 23:38:49.507 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (3, 2)
+2026-02-16 23:38:49.507 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=2: mean=0.2963, std=0.2095
+2026-02-16 23:38:49.507 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=2
+2026-02-16 23:38:49.509 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (3, 2)
+2026-02-16 23:38:49.517 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (3, 2)
+2026-02-16 23:38:49.519 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (3, 2)
+2026-02-16 23:38:49.519 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=2: mean=0.2963, std=0.2095
+2026-02-16 23:38:49.519 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (3 pairs)
+2026-02-16 23:38:49.519 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (3 pairs)
+2026-02-16 23:38:49.519 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (3 pairs)
+2026-02-16 23:38:49.519 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:38:49.520 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:38:49.520 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:38:49.520 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:38:49.520 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:38:49.520 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:38:49.520 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 23:38:49.520 | INFO     | __main__:main:1179 - Dataset medical_abstracts complete. Elapsed: 15s
+2026-02-16 23:38:49.520 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:38:49.521 | INFO     | __main__:main:1091 - Processing dataset: mimic_iv_ed_demo (3 examples)
+2026-02-16 23:38:49.521 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:38:49.521 | INFO     | __main__:main:1103 - Class pairs: 3
+2026-02-16 23:38:49.521 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 3 texts
+2026-02-16 23:38:49.522 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (3, 26)
+2026-02-16 23:38:49.527 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 3 texts
+2026-02-16 23:38:53.494 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (3, 384)
+2026-02-16 23:38:53.495 | INFO     | __main__:build_llm_features:361 - Building LLM features for 3 texts (starting at 0, 3 classes)
+2026-02-16 23:38:57.986 | INFO     | __main__:build_llm_features:399 - LLM features complete: 3 texts, logprobs available: False (0/3)
+2026-02-16 23:38:57.987 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=2
+2026-02-16 23:38:57.996 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (3, 2)
+2026-02-16 23:38:57.998 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (3, 2)
+2026-02-16 23:38:58.000 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (3, 2)
+2026-02-16 23:38:58.001 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=2: mean=0.1481, std=0.2095
+2026-02-16 23:38:58.001 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=2
+2026-02-16 23:38:58.003 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (3, 2)
+2026-02-16 23:38:58.007 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (3, 2)
+2026-02-16 23:38:58.010 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (3, 2)
+2026-02-16 23:38:58.022 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=2: mean=0.1481, std=0.2095
+2026-02-16 23:38:58.022 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (3 pairs)
+2026-02-16 23:38:58.023 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (3 pairs)
+2026-02-16 23:38:58.023 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (3 pairs)
+2026-02-16 23:38:58.024 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:38:58.024 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:38:58.025 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:38:58.025 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:38:58.026 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:38:58.026 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:38:58.027 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 23:38:58.027 | INFO     | __main__:main:1179 - Dataset mimic_iv_ed_demo complete. Elapsed: 24s
+2026-02-16 23:38:58.028 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:38:58.028 | INFO     | __main__:main:1091 - Processing dataset: clinical_patient_triage_nl (3 examples)
+2026-02-16 23:38:58.028 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:38:58.029 | INFO     | __main__:main:1103 - Class pairs: 3
+2026-02-16 23:38:58.029 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 3 texts
+2026-02-16 23:38:58.031 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (3, 41)
+2026-02-16 23:38:58.032 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 3 texts
+2026-02-16 23:39:02.333 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (3, 384)
+2026-02-16 23:39:02.334 | INFO     | __main__:build_llm_features:361 - Building LLM features for 3 texts (starting at 0, 3 classes)
+2026-02-16 23:39:05.898 | INFO     | __main__:build_llm_features:399 - LLM features complete: 3 texts, logprobs available: False (0/3)
+2026-02-16 23:39:05.898 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=2
+2026-02-16 23:39:05.899 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (3, 2)
+2026-02-16 23:39:05.901 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (3, 2)
+2026-02-16 23:39:05.911 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (3, 2)
+2026-02-16 23:39:05.911 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=2: mean=0.1481, std=0.2095
+2026-02-16 23:39:05.911 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=2
+2026-02-16 23:39:05.913 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (3, 2)
+2026-02-16 23:39:05.914 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (3, 2)
+2026-02-16 23:39:05.915 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (3, 2)
+2026-02-16 23:39:05.947 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=2: mean=0.1481, std=0.2095
+2026-02-16 23:39:05.947 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (3 pairs)
+2026-02-16 23:39:05.948 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (3 pairs)
+2026-02-16 23:39:05.948 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (3 pairs)
+2026-02-16 23:39:05.948 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:39:05.948 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:39:05.948 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:39:05.948 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:39:05.949 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:39:05.949 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:39:05.949 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 23:39:05.949 | INFO     | __main__:main:1179 - Dataset clinical_patient_triage_nl complete. Elapsed: 32s
+2026-02-16 23:39:05.949 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:39:05.949 | INFO     | __main__:main:1091 - Processing dataset: ohsumed_single (3 examples)
+2026-02-16 23:39:05.949 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:39:05.949 | INFO     | __main__:main:1103 - Class pairs: 3
+2026-02-16 23:39:05.949 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 3 texts
+2026-02-16 23:39:05.951 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (3, 252)
+2026-02-16 23:39:05.951 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 3 texts
+2026-02-16 23:39:09.977 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (3, 384)
+2026-02-16 23:39:09.978 | INFO     | __main__:build_llm_features:361 - Building LLM features for 3 texts (starting at 0, 3 classes)
+2026-02-16 23:39:13.775 | INFO     | __main__:build_llm_features:399 - LLM features complete: 3 texts, logprobs available: False (0/3)
+2026-02-16 23:39:13.775 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=2
+2026-02-16 23:39:13.777 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (3, 2)
+2026-02-16 23:39:13.779 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (3, 2)
+2026-02-16 23:39:13.780 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (3, 2)
+2026-02-16 23:39:13.780 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=2: mean=0.0000, std=0.0000
+2026-02-16 23:39:13.780 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=2
+2026-02-16 23:39:13.782 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (3, 2)
+2026-02-16 23:39:13.783 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (3, 2)
+2026-02-16 23:39:13.785 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (3, 2)
+2026-02-16 23:39:13.785 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=2: mean=0.0000, std=0.0000
+2026-02-16 23:39:13.785 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (3 pairs)
+2026-02-16 23:39:13.786 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (3 pairs)
+2026-02-16 23:39:13.786 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (3 pairs)
+2026-02-16 23:39:13.786 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:39:13.786 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:39:13.786 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:39:13.787 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:39:13.787 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:39:13.787 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:39:13.787 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 23:39:13.787 | INFO     | __main__:main:1179 - Dataset ohsumed_single complete. Elapsed: 40s
+2026-02-16 23:39:13.787 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:39:13.787 | INFO     | __main__:main:1091 - Processing dataset: mental_health_conditions (3 examples)
+2026-02-16 23:39:13.787 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:39:13.787 | INFO     | __main__:main:1103 - Class pairs: 3
+2026-02-16 23:39:13.787 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 3 texts
+2026-02-16 23:39:13.789 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (3, 82)
+2026-02-16 23:39:13.789 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 3 texts
+2026-02-16 23:39:17.493 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (3, 384)
+2026-02-16 23:39:17.494 | INFO     | __main__:build_llm_features:361 - Building LLM features for 3 texts (starting at 0, 3 classes)
+2026-02-16 23:39:21.594 | INFO     | __main__:build_llm_features:399 - LLM features complete: 3 texts, logprobs available: False (0/3)
+2026-02-16 23:39:21.594 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=2
+2026-02-16 23:39:21.596 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (3, 2)
+2026-02-16 23:39:21.597 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (3, 2)
+2026-02-16 23:39:21.599 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (3, 2)
+2026-02-16 23:39:21.599 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=2: mean=0.1481, std=0.2095
+2026-02-16 23:39:21.600 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=2
+2026-02-16 23:39:21.601 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (3, 2)
+2026-02-16 23:39:21.602 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (3, 2)
+2026-02-16 23:39:21.604 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (3, 2)
+2026-02-16 23:39:21.605 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=2: mean=0.1481, std=0.2095
+2026-02-16 23:39:21.605 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (3 pairs)
+2026-02-16 23:39:21.606 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (3 pairs)
+2026-02-16 23:39:21.606 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (3 pairs)
+2026-02-16 23:39:21.606 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:39:21.606 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:39:21.606 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:39:21.606 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:39:21.607 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:39:21.607 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:39:21.607 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 23:39:21.607 | INFO     | __main__:main:1179 - Dataset mental_health_conditions complete. Elapsed: 48s
+2026-02-16 23:39:21.607 | INFO     | __main__:main:1183 - 
+Pooled analysis: 15 total class pairs
+2026-02-16 23:39:21.607 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 23:39:21.607 | WARNING  | __main__:train_meta_predictor:861 - Too few samples (0) for meta-predictor
+2026-02-16 23:39:21.609 | INFO     | __main__:main:1336 - Saved output to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method_out.json
+2026-02-16 23:39:21.610 | INFO     | __main__:main:1339 - Total examples in output: 15
+2026-02-16 23:39:21.610 | INFO     | __main__:main:1340 - Total LLM calls: 15, cost: $0.0002
+2026-02-16 23:39:21.610 | INFO     | __main__:main:1343 - Total runtime: 48s (0.8min)
+2026-02-16 23:39:21.610 | INFO     | __main__:main:1344 - ============================================================
+2026-02-16 23:39:21.611 | INFO     | __main__:main:1345 - DONE
+2026-02-16 23:39:40.108 | INFO     | __main__:main:1062 - ============================================================
+2026-02-16 23:39:40.108 | INFO     | __main__:main:1063 - Cross-Representation Method Selection Validation (Iter 3)
+2026-02-16 23:39:40.108 | INFO     | __main__:main:1064 - ============================================================
+2026-02-16 23:39:40.108 | INFO     | __main__:main:1069 - MAX_EXAMPLES_PER_DATASET = 10
+2026-02-16 23:39:40.108 | INFO     | __main__:load_and_sample_data:93 - Loading data from /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-16 23:39:40.888 | INFO     | __main__:load_and_sample_data:129 -   medical_abstracts: 9 examples, 5 classes
+2026-02-16 23:39:40.890 | INFO     | __main__:load_and_sample_data:129 -   mimic_iv_ed_demo: 10 examples, 4 classes
+2026-02-16 23:39:40.891 | INFO     | __main__:load_and_sample_data:129 -   clinical_patient_triage_nl: 9 examples, 6 classes
+2026-02-16 23:39:40.902 | INFO     | __main__:load_and_sample_data:129 -   ohsumed_single: 10 examples, 10 classes
+2026-02-16 23:39:40.923 | INFO     | __main__:load_and_sample_data:129 -   mental_health_conditions: 7 examples, 7 classes
+2026-02-16 23:39:40.933 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:39:40.933 | INFO     | __main__:main:1091 - Processing dataset: medical_abstracts (9 examples)
+2026-02-16 23:39:40.933 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:39:40.933 | INFO     | __main__:main:1103 - Class pairs: 10
+2026-02-16 23:39:40.934 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 9 texts
+2026-02-16 23:39:40.937 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (9, 612)
+2026-02-16 23:39:44.998 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 9 texts
+2026-02-16 23:39:49.546 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (9, 384)
+2026-02-16 23:39:49.547 | WARNING  | __main__:build_llm_features:352 - Checkpoint shape (3, 3) doesn't match expected (9, 5), starting fresh
+2026-02-16 23:39:49.550 | INFO     | __main__:build_llm_features:361 - Building LLM features for 9 texts (starting at 0, 5 classes)
+2026-02-16 23:40:01.335 | INFO     | __main__:build_llm_features:399 - LLM features complete: 9 texts, logprobs available: False (0/9)
+2026-02-16 23:40:01.336 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=8
+2026-02-16 23:40:01.338 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (9, 8)
+2026-02-16 23:40:01.340 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (9, 8)
+2026-02-16 23:40:01.341 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (9, 8)
+2026-02-16 23:40:01.348 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=8: mean=0.0658, std=0.0736
+2026-02-16 23:40:01.348 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=8
+2026-02-16 23:40:01.350 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (9, 8)
+2026-02-16 23:40:01.351 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (9, 8)
+2026-02-16 23:40:01.353 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (9, 8)
+2026-02-16 23:40:01.360 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=8: mean=0.0658, std=0.0736
+2026-02-16 23:40:01.360 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (10 pairs)
+2026-02-16 23:40:01.360 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (10 pairs)
+2026-02-16 23:40:01.361 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (10 pairs)
+2026-02-16 23:40:01.361 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:40:01.361 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:40:01.361 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:40:01.362 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:40:01.362 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:40:01.362 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:40:01.362 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 23:40:01.362 | INFO     | __main__:main:1179 - Dataset medical_abstracts complete. Elapsed: 21s
+2026-02-16 23:40:01.362 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:40:01.364 | INFO     | __main__:main:1091 - Processing dataset: mimic_iv_ed_demo (10 examples)
+2026-02-16 23:40:01.364 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:40:01.364 | INFO     | __main__:main:1103 - Class pairs: 6
+2026-02-16 23:40:01.364 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 10 texts
+2026-02-16 23:40:01.366 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (10, 67)
+2026-02-16 23:40:01.367 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 10 texts
+2026-02-16 23:40:06.992 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (10, 384)
+2026-02-16 23:40:06.993 | WARNING  | __main__:build_llm_features:352 - Checkpoint shape (3, 3) doesn't match expected (10, 4), starting fresh
+2026-02-16 23:40:06.995 | INFO     | __main__:build_llm_features:361 - Building LLM features for 10 texts (starting at 0, 4 classes)
+2026-02-16 23:40:25.493 | INFO     | __main__:build_llm_features:399 - LLM features complete: 10 texts, logprobs available: False (0/10)
+2026-02-16 23:40:25.494 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=9
+2026-02-16 23:40:25.496 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (10, 9)
+2026-02-16 23:40:25.504 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (10, 9)
+2026-02-16 23:40:25.506 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (10, 9)
+2026-02-16 23:40:25.507 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=9: mean=0.1067, std=0.0533
+2026-02-16 23:40:25.516 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=9
+2026-02-16 23:40:25.519 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (10, 9)
+2026-02-16 23:40:25.524 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (10, 9)
+2026-02-16 23:40:25.545 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (10, 9)
+2026-02-16 23:40:25.546 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=9: mean=0.1067, std=0.0533
+2026-02-16 23:40:25.546 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (6 pairs)
+2026-02-16 23:40:25.547 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (6 pairs)
+2026-02-16 23:40:25.547 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (6 pairs)
+2026-02-16 23:40:25.548 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:40:25.548 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:40:25.549 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:40:25.550 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:40:25.561 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:40:25.561 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:40:25.562 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 23:40:25.562 | INFO     | __main__:main:1179 - Dataset mimic_iv_ed_demo complete. Elapsed: 45s
+2026-02-16 23:40:25.563 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:40:25.563 | INFO     | __main__:main:1091 - Processing dataset: clinical_patient_triage_nl (9 examples)
+2026-02-16 23:40:25.564 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:40:25.564 | INFO     | __main__:main:1103 - Class pairs: 15
+2026-02-16 23:40:25.565 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 9 texts
+2026-02-16 23:40:25.566 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (9, 100)
+2026-02-16 23:40:25.567 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 9 texts
+2026-02-16 23:40:31.500 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (9, 384)
+2026-02-16 23:40:31.500 | WARNING  | __main__:build_llm_features:352 - Checkpoint shape (3, 3) doesn't match expected (9, 6), starting fresh
+2026-02-16 23:40:31.501 | INFO     | __main__:build_llm_features:361 - Building LLM features for 9 texts (starting at 0, 6 classes)
+2026-02-16 23:40:42.899 | INFO     | __main__:build_llm_features:399 - LLM features complete: 9 texts, logprobs available: False (0/9)
+2026-02-16 23:40:42.900 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=8
+2026-02-16 23:40:42.917 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (9, 8)
+2026-02-16 23:40:42.919 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (9, 8)
+2026-02-16 23:40:42.922 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (9, 8)
+2026-02-16 23:40:42.923 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=8: mean=0.0823, std=0.0736
+2026-02-16 23:40:42.924 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=8
+2026-02-16 23:40:42.926 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (9, 8)
+2026-02-16 23:40:42.928 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (9, 8)
+2026-02-16 23:40:42.930 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (9, 8)
+2026-02-16 23:40:42.931 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=8: mean=0.0823, std=0.0736
+2026-02-16 23:40:42.932 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (15 pairs)
+2026-02-16 23:40:42.933 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (15 pairs)
+2026-02-16 23:40:42.933 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (15 pairs)
+2026-02-16 23:40:42.934 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:40:42.935 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:40:42.936 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:40:42.937 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:40:42.937 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:40:42.938 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:40:42.939 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 23:40:42.939 | INFO     | __main__:main:1179 - Dataset clinical_patient_triage_nl complete. Elapsed: 63s
+2026-02-16 23:40:42.940 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:40:42.941 | INFO     | __main__:main:1091 - Processing dataset: ohsumed_single (10 examples)
+2026-02-16 23:40:42.942 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:40:42.942 | INFO     | __main__:main:1103 - Class pairs: 45
+2026-02-16 23:40:42.943 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 10 texts
+2026-02-16 23:40:42.949 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (10, 775)
+2026-02-16 23:40:42.950 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 10 texts
+2026-02-16 23:40:46.775 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (10, 384)
+2026-02-16 23:40:46.776 | WARNING  | __main__:build_llm_features:352 - Checkpoint shape (3, 3) doesn't match expected (10, 10), starting fresh
+2026-02-16 23:40:46.776 | INFO     | __main__:build_llm_features:361 - Building LLM features for 10 texts (starting at 0, 10 classes)
+2026-02-16 23:41:01.472 | INFO     | __main__:build_llm_features:399 - LLM features complete: 10 texts, logprobs available: False (0/10)
+2026-02-16 23:41:01.473 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=9
+2026-02-16 23:41:01.475 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (10, 9)
+2026-02-16 23:41:01.478 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (10, 9)
+2026-02-16 23:41:01.480 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (10, 9)
+2026-02-16 23:41:01.481 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=9: mean=0.0533, std=0.0653
+2026-02-16 23:41:01.482 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=9
+2026-02-16 23:41:01.484 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (10, 9)
+2026-02-16 23:41:01.486 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (10, 9)
+2026-02-16 23:41:01.489 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (10, 9)
+2026-02-16 23:41:01.490 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=9: mean=0.0533, std=0.0653
+2026-02-16 23:41:01.490 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (45 pairs)
+2026-02-16 23:41:01.491 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (45 pairs)
+2026-02-16 23:41:01.492 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (45 pairs)
+2026-02-16 23:41:01.501 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:41:01.502 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:41:01.503 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:41:01.504 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:41:01.505 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:41:01.506 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:41:01.506 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 23:41:01.507 | INFO     | __main__:main:1179 - Dataset ohsumed_single complete. Elapsed: 81s
+2026-02-16 23:41:01.507 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:41:01.507 | INFO     | __main__:main:1091 - Processing dataset: mental_health_conditions (7 examples)
+2026-02-16 23:41:01.508 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:41:01.508 | INFO     | __main__:main:1103 - Class pairs: 21
+2026-02-16 23:41:01.508 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 7 texts
+2026-02-16 23:41:01.510 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (7, 308)
+2026-02-16 23:41:01.510 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 7 texts
+2026-02-16 23:41:05.558 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (7, 384)
+2026-02-16 23:41:05.559 | WARNING  | __main__:build_llm_features:352 - Checkpoint shape (3, 3) doesn't match expected (7, 7), starting fresh
+2026-02-16 23:41:05.559 | INFO     | __main__:build_llm_features:361 - Building LLM features for 7 texts (starting at 0, 7 classes)
+2026-02-16 23:41:18.169 | INFO     | __main__:build_llm_features:399 - LLM features complete: 7 texts, logprobs available: False (0/7)
+2026-02-16 23:41:18.169 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=6
+2026-02-16 23:41:18.176 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (7, 6)
+2026-02-16 23:41:18.178 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (7, 6)
+2026-02-16 23:41:18.183 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (7, 6)
+2026-02-16 23:41:18.187 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=6: mean=0.0816, std=0.0943
+2026-02-16 23:41:18.187 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=6
+2026-02-16 23:41:18.189 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (7, 6)
+2026-02-16 23:41:18.199 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (7, 6)
+2026-02-16 23:41:18.201 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (7, 6)
+2026-02-16 23:41:18.202 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=6: mean=0.0816, std=0.0943
+2026-02-16 23:41:18.202 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (21 pairs)
+2026-02-16 23:41:18.203 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (21 pairs)
+2026-02-16 23:41:18.203 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (21 pairs)
+2026-02-16 23:41:18.205 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:41:18.205 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:41:18.206 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:41:18.206 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:41:18.207 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:41:18.207 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:41:18.208 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 23:41:18.208 | INFO     | __main__:main:1179 - Dataset mental_health_conditions complete. Elapsed: 98s
+2026-02-16 23:41:18.208 | INFO     | __main__:main:1183 - 
+Pooled analysis: 97 total class pairs
+2026-02-16 23:41:18.208 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (0) for Kendall's τ
+2026-02-16 23:41:18.209 | WARNING  | __main__:train_meta_predictor:861 - Too few samples (0) for meta-predictor
+2026-02-16 23:41:18.213 | INFO     | __main__:main:1336 - Saved output to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method_out.json
+2026-02-16 23:41:18.214 | INFO     | __main__:main:1339 - Total examples in output: 45
+2026-02-16 23:41:18.214 | INFO     | __main__:main:1340 - Total LLM calls: 45, cost: $0.0006
+2026-02-16 23:41:18.214 | INFO     | __main__:main:1343 - Total runtime: 98s (1.6min)
+2026-02-16 23:41:18.214 | INFO     | __main__:main:1344 - ============================================================
+2026-02-16 23:41:18.214 | INFO     | __main__:main:1345 - DONE
+2026-02-16 23:41:26.302 | INFO     | __main__:main:1062 - ============================================================
+2026-02-16 23:41:26.305 | INFO     | __main__:main:1063 - Cross-Representation Method Selection Validation (Iter 3)
+2026-02-16 23:41:26.305 | INFO     | __main__:main:1064 - ============================================================
+2026-02-16 23:41:26.305 | INFO     | __main__:main:1069 - MAX_EXAMPLES_PER_DATASET = 50
+2026-02-16 23:41:26.305 | INFO     | __main__:load_and_sample_data:93 - Loading data from /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-16 23:41:27.096 | INFO     | __main__:load_and_sample_data:129 -   medical_abstracts: 47 examples, 5 classes
+2026-02-16 23:41:27.097 | INFO     | __main__:load_and_sample_data:129 -   mimic_iv_ed_demo: 49 examples, 4 classes
+2026-02-16 23:41:27.097 | INFO     | __main__:load_and_sample_data:129 -   clinical_patient_triage_nl: 31 examples, 6 classes
+2026-02-16 23:41:27.109 | INFO     | __main__:load_and_sample_data:129 -   ohsumed_single: 46 examples, 23 classes
+2026-02-16 23:41:27.125 | INFO     | __main__:load_and_sample_data:129 -   mental_health_conditions: 46 examples, 7 classes
+2026-02-16 23:41:27.133 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:41:27.133 | INFO     | __main__:main:1091 - Processing dataset: medical_abstracts (47 examples)
+2026-02-16 23:41:27.133 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:41:27.133 | INFO     | __main__:main:1103 - Class pairs: 10
+2026-02-16 23:41:27.134 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 47 texts
+2026-02-16 23:41:27.141 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (47, 2272)
+2026-02-16 23:41:31.818 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 47 texts
+2026-02-16 23:41:39.282 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (47, 384)
+2026-02-16 23:41:39.285 | WARNING  | __main__:build_llm_features:352 - Checkpoint shape (9, 5) doesn't match expected (47, 5), starting fresh
+2026-02-16 23:41:39.285 | INFO     | __main__:build_llm_features:361 - Building LLM features for 47 texts (starting at 0, 5 classes)
+2026-02-16 23:43:00.492 | INFO     | __main__:build_llm_features:399 - LLM features complete: 47 texts, logprobs available: False (0/47)
+2026-02-16 23:43:00.493 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-16 23:43:00.618 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (47, 10)
+2026-02-16 23:43:00.629 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (47, 10)
+2026-02-16 23:43:00.639 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (47, 10)
+2026-02-16 23:43:00.640 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.7631, std=0.0938
+2026-02-16 23:43:00.640 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-16 23:43:00.711 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (47, 20)
+2026-02-16 23:43:00.738 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (47, 20)
+2026-02-16 23:43:00.740 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (47, 20)
+2026-02-16 23:43:00.754 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.6558, std=0.0658
+2026-02-16 23:43:00.754 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (10 pairs)
+2026-02-16 23:43:05.686 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.5614, valid pairs=10/10
+2026-02-16 23:43:05.705 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (10 pairs)
+2026-02-16 23:43:06.549 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.3230, valid pairs=10/10
+2026-02-16 23:43:06.550 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (10 pairs)
+2026-02-16 23:43:06.668 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=0.6798, valid pairs=10/10
+2026-02-16 23:43:06.669 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:43:21.235 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.5509, valid pairs=10/10
+2026-02-16 23:43:21.235 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:43:31.021 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.7456, valid pairs=10/10
+2026-02-16 23:43:31.022 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:43:36.974 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.8675, valid pairs=10/10
+2026-02-16 23:43:36.977 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:43:37.325 | INFO     | __main__:train_baseline_multiclass:736 -   tfidf: macro_f1=0.1013
+2026-02-16 23:43:37.330 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:43:37.447 | INFO     | __main__:train_baseline_multiclass:736 -   sbert: macro_f1=0.2078
+2026-02-16 23:43:37.447 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:43:37.490 | INFO     | __main__:train_baseline_multiclass:736 -   llm: macro_f1=0.2849
+2026-02-16 23:43:37.769 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = -0.5200 (p=0.001641), 95% CI: [-0.8000, -0.2467], n_pairs = 10
+2026-02-16 23:43:37.769 | INFO     | __main__:main:1179 - Dataset medical_abstracts complete. Elapsed: 131s
+2026-02-16 23:43:37.769 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:43:37.770 | INFO     | __main__:main:1091 - Processing dataset: mimic_iv_ed_demo (49 examples)
+2026-02-16 23:43:37.770 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:43:37.770 | INFO     | __main__:main:1103 - Class pairs: 6
+2026-02-16 23:43:37.770 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 49 texts
+2026-02-16 23:43:37.772 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (49, 170)
+2026-02-16 23:43:37.772 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 49 texts
+2026-02-16 23:43:42.600 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (49, 384)
+2026-02-16 23:43:42.607 | WARNING  | __main__:build_llm_features:352 - Checkpoint shape (10, 4) doesn't match expected (49, 4), starting fresh
+2026-02-16 23:43:42.607 | INFO     | __main__:build_llm_features:361 - Building LLM features for 49 texts (starting at 0, 4 classes)
+2026-02-16 23:44:52.352 | INFO     | __main__:build_llm_features:399 - LLM features complete: 49 texts, logprobs available: False (0/49)
+2026-02-16 23:44:52.353 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-16 23:44:52.357 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (49, 10)
+2026-02-16 23:44:52.379 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (49, 10)
+2026-02-16 23:44:52.388 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (49, 10)
+2026-02-16 23:44:52.394 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.8361, std=0.0452
+2026-02-16 23:44:52.396 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-16 23:44:52.401 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (49, 20)
+2026-02-16 23:44:52.429 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (49, 20)
+2026-02-16 23:44:52.433 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (49, 20)
+2026-02-16 23:44:52.439 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.6991, std=0.0433
+2026-02-16 23:44:52.442 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (6 pairs)
+2026-02-16 23:44:52.532 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.6490, valid pairs=1/6
+2026-02-16 23:44:52.534 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (6 pairs)
+2026-02-16 23:44:52.570 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.5640, valid pairs=1/6
+2026-02-16 23:44:52.570 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (6 pairs)
+2026-02-16 23:44:52.628 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=0.9420, valid pairs=1/6
+2026-02-16 23:44:52.628 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:44:54.473 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.2624, valid pairs=3/6
+2026-02-16 23:44:54.473 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:44:58.526 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.3254, valid pairs=3/6
+2026-02-16 23:44:58.528 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:45:00.285 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.1167, valid pairs=3/6
+2026-02-16 23:45:00.286 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:45:00.287 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:45:00.287 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:45:00.287 | WARNING  | __main__:compute_kendall_tau:781 - Too few valid pairs (1) for Kendall's τ
+2026-02-16 23:45:00.287 | INFO     | __main__:main:1179 - Dataset mimic_iv_ed_demo complete. Elapsed: 214s
+2026-02-16 23:45:00.287 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:45:00.287 | INFO     | __main__:main:1091 - Processing dataset: clinical_patient_triage_nl (31 examples)
+2026-02-16 23:45:00.287 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:45:00.288 | INFO     | __main__:main:1103 - Class pairs: 15
+2026-02-16 23:45:00.288 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 31 texts
+2026-02-16 23:45:00.290 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (31, 276)
+2026-02-16 23:45:00.291 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 31 texts
+2026-02-16 23:45:04.399 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (31, 384)
+2026-02-16 23:45:04.401 | WARNING  | __main__:build_llm_features:352 - Checkpoint shape (9, 6) doesn't match expected (31, 6), starting fresh
+2026-02-16 23:45:04.402 | INFO     | __main__:build_llm_features:361 - Building LLM features for 31 texts (starting at 0, 6 classes)
+2026-02-16 23:45:51.927 | INFO     | __main__:build_llm_features:399 - LLM features complete: 31 texts, logprobs available: False (0/31)
+2026-02-16 23:45:51.928 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-16 23:45:51.930 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (31, 10)
+2026-02-16 23:45:51.931 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (31, 10)
+2026-02-16 23:45:51.933 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (31, 10)
+2026-02-16 23:45:51.934 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.7441, std=0.0569
+2026-02-16 23:45:51.934 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-16 23:45:51.935 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (31, 20)
+2026-02-16 23:45:51.937 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (31, 20)
+2026-02-16 23:45:51.938 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (31, 20)
+2026-02-16 23:45:51.939 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.4965, std=0.0447
+2026-02-16 23:45:51.939 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (15 pairs)
+2026-02-16 23:45:51.953 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.5494, valid pairs=3/15
+2026-02-16 23:45:51.954 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (15 pairs)
+2026-02-16 23:45:51.970 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.6781, valid pairs=3/15
+2026-02-16 23:45:51.971 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (15 pairs)
+2026-02-16 23:45:51.986 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=1.0000, valid pairs=3/15
+2026-02-16 23:45:51.986 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:45:55.028 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.6441, valid pairs=7/15
+2026-02-16 23:45:55.028 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:45:58.472 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.3711, valid pairs=7/15
+2026-02-16 23:45:58.472 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:46:00.640 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.5752, valid pairs=7/15
+2026-02-16 23:46:00.640 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:46:00.640 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:46:00.641 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:46:00.881 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = 0.1111 (p=0.724263), 95% CI: [-0.3333, 0.3333], n_pairs = 3
+2026-02-16 23:46:00.881 | INFO     | __main__:main:1179 - Dataset clinical_patient_triage_nl complete. Elapsed: 275s
+2026-02-16 23:46:00.881 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:46:00.881 | INFO     | __main__:main:1091 - Processing dataset: ohsumed_single (46 examples)
+2026-02-16 23:46:00.882 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:46:00.882 | INFO     | __main__:main:1103 - Class pairs: 253
+2026-02-16 23:46:00.882 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 46 texts
+2026-02-16 23:46:00.892 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (46, 2236)
+2026-02-16 23:46:00.892 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 46 texts
+2026-02-16 23:46:05.663 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (46, 384)
+2026-02-16 23:46:05.664 | WARNING  | __main__:build_llm_features:352 - Checkpoint shape (10, 10) doesn't match expected (46, 23), starting fresh
+2026-02-16 23:46:05.664 | INFO     | __main__:build_llm_features:361 - Building LLM features for 46 texts (starting at 0, 23 classes)
+2026-02-16 23:47:11.977 | INFO     | __main__:build_llm_features:399 - LLM features complete: 46 texts, logprobs available: False (0/46)
+2026-02-16 23:47:11.978 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-16 23:47:12.053 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (46, 10)
+2026-02-16 23:47:12.069 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (46, 10)
+2026-02-16 23:47:12.071 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (46, 10)
+2026-02-16 23:47:12.072 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.8111, std=0.0661
+2026-02-16 23:47:12.072 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-16 23:47:12.188 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (46, 20)
+2026-02-16 23:47:12.204 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (46, 20)
+2026-02-16 23:47:12.207 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (46, 20)
+2026-02-16 23:47:12.220 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.6773, std=0.0496
+2026-02-16 23:47:12.245 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (253 pairs)
+2026-02-16 23:47:13.616 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.2196, valid pairs=3/253
+2026-02-16 23:47:13.617 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (253 pairs)
+2026-02-16 23:47:14.039 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.1674, valid pairs=3/253
+2026-02-16 23:47:14.039 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (253 pairs)
+2026-02-16 23:47:14.378 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=0.5000, valid pairs=3/253
+2026-02-16 23:47:14.379 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:47:19.881 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.7716, valid pairs=5/253
+2026-02-16 23:47:19.887 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:47:26.916 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.8903, valid pairs=5/253
+2026-02-16 23:47:26.917 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:47:29.698 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.7843, valid pairs=5/253
+2026-02-16 23:47:29.698 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:47:29.698 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:47:29.699 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:47:29.982 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = 0.1481 (p=0.638101), 95% CI: [-1.0000, 1.0000], n_pairs = 3
+2026-02-16 23:47:29.983 | INFO     | __main__:main:1179 - Dataset ohsumed_single complete. Elapsed: 364s
+2026-02-16 23:47:29.984 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:47:29.984 | INFO     | __main__:main:1091 - Processing dataset: mental_health_conditions (46 examples)
+2026-02-16 23:47:29.985 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:47:29.985 | INFO     | __main__:main:1103 - Class pairs: 21
+2026-02-16 23:47:29.985 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 46 texts
+2026-02-16 23:47:29.992 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (46, 1138)
+2026-02-16 23:47:29.992 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 46 texts
+2026-02-16 23:47:35.881 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (46, 384)
+2026-02-16 23:47:35.883 | WARNING  | __main__:build_llm_features:352 - Checkpoint shape (7, 7) doesn't match expected (46, 7), starting fresh
+2026-02-16 23:47:35.884 | INFO     | __main__:build_llm_features:361 - Building LLM features for 46 texts (starting at 0, 7 classes)
+2026-02-16 23:48:34.007 | INFO     | __main__:build_llm_features:399 - LLM features complete: 46 texts, logprobs available: False (0/46)
+2026-02-16 23:48:34.007 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-16 23:48:34.034 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (46, 10)
+2026-02-16 23:48:34.039 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (46, 10)
+2026-02-16 23:48:34.042 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (46, 10)
+2026-02-16 23:48:34.043 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.7805, std=0.0777
+2026-02-16 23:48:34.044 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-16 23:48:34.048 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (46, 20)
+2026-02-16 23:48:34.051 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (46, 20)
+2026-02-16 23:48:34.054 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (46, 20)
+2026-02-16 23:48:34.055 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.6619, std=0.0579
+2026-02-16 23:48:34.057 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (21 pairs)
+2026-02-16 23:48:37.737 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.1330, valid pairs=21/21
+2026-02-16 23:48:37.738 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (21 pairs)
+2026-02-16 23:48:41.103 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.0511, valid pairs=21/21
+2026-02-16 23:48:41.103 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (21 pairs)
+2026-02-16 23:48:44.518 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=0.9524, valid pairs=21/21
+2026-02-16 23:48:44.523 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:49:01.874 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.8657, valid pairs=21/21
+2026-02-16 23:49:01.875 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:49:19.786 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.9302, valid pairs=21/21
+2026-02-16 23:49:19.786 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:49:32.216 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.8851, valid pairs=21/21
+2026-02-16 23:49:32.226 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:49:32.529 | INFO     | __main__:train_baseline_multiclass:736 -   tfidf: macro_f1=0.3824
+2026-02-16 23:49:32.541 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:49:32.633 | INFO     | __main__:train_baseline_multiclass:736 -   sbert: macro_f1=0.7705
+2026-02-16 23:49:32.634 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:49:32.662 | INFO     | __main__:train_baseline_multiclass:736 -   llm: macro_f1=0.4933
+2026-02-16 23:49:32.979 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = 0.0892 (p=0.429600), 95% CI: [-0.2313, 0.4082], n_pairs = 21
+2026-02-16 23:49:32.980 | INFO     | __main__:main:1179 - Dataset mental_health_conditions complete. Elapsed: 487s
+2026-02-16 23:49:32.981 | INFO     | __main__:main:1183 - 
+Pooled analysis: 305 total class pairs
+2026-02-16 23:49:33.303 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = -0.0598 (p=0.474674), 95% CI: [-0.2884, 0.1538], n_pairs = 38
+2026-02-16 23:49:35.300 | INFO     | __main__:train_meta_predictor:899 - Meta-predictor AUC = 0.5647, n_samples = 38
+2026-02-16 23:49:35.386 | INFO     | __main__:main:1336 - Saved output to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method_out.json
+2026-02-16 23:49:35.387 | INFO     | __main__:main:1339 - Total examples in output: 219
+2026-02-16 23:49:35.387 | INFO     | __main__:main:1340 - Total LLM calls: 219, cost: $0.0035
+2026-02-16 23:49:35.387 | INFO     | __main__:main:1343 - Total runtime: 489s (8.2min)
+2026-02-16 23:49:35.387 | INFO     | __main__:main:1344 - ============================================================
+2026-02-16 23:49:35.387 | INFO     | __main__:main:1345 - DONE
+2026-02-16 23:49:46.400 | INFO     | __main__:main:1062 - ============================================================
+2026-02-16 23:49:46.400 | INFO     | __main__:main:1063 - Cross-Representation Method Selection Validation (Iter 3)
+2026-02-16 23:49:46.400 | INFO     | __main__:main:1064 - ============================================================
+2026-02-16 23:49:46.400 | INFO     | __main__:main:1069 - MAX_EXAMPLES_PER_DATASET = 200
+2026-02-16 23:49:46.400 | INFO     | __main__:load_and_sample_data:93 - Loading data from /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-16 23:49:47.906 | INFO     | __main__:load_and_sample_data:129 -   medical_abstracts: 197 examples, 5 classes
+2026-02-16 23:49:47.928 | INFO     | __main__:load_and_sample_data:129 -   mimic_iv_ed_demo: 197 examples, 4 classes
+2026-02-16 23:49:47.928 | INFO     | __main__:load_and_sample_data:129 -   clinical_patient_triage_nl: 31 examples, 6 classes
+2026-02-16 23:49:47.941 | INFO     | __main__:load_and_sample_data:129 -   ohsumed_single: 190 examples, 23 classes
+2026-02-16 23:49:47.973 | INFO     | __main__:load_and_sample_data:129 -   mental_health_conditions: 197 examples, 7 classes
+2026-02-16 23:49:47.983 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:49:47.992 | INFO     | __main__:main:1091 - Processing dataset: medical_abstracts (197 examples)
+2026-02-16 23:49:47.993 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:49:47.993 | INFO     | __main__:main:1103 - Class pairs: 10
+2026-02-16 23:49:47.993 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 197 texts
+2026-02-16 23:49:48.070 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (197, 5000)
+2026-02-16 23:49:55.257 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 197 texts
+2026-02-16 23:50:24.785 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (197, 384)
+2026-02-16 23:50:24.788 | WARNING  | __main__:build_llm_features:352 - Checkpoint shape (47, 5) doesn't match expected (197, 5), starting fresh
+2026-02-16 23:50:24.789 | INFO     | __main__:build_llm_features:361 - Building LLM features for 197 texts (starting at 0, 5 classes)
+2026-02-16 23:51:36.120 | INFO     | __main__:build_llm_features:372 - LLM features: 50/197 done | logprobs: 0/50 | cost: $0.0010 | calls: 50
+2026-02-16 23:52:10.267 | INFO     | __main__:main:1062 - ============================================================
+2026-02-16 23:52:10.267 | INFO     | __main__:main:1063 - Cross-Representation Method Selection Validation (Iter 3)
+2026-02-16 23:52:10.267 | INFO     | __main__:main:1064 - ============================================================
+2026-02-16 23:52:10.268 | INFO     | __main__:main:1069 - MAX_EXAMPLES_PER_DATASET = 200
+2026-02-16 23:52:10.268 | INFO     | __main__:load_and_sample_data:93 - Loading data from /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-16 23:52:11.018 | INFO     | __main__:load_and_sample_data:129 -   medical_abstracts: 197 examples, 5 classes
+2026-02-16 23:52:11.019 | INFO     | __main__:load_and_sample_data:129 -   mimic_iv_ed_demo: 197 examples, 4 classes
+2026-02-16 23:52:11.019 | INFO     | __main__:load_and_sample_data:129 -   clinical_patient_triage_nl: 31 examples, 6 classes
+2026-02-16 23:52:11.026 | INFO     | __main__:load_and_sample_data:129 -   ohsumed_single: 190 examples, 23 classes
+2026-02-16 23:52:11.036 | INFO     | __main__:load_and_sample_data:129 -   mental_health_conditions: 197 examples, 7 classes
+2026-02-16 23:52:11.044 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:52:11.044 | INFO     | __main__:main:1091 - Processing dataset: medical_abstracts (197 examples)
+2026-02-16 23:52:11.045 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:52:11.045 | INFO     | __main__:main:1103 - Class pairs: 10
+2026-02-16 23:52:11.045 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 197 texts
+2026-02-16 23:52:11.067 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (197, 5000)
+2026-02-16 23:52:15.268 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 197 texts
+2026-02-16 23:52:38.859 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (197, 384)
+2026-02-16 23:52:38.860 | INFO     | __main__:build_llm_features:361 - Building LLM features for 197 texts (starting at 0, 5 classes)
+2026-02-16 23:52:45.301 | INFO     | __main__:build_llm_features:372 - LLM features: 100/197 done | logprobs: 0/100 | cost: $0.0021 | calls: 100
+2026-02-16 23:53:42.991 | INFO     | __main__:build_llm_features:372 - LLM features: 50/197 done | logprobs: 0/50 | cost: $0.0010 | calls: 50
+2026-02-16 23:53:51.338 | INFO     | __main__:build_llm_features:372 - LLM features: 150/197 done | logprobs: 0/150 | cost: $0.0033 | calls: 150
+2026-02-16 23:54:47.076 | INFO     | __main__:build_llm_features:372 - LLM features: 100/197 done | logprobs: 0/100 | cost: $0.0021 | calls: 100
+2026-02-16 23:55:02.092 | INFO     | __main__:build_llm_features:399 - LLM features complete: 197 texts, logprobs available: False (0/197)
+2026-02-16 23:55:02.092 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-16 23:55:02.109 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (197, 10)
+2026-02-16 23:55:02.111 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (197, 10)
+2026-02-16 23:55:02.113 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (197, 10)
+2026-02-16 23:55:02.115 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.8771, std=0.0626
+2026-02-16 23:55:02.116 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-16 23:55:02.128 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (197, 20)
+2026-02-16 23:55:02.131 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (197, 20)
+2026-02-16 23:55:02.133 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (197, 20)
+2026-02-16 23:55:02.137 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.8409, std=0.0542
+2026-02-16 23:55:02.137 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (10 pairs)
+2026-02-16 23:55:04.302 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.5903, valid pairs=10/10
+2026-02-16 23:55:04.311 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (10 pairs)
+2026-02-16 23:55:33.562 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.3456, valid pairs=10/10
+2026-02-16 23:55:33.563 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (10 pairs)
+2026-02-16 23:55:35.304 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=0.2134, valid pairs=10/10
+2026-02-16 23:55:35.305 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:55:57.886 | INFO     | __main__:build_llm_features:372 - LLM features: 150/197 done | logprobs: 0/150 | cost: $0.0032 | calls: 150
+2026-02-16 23:56:34.460 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.6517, valid pairs=10/10
+2026-02-16 23:56:34.461 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:57:01.376 | INFO     | __main__:build_llm_features:399 - LLM features complete: 197 texts, logprobs available: False (0/197)
+2026-02-16 23:57:01.377 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-16 23:57:01.641 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (197, 10)
+2026-02-16 23:57:01.673 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (197, 10)
+2026-02-16 23:57:01.676 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (197, 10)
+2026-02-16 23:57:01.679 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.8799, std=0.0591
+2026-02-16 23:57:01.679 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-16 23:57:01.719 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (197, 20)
+2026-02-16 23:57:01.723 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (197, 20)
+2026-02-16 23:57:01.742 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (197, 20)
+2026-02-16 23:57:01.781 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.8387, std=0.0601
+2026-02-16 23:57:01.781 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (10 pairs)
+2026-02-16 23:57:08.290 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.5670, valid pairs=10/10
+2026-02-16 23:57:08.297 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (10 pairs)
+2026-02-16 23:57:24.394 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.8250, valid pairs=10/10
+2026-02-16 23:57:24.394 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:57:41.372 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.8410, valid pairs=10/10
+2026-02-16 23:57:41.411 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:57:47.168 | INFO     | __main__:train_baseline_multiclass:736 -   tfidf: macro_f1=0.1858
+2026-02-16 23:57:47.180 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:57:48.041 | INFO     | __main__:train_baseline_multiclass:736 -   sbert: macro_f1=0.3917
+2026-02-16 23:57:48.095 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:57:48.180 | INFO     | __main__:train_baseline_multiclass:736 -   llm: macro_f1=0.5288
+2026-02-16 23:57:49.155 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = 0.5200 (p=0.001641), 95% CI: [0.0932, 0.8667], n_pairs = 10
+2026-02-16 23:57:49.163 | INFO     | __main__:main:1179 - Dataset medical_abstracts complete. Elapsed: 483s
+2026-02-16 23:57:49.164 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:57:49.164 | INFO     | __main__:main:1091 - Processing dataset: mimic_iv_ed_demo (197 examples)
+2026-02-16 23:57:49.164 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:57:49.164 | INFO     | __main__:main:1103 - Class pairs: 6
+2026-02-16 23:57:49.164 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 197 texts
+2026-02-16 23:57:49.168 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (197, 314)
+2026-02-16 23:57:49.175 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 197 texts
+2026-02-16 23:57:51.396 | ERROR    | __main__:<module>:1349 - An error has been caught in function '<module>', process 'MainProcess' (2044557), thread 'MainThread' (136592190052160):
+Traceback (most recent call last):
+
+> File "/home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method.py", line 1349, in <module>
+    main()
+    └ <function main at 0x7c3aa5d25750>
+
+  File "/home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method.py", line 1107, in main
+    X_sbert = build_sbert_features(texts)
+              │                    └ ['Chief complaint: Abd pain, LEAKING ASCITES', 'Chief complaint: Dizziness, Diplopia', 'Chief complaint: Abd pain. Vitals: HR...
+              └ <function build_sbert_features at 0x7c3aa5d24f70>
+
+  File "/home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method.py", line 163, in build_sbert_features
+    model = SentenceTransformer("all-MiniLM-L6-v2")
+            └ <class 'sentence_transformers.SentenceTransformer.SentenceTransformer'>
+
+  File "/home/adrian/projects/ai-inventor/.venv/lib/python3.10/site-packages/sentence_transformers/SentenceTransformer.py", line 327, in __init__
+    modules, self.module_kwargs = self._load_sbert_model(
+    │        │    │               │    └ <function SentenceTransformer._load_sbert_model at 0x7c3a47674dc0>
+    │        │    │               └ <unprintable SentenceTransformer object>
+    │        │    └ None
+    │        └ <unprintable SentenceTransformer object>
+    └ None
+  File "/home/adrian/projects/ai-inventor/.venv/lib/python3.10/site-packages/sentence_transformers/SentenceTransformer.py", line 2305, in _load_sbert_model
+    module = module_class.load(
+             │            └ <classmethod(<function Transformer.load at 0x7c3a475f7d00>)>
+             └ <class 'sentence_transformers.models.Transformer.Transformer'>
+  File "/home/adrian/projects/ai-inventor/.venv/lib/python3.10/site-packages/sentence_transformers/models/Transformer.py", line 366, in load
+    return cls(model_name_or_path=model_name_or_path, **init_kwargs)
+           │                      │                     └ {'max_seq_length': 256, 'do_lower_case': False, 'model_args': {'subfolder': '', 'token': None, 'revision': None, 'local_files...
+           │                      └ 'sentence-transformers/all-MiniLM-L6-v2'
+           └ <class 'sentence_transformers.models.Transformer.Transformer'>
+  File "/home/adrian/projects/ai-inventor/.venv/lib/python3.10/site-packages/sentence_transformers/models/Transformer.py", line 89, in __init__
+    self._load_model(model_name_or_path, config, cache_dir, backend, is_peft_model, **model_args)
+    │    │           │                   │       │          │        │                └ {'subfolder': '', 'token': None, 'revision': None, 'local_files_only': False, 'trust_remote_code': False}
+    │    │           │                   │       │          │        └ False
+    │    │           │                   │       │          └ 'torch'
+    │    │           │                   │       └ None
+    │    │           │                   └ BertConfig {
+    │    │           │                       "add_cross_attention": false,
+    │    │           │                       "architectures": [
+    │    │           │                         "BertModel"
+    │    │           │                       ],
+    │    │           │                       "attention_probs_dropout_prob": 0.1,...
+    │    │           └ 'sentence-transformers/all-MiniLM-L6-v2'
+    │    └ <function Transformer._load_model at 0x7c3a475f7880>
+    └ <unprintable Transformer object>
+  File "/home/adrian/projects/ai-inventor/.venv/lib/python3.10/site-packages/sentence_transformers/models/Transformer.py", line 197, in _load_model
+    self.auto_model = AutoModel.from_pretrained(
+    │                 │         └ <classmethod(<function _BaseAutoModelClass.from_pretrained at 0x7c3a8baf6dd0>)>
+    │                 └ <class 'transformers.models.auto.modeling_auto.AutoModel'>
+    └ <unprintable Transformer object>
+  File "/home/adrian/projects/ai-inventor/.venv/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 372, in from_pretrained
+    return model_class.from_pretrained(
+           │           └ <classmethod(<function PreTrainedModel.from_pretrained at 0x7c3a884f8160>)>
+           └ <class 'transformers.models.bert.modeling_bert.BertModel'>
+  File "/home/adrian/projects/ai-inventor/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4109, in from_pretrained
+    load_info = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                │   │                      │      │           │                 └ LoadStateDictConfig(pretrained_model_name_or_path='sentence-transformers/all-MiniLM-L6-v2', download_kwargs={'cache_dir': Non...
+                │   │                      │      │           └ ['/home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/.hf_cache/hub/models--sentence-transformers--all-M...
+                │   │                      │      └ None
+                │   │                      └ BertModel(
+                │   │                          (embeddings): BertEmbeddings(
+                │   │                            (word_embeddings): Embedding(30522, 384, padding_idx=0)
+                │   │                            (position_embeddin...
+                │   └ <classmethod(<function PreTrainedModel._load_pretrained_model at 0x7c3a884f81f0>)>
+                └ <class 'transformers.models.bert.modeling_bert.BertModel'>
+  File "/home/adrian/projects/ai-inventor/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4231, in _load_pretrained_model
+    convert_and_load_state_dict_in_model(
+    └ <function convert_and_load_state_dict_in_model at 0x7c3a88ed09d0>
+  File "/home/adrian/projects/ai-inventor/.venv/lib/python3.10/site-packages/transformers/core_model_loading.py", line 1211, in convert_and_load_state_dict_in_model
+    with logging.tqdm(total=total_entries, desc="Loading weights") as pbar:
+         │       │          └ 103
+         │       └ <transformers.utils.logging._tqdm_cls object at 0x7c3aa4f2cd90>
+         └ <module 'transformers.utils.logging' from '/home/adrian/projects/ai-inventor/.venv/lib/python3.10/site-packages/transformers/...
+  File "/home/adrian/projects/ai-inventor/.venv/lib/python3.10/site-packages/transformers/utils/logging.py", line 375, in __call__
+    return tqdm_lib.tqdm(*args, **kwargs)
+           │        │     │       └ {'total': 103, 'desc': 'Loading weights'}
+           │        │     └ ()
+           │        └ <class 'tqdm.asyncio.tqdm_asyncio'>
+           └ <module 'tqdm.auto' from '/home/adrian/projects/ai-inventor/.venv/lib/python3.10/site-packages/tqdm/auto.py'>
+  File "/home/adrian/projects/ai-inventor/.venv/lib/python3.10/site-packages/tqdm/asyncio.py", line 24, in __init__
+    super().__init__(iterable, *args, **kwargs)
+                     │          │       └ {'total': 103, 'desc': 'Loading weights'}
+                     │          └ ()
+                     └ None
+  File "/home/adrian/projects/ai-inventor/.venv/lib/python3.10/site-packages/tqdm/std.py", line 1096, in __init__
+    self.sp = self.status_printer(self.fp)
+    │         │    │              │    └ <tqdm.utils.DisableOnWriteError object at 0x7c3a46c45930>
+    │         │    │              └ <tqdm.asyncio.tqdm_asyncio object at 0x7c3a4728b4f0>
+    │         │    └ <staticmethod(<function tqdm.status_printer at 0x7c3aa58791b0>)>
+    │         └ <tqdm.asyncio.tqdm_asyncio object at 0x7c3a4728b4f0>
+    └ <tqdm.asyncio.tqdm_asyncio object at 0x7c3a4728b4f0>
+  File "/home/adrian/projects/ai-inventor/.venv/lib/python3.10/site-packages/tqdm/std.py", line 448, in status_printer
+    getattr(sys.stderr, 'flush', lambda: None)()
+            │   └ <_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'>
+            └ <module 'sys' (built-in)>
+
+BrokenPipeError: [Errno 32] Broken pipe
+2026-02-16 23:57:56.073 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.3456, valid pairs=10/10
+2026-02-16 23:57:56.073 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (10 pairs)
+2026-02-16 23:57:57.578 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=0.2362, valid pairs=10/10
+2026-02-16 23:57:57.579 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-16 23:59:05.040 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.6517, valid pairs=10/10
+2026-02-16 23:59:05.041 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-16 23:59:48.729 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.8250, valid pairs=10/10
+2026-02-16 23:59:48.730 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-16 23:59:53.363 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.8454, valid pairs=10/10
+2026-02-16 23:59:53.364 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-16 23:59:56.307 | INFO     | __main__:train_baseline_multiclass:736 -   tfidf: macro_f1=0.1858
+2026-02-16 23:59:56.310 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-16 23:59:56.595 | INFO     | __main__:train_baseline_multiclass:736 -   sbert: macro_f1=0.3917
+2026-02-16 23:59:56.596 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-16 23:59:56.626 | INFO     | __main__:train_baseline_multiclass:736 -   llm: macro_f1=0.5068
+2026-02-16 23:59:56.958 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = 0.3167 (p=0.055188), 95% CI: [-0.1000, 0.7100], n_pairs = 10
+2026-02-16 23:59:56.960 | INFO     | __main__:main:1179 - Dataset medical_abstracts complete. Elapsed: 467s
+2026-02-16 23:59:56.961 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-16 23:59:56.961 | INFO     | __main__:main:1091 - Processing dataset: mimic_iv_ed_demo (197 examples)
+2026-02-16 23:59:56.961 | INFO     | __main__:main:1092 - ============================================================
+2026-02-16 23:59:56.962 | INFO     | __main__:main:1103 - Class pairs: 6
+2026-02-16 23:59:56.962 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 197 texts
+2026-02-16 23:59:56.965 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (197, 314)
+2026-02-16 23:59:56.966 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 197 texts
+2026-02-17 00:00:09.459 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (197, 384)
+2026-02-17 00:00:09.460 | INFO     | __main__:build_llm_features:361 - Building LLM features for 197 texts (starting at 0, 4 classes)
+2026-02-17 00:01:22.336 | INFO     | __main__:build_llm_features:372 - LLM features: 50/197 done | logprobs: 0/50 | cost: $0.0045 | calls: 247
+2026-02-17 00:02:27.361 | INFO     | __main__:build_llm_features:372 - LLM features: 100/197 done | logprobs: 0/100 | cost: $0.0049 | calls: 297
+2026-02-17 00:03:42.225 | INFO     | __main__:build_llm_features:372 - LLM features: 150/197 done | logprobs: 0/150 | cost: $0.0052 | calls: 347
+2026-02-17 00:04:49.941 | INFO     | __main__:build_llm_features:399 - LLM features complete: 197 texts, logprobs available: False (0/197)
+2026-02-17 00:04:49.942 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-17 00:04:49.961 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (197, 10)
+2026-02-17 00:04:49.972 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (197, 10)
+2026-02-17 00:04:49.980 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (197, 10)
+2026-02-17 00:04:49.984 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.9212, std=0.0426
+2026-02-17 00:04:49.985 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-17 00:04:49.989 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (197, 20)
+2026-02-17 00:04:49.999 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (197, 20)
+2026-02-17 00:04:50.002 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (197, 20)
+2026-02-17 00:04:50.007 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.8946, std=0.0395
+2026-02-17 00:04:50.008 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (6 pairs)
+2026-02-17 00:04:57.969 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.5783, valid pairs=3/6
+2026-02-17 00:04:57.971 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (6 pairs)
+2026-02-17 00:05:05.294 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.5104, valid pairs=3/6
+2026-02-17 00:05:05.295 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (6 pairs)
+2026-02-17 00:05:05.515 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=0.7678, valid pairs=3/6
+2026-02-17 00:05:05.516 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-17 00:05:09.293 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.5307, valid pairs=3/6
+2026-02-17 00:05:09.293 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-17 00:05:30.457 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.5608, valid pairs=3/6
+2026-02-17 00:05:30.457 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-17 00:05:31.690 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.2071, valid pairs=3/6
+2026-02-17 00:05:31.690 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-17 00:05:31.690 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-17 00:05:31.690 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-17 00:05:31.901 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = 0.3333 (p=0.289918), 95% CI: [-1.0000, 1.0000], n_pairs = 3
+2026-02-17 00:05:31.901 | INFO     | __main__:main:1179 - Dataset mimic_iv_ed_demo complete. Elapsed: 802s
+2026-02-17 00:05:31.901 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-17 00:05:31.901 | INFO     | __main__:main:1091 - Processing dataset: clinical_patient_triage_nl (31 examples)
+2026-02-17 00:05:31.901 | INFO     | __main__:main:1092 - ============================================================
+2026-02-17 00:05:31.901 | INFO     | __main__:main:1103 - Class pairs: 15
+2026-02-17 00:05:31.901 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 31 texts
+2026-02-17 00:05:31.903 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (31, 276)
+2026-02-17 00:05:31.903 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 31 texts
+2026-02-17 00:05:35.746 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (31, 384)
+2026-02-17 00:05:35.746 | INFO     | __main__:build_llm_features:361 - Building LLM features for 31 texts (starting at 0, 6 classes)
+2026-02-17 00:06:21.436 | INFO     | __main__:build_llm_features:399 - LLM features complete: 31 texts, logprobs available: False (0/31)
+2026-02-17 00:06:21.436 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-17 00:06:21.438 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (31, 10)
+2026-02-17 00:06:21.440 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (31, 10)
+2026-02-17 00:06:21.441 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (31, 10)
+2026-02-17 00:06:21.442 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.7504, std=0.0704
+2026-02-17 00:06:21.442 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-17 00:06:21.443 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (31, 20)
+2026-02-17 00:06:21.445 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (31, 20)
+2026-02-17 00:06:21.446 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (31, 20)
+2026-02-17 00:06:21.447 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.4970, std=0.0462
+2026-02-17 00:06:21.447 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (15 pairs)
+2026-02-17 00:06:21.457 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.5494, valid pairs=3/15
+2026-02-17 00:06:21.457 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (15 pairs)
+2026-02-17 00:06:21.489 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.6781, valid pairs=3/15
+2026-02-17 00:06:21.489 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (15 pairs)
+2026-02-17 00:06:21.525 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=1.0000, valid pairs=3/15
+2026-02-17 00:06:21.526 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-17 00:06:23.804 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.6441, valid pairs=7/15
+2026-02-17 00:06:23.804 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-17 00:06:26.836 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.3711, valid pairs=7/15
+2026-02-17 00:06:26.836 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-17 00:06:28.927 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.5571, valid pairs=7/15
+2026-02-17 00:06:28.928 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-17 00:06:28.928 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-17 00:06:28.928 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-17 00:06:29.157 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = 0.2963 (p=0.346853), 95% CI: [-0.3333, 1.0000], n_pairs = 3
+2026-02-17 00:06:29.157 | INFO     | __main__:main:1179 - Dataset clinical_patient_triage_nl complete. Elapsed: 859s
+2026-02-17 00:06:29.157 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-17 00:06:29.157 | INFO     | __main__:main:1091 - Processing dataset: ohsumed_single (190 examples)
+2026-02-17 00:06:29.157 | INFO     | __main__:main:1092 - ============================================================
+2026-02-17 00:06:29.157 | INFO     | __main__:main:1103 - Class pairs: 253
+2026-02-17 00:06:29.157 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 190 texts
+2026-02-17 00:06:29.189 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (190, 5000)
+2026-02-17 00:06:29.190 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 190 texts
+2026-02-17 00:06:40.390 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (190, 384)
+2026-02-17 00:06:40.390 | INFO     | __main__:build_llm_features:361 - Building LLM features for 190 texts (starting at 0, 23 classes)
+2026-02-17 00:07:38.685 | INFO     | __main__:build_llm_features:372 - LLM features: 50/190 done | logprobs: 0/50 | cost: $0.0074 | calls: 475
+2026-02-17 00:08:46.039 | INFO     | __main__:build_llm_features:372 - LLM features: 100/190 done | logprobs: 0/100 | cost: $0.0090 | calls: 525
+2026-02-17 00:09:58.717 | INFO     | __main__:build_llm_features:372 - LLM features: 150/190 done | logprobs: 0/150 | cost: $0.0106 | calls: 575
+2026-02-17 00:10:59.595 | INFO     | __main__:build_llm_features:399 - LLM features complete: 190 texts, logprobs available: False (0/190)
+2026-02-17 00:10:59.595 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-17 00:10:59.608 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (190, 10)
+2026-02-17 00:10:59.613 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (190, 10)
+2026-02-17 00:10:59.617 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (190, 10)
+2026-02-17 00:10:59.619 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.8612, std=0.0742
+2026-02-17 00:10:59.619 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-17 00:10:59.645 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (190, 20)
+2026-02-17 00:10:59.650 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (190, 20)
+2026-02-17 00:10:59.655 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (190, 20)
+2026-02-17 00:10:59.659 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.8327, std=0.0756
+2026-02-17 00:10:59.663 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (253 pairs)
+2026-02-17 00:11:19.906 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.3138, valid pairs=91/253
+2026-02-17 00:11:19.910 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (253 pairs)
+2026-02-17 00:11:35.941 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.2174, valid pairs=91/253
+2026-02-17 00:11:35.942 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (253 pairs)
+2026-02-17 00:11:41.500 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=0.3704, valid pairs=91/253
+2026-02-17 00:11:41.505 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-17 00:13:36.017 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.5434, valid pairs=136/253
+2026-02-17 00:13:36.017 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-17 00:15:03.070 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.7129, valid pairs=136/253
+2026-02-17 00:15:03.071 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-17 00:15:51.143 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.7348, valid pairs=136/253
+2026-02-17 00:15:51.144 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-17 00:15:51.144 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-17 00:15:51.144 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-17 00:15:51.462 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = -0.0676 (p=0.209612), 95% CI: [-0.2170, 0.0885], n_pairs = 91
+2026-02-17 00:15:51.462 | INFO     | __main__:main:1179 - Dataset ohsumed_single complete. Elapsed: 1421s
+2026-02-17 00:15:51.462 | INFO     | __main__:main:1090 - 
+============================================================
+2026-02-17 00:15:51.462 | INFO     | __main__:main:1091 - Processing dataset: mental_health_conditions (197 examples)
+2026-02-17 00:15:51.462 | INFO     | __main__:main:1092 - ============================================================
+2026-02-17 00:15:51.462 | INFO     | __main__:main:1103 - Class pairs: 21
+2026-02-17 00:15:51.463 | INFO     | __main__:build_tfidf_features:143 - Building TF-IDF features for 197 texts
+2026-02-17 00:15:51.474 | INFO     | __main__:build_tfidf_features:150 -   TF-IDF shape: (197, 2655)
+2026-02-17 00:15:51.474 | INFO     | __main__:build_sbert_features:162 - Building SBERT features for 197 texts
+2026-02-17 00:16:01.394 | INFO     | __main__:build_sbert_features:165 -   SBERT shape: (197, 384)
+2026-02-17 00:16:01.395 | INFO     | __main__:build_llm_features:361 - Building LLM features for 197 texts (starting at 0, 7 classes)
+2026-02-17 00:17:07.768 | INFO     | __main__:build_llm_features:372 - LLM features: 50/197 done | logprobs: 0/50 | cost: $0.0125 | calls: 665
+2026-02-17 00:18:02.996 | INFO     | __main__:build_llm_features:372 - LLM features: 100/197 done | logprobs: 0/100 | cost: $0.0130 | calls: 715
+2026-02-17 00:19:06.714 | INFO     | __main__:build_llm_features:372 - LLM features: 150/197 done | logprobs: 0/150 | cost: $0.0135 | calls: 765
+2026-02-17 00:20:14.907 | INFO     | __main__:build_llm_features:399 - LLM features complete: 197 texts, logprobs available: False (0/197)
+2026-02-17 00:20:14.908 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=10
+2026-02-17 00:20:14.924 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (197, 10)
+2026-02-17 00:20:14.932 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (197, 10)
+2026-02-17 00:20:14.935 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (197, 10)
+2026-02-17 00:20:14.942 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=10: mean=0.8559, std=0.0922
+2026-02-17 00:20:14.944 | INFO     | __main__:compute_knn_and_crnd:433 - Computing k-NN with k=20
+2026-02-17 00:20:14.969 | INFO     | __main__:compute_knn_and_crnd:445 -   tfidf: neighbors shape (197, 20)
+2026-02-17 00:20:14.977 | INFO     | __main__:compute_knn_and_crnd:445 -   sbert: neighbors shape (197, 20)
+2026-02-17 00:20:14.981 | INFO     | __main__:compute_knn_and_crnd:445 -   llm: neighbors shape (197, 20)
+2026-02-17 00:20:14.991 | INFO     | __main__:compute_knn_and_crnd:466 -   CRND k=20: mean=0.8144, std=0.1065
+2026-02-17 00:20:14.994 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for tfidf (21 pairs)
+2026-02-17 00:20:21.240 | INFO     | __main__:compute_niche_overlap_all:605 -   tfidf: mean D=0.1360, valid pairs=21/21
+2026-02-17 00:20:21.274 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for sbert (21 pairs)
+2026-02-17 00:20:48.248 | INFO     | __main__:compute_niche_overlap_all:605 -   sbert: mean D=0.1282, valid pairs=21/21
+2026-02-17 00:20:48.248 | INFO     | __main__:compute_niche_overlap_all:596 - Computing niche overlap for llm (21 pairs)
+2026-02-17 00:20:49.510 | INFO     | __main__:compute_niche_overlap_all:605 -   llm: mean D=0.2097, valid pairs=21/21
+2026-02-17 00:20:49.511 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for tfidf
+2026-02-17 00:21:15.470 | INFO     | __main__:train_classifiers_ovo:678 -   tfidf: mean best F1=0.9256, valid pairs=21/21
+2026-02-17 00:21:15.470 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for sbert
+2026-02-17 00:21:50.401 | INFO     | __main__:train_classifiers_ovo:678 -   sbert: mean best F1=0.9377, valid pairs=21/21
+2026-02-17 00:21:50.402 | INFO     | __main__:train_classifiers_ovo:635 - Training classifiers for llm
+2026-02-17 00:21:58.858 | INFO     | __main__:train_classifiers_ovo:678 -   llm: mean best F1=0.8573, valid pairs=21/21
+2026-02-17 00:21:58.859 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for tfidf
+2026-02-17 00:21:59.955 | INFO     | __main__:train_baseline_multiclass:736 -   tfidf: macro_f1=0.7074
+2026-02-17 00:21:59.955 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for sbert
+2026-02-17 00:22:00.217 | INFO     | __main__:train_baseline_multiclass:736 -   sbert: macro_f1=0.7259
+2026-02-17 00:22:00.217 | INFO     | __main__:train_baseline_multiclass:706 - Baseline multi-class classification for llm
+2026-02-17 00:22:00.248 | INFO     | __main__:train_baseline_multiclass:736 -   llm: macro_f1=0.5203
+2026-02-17 00:22:00.516 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = 0.4044 (p=0.000342), 95% CI: [0.1888, 0.6025], n_pairs = 21
+2026-02-17 00:22:00.517 | INFO     | __main__:main:1179 - Dataset mental_health_conditions complete. Elapsed: 1790s
+2026-02-17 00:22:00.517 | INFO     | __main__:main:1183 - 
+Pooled analysis: 305 total class pairs
+2026-02-17 00:22:00.893 | INFO     | __main__:compute_kendall_tau:811 - Kendall's τ = 0.0641 (p=0.158267), 95% CI: [-0.0651, 0.1867], n_pairs = 128
+2026-02-17 00:22:00.940 | INFO     | __main__:train_meta_predictor:899 - Meta-predictor AUC = 0.5485, n_samples = 128
+2026-02-17 00:22:01.124 | INFO     | __main__:main:1336 - Saved output to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method_out.json
+2026-02-17 00:22:01.125 | INFO     | __main__:main:1339 - Total examples in output: 812
+2026-02-17 00:22:01.125 | INFO     | __main__:main:1340 - Total LLM calls: 812, cost: $0.0140
+2026-02-17 00:22:01.125 | INFO     | __main__:main:1343 - Total runtime: 1791s (29.8min)
+2026-02-17 00:22:01.125 | INFO     | __main__:main:1344 - ============================================================
+2026-02-17 00:22:01.125 | INFO     | __main__:main:1345 - DONE
