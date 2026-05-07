@@ -1,0 +1,6 @@
+pyproject.toml
+baseline_noise_detection.egg-info/PKG-INFO
+baseline_noise_detection.egg-info/SOURCES.txt
+baseline_noise_detection.egg-info/dependency_links.txt
+baseline_noise_detection.egg-info/requires.txt
+baseline_noise_detection.egg-info/top_level.txt

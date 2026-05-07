@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: crnd-ablation
+Version: 0.1.0
+Summary: CRND Ablation & Robustness Analysis
+Requires-Python: <3.12,>=3.10
+Requires-Dist: numpy<2.3,>=1.26
+Requires-Dist: scipy>=1.11
+Requires-Dist: scikit-learn>=1.3
+Requires-Dist: sentence-transformers>=2.2
+Requires-Dist: pandas>=2.0
+Requires-Dist: loguru>=0.7
+Requires-Dist: requests>=2.31
+Requires-Dist: python-dotenv>=1.0
+Requires-Dist: tenacity>=8.0
+Requires-Dist: pingouin>=0.5.3

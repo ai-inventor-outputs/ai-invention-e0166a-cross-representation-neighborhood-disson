@@ -1,0 +1,279 @@
+{
+  "datasets": [
+    {
+      "dataset": "medical_abstracts",
+      "examples": [
+        {
+          "input": "Pharmacomechanical thrombolysis and angioplasty in the management of clotted hemodialysis grafts: early and late clinical results. The results of pharmacomechanical thrombolysis and angioplasty of 121 thrombosed hemodialysis grafts were reviewed. The initial pharmacomechanical method (used in 65 cases) employed clot maceration with hook-shaped catheters and clot lacing with highly concentrated urokinase. The current technique (used in 56 cases) consisted of pulsed-spray injection of urokinase in",
+          "output": "Cardiovascular_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 7,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Severe hypotension due to intramyometrial injection of prostaglandin E2 Treatment of postpartum haemorrhage because of uterine atony with intramyometrial prostaglandin E2 1 mg, in an anaesthetised patient resulted in life-threatening hypotension. Anaesthetists should be aware of the potential cardiovascular side effects of prostaglandins.",
+          "output": "Cardiovascular_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 2372,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Cardiac echinococcosis with fatal intracerebral embolism. A previously well 7 year old boy presented with sudden loss of consciousness and fitting. No evidence of trauma or space occupying lesion was identified. Death occurred the next day due to cerebral infarction caused by embolised fragments from a ruptured left ventricular hydatid cyst that was found at necropsy.",
+          "output": "Cardiovascular_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 4739,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Secular trends in Q wave and non-Q wave acute myocardial infarction. The Minnesota Heart Survey. The Minnesota Heart Survey examined trends of Q wave and non-Q wave acute myocardial infarction (AMI) using a 50% random sample of all hospital discharges of patients with AMI or another acute coronary disease from 35 of 36 hospitals in 1970 and 30 of 31 hospitals in 1980 in the Minneapolis-St. Paul metropolitan area. A total of 1,901 and 1,864 potential AMI cases were abstracted in 1970 and 1980, re",
+          "output": "Cardiovascular_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 7138,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Rash after treatment with anistreplase. A palpable purpura developed on the legs and lower abdomen of a woman of 54 five days after she was treated with anistreplase anisoylated plasminogen streptokinase activator complex (APSAC) for an acute myocardial infarction. Histological examination of a skin biopsy specimen taken 6 days after treatment showed leucocytoclastic vasculitis. The rash resolved within two weeks and there were no other complications.",
+          "output": "Cardiovascular_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 9583,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Major depression, panic disorder, and mitral valve prolapse in patients who complain of chest pain. PURPOSE: Patients with chest pain but without angiographic evidence of significant atherosclerotic coronary artery disease (CAD) are often found to have other medical or psychiatric disorders, including mitral valve prolapse, panic disorder (PD), and major depressive disorder (MDD). The purpose of this study was to determine the degree of comorbidity between MDD/PD and mitral valve prolapse in a g",
+          "output": "Cardiovascular_diseases",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 420,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Sexually transmitted diseases of the colon, rectum, and anus. The challenge of the nineties. During the past two decades, an explosive growth in both the prevalence and types of sexually transmitted diseases has occurred. Up to 55 percent of homosexual men with anorectal complaints have gonorrhea; 80 percent of the patients with syphilis are homosexuals. Chlamydia is found in 15 percent of asymptomatic homosexual men, and up to one third of homosexuals have active anorectal herpes simplex virus.",
+          "output": "Digestive_system_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 2,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Gallbladder dynamics in patients with irritable bowel syndrome and essential dyspepsia. To assess whether gallbladder motility is altered in patients with irritable bowel syndrome (IBS) or essential dyspepsia (ED), we studied gallbladder function in 25 healthy volunteers, 20 patients with IBS, and 22 with ED. By real time ultrasonography, we studied the following parameters: (a) fasting gallbladder volume, (b) maximum percent of gallbladder emptied, (c) time required for maximal contraction, (d)",
+          "output": "Digestive_system_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 2229,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Cirrhosis of the liver. A risk factor for development of cholelithiasis in males. An ultrasonographic study about the prevalence of cholelithiasis was performed in 410 cirrhotic patients and in 414 controls matched for age and sex. Gallstone disease was found more often in cirrhotic patients (31.9%) than in controls (20.7%) (P less than 0.001). The female-to-male ratio of gallstones prevalence in cirrhotic patients approached to 1:1. Gallstone disease in cirrhotic patients vs controls was signif",
+          "output": "Digestive_system_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 4644,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Development of acute myelocytic leukemia in patients with Crohn's disease. In our hospital within one year two patients with Crohn's disease were seen who developed an acute myelocytic leukemia. A review of the literature reveals eight previously reported patients with both Crohn's disease and leukemia. Six of the reported 10 patients have had acute myelocytic leukemia and, interestingly, three of them, including our two patients, have shown monocytic differentiation (FAB type M4). It has been s",
+          "output": "Digestive_system_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 7219,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Eosinophil infiltration and degranulation in Helicobacter pylori-associated chronic gastritis. Eosinophil granules contain cationic proteins, including the major basic protein, which are toxic to mammalian tissue. While eosinophils have been observed to comprise part of the inflammatory reaction in acute Helicobacter pylori gastritis, the role of the eosinophil in the pathogenesis of chronic gastritis is unknown. We evaluated whether eosinophil infiltration and degranulation are associated with ",
+          "output": "Digestive_system_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 9725,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Effect of extracorporeal membrane oxygenation on survival of infants with congenital diaphragmatic hernia. To determine the effect of extracorporeal membrane oxygenation (ECMO) on the survival of infants with congenital diaphragmatic hernia, we undertook a retrospective review of 31 infants with congenital diaphragmatic hernia treated at Children's National Medical Center. Infants were categorized by means of the Bohn quadrant analysis to determine the impact of ECMO on infants with congenital d",
+          "output": "Digestive_system_diseases",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 540,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Tissue changes around loose prostheses. A canine model to investigate the effects of an antiinflammatory agent. The aseptically loosened prosthesis provided a means for investigating the in vivo and in vitro activity of the cells associated with the loosening process in seven dogs. The cells were isolated and maintained in culture for sufficient periods of time so that their biologic activity could be studied as well as the effect of different agents added to the cells in vivo or in vitro. The b",
+          "output": "General_pathological_conditions",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 0,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Total hip arthroplasties in patients younger than 45 years. A nine- to ten-year follow-up study. Eighty-one cemented total hip arthroplasties in patients younger than 45 years were reviewed with an average 9.2-year follow-up interval. The results were compared with the same group previously reported at an average follow-up time of 4.5 years. Clinically satisfactory results were 58% compared with 78% at 4.5 years. The revision rate almost tripled to 33%. Impending failure was present in 56% of th",
+          "output": "General_pathological_conditions",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 2381,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Predicting distant metastases in operable breast cancer patients. Risk factors for distant metastases following mastectomy and axillary node dissection for breast cancer were analyzed in a review of 1022 women. From diagnosis until the end of the adjuvant treatment, six stages were identified that corresponded well to patient data acquisition. At each stage, a prognosis study based on the Cox model was carried out using all acquired information from the first stage. The results demonstrated that",
+          "output": "General_pathological_conditions",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 4846,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Otological manifestations of a new familial polyostotic bone disorder. Fifty members of a family with a unique autosomal dominant bone disease were investigated. Nineteen of the family members were either known to have, or were strongly suspected of having the disease. All but one of these had a hearing loss which was conductive in the younger age group and mixed in the older members. The common finding in those who had middle ear surgery was replacement of the long process of incus by a fibrous",
+          "output": "General_pathological_conditions",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 7104,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Emergent aneurysm surgery without cerebral angiography for the comatose patient Neurologically based clinical grading scales offer excellent prognostic information for the patient suffering diffuse subarachnoid hemorrhage (SAH). These grading scales are less applicable to patients with life-threatening intraparenchymal hematomas after aneurysmal rupture. During the last 3 years, four patients in a comatose state with brain stem compression syndromes documented by computed tomographic scans have ",
+          "output": "General_pathological_conditions",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 9586,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Splenic septic emboli in endocarditis. The significance of septic emboli to the spleen is inferred by the frequency of septic emboli in general seen in patients with left-sided infective endocarditis who are referred for valve replacement. To determine the proper management of splenic infarcts and abscess due to septic emboli, we retrospectively reviewed the records of 108 patients with left-sided endocarditis who underwent valvular surgery at the University of Illinois Hospital from 1980 throug",
+          "output": "General_pathological_conditions",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 499,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Neuropeptide Y and neuron-specific enolase levels in benign and malignant pheochromocytomas. Neuron-specific enolase (NSE) is the isoform of enolase, a glycolytic enzyme found in the neuroendocrine system. Neuropeptide Y (NPY) is a peptide recently discovered in the peripheral and central nervous systems. Serum NSE and plasma NPY levels have been reported to be increased in some patients with pheochromocytoma. The authors evaluated whether the measurement of these molecules could help to discrim",
+          "output": "Neoplasms",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 1,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Effect of closing dead space on incidence of seroma after mastectomy. Seromas are a significant cause of morbidity after modified radical mastectomy. The effect of closing dead space by suturing skin flaps to underlying muscle combined with early removal (48 hours postoperatively) of closed suction drains on formation of the seroma was evaluated prospectively in 37 patients. Thirty-three underwent modified radical mastectomy for invasive carcinoma while four underwent total mastectomy with a lev",
+          "output": "Neoplasms",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 2476,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Human basophils express interleukin-4 receptors. Interleukin-4 (IL-4), a multipotential lymphokine reputed to play an important role in the regulation of immune responses, interacts with a variety of hemopoietic target cells through specific cell surface membrane receptors. The present study was designed to investigate whether human basophils express IL-4 binding sites. For this purpose, basophils were enriched to homogeneity (93% and 98% purity, respectively) from the peripheral blood of two ch",
+          "output": "Neoplasms",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 4756,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Peripheral ameloblastoma with clear cell differentiation. This report details a case of mandibular peripheral ameloblastoma having a clear cell component. The latter consisted of ovoid cells with vacuolated or clear cytoplasm and vesicular or pyknotic nuclei that may be disposed as discrete clusters or show direct transition from typical acanthomatous areas. Comparison of this lesion with other odontogenic and nonodontogenic tumors that contain clear cells is discussed in the context of the diff",
+          "output": "Neoplasms",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 7159,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Growth of cultured human cerebral meningiomas is inhibited by dopaminergic agents. Presence of high affinity dopamine-D1 receptors. We have found that microM concentrations of the dopamine agonist bromocriptine significantly decrease the proliferation rate of human meningioma cells in culture (25-56% inhibition). This effect was also seen with direct application of dopamine, as well as the dopamine-D1 agonist (+)-SKF-38393 (both applied in microM concentrations) to meningioma cell cultures. Rece",
+          "output": "Neoplasms",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 9585,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Primary rhabdomyosarcoma of the ileum in an adult. We report a case of primary rhabdomyosarcoma of the ileum occurring in a 45-year-old man. The rhabdomyoblastic nature was immunohistochemically confirmed by positivity with anti-myoglobin and anti-striated actin antisera. We discuss the differential diagnosis with similar tumors. To our knowledge, ileal rhabdomyosarcomas have not been previously reported in adults.",
+          "output": "Neoplasms",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 485,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Does carotid restenosis predict an increased risk of late symptoms, stroke, or death? The identification of carotid restenosis as an unexpected late complication of carotid endarterectomy has prompted concerns regarding its importance as a source of new cerebral symptoms, stroke, and death. To investigate these concerns, we analyzed a consecutive series of 507 patients undergoing 566 carotid endarterectomies, each documented as technically satisfactory. Post-operative duplex Doppler examination ",
+          "output": "Nervous_system_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 4,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Effect of sleep and sleep deprivation on ventilatory response to bronchoconstriction. To characterize ventilatory responses to bronchoconstriction during sleep and to assess the effect of prior sleep deprivation on ventilatory and arousal responses to bronchoconstriction, bronchoconstriction was induced in eight asthmatic subjects while they were awake, during normal sleep, and during sleep after a 36-h period of sleep deprivation. Each subject was bronchoconstricted with increasing concentratio",
+          "output": "Nervous_system_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 2569,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Tables for estimation of individual risks of fetal neural tube and ventral wall defects, incorporating prior probability, maternal serum alpha-fetoprotein levels, and ultrasonographic examination results. Tables are provided for estimation of the risk of open spina bifida in patients who have elevated maternal serum alpha-fetoprotein levels but normal results on detailed anatomy ultrasonographic scan. Risks are provided for various prior population risks, for various levels of elevated maternal ",
+          "output": "Nervous_system_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 5170,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Elevated alpha-tumor necrosis factor levels in spinal fluid from HIV-1-infected patients with central nervous system involvement. To assess the role of alpha-tumor necrosis factor in the pathogenesis of central nervous system involvement during human immunodeficiency virus type 1 infection, we recorded clinical data and measured alpha-tumor necrosis factor levels in serum and cerebrospinal fluid samples from 45 patients infected with human immunodeficiency virus type 1, classified as group II/II",
+          "output": "Nervous_system_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 7632,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Tonic contraversive ocular tilt reaction due to unilateral meso-diencephalic lesion. We studied 4 patients with tonic contraversive ocular tilt reactions due to unilateral, paramedian, mesodiencephalic lesions. This is in contrast to the only 2 previously reported patients with ocular tilt reactions due to unilateral mesodiencephalic lesions, each of whom had a paroxysmal ipsiversive ocular tilt reaction. This new finding is considered in the context of previous clinical and experimental data on",
+          "output": "Nervous_system_diseases",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 9730,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        },
+        {
+          "input": "Lymphomatous polyneuropathy. Biopsy of clinically involved nerve and successful treatment. We present a patient with large-cell lymphoma in remission who, over several weeks, developed widespread multifocal polyneuropathy. There was involvement of all four limbs, most severely the left upper extremity that had become useless. Biopsy of the left saphenous nerve within an area of sensory loss showed lymphoma in the endoneurium. There was no other evidence of recurrent lymphoma despite extensive in",
+          "output": "Nervous_system_diseases",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 400,
+          "metadata_source": "huggingface/TimSchopf/medical_abstracts"
+        }
+      ]
+    }
+  ]
+}

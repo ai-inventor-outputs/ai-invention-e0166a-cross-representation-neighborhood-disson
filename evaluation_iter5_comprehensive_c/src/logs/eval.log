@@ -1,0 +1,292 @@
+2026-02-20 03:26:32.435 | INFO     | __main__:main:1454 - ======================================================================
+2026-02-20 03:26:32.436 | INFO     | __main__:main:1455 - CRND Comprehensive Final Evaluation — Starting
+2026-02-20 03:26:32.436 | INFO     | __main__:main:1456 - ======================================================================
+2026-02-20 03:26:32.436 | INFO     | __main__:main:1459 - Loading experiment data files...
+2026-02-20 03:26:32.436 | INFO     | __main__:load_json:82 - Loading full_method_out.json (5.1 MB)
+2026-02-20 03:26:32.516 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:26:32.516 | INFO     | __main__:load_json:82 - Loading full_method_out.json (1.3 MB)
+2026-02-20 03:26:32.538 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:26:32.538 | INFO     | __main__:load_json:82 - Loading full_method_out.json (0.2 MB)
+2026-02-20 03:26:32.540 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:26:32.540 | INFO     | __main__:load_json:82 - Loading full_method_out.json (0.9 MB)
+2026-02-20 03:26:32.552 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:26:32.552 | INFO     | __main__:load_json:82 - Loading full_method_out.json (6.4 MB)
+2026-02-20 03:26:32.624 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:26:32.624 | INFO     | __main__:main:1471 - All 5 experiments loaded in 0.2s
+2026-02-20 03:26:32.624 | INFO     | __main__:phase1_noise_detection:344 - ============================================================
+2026-02-20 03:26:32.624 | INFO     | __main__:phase1_noise_detection:345 - PHASE 1: Noise Detection Synthesis (CRND vs Baselines)
+2026-02-20 03:26:32.624 | INFO     | __main__:phase1_noise_detection:346 - ============================================================
+2026-02-20 03:26:32.628 | INFO     | __main__:phase1_noise_detection:383 - Baselines found in exp3: ['cleanlab_avg', 'cleanlab_embed', 'cleanlab_tfidf', 'kdn_avg', 'kdn_combined', 'kdn_embed', 'kdn_tfidf', 'random']
+2026-02-20 03:27:48.890 | INFO     | __main__:phase1_noise_detection:515 - Phase 1 complete. Pooled CRND AUC = 0.4950
+2026-02-20 03:27:48.891 | INFO     | __main__:phase2_class_characterization:527 - ============================================================
+2026-02-20 03:27:48.891 | INFO     | __main__:phase2_class_characterization:528 - PHASE 2: Class Characterization Meta-Analysis
+2026-02-20 03:27:48.892 | INFO     | __main__:phase2_class_characterization:529 - ============================================================
+2026-02-20 03:27:48.895 | INFO     | __main__:phase2_class_characterization:576 -   medical_abstracts: KW H=54.43, p=4.28e-11, eta²=0.0507
+2026-02-20 03:27:48.897 | INFO     | __main__:phase2_class_characterization:576 -   mimic_iv_ed_demo: KW H=5.32, p=1.50e-01, eta²=0.0114
+2026-02-20 03:27:48.900 | INFO     | __main__:phase2_class_characterization:576 -   clinical_patient_triage_nl: KW H=11.18, p=4.80e-02, eta²=0.2470
+2026-02-20 03:27:48.903 | INFO     | __main__:phase2_class_characterization:576 -   ohsumed_single: KW H=28.55, p=3.80e-04, eta²=0.0207
+2026-02-20 03:27:48.908 | INFO     | __main__:phase2_class_characterization:576 -   mental_health_conditions: KW H=441.86, p=2.77e-92, eta²=0.4389
+2026-02-20 03:27:48.910 | INFO     | __main__:phase2_class_characterization:661 - Phase 2 complete. Grand D-gap = 0.36791545513832885
+2026-02-20 03:27:48.910 | INFO     | __main__:phase3_method_selection:674 - ============================================================
+2026-02-20 03:27:48.910 | INFO     | __main__:phase3_method_selection:675 - PHASE 3: Method Selection Reassessment
+2026-02-20 03:27:48.910 | INFO     | __main__:phase3_method_selection:676 - ============================================================
+2026-02-20 03:27:48.911 | INFO     | __main__:phase3_method_selection:766 - Phase 3 complete. exp2 pooled tau=0.2428, exp2b pooled tau=0.0641
+2026-02-20 03:27:48.911 | INFO     | __main__:phase4_ecological_novelty:780 - ============================================================
+2026-02-20 03:27:48.911 | INFO     | __main__:phase4_ecological_novelty:781 - PHASE 4: Ecological Metric Novelty Assessment
+2026-02-20 03:27:48.911 | INFO     | __main__:phase4_ecological_novelty:782 - ============================================================
+2026-02-20 03:27:48.912 | INFO     | __main__:phase4_ecological_novelty:868 - Phase 4 complete.
+2026-02-20 03:27:48.912 | INFO     | __main__:phase5_success_criteria:883 - ============================================================
+2026-02-20 03:27:48.912 | INFO     | __main__:phase5_success_criteria:884 - PHASE 5: Success Criteria Adjudication
+2026-02-20 03:27:48.912 | INFO     | __main__:phase5_success_criteria:885 - ============================================================
+2026-02-20 03:27:49.212 | INFO     | __main__:phase5_success_criteria:922 -   SC1: max_rho=0.0214, verdict=NOT_MET
+2026-02-20 03:27:49.212 | INFO     | __main__:phase5_success_criteria:947 -   SC2: exp2_tau=0.2428, exp2b_tau=0.0641, mental_health_tau=0.4044, verdict=PARTIALLY_MET
+2026-02-20 03:27:49.212 | INFO     | __main__:phase5_success_criteria:989 -   SC3: KW significant=4/5, boundary significant=1/4, verdict=PARTIALLY_MET
+2026-02-20 03:27:49.212 | INFO     | __main__:phase6_reframed_contributions:1008 - ============================================================
+2026-02-20 03:27:49.212 | INFO     | __main__:phase6_reframed_contributions:1009 - PHASE 6: Reframed Contribution Quantification
+2026-02-20 03:27:49.212 | INFO     | __main__:phase6_reframed_contributions:1010 - ============================================================
+2026-02-20 03:27:49.212 | INFO     | __main__:phase6_reframed_contributions:1079 - Phase 6 complete.
+2026-02-20 03:27:49.212 | INFO     | __main__:phase7_tables:1097 - ============================================================
+2026-02-20 03:27:49.212 | INFO     | __main__:phase7_tables:1098 - PHASE 7: Paper-Ready Tables
+2026-02-20 03:27:49.213 | INFO     | __main__:phase7_tables:1099 - ============================================================
+2026-02-20 03:27:49.213 | INFO     | __main__:phase7_tables:1242 - Phase 7 complete. 5 tables generated.
+2026-02-20 03:27:49.213 | INFO     | __main__:build_per_example_eval:1263 - ============================================================
+2026-02-20 03:27:49.213 | INFO     | __main__:build_per_example_eval:1264 - Building per-example eval_ fields
+2026-02-20 03:27:49.213 | INFO     | __main__:build_per_example_eval:1265 - ============================================================
+2026-02-20 03:27:49.213 | INFO     | __main__:build_per_example_eval:1276 -   Processing medical_abstracts: 3 examples
+2026-02-20 03:27:49.213 | INFO     | __main__:build_per_example_eval:1276 -   Processing mimic_iv_ed_demo: 3 examples
+2026-02-20 03:27:49.213 | INFO     | __main__:build_per_example_eval:1276 -   Processing clinical_patient_triage_nl: 3 examples
+2026-02-20 03:27:49.213 | INFO     | __main__:build_per_example_eval:1276 -   Processing ohsumed_single: 3 examples
+2026-02-20 03:27:49.214 | INFO     | __main__:build_per_example_eval:1276 -   Processing mental_health_conditions: 3 examples
+2026-02-20 03:27:49.214 | INFO     | __main__:build_per_example_eval:1343 - Built 15 eval examples across 5 datasets
+2026-02-20 03:27:49.228 | INFO     | __main__:main:1536 - Output written to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260219_220558/3_invention_loop/iter_5/gen_art/eval_id2_it5__opus/eval_out.json (0.13 MB)
+2026-02-20 03:27:49.228 | INFO     | __main__:main:1539 - Total runtime: 76.8s
+2026-02-20 03:27:49.228 | INFO     | __main__:main:1542 - ======================================================================
+2026-02-20 03:27:49.228 | INFO     | __main__:main:1543 - EVALUATION SUMMARY
+2026-02-20 03:27:49.228 | INFO     | __main__:main:1544 - ======================================================================
+2026-02-20 03:27:49.228 | INFO     | __main__:main:1545 -   SC1 (noise rho>0.3): NOT_MET
+2026-02-20 03:27:49.229 | INFO     | __main__:main:1546 -   SC2 (method tau>0.4): PARTIALLY_MET
+2026-02-20 03:27:49.229 | INFO     | __main__:main:1547 -   SC3 (interpretable):  PARTIALLY_MET
+2026-02-20 03:27:49.229 | INFO     | __main__:main:1548 -   Pooled CRND AUC: 0.495011
+2026-02-20 03:27:49.229 | INFO     | __main__:main:1549 -   Pooled exp2 tau: 0.242806
+2026-02-20 03:27:49.229 | INFO     | __main__:main:1550 -   Pooled exp2b tau: 0.0641
+2026-02-20 03:27:49.229 | INFO     | __main__:main:1551 -   D-gap grand mean: 0.367915
+2026-02-20 03:27:49.229 | INFO     | __main__:main:1552 - ======================================================================
+2026-02-20 03:28:54.522 | INFO     | __main__:main:1454 - ======================================================================
+2026-02-20 03:28:54.522 | INFO     | __main__:main:1455 - CRND Comprehensive Final Evaluation — Starting
+2026-02-20 03:28:54.523 | INFO     | __main__:main:1456 - ======================================================================
+2026-02-20 03:28:54.523 | INFO     | __main__:main:1459 - Loading experiment data files...
+2026-02-20 03:28:54.523 | INFO     | __main__:load_json:82 - Loading full_method_out.json (5.1 MB)
+2026-02-20 03:28:54.582 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:28:54.582 | INFO     | __main__:load_json:82 - Loading full_method_out.json (1.3 MB)
+2026-02-20 03:28:54.592 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:28:54.592 | INFO     | __main__:load_json:82 - Loading full_method_out.json (0.2 MB)
+2026-02-20 03:28:54.593 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:28:54.593 | INFO     | __main__:load_json:82 - Loading full_method_out.json (0.9 MB)
+2026-02-20 03:28:54.601 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:28:54.601 | INFO     | __main__:load_json:82 - Loading full_method_out.json (6.4 MB)
+2026-02-20 03:28:54.668 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:28:54.668 | INFO     | __main__:main:1471 - All 5 experiments loaded in 0.1s
+2026-02-20 03:28:54.668 | INFO     | __main__:phase1_noise_detection:344 - ============================================================
+2026-02-20 03:28:54.668 | INFO     | __main__:phase1_noise_detection:345 - PHASE 1: Noise Detection Synthesis (CRND vs Baselines)
+2026-02-20 03:28:54.668 | INFO     | __main__:phase1_noise_detection:346 - ============================================================
+2026-02-20 03:28:54.673 | INFO     | __main__:phase1_noise_detection:383 - Baselines found in exp3: ['cleanlab_avg', 'cleanlab_embed', 'cleanlab_tfidf', 'kdn_avg', 'kdn_combined', 'kdn_embed', 'kdn_tfidf', 'random']
+2026-02-20 03:30:21.783 | INFO     | __main__:phase1_noise_detection:515 - Phase 1 complete. Pooled CRND AUC = 0.5018
+2026-02-20 03:30:21.784 | INFO     | __main__:phase2_class_characterization:527 - ============================================================
+2026-02-20 03:30:21.784 | INFO     | __main__:phase2_class_characterization:528 - PHASE 2: Class Characterization Meta-Analysis
+2026-02-20 03:30:21.784 | INFO     | __main__:phase2_class_characterization:529 - ============================================================
+2026-02-20 03:30:21.789 | INFO     | __main__:phase2_class_characterization:576 -   medical_abstracts: KW H=43.77, p=7.16e-09, eta²=0.0400
+2026-02-20 03:30:21.793 | INFO     | __main__:phase2_class_characterization:576 -   mimic_iv_ed_demo: KW H=4.17, p=2.44e-01, eta²=0.0057
+2026-02-20 03:30:21.796 | INFO     | __main__:phase2_class_characterization:576 -   clinical_patient_triage_nl: KW H=17.67, p=3.39e-03, eta²=0.5068
+2026-02-20 03:30:21.798 | INFO     | __main__:phase2_class_characterization:576 -   ohsumed_single: KW H=33.82, p=4.37e-05, eta²=0.0261
+2026-02-20 03:30:21.801 | INFO     | __main__:phase2_class_characterization:576 -   mental_health_conditions: KW H=427.35, p=3.67e-89, eta²=0.4243
+2026-02-20 03:30:21.802 | INFO     | __main__:phase2_class_characterization:661 - Phase 2 complete. Grand D-gap = 0.36791545513832885
+2026-02-20 03:30:21.802 | INFO     | __main__:phase3_method_selection:674 - ============================================================
+2026-02-20 03:30:21.802 | INFO     | __main__:phase3_method_selection:675 - PHASE 3: Method Selection Reassessment
+2026-02-20 03:30:21.803 | INFO     | __main__:phase3_method_selection:676 - ============================================================
+2026-02-20 03:30:21.803 | INFO     | __main__:phase3_method_selection:766 - Phase 3 complete. exp2 pooled tau=0.2428, exp2b pooled tau=0.0641
+2026-02-20 03:30:21.803 | INFO     | __main__:phase4_ecological_novelty:780 - ============================================================
+2026-02-20 03:30:21.803 | INFO     | __main__:phase4_ecological_novelty:781 - PHASE 4: Ecological Metric Novelty Assessment
+2026-02-20 03:30:21.803 | INFO     | __main__:phase4_ecological_novelty:782 - ============================================================
+2026-02-20 03:30:21.804 | INFO     | __main__:phase4_ecological_novelty:868 - Phase 4 complete.
+2026-02-20 03:30:21.804 | INFO     | __main__:phase5_success_criteria:883 - ============================================================
+2026-02-20 03:30:21.804 | INFO     | __main__:phase5_success_criteria:884 - PHASE 5: Success Criteria Adjudication
+2026-02-20 03:30:21.804 | INFO     | __main__:phase5_success_criteria:885 - ============================================================
+2026-02-20 03:30:22.117 | INFO     | __main__:phase5_success_criteria:922 -   SC1: max_rho=0.0214, verdict=NOT_MET
+2026-02-20 03:30:22.118 | INFO     | __main__:phase5_success_criteria:947 -   SC2: exp2_tau=0.2428, exp2b_tau=0.0641, mental_health_tau=0.4044, verdict=PARTIALLY_MET
+2026-02-20 03:30:22.118 | INFO     | __main__:phase5_success_criteria:989 -   SC3: KW significant=4/5, boundary significant=1/4, verdict=PARTIALLY_MET
+2026-02-20 03:30:22.118 | INFO     | __main__:phase6_reframed_contributions:1008 - ============================================================
+2026-02-20 03:30:22.118 | INFO     | __main__:phase6_reframed_contributions:1009 - PHASE 6: Reframed Contribution Quantification
+2026-02-20 03:30:22.118 | INFO     | __main__:phase6_reframed_contributions:1010 - ============================================================
+2026-02-20 03:30:22.118 | INFO     | __main__:phase6_reframed_contributions:1079 - Phase 6 complete.
+2026-02-20 03:30:22.118 | INFO     | __main__:phase7_tables:1097 - ============================================================
+2026-02-20 03:30:22.118 | INFO     | __main__:phase7_tables:1098 - PHASE 7: Paper-Ready Tables
+2026-02-20 03:30:22.118 | INFO     | __main__:phase7_tables:1099 - ============================================================
+2026-02-20 03:30:22.119 | INFO     | __main__:phase7_tables:1242 - Phase 7 complete. 5 tables generated.
+2026-02-20 03:30:22.119 | INFO     | __main__:build_per_example_eval:1263 - ============================================================
+2026-02-20 03:30:22.119 | INFO     | __main__:build_per_example_eval:1264 - Building per-example eval_ fields
+2026-02-20 03:30:22.119 | INFO     | __main__:build_per_example_eval:1265 - ============================================================
+2026-02-20 03:30:22.119 | INFO     | __main__:build_per_example_eval:1276 -   Processing medical_abstracts: 10 examples
+2026-02-20 03:30:22.119 | INFO     | __main__:build_per_example_eval:1276 -   Processing mimic_iv_ed_demo: 10 examples
+2026-02-20 03:30:22.119 | INFO     | __main__:build_per_example_eval:1276 -   Processing clinical_patient_triage_nl: 10 examples
+2026-02-20 03:30:22.120 | INFO     | __main__:build_per_example_eval:1276 -   Processing ohsumed_single: 10 examples
+2026-02-20 03:30:22.120 | INFO     | __main__:build_per_example_eval:1276 -   Processing mental_health_conditions: 10 examples
+2026-02-20 03:30:22.120 | INFO     | __main__:build_per_example_eval:1343 - Built 50 eval examples across 5 datasets
+2026-02-20 03:30:22.133 | INFO     | __main__:main:1536 - Output written to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260219_220558/3_invention_loop/iter_5/gen_art/eval_id2_it5__opus/eval_out.json (0.17 MB)
+2026-02-20 03:30:22.133 | INFO     | __main__:main:1539 - Total runtime: 87.6s
+2026-02-20 03:30:22.133 | INFO     | __main__:main:1542 - ======================================================================
+2026-02-20 03:30:22.133 | INFO     | __main__:main:1543 - EVALUATION SUMMARY
+2026-02-20 03:30:22.133 | INFO     | __main__:main:1544 - ======================================================================
+2026-02-20 03:30:22.134 | INFO     | __main__:main:1545 -   SC1 (noise rho>0.3): NOT_MET
+2026-02-20 03:30:22.134 | INFO     | __main__:main:1546 -   SC2 (method tau>0.4): PARTIALLY_MET
+2026-02-20 03:30:22.134 | INFO     | __main__:main:1547 -   SC3 (interpretable):  PARTIALLY_MET
+2026-02-20 03:30:22.134 | INFO     | __main__:main:1548 -   Pooled CRND AUC: 0.501844
+2026-02-20 03:30:22.134 | INFO     | __main__:main:1549 -   Pooled exp2 tau: 0.242806
+2026-02-20 03:30:22.134 | INFO     | __main__:main:1550 -   Pooled exp2b tau: 0.0641
+2026-02-20 03:30:22.134 | INFO     | __main__:main:1551 -   D-gap grand mean: 0.367915
+2026-02-20 03:30:22.134 | INFO     | __main__:main:1552 - ======================================================================
+2026-02-20 03:30:37.654 | INFO     | __main__:main:1454 - ======================================================================
+2026-02-20 03:30:37.654 | INFO     | __main__:main:1455 - CRND Comprehensive Final Evaluation — Starting
+2026-02-20 03:30:37.654 | INFO     | __main__:main:1456 - ======================================================================
+2026-02-20 03:30:37.654 | INFO     | __main__:main:1459 - Loading experiment data files...
+2026-02-20 03:30:37.655 | INFO     | __main__:load_json:82 - Loading full_method_out.json (5.1 MB)
+2026-02-20 03:30:37.732 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:30:37.732 | INFO     | __main__:load_json:82 - Loading full_method_out.json (1.3 MB)
+2026-02-20 03:30:37.742 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:30:37.743 | INFO     | __main__:load_json:82 - Loading full_method_out.json (0.2 MB)
+2026-02-20 03:30:37.744 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:30:37.744 | INFO     | __main__:load_json:82 - Loading full_method_out.json (0.9 MB)
+2026-02-20 03:30:37.755 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:30:37.756 | INFO     | __main__:load_json:82 - Loading full_method_out.json (6.4 MB)
+2026-02-20 03:30:37.824 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:30:37.825 | INFO     | __main__:main:1471 - All 5 experiments loaded in 0.2s
+2026-02-20 03:30:37.825 | INFO     | __main__:phase1_noise_detection:344 - ============================================================
+2026-02-20 03:30:37.825 | INFO     | __main__:phase1_noise_detection:345 - PHASE 1: Noise Detection Synthesis (CRND vs Baselines)
+2026-02-20 03:30:37.825 | INFO     | __main__:phase1_noise_detection:346 - ============================================================
+2026-02-20 03:30:37.830 | INFO     | __main__:phase1_noise_detection:383 - Baselines found in exp3: ['cleanlab_avg', 'cleanlab_embed', 'cleanlab_tfidf', 'kdn_avg', 'kdn_combined', 'kdn_embed', 'kdn_tfidf', 'random']
+2026-02-20 03:32:12.912 | INFO     | __main__:phase1_noise_detection:515 - Phase 1 complete. Pooled CRND AUC = 0.5026
+2026-02-20 03:32:12.912 | INFO     | __main__:phase2_class_characterization:527 - ============================================================
+2026-02-20 03:32:12.912 | INFO     | __main__:phase2_class_characterization:528 - PHASE 2: Class Characterization Meta-Analysis
+2026-02-20 03:32:12.912 | INFO     | __main__:phase2_class_characterization:529 - ============================================================
+2026-02-20 03:32:12.916 | INFO     | __main__:phase2_class_characterization:576 -   medical_abstracts: KW H=39.93, p=4.48e-08, eta²=0.0361
+2026-02-20 03:32:12.919 | INFO     | __main__:phase2_class_characterization:576 -   mimic_iv_ed_demo: KW H=5.35, p=1.48e-01, eta²=0.0116
+2026-02-20 03:32:12.923 | INFO     | __main__:phase2_class_characterization:576 -   clinical_patient_triage_nl: KW H=18.51, p=2.37e-03, eta²=0.5404
+2026-02-20 03:32:12.927 | INFO     | __main__:phase2_class_characterization:576 -   ohsumed_single: KW H=31.60, p=1.10e-04, eta²=0.0238
+2026-02-20 03:32:12.933 | INFO     | __main__:phase2_class_characterization:576 -   mental_health_conditions: KW H=407.74, p=6.05e-85, eta²=0.4046
+2026-02-20 03:32:12.935 | INFO     | __main__:phase2_class_characterization:661 - Phase 2 complete. Grand D-gap = 0.36791545513832885
+2026-02-20 03:32:12.935 | INFO     | __main__:phase3_method_selection:674 - ============================================================
+2026-02-20 03:32:12.935 | INFO     | __main__:phase3_method_selection:675 - PHASE 3: Method Selection Reassessment
+2026-02-20 03:32:12.935 | INFO     | __main__:phase3_method_selection:676 - ============================================================
+2026-02-20 03:32:12.936 | INFO     | __main__:phase3_method_selection:766 - Phase 3 complete. exp2 pooled tau=0.2428, exp2b pooled tau=0.0641
+2026-02-20 03:32:12.936 | INFO     | __main__:phase4_ecological_novelty:780 - ============================================================
+2026-02-20 03:32:12.937 | INFO     | __main__:phase4_ecological_novelty:781 - PHASE 4: Ecological Metric Novelty Assessment
+2026-02-20 03:32:12.937 | INFO     | __main__:phase4_ecological_novelty:782 - ============================================================
+2026-02-20 03:32:12.937 | INFO     | __main__:phase4_ecological_novelty:868 - Phase 4 complete.
+2026-02-20 03:32:12.937 | INFO     | __main__:phase5_success_criteria:883 - ============================================================
+2026-02-20 03:32:12.938 | INFO     | __main__:phase5_success_criteria:884 - PHASE 5: Success Criteria Adjudication
+2026-02-20 03:32:12.938 | INFO     | __main__:phase5_success_criteria:885 - ============================================================
+2026-02-20 03:32:13.260 | INFO     | __main__:phase5_success_criteria:922 -   SC1: max_rho=0.0214, verdict=NOT_MET
+2026-02-20 03:32:13.260 | INFO     | __main__:phase5_success_criteria:947 -   SC2: exp2_tau=0.2428, exp2b_tau=0.0641, mental_health_tau=0.4044, verdict=PARTIALLY_MET
+2026-02-20 03:32:13.261 | INFO     | __main__:phase5_success_criteria:989 -   SC3: KW significant=4/5, boundary significant=1/4, verdict=PARTIALLY_MET
+2026-02-20 03:32:13.261 | INFO     | __main__:phase6_reframed_contributions:1008 - ============================================================
+2026-02-20 03:32:13.261 | INFO     | __main__:phase6_reframed_contributions:1009 - PHASE 6: Reframed Contribution Quantification
+2026-02-20 03:32:13.261 | INFO     | __main__:phase6_reframed_contributions:1010 - ============================================================
+2026-02-20 03:32:13.261 | INFO     | __main__:phase6_reframed_contributions:1079 - Phase 6 complete.
+2026-02-20 03:32:13.261 | INFO     | __main__:phase7_tables:1097 - ============================================================
+2026-02-20 03:32:13.261 | INFO     | __main__:phase7_tables:1098 - PHASE 7: Paper-Ready Tables
+2026-02-20 03:32:13.261 | INFO     | __main__:phase7_tables:1099 - ============================================================
+2026-02-20 03:32:13.261 | INFO     | __main__:phase7_tables:1242 - Phase 7 complete. 5 tables generated.
+2026-02-20 03:32:13.262 | INFO     | __main__:build_per_example_eval:1263 - ============================================================
+2026-02-20 03:32:13.262 | INFO     | __main__:build_per_example_eval:1264 - Building per-example eval_ fields
+2026-02-20 03:32:13.262 | INFO     | __main__:build_per_example_eval:1265 - ============================================================
+2026-02-20 03:32:13.262 | INFO     | __main__:build_per_example_eval:1276 -   Processing medical_abstracts: 1000 examples
+2026-02-20 03:32:13.309 | INFO     | __main__:build_per_example_eval:1276 -   Processing mimic_iv_ed_demo: 207 examples
+2026-02-20 03:32:13.321 | INFO     | __main__:build_per_example_eval:1276 -   Processing clinical_patient_triage_nl: 31 examples
+2026-02-20 03:32:13.322 | INFO     | __main__:build_per_example_eval:1276 -   Processing ohsumed_single: 1000 examples
+2026-02-20 03:32:13.351 | INFO     | __main__:build_per_example_eval:1276 -   Processing mental_health_conditions: 1000 examples
+2026-02-20 03:32:13.375 | INFO     | __main__:build_per_example_eval:1343 - Built 3238 eval examples across 5 datasets
+2026-02-20 03:32:13.677 | INFO     | __main__:main:1536 - Output written to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260219_220558/3_invention_loop/iter_5/gen_art/eval_id2_it5__opus/eval_out.json (3.74 MB)
+2026-02-20 03:32:13.677 | INFO     | __main__:main:1539 - Total runtime: 96.0s
+2026-02-20 03:32:13.677 | INFO     | __main__:main:1542 - ======================================================================
+2026-02-20 03:32:13.677 | INFO     | __main__:main:1543 - EVALUATION SUMMARY
+2026-02-20 03:32:13.677 | INFO     | __main__:main:1544 - ======================================================================
+2026-02-20 03:32:13.678 | INFO     | __main__:main:1545 -   SC1 (noise rho>0.3): NOT_MET
+2026-02-20 03:32:13.678 | INFO     | __main__:main:1546 -   SC2 (method tau>0.4): PARTIALLY_MET
+2026-02-20 03:32:13.678 | INFO     | __main__:main:1547 -   SC3 (interpretable):  PARTIALLY_MET
+2026-02-20 03:32:13.678 | INFO     | __main__:main:1548 -   Pooled CRND AUC: 0.502586
+2026-02-20 03:32:13.678 | INFO     | __main__:main:1549 -   Pooled exp2 tau: 0.242806
+2026-02-20 03:32:13.678 | INFO     | __main__:main:1550 -   Pooled exp2b tau: 0.0641
+2026-02-20 03:32:13.678 | INFO     | __main__:main:1551 -   D-gap grand mean: 0.367915
+2026-02-20 03:32:13.678 | INFO     | __main__:main:1552 - ======================================================================
+2026-02-20 03:32:29.715 | INFO     | __main__:main:1454 - ======================================================================
+2026-02-20 03:32:29.715 | INFO     | __main__:main:1455 - CRND Comprehensive Final Evaluation — Starting
+2026-02-20 03:32:29.715 | INFO     | __main__:main:1456 - ======================================================================
+2026-02-20 03:32:29.715 | INFO     | __main__:main:1459 - Loading experiment data files...
+2026-02-20 03:32:29.715 | INFO     | __main__:load_json:82 - Loading full_method_out.json (5.1 MB)
+2026-02-20 03:32:29.790 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:32:29.790 | INFO     | __main__:load_json:82 - Loading full_method_out.json (1.3 MB)
+2026-02-20 03:32:29.803 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:32:29.803 | INFO     | __main__:load_json:82 - Loading full_method_out.json (0.2 MB)
+2026-02-20 03:32:29.804 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:32:29.804 | INFO     | __main__:load_json:82 - Loading full_method_out.json (0.9 MB)
+2026-02-20 03:32:29.815 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:32:29.815 | INFO     | __main__:load_json:82 - Loading full_method_out.json (6.4 MB)
+2026-02-20 03:32:29.912 | INFO     | __main__:load_json:84 -   Loaded successfully
+2026-02-20 03:32:29.912 | INFO     | __main__:main:1471 - All 5 experiments loaded in 0.2s
+2026-02-20 03:32:29.912 | INFO     | __main__:phase1_noise_detection:344 - ============================================================
+2026-02-20 03:32:29.912 | INFO     | __main__:phase1_noise_detection:345 - PHASE 1: Noise Detection Synthesis (CRND vs Baselines)
+2026-02-20 03:32:29.912 | INFO     | __main__:phase1_noise_detection:346 - ============================================================
+2026-02-20 03:32:29.918 | INFO     | __main__:phase1_noise_detection:383 - Baselines found in exp3: ['cleanlab_avg', 'cleanlab_embed', 'cleanlab_tfidf', 'kdn_avg', 'kdn_combined', 'kdn_embed', 'kdn_tfidf', 'random']
+2026-02-20 03:33:59.034 | INFO     | __main__:phase1_noise_detection:515 - Phase 1 complete. Pooled CRND AUC = 0.5026
+2026-02-20 03:33:59.035 | INFO     | __main__:phase2_class_characterization:527 - ============================================================
+2026-02-20 03:33:59.035 | INFO     | __main__:phase2_class_characterization:528 - PHASE 2: Class Characterization Meta-Analysis
+2026-02-20 03:33:59.035 | INFO     | __main__:phase2_class_characterization:529 - ============================================================
+2026-02-20 03:33:59.041 | INFO     | __main__:phase2_class_characterization:576 -   medical_abstracts: KW H=49.26, p=5.15e-10, eta²=0.0455
+2026-02-20 03:33:59.045 | INFO     | __main__:phase2_class_characterization:576 -   mimic_iv_ed_demo: KW H=8.34, p=3.95e-02, eta²=0.0263
+2026-02-20 03:33:59.051 | INFO     | __main__:phase2_class_characterization:576 -   clinical_patient_triage_nl: KW H=8.39, p=1.36e-01, eta²=0.1355
+2026-02-20 03:33:59.054 | INFO     | __main__:phase2_class_characterization:576 -   ohsumed_single: KW H=64.61, p=5.77e-11, eta²=0.0571
+2026-02-20 03:33:59.057 | INFO     | __main__:phase2_class_characterization:576 -   mental_health_conditions: KW H=391.41, p=1.96e-81, eta²=0.3881
+2026-02-20 03:33:59.058 | INFO     | __main__:phase2_class_characterization:661 - Phase 2 complete. Grand D-gap = 0.36791545513832885
+2026-02-20 03:33:59.058 | INFO     | __main__:phase3_method_selection:674 - ============================================================
+2026-02-20 03:33:59.058 | INFO     | __main__:phase3_method_selection:675 - PHASE 3: Method Selection Reassessment
+2026-02-20 03:33:59.058 | INFO     | __main__:phase3_method_selection:676 - ============================================================
+2026-02-20 03:33:59.059 | INFO     | __main__:phase3_method_selection:766 - Phase 3 complete. exp2 pooled tau=0.2428, exp2b pooled tau=0.0641
+2026-02-20 03:33:59.059 | INFO     | __main__:phase4_ecological_novelty:780 - ============================================================
+2026-02-20 03:33:59.059 | INFO     | __main__:phase4_ecological_novelty:781 - PHASE 4: Ecological Metric Novelty Assessment
+2026-02-20 03:33:59.059 | INFO     | __main__:phase4_ecological_novelty:782 - ============================================================
+2026-02-20 03:33:59.060 | INFO     | __main__:phase4_ecological_novelty:868 - Phase 4 complete.
+2026-02-20 03:33:59.060 | INFO     | __main__:phase5_success_criteria:883 - ============================================================
+2026-02-20 03:33:59.060 | INFO     | __main__:phase5_success_criteria:884 - PHASE 5: Success Criteria Adjudication
+2026-02-20 03:33:59.060 | INFO     | __main__:phase5_success_criteria:885 - ============================================================
+2026-02-20 03:33:59.456 | INFO     | __main__:phase5_success_criteria:922 -   SC1: max_rho=0.0214, verdict=NOT_MET
+2026-02-20 03:33:59.456 | INFO     | __main__:phase5_success_criteria:947 -   SC2: exp2_tau=0.2428, exp2b_tau=0.0641, mental_health_tau=0.4044, verdict=PARTIALLY_MET
+2026-02-20 03:33:59.456 | INFO     | __main__:phase5_success_criteria:989 -   SC3: KW significant=4/5, boundary significant=1/4, verdict=PARTIALLY_MET
+2026-02-20 03:33:59.456 | INFO     | __main__:phase6_reframed_contributions:1008 - ============================================================
+2026-02-20 03:33:59.456 | INFO     | __main__:phase6_reframed_contributions:1009 - PHASE 6: Reframed Contribution Quantification
+2026-02-20 03:33:59.457 | INFO     | __main__:phase6_reframed_contributions:1010 - ============================================================
+2026-02-20 03:33:59.457 | INFO     | __main__:phase6_reframed_contributions:1079 - Phase 6 complete.
+2026-02-20 03:33:59.457 | INFO     | __main__:phase7_tables:1097 - ============================================================
+2026-02-20 03:33:59.457 | INFO     | __main__:phase7_tables:1098 - PHASE 7: Paper-Ready Tables
+2026-02-20 03:33:59.457 | INFO     | __main__:phase7_tables:1099 - ============================================================
+2026-02-20 03:33:59.457 | INFO     | __main__:phase7_tables:1242 - Phase 7 complete. 5 tables generated.
+2026-02-20 03:33:59.457 | INFO     | __main__:build_per_example_eval:1263 - ============================================================
+2026-02-20 03:33:59.457 | INFO     | __main__:build_per_example_eval:1264 - Building per-example eval_ fields
+2026-02-20 03:33:59.458 | INFO     | __main__:build_per_example_eval:1265 - ============================================================
+2026-02-20 03:33:59.458 | INFO     | __main__:build_per_example_eval:1276 -   Processing medical_abstracts: 1000 examples
+2026-02-20 03:33:59.476 | INFO     | __main__:build_per_example_eval:1276 -   Processing mimic_iv_ed_demo: 207 examples
+2026-02-20 03:33:59.481 | INFO     | __main__:build_per_example_eval:1276 -   Processing clinical_patient_triage_nl: 31 examples
+2026-02-20 03:33:59.481 | INFO     | __main__:build_per_example_eval:1276 -   Processing ohsumed_single: 1000 examples
+2026-02-20 03:33:59.499 | INFO     | __main__:build_per_example_eval:1276 -   Processing mental_health_conditions: 1000 examples
+2026-02-20 03:33:59.512 | INFO     | __main__:build_per_example_eval:1343 - Built 3238 eval examples across 5 datasets
+2026-02-20 03:33:59.848 | INFO     | __main__:main:1536 - Output written to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260219_220558/3_invention_loop/iter_5/gen_art/eval_id2_it5__opus/eval_out.json (3.74 MB)
+2026-02-20 03:33:59.848 | INFO     | __main__:main:1539 - Total runtime: 90.1s
+2026-02-20 03:33:59.848 | INFO     | __main__:main:1542 - ======================================================================
+2026-02-20 03:33:59.848 | INFO     | __main__:main:1543 - EVALUATION SUMMARY
+2026-02-20 03:33:59.849 | INFO     | __main__:main:1544 - ======================================================================
+2026-02-20 03:33:59.849 | INFO     | __main__:main:1545 -   SC1 (noise rho>0.3): NOT_MET
+2026-02-20 03:33:59.849 | INFO     | __main__:main:1546 -   SC2 (method tau>0.4): PARTIALLY_MET
+2026-02-20 03:33:59.849 | INFO     | __main__:main:1547 -   SC3 (interpretable):  PARTIALLY_MET
+2026-02-20 03:33:59.849 | INFO     | __main__:main:1548 -   Pooled CRND AUC: 0.502572
+2026-02-20 03:33:59.849 | INFO     | __main__:main:1549 -   Pooled exp2 tau: 0.242806
+2026-02-20 03:33:59.849 | INFO     | __main__:main:1550 -   Pooled exp2b tau: 0.0641
+2026-02-20 03:33:59.849 | INFO     | __main__:main:1551 -   D-gap grand mean: 0.367915
+2026-02-20 03:33:59.849 | INFO     | __main__:main:1552 - ======================================================================

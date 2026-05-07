@@ -1,0 +1,331 @@
+2026-02-16 21:24:47.577 | INFO     | __main__:load_data:97 - Loading data from /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/full_data_out.json
+2026-02-16 21:24:48.257 | INFO     | __main__:load_data:101 -   Dataset 'medical_abstracts': 14438 examples
+2026-02-16 21:24:48.257 | INFO     | __main__:load_data:101 -   Dataset 'mimic_iv_ed_demo': 207 examples
+2026-02-16 21:24:48.257 | INFO     | __main__:load_data:101 -   Dataset 'clinical_patient_triage_nl': 31 examples
+2026-02-16 21:24:48.257 | INFO     | __main__:load_data:101 -   Dataset 'ohsumed_single': 7400 examples
+2026-02-16 21:24:48.257 | INFO     | __main__:load_data:101 -   Dataset 'mental_health_conditions': 15000 examples
+2026-02-16 21:24:48.257 | INFO     | __main__:main:579 - [medical_abstracts] Subsampling from 14438 to 3000 examples (runtime cap)
+2026-02-16 21:24:48.258 | INFO     | __main__:process_dataset:351 - === Processing medical_abstracts (3000 examples) ===
+2026-02-16 21:24:48.262 | INFO     | __main__:process_dataset:358 - [medical_abstracts] 5 classes
+2026-02-16 21:24:48.262 | INFO     | __main__:build_feature_spaces:117 - [medical_abstracts] Building TF-IDF features (max_features=5000)
+2026-02-16 21:24:48.545 | INFO     | __main__:build_feature_spaces:123 - [medical_abstracts] TF-IDF shape: (3000, 5000) (0.3s)
+2026-02-16 21:24:48.545 | INFO     | __main__:build_feature_spaces:127 - [medical_abstracts] Computing sentence-transformer embeddings
+2026-02-16 21:26:44.592 | INFO     | __main__:build_feature_spaces:143 - [medical_abstracts] Embedding shape: (3000, 384) (116.0s)
+2026-02-16 21:26:44.592 | INFO     | __main__:build_feature_spaces:147 - [medical_abstracts] Building combined feature space
+2026-02-16 21:26:44.858 | INFO     | __main__:build_feature_spaces:154 - [medical_abstracts] Combined shape: (3000, 484) (0.3s)
+2026-02-16 21:26:44.860 | INFO     | __main__:precompute_knn_indices:168 - [medical_abstracts] KNN indices for tfidf (k=10)
+2026-02-16 21:26:45.345 | INFO     | __main__:precompute_knn_indices:179 - [medical_abstracts] KNN tfidf done (0.5s)
+2026-02-16 21:26:45.345 | INFO     | __main__:precompute_knn_indices:168 - [medical_abstracts] KNN indices for embed (k=10)
+2026-02-16 21:26:45.548 | INFO     | __main__:precompute_knn_indices:179 - [medical_abstracts] KNN embed done (0.2s)
+2026-02-16 21:26:45.548 | INFO     | __main__:precompute_knn_indices:168 - [medical_abstracts] KNN indices for combined (k=10)
+2026-02-16 21:26:45.825 | INFO     | __main__:precompute_knn_indices:179 - [medical_abstracts] KNN combined done (0.3s)
+2026-02-16 21:26:45.826 | DEBUG    | __main__:process_dataset:386 - [medical_abstracts] noise=0.05, seed=0
+2026-02-16 21:26:46.053 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab tfidf done (0.2s)
+2026-02-16 21:26:47.706 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab embed done (1.7s)
+2026-02-16 21:26:47.735 | DEBUG    | __main__:process_dataset:386 - [medical_abstracts] noise=0.05, seed=1
+2026-02-16 21:26:47.951 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab tfidf done (0.2s)
+2026-02-16 21:26:49.618 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab embed done (1.7s)
+2026-02-16 21:26:49.646 | DEBUG    | __main__:process_dataset:386 - [medical_abstracts] noise=0.05, seed=2
+2026-02-16 21:26:49.874 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab tfidf done (0.2s)
+2026-02-16 21:26:51.435 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab embed done (1.6s)
+2026-02-16 21:26:51.464 | DEBUG    | __main__:process_dataset:386 - [medical_abstracts] noise=0.05, seed=3
+2026-02-16 21:26:51.666 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab tfidf done (0.2s)
+2026-02-16 21:26:53.936 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab embed done (2.3s)
+2026-02-16 21:26:53.969 | DEBUG    | __main__:process_dataset:386 - [medical_abstracts] noise=0.05, seed=4
+2026-02-16 21:26:54.193 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab tfidf done (0.2s)
+2026-02-16 21:26:55.960 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab embed done (1.8s)
+2026-02-16 21:26:55.994 | DEBUG    | __main__:process_dataset:386 - [medical_abstracts] noise=0.1, seed=0
+2026-02-16 21:26:56.271 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab tfidf done (0.3s)
+2026-02-16 21:26:58.267 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab embed done (2.0s)
+2026-02-16 21:26:58.301 | DEBUG    | __main__:process_dataset:386 - [medical_abstracts] noise=0.1, seed=1
+2026-02-16 21:26:58.539 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab tfidf done (0.2s)
+2026-02-16 21:27:00.351 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab embed done (1.8s)
+2026-02-16 21:27:00.381 | DEBUG    | __main__:process_dataset:386 - [medical_abstracts] noise=0.1, seed=2
+2026-02-16 21:27:00.613 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab tfidf done (0.2s)
+2026-02-16 21:27:02.361 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab embed done (1.7s)
+2026-02-16 21:27:02.392 | DEBUG    | __main__:process_dataset:386 - [medical_abstracts] noise=0.1, seed=3
+2026-02-16 21:27:02.620 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab tfidf done (0.2s)
+2026-02-16 21:27:04.381 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab embed done (1.8s)
+2026-02-16 21:27:04.408 | DEBUG    | __main__:process_dataset:386 - [medical_abstracts] noise=0.1, seed=4
+2026-02-16 21:27:04.629 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab tfidf done (0.2s)
+2026-02-16 21:27:06.369 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab embed done (1.7s)
+2026-02-16 21:27:06.397 | DEBUG    | __main__:process_dataset:386 - [medical_abstracts] noise=0.2, seed=0
+2026-02-16 21:27:06.632 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab tfidf done (0.2s)
+2026-02-16 21:27:08.420 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab embed done (1.8s)
+2026-02-16 21:27:08.447 | DEBUG    | __main__:process_dataset:386 - [medical_abstracts] noise=0.2, seed=1
+2026-02-16 21:27:08.671 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab tfidf done (0.2s)
+2026-02-16 21:27:10.554 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab embed done (1.9s)
+2026-02-16 21:27:10.592 | DEBUG    | __main__:process_dataset:386 - [medical_abstracts] noise=0.2, seed=2
+2026-02-16 21:27:10.823 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab tfidf done (0.2s)
+2026-02-16 21:27:12.652 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab embed done (1.8s)
+2026-02-16 21:27:12.679 | DEBUG    | __main__:process_dataset:386 - [medical_abstracts] noise=0.2, seed=3
+2026-02-16 21:27:12.909 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab tfidf done (0.2s)
+2026-02-16 21:27:14.758 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab embed done (1.8s)
+2026-02-16 21:27:14.784 | DEBUG    | __main__:process_dataset:386 - [medical_abstracts] noise=0.2, seed=4
+2026-02-16 21:27:15.007 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab tfidf done (0.2s)
+2026-02-16 21:27:16.886 | DEBUG    | __main__:compute_cleanlab_scores:267 - [medical_abstracts] Cleanlab embed done (1.9s)
+2026-02-16 21:27:16.919 | INFO     | __main__:process_dataset:487 - [medical_abstracts] Done. 18 examples. Elapsed: 149.3s
+2026-02-16 21:27:17.047 | INFO     | __main__:save_output:530 - Saved 18 total examples to method_out_partial.json
+2026-02-16 21:27:17.047 | INFO     | __main__:process_dataset:351 - === Processing mimic_iv_ed_demo (207 examples) ===
+2026-02-16 21:27:17.048 | INFO     | __main__:process_dataset:358 - [mimic_iv_ed_demo] 4 classes
+2026-02-16 21:27:17.048 | INFO     | __main__:build_feature_spaces:117 - [mimic_iv_ed_demo] Building TF-IDF features (max_features=5000)
+2026-02-16 21:27:17.053 | INFO     | __main__:build_feature_spaces:123 - [mimic_iv_ed_demo] TF-IDF shape: (207, 206) (0.0s)
+2026-02-16 21:27:17.053 | INFO     | __main__:build_feature_spaces:127 - [mimic_iv_ed_demo] Computing sentence-transformer embeddings
+2026-02-16 21:27:18.228 | INFO     | __main__:build_feature_spaces:143 - [mimic_iv_ed_demo] Embedding shape: (207, 384) (1.2s)
+2026-02-16 21:27:18.229 | INFO     | __main__:build_feature_spaces:147 - [mimic_iv_ed_demo] Building combined feature space
+2026-02-16 21:27:18.300 | INFO     | __main__:build_feature_spaces:154 - [mimic_iv_ed_demo] Combined shape: (207, 484) (0.1s)
+2026-02-16 21:27:18.300 | INFO     | __main__:precompute_knn_indices:168 - [mimic_iv_ed_demo] KNN indices for tfidf (k=10)
+2026-02-16 21:27:18.303 | INFO     | __main__:precompute_knn_indices:179 - [mimic_iv_ed_demo] KNN tfidf done (0.0s)
+2026-02-16 21:27:18.303 | INFO     | __main__:precompute_knn_indices:168 - [mimic_iv_ed_demo] KNN indices for embed (k=10)
+2026-02-16 21:27:18.346 | INFO     | __main__:precompute_knn_indices:179 - [mimic_iv_ed_demo] KNN embed done (0.0s)
+2026-02-16 21:27:18.346 | INFO     | __main__:precompute_knn_indices:168 - [mimic_iv_ed_demo] KNN indices for combined (k=10)
+2026-02-16 21:27:18.349 | INFO     | __main__:precompute_knn_indices:179 - [mimic_iv_ed_demo] KNN combined done (0.0s)
+2026-02-16 21:27:18.349 | DEBUG    | __main__:process_dataset:386 - [mimic_iv_ed_demo] noise=0.05, seed=0
+2026-02-16 21:27:18.359 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:18.393 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab embed done (0.0s)
+2026-02-16 21:27:18.429 | DEBUG    | __main__:process_dataset:386 - [mimic_iv_ed_demo] noise=0.05, seed=1
+2026-02-16 21:27:18.461 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:18.581 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab embed done (0.1s)
+2026-02-16 21:27:18.603 | DEBUG    | __main__:process_dataset:386 - [mimic_iv_ed_demo] noise=0.05, seed=2
+2026-02-16 21:27:18.622 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:18.724 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab embed done (0.1s)
+2026-02-16 21:27:18.745 | DEBUG    | __main__:process_dataset:386 - [mimic_iv_ed_demo] noise=0.05, seed=3
+2026-02-16 21:27:18.760 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:18.836 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab embed done (0.1s)
+2026-02-16 21:27:18.859 | DEBUG    | __main__:process_dataset:386 - [mimic_iv_ed_demo] noise=0.05, seed=4
+2026-02-16 21:27:18.877 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:18.964 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab embed done (0.1s)
+2026-02-16 21:27:18.990 | DEBUG    | __main__:process_dataset:386 - [mimic_iv_ed_demo] noise=0.1, seed=0
+2026-02-16 21:27:19.008 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:19.078 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab embed done (0.1s)
+2026-02-16 21:27:19.098 | DEBUG    | __main__:process_dataset:386 - [mimic_iv_ed_demo] noise=0.1, seed=1
+2026-02-16 21:27:19.118 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:19.225 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab embed done (0.1s)
+2026-02-16 21:27:19.244 | DEBUG    | __main__:process_dataset:386 - [mimic_iv_ed_demo] noise=0.1, seed=2
+2026-02-16 21:27:19.262 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:19.373 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab embed done (0.1s)
+2026-02-16 21:27:19.393 | DEBUG    | __main__:process_dataset:386 - [mimic_iv_ed_demo] noise=0.1, seed=3
+2026-02-16 21:27:19.411 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:19.508 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab embed done (0.1s)
+2026-02-16 21:27:19.528 | DEBUG    | __main__:process_dataset:386 - [mimic_iv_ed_demo] noise=0.1, seed=4
+2026-02-16 21:27:19.547 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:19.651 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab embed done (0.1s)
+2026-02-16 21:27:19.675 | DEBUG    | __main__:process_dataset:386 - [mimic_iv_ed_demo] noise=0.2, seed=0
+2026-02-16 21:27:19.697 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:19.793 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab embed done (0.1s)
+2026-02-16 21:27:19.813 | DEBUG    | __main__:process_dataset:386 - [mimic_iv_ed_demo] noise=0.2, seed=1
+2026-02-16 21:27:19.837 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:19.965 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab embed done (0.1s)
+2026-02-16 21:27:19.985 | DEBUG    | __main__:process_dataset:386 - [mimic_iv_ed_demo] noise=0.2, seed=2
+2026-02-16 21:27:20.005 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:20.118 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab embed done (0.1s)
+2026-02-16 21:27:20.137 | DEBUG    | __main__:process_dataset:386 - [mimic_iv_ed_demo] noise=0.2, seed=3
+2026-02-16 21:27:20.155 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:20.268 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab embed done (0.1s)
+2026-02-16 21:27:20.287 | DEBUG    | __main__:process_dataset:386 - [mimic_iv_ed_demo] noise=0.2, seed=4
+2026-02-16 21:27:20.305 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:20.417 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mimic_iv_ed_demo] Cleanlab embed done (0.1s)
+2026-02-16 21:27:20.440 | INFO     | __main__:process_dataset:487 - [mimic_iv_ed_demo] Done. 18 examples. Elapsed: 152.9s
+2026-02-16 21:27:20.559 | INFO     | __main__:save_output:530 - Saved 36 total examples to method_out_partial.json
+2026-02-16 21:27:20.559 | INFO     | __main__:process_dataset:351 - === Processing clinical_patient_triage_nl (31 examples) ===
+2026-02-16 21:27:20.559 | INFO     | __main__:process_dataset:358 - [clinical_patient_triage_nl] 6 classes
+2026-02-16 21:27:20.559 | INFO     | __main__:build_feature_spaces:117 - [clinical_patient_triage_nl] Building TF-IDF features (max_features=5000)
+2026-02-16 21:27:20.561 | INFO     | __main__:build_feature_spaces:123 - [clinical_patient_triage_nl] TF-IDF shape: (31, 34) (0.0s)
+2026-02-16 21:27:20.561 | INFO     | __main__:build_feature_spaces:127 - [clinical_patient_triage_nl] Computing sentence-transformer embeddings
+2026-02-16 21:27:20.667 | INFO     | __main__:build_feature_spaces:143 - [clinical_patient_triage_nl] Embedding shape: (31, 384) (0.1s)
+2026-02-16 21:27:20.667 | INFO     | __main__:build_feature_spaces:147 - [clinical_patient_triage_nl] Building combined feature space
+2026-02-16 21:27:20.670 | INFO     | __main__:build_feature_spaces:154 - [clinical_patient_triage_nl] Combined shape: (31, 414) (0.0s)
+2026-02-16 21:27:20.671 | INFO     | __main__:precompute_knn_indices:168 - [clinical_patient_triage_nl] KNN indices for tfidf (k=10)
+2026-02-16 21:27:20.672 | INFO     | __main__:precompute_knn_indices:179 - [clinical_patient_triage_nl] KNN tfidf done (0.0s)
+2026-02-16 21:27:20.673 | INFO     | __main__:precompute_knn_indices:168 - [clinical_patient_triage_nl] KNN indices for embed (k=10)
+2026-02-16 21:27:20.674 | INFO     | __main__:precompute_knn_indices:179 - [clinical_patient_triage_nl] KNN embed done (0.0s)
+2026-02-16 21:27:20.675 | INFO     | __main__:precompute_knn_indices:168 - [clinical_patient_triage_nl] KNN indices for combined (k=10)
+2026-02-16 21:27:20.676 | INFO     | __main__:precompute_knn_indices:179 - [clinical_patient_triage_nl] KNN combined done (0.0s)
+2026-02-16 21:27:20.676 | DEBUG    | __main__:process_dataset:386 - [clinical_patient_triage_nl] noise=0.05, seed=0
+2026-02-16 21:27:20.695 | DEBUG    | __main__:process_dataset:386 - [clinical_patient_triage_nl] noise=0.05, seed=1
+2026-02-16 21:27:20.715 | DEBUG    | __main__:process_dataset:386 - [clinical_patient_triage_nl] noise=0.05, seed=2
+2026-02-16 21:27:20.734 | DEBUG    | __main__:process_dataset:386 - [clinical_patient_triage_nl] noise=0.05, seed=3
+2026-02-16 21:27:20.752 | DEBUG    | __main__:process_dataset:386 - [clinical_patient_triage_nl] noise=0.05, seed=4
+2026-02-16 21:27:20.774 | DEBUG    | __main__:process_dataset:386 - [clinical_patient_triage_nl] noise=0.1, seed=0
+2026-02-16 21:27:20.793 | DEBUG    | __main__:process_dataset:386 - [clinical_patient_triage_nl] noise=0.1, seed=1
+2026-02-16 21:27:20.812 | DEBUG    | __main__:process_dataset:386 - [clinical_patient_triage_nl] noise=0.1, seed=2
+2026-02-16 21:27:20.825 | DEBUG    | __main__:compute_cleanlab_scores:267 - [clinical_patient_triage_nl] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:20.838 | DEBUG    | __main__:compute_cleanlab_scores:267 - [clinical_patient_triage_nl] Cleanlab embed done (0.0s)
+2026-02-16 21:27:20.859 | DEBUG    | __main__:process_dataset:386 - [clinical_patient_triage_nl] noise=0.1, seed=3
+2026-02-16 21:27:20.868 | DEBUG    | __main__:compute_cleanlab_scores:267 - [clinical_patient_triage_nl] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:20.877 | DEBUG    | __main__:compute_cleanlab_scores:267 - [clinical_patient_triage_nl] Cleanlab embed done (0.0s)
+2026-02-16 21:27:20.899 | DEBUG    | __main__:process_dataset:386 - [clinical_patient_triage_nl] noise=0.1, seed=4
+2026-02-16 21:27:20.908 | DEBUG    | __main__:compute_cleanlab_scores:267 - [clinical_patient_triage_nl] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:20.919 | DEBUG    | __main__:compute_cleanlab_scores:267 - [clinical_patient_triage_nl] Cleanlab embed done (0.0s)
+2026-02-16 21:27:20.945 | DEBUG    | __main__:process_dataset:386 - [clinical_patient_triage_nl] noise=0.2, seed=0
+2026-02-16 21:27:20.965 | DEBUG    | __main__:process_dataset:386 - [clinical_patient_triage_nl] noise=0.2, seed=1
+2026-02-16 21:27:20.985 | DEBUG    | __main__:process_dataset:386 - [clinical_patient_triage_nl] noise=0.2, seed=2
+2026-02-16 21:27:21.006 | DEBUG    | __main__:process_dataset:386 - [clinical_patient_triage_nl] noise=0.2, seed=3
+2026-02-16 21:27:21.015 | DEBUG    | __main__:compute_cleanlab_scores:267 - [clinical_patient_triage_nl] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:21.025 | DEBUG    | __main__:compute_cleanlab_scores:267 - [clinical_patient_triage_nl] Cleanlab embed done (0.0s)
+2026-02-16 21:27:21.045 | DEBUG    | __main__:process_dataset:386 - [clinical_patient_triage_nl] noise=0.2, seed=4
+2026-02-16 21:27:21.058 | DEBUG    | __main__:compute_cleanlab_scores:267 - [clinical_patient_triage_nl] Cleanlab tfidf done (0.0s)
+2026-02-16 21:27:21.074 | DEBUG    | __main__:compute_cleanlab_scores:267 - [clinical_patient_triage_nl] Cleanlab embed done (0.0s)
+2026-02-16 21:27:21.098 | INFO     | __main__:process_dataset:487 - [clinical_patient_triage_nl] Done. 18 examples. Elapsed: 153.5s
+2026-02-16 21:27:21.213 | INFO     | __main__:save_output:530 - Saved 54 total examples to method_out_partial.json
+2026-02-16 21:27:21.213 | INFO     | __main__:main:579 - [ohsumed_single] Subsampling from 7400 to 3000 examples (runtime cap)
+2026-02-16 21:27:21.214 | INFO     | __main__:process_dataset:351 - === Processing ohsumed_single (3000 examples) ===
+2026-02-16 21:27:21.217 | INFO     | __main__:process_dataset:358 - [ohsumed_single] 23 classes
+2026-02-16 21:27:21.217 | INFO     | __main__:build_feature_spaces:117 - [ohsumed_single] Building TF-IDF features (max_features=5000)
+2026-02-16 21:27:21.495 | INFO     | __main__:build_feature_spaces:123 - [ohsumed_single] TF-IDF shape: (3000, 5000) (0.3s)
+2026-02-16 21:27:21.495 | INFO     | __main__:build_feature_spaces:127 - [ohsumed_single] Computing sentence-transformer embeddings
+2026-02-16 21:29:07.016 | INFO     | __main__:build_feature_spaces:143 - [ohsumed_single] Embedding shape: (3000, 384) (105.5s)
+2026-02-16 21:29:07.016 | INFO     | __main__:build_feature_spaces:147 - [ohsumed_single] Building combined feature space
+2026-02-16 21:29:07.299 | INFO     | __main__:build_feature_spaces:154 - [ohsumed_single] Combined shape: (3000, 484) (0.3s)
+2026-02-16 21:29:07.300 | INFO     | __main__:precompute_knn_indices:168 - [ohsumed_single] KNN indices for tfidf (k=10)
+2026-02-16 21:29:07.764 | INFO     | __main__:precompute_knn_indices:179 - [ohsumed_single] KNN tfidf done (0.5s)
+2026-02-16 21:29:07.764 | INFO     | __main__:precompute_knn_indices:168 - [ohsumed_single] KNN indices for embed (k=10)
+2026-02-16 21:29:08.011 | INFO     | __main__:precompute_knn_indices:179 - [ohsumed_single] KNN embed done (0.2s)
+2026-02-16 21:29:08.011 | INFO     | __main__:precompute_knn_indices:168 - [ohsumed_single] KNN indices for combined (k=10)
+2026-02-16 21:29:08.344 | INFO     | __main__:precompute_knn_indices:179 - [ohsumed_single] KNN combined done (0.3s)
+2026-02-16 21:29:08.345 | DEBUG    | __main__:process_dataset:386 - [ohsumed_single] noise=0.05, seed=0
+2026-02-16 21:29:09.014 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab tfidf done (0.7s)
+2026-02-16 21:29:13.987 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab embed done (5.0s)
+2026-02-16 21:29:14.024 | DEBUG    | __main__:process_dataset:386 - [ohsumed_single] noise=0.05, seed=1
+2026-02-16 21:29:14.821 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab tfidf done (0.8s)
+2026-02-16 21:29:19.054 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab embed done (4.2s)
+2026-02-16 21:29:19.079 | DEBUG    | __main__:process_dataset:386 - [ohsumed_single] noise=0.05, seed=2
+2026-02-16 21:29:19.725 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab tfidf done (0.6s)
+2026-02-16 21:29:23.693 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab embed done (4.0s)
+2026-02-16 21:29:23.719 | DEBUG    | __main__:process_dataset:386 - [ohsumed_single] noise=0.05, seed=3
+2026-02-16 21:29:24.364 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab tfidf done (0.6s)
+2026-02-16 21:29:28.303 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab embed done (3.9s)
+2026-02-16 21:29:28.333 | DEBUG    | __main__:process_dataset:386 - [ohsumed_single] noise=0.05, seed=4
+2026-02-16 21:29:28.994 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab tfidf done (0.7s)
+2026-02-16 21:29:33.052 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab embed done (4.1s)
+2026-02-16 21:29:33.079 | DEBUG    | __main__:process_dataset:386 - [ohsumed_single] noise=0.1, seed=0
+2026-02-16 21:29:33.731 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab tfidf done (0.6s)
+2026-02-16 21:29:38.659 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab embed done (4.9s)
+2026-02-16 21:29:38.697 | DEBUG    | __main__:process_dataset:386 - [ohsumed_single] noise=0.1, seed=1
+2026-02-16 21:29:39.462 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab tfidf done (0.8s)
+2026-02-16 21:29:44.127 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab embed done (4.7s)
+2026-02-16 21:29:44.153 | DEBUG    | __main__:process_dataset:386 - [ohsumed_single] noise=0.1, seed=2
+2026-02-16 21:29:44.847 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab tfidf done (0.7s)
+2026-02-16 21:29:49.058 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab embed done (4.2s)
+2026-02-16 21:29:49.085 | DEBUG    | __main__:process_dataset:386 - [ohsumed_single] noise=0.1, seed=3
+2026-02-16 21:29:49.749 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab tfidf done (0.7s)
+2026-02-16 21:29:53.912 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab embed done (4.2s)
+2026-02-16 21:29:53.939 | DEBUG    | __main__:process_dataset:386 - [ohsumed_single] noise=0.1, seed=4
+2026-02-16 21:29:54.614 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab tfidf done (0.7s)
+2026-02-16 21:29:59.082 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab embed done (4.5s)
+2026-02-16 21:29:59.110 | DEBUG    | __main__:process_dataset:386 - [ohsumed_single] noise=0.2, seed=0
+2026-02-16 21:29:59.802 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab tfidf done (0.7s)
+2026-02-16 21:30:05.047 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab embed done (5.2s)
+2026-02-16 21:30:05.077 | DEBUG    | __main__:process_dataset:386 - [ohsumed_single] noise=0.2, seed=1
+2026-02-16 21:30:05.835 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab tfidf done (0.7s)
+2026-02-16 21:30:10.553 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab embed done (4.7s)
+2026-02-16 21:30:10.577 | DEBUG    | __main__:process_dataset:386 - [ohsumed_single] noise=0.2, seed=2
+2026-02-16 21:30:11.276 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab tfidf done (0.7s)
+2026-02-16 21:30:15.875 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab embed done (4.6s)
+2026-02-16 21:30:15.903 | DEBUG    | __main__:process_dataset:386 - [ohsumed_single] noise=0.2, seed=3
+2026-02-16 21:30:16.636 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab tfidf done (0.7s)
+2026-02-16 21:30:21.300 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab embed done (4.7s)
+2026-02-16 21:30:21.325 | DEBUG    | __main__:process_dataset:386 - [ohsumed_single] noise=0.2, seed=4
+2026-02-16 21:30:22.056 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab tfidf done (0.7s)
+2026-02-16 21:30:26.427 | DEBUG    | __main__:compute_cleanlab_scores:267 - [ohsumed_single] Cleanlab embed done (4.4s)
+2026-02-16 21:30:26.453 | INFO     | __main__:process_dataset:487 - [ohsumed_single] Done. 18 examples. Elapsed: 338.9s
+2026-02-16 21:30:26.574 | INFO     | __main__:save_output:530 - Saved 72 total examples to method_out_partial.json
+2026-02-16 21:30:26.575 | INFO     | __main__:main:579 - [mental_health_conditions] Subsampling from 15000 to 3000 examples (runtime cap)
+2026-02-16 21:30:26.576 | INFO     | __main__:process_dataset:351 - === Processing mental_health_conditions (3000 examples) ===
+2026-02-16 21:30:26.579 | INFO     | __main__:process_dataset:358 - [mental_health_conditions] 7 classes
+2026-02-16 21:30:26.579 | INFO     | __main__:build_feature_spaces:117 - [mental_health_conditions] Building TF-IDF features (max_features=5000)
+2026-02-16 21:30:26.697 | INFO     | __main__:build_feature_spaces:123 - [mental_health_conditions] TF-IDF shape: (3000, 5000) (0.1s)
+2026-02-16 21:30:26.698 | INFO     | __main__:build_feature_spaces:127 - [mental_health_conditions] Computing sentence-transformer embeddings
+2026-02-16 21:31:45.678 | INFO     | __main__:load_data:97 - Loading data from /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/full_data_out.json
+2026-02-16 21:31:46.348 | INFO     | __main__:load_data:101 -   Dataset 'medical_abstracts': 14438 examples
+2026-02-16 21:31:46.348 | INFO     | __main__:load_data:101 -   Dataset 'mimic_iv_ed_demo': 207 examples
+2026-02-16 21:31:46.348 | INFO     | __main__:load_data:101 -   Dataset 'clinical_patient_triage_nl': 31 examples
+2026-02-16 21:31:46.348 | INFO     | __main__:load_data:101 -   Dataset 'ohsumed_single': 7400 examples
+2026-02-16 21:31:46.348 | INFO     | __main__:load_data:101 -   Dataset 'mental_health_conditions': 15000 examples
+2026-02-16 21:31:46.349 | INFO     | __main__:main:558 - Resuming from partial results: 4 datasets already done: {'ohsumed_single', 'medical_abstracts', 'mimic_iv_ed_demo', 'clinical_patient_triage_nl'}
+2026-02-16 21:31:46.349 | INFO     | __main__:main:573 - [medical_abstracts] Already completed, skipping
+2026-02-16 21:31:46.349 | INFO     | __main__:main:573 - [mimic_iv_ed_demo] Already completed, skipping
+2026-02-16 21:31:46.349 | INFO     | __main__:main:573 - [clinical_patient_triage_nl] Already completed, skipping
+2026-02-16 21:31:46.349 | INFO     | __main__:main:573 - [ohsumed_single] Already completed, skipping
+2026-02-16 21:31:46.350 | INFO     | __main__:main:579 - [mental_health_conditions] Subsampling from 15000 to 3000 examples (runtime cap)
+2026-02-16 21:31:46.352 | INFO     | __main__:process_dataset:351 - === Processing mental_health_conditions (3000 examples) ===
+2026-02-16 21:31:46.355 | INFO     | __main__:process_dataset:358 - [mental_health_conditions] 7 classes
+2026-02-16 21:31:46.355 | INFO     | __main__:build_feature_spaces:117 - [mental_health_conditions] Building TF-IDF features (max_features=5000)
+2026-02-16 21:31:46.522 | INFO     | __main__:build_feature_spaces:123 - [mental_health_conditions] TF-IDF shape: (3000, 5000) (0.2s)
+2026-02-16 21:31:46.522 | INFO     | __main__:build_feature_spaces:127 - [mental_health_conditions] Computing sentence-transformer embeddings
+2026-02-16 21:32:57.119 | INFO     | __main__:load_data:97 - Loading data from /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/full_data_out.json
+2026-02-16 21:32:57.780 | INFO     | __main__:load_data:101 -   Dataset 'medical_abstracts': 14438 examples
+2026-02-16 21:32:57.780 | INFO     | __main__:load_data:101 -   Dataset 'mimic_iv_ed_demo': 207 examples
+2026-02-16 21:32:57.780 | INFO     | __main__:load_data:101 -   Dataset 'clinical_patient_triage_nl': 31 examples
+2026-02-16 21:32:57.780 | INFO     | __main__:load_data:101 -   Dataset 'ohsumed_single': 7400 examples
+2026-02-16 21:32:57.780 | INFO     | __main__:load_data:101 -   Dataset 'mental_health_conditions': 15000 examples
+2026-02-16 21:32:57.781 | INFO     | __main__:main:558 - Resuming from partial results: 4 datasets already done: {'ohsumed_single', 'medical_abstracts', 'mimic_iv_ed_demo', 'clinical_patient_triage_nl'}
+2026-02-16 21:32:57.781 | INFO     | __main__:main:573 - [medical_abstracts] Already completed, skipping
+2026-02-16 21:32:57.781 | INFO     | __main__:main:573 - [mimic_iv_ed_demo] Already completed, skipping
+2026-02-16 21:32:57.781 | INFO     | __main__:main:573 - [clinical_patient_triage_nl] Already completed, skipping
+2026-02-16 21:32:57.781 | INFO     | __main__:main:573 - [ohsumed_single] Already completed, skipping
+2026-02-16 21:32:57.782 | INFO     | __main__:main:579 - [mental_health_conditions] Subsampling from 15000 to 3000 examples (runtime cap)
+2026-02-16 21:32:57.783 | INFO     | __main__:process_dataset:351 - === Processing mental_health_conditions (3000 examples) ===
+2026-02-16 21:32:57.786 | INFO     | __main__:process_dataset:358 - [mental_health_conditions] 7 classes
+2026-02-16 21:32:57.786 | INFO     | __main__:build_feature_spaces:117 - [mental_health_conditions] Building TF-IDF features (max_features=5000)
+2026-02-16 21:32:57.945 | INFO     | __main__:build_feature_spaces:123 - [mental_health_conditions] TF-IDF shape: (3000, 5000) (0.2s)
+2026-02-16 21:32:57.945 | INFO     | __main__:build_feature_spaces:127 - [mental_health_conditions] Computing sentence-transformer embeddings
+2026-02-16 21:34:15.622 | INFO     | __main__:build_feature_spaces:143 - [mental_health_conditions] Embedding shape: (3000, 384) (77.7s)
+2026-02-16 21:34:15.622 | INFO     | __main__:build_feature_spaces:147 - [mental_health_conditions] Building combined feature space
+2026-02-16 21:34:15.893 | INFO     | __main__:build_feature_spaces:154 - [mental_health_conditions] Combined shape: (3000, 484) (0.3s)
+2026-02-16 21:34:15.903 | INFO     | __main__:precompute_knn_indices:168 - [mental_health_conditions] KNN indices for tfidf (k=10)
+2026-02-16 21:34:16.254 | INFO     | __main__:precompute_knn_indices:179 - [mental_health_conditions] KNN tfidf done (0.3s)
+2026-02-16 21:34:16.254 | INFO     | __main__:precompute_knn_indices:168 - [mental_health_conditions] KNN indices for embed (k=10)
+2026-02-16 21:34:16.465 | INFO     | __main__:precompute_knn_indices:179 - [mental_health_conditions] KNN embed done (0.2s)
+2026-02-16 21:34:16.466 | INFO     | __main__:precompute_knn_indices:168 - [mental_health_conditions] KNN indices for combined (k=10)
+2026-02-16 21:34:16.734 | INFO     | __main__:precompute_knn_indices:179 - [mental_health_conditions] KNN combined done (0.3s)
+2026-02-16 21:34:16.734 | DEBUG    | __main__:process_dataset:386 - [mental_health_conditions] noise=0.05, seed=0
+2026-02-16 21:34:16.893 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab tfidf done (0.2s)
+2026-02-16 21:34:18.621 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab embed done (1.7s)
+2026-02-16 21:34:18.649 | DEBUG    | __main__:process_dataset:386 - [mental_health_conditions] noise=0.05, seed=1
+2026-02-16 21:34:18.820 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab tfidf done (0.2s)
+2026-02-16 21:34:20.420 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab embed done (1.6s)
+2026-02-16 21:34:20.445 | DEBUG    | __main__:process_dataset:386 - [mental_health_conditions] noise=0.05, seed=2
+2026-02-16 21:34:20.614 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab tfidf done (0.2s)
+2026-02-16 21:34:22.276 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab embed done (1.7s)
+2026-02-16 21:34:22.303 | DEBUG    | __main__:process_dataset:386 - [mental_health_conditions] noise=0.05, seed=3
+2026-02-16 21:34:22.472 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab tfidf done (0.2s)
+2026-02-16 21:34:24.174 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab embed done (1.7s)
+2026-02-16 21:34:24.206 | DEBUG    | __main__:process_dataset:386 - [mental_health_conditions] noise=0.05, seed=4
+2026-02-16 21:34:24.364 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab tfidf done (0.2s)
+2026-02-16 21:34:26.052 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab embed done (1.7s)
+2026-02-16 21:34:26.082 | DEBUG    | __main__:process_dataset:386 - [mental_health_conditions] noise=0.1, seed=0
+2026-02-16 21:34:26.262 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab tfidf done (0.2s)
+2026-02-16 21:34:28.294 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab embed done (2.0s)
+2026-02-16 21:34:28.323 | DEBUG    | __main__:process_dataset:386 - [mental_health_conditions] noise=0.1, seed=1
+2026-02-16 21:34:28.510 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab tfidf done (0.2s)
+2026-02-16 21:34:30.268 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab embed done (1.8s)
+2026-02-16 21:34:30.297 | DEBUG    | __main__:process_dataset:386 - [mental_health_conditions] noise=0.1, seed=2
+2026-02-16 21:34:30.514 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab tfidf done (0.2s)
+2026-02-16 21:34:32.340 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab embed done (1.8s)
+2026-02-16 21:34:32.369 | DEBUG    | __main__:process_dataset:386 - [mental_health_conditions] noise=0.1, seed=3
+2026-02-16 21:34:32.542 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab tfidf done (0.2s)
+2026-02-16 21:34:34.346 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab embed done (1.8s)
+2026-02-16 21:34:34.373 | DEBUG    | __main__:process_dataset:386 - [mental_health_conditions] noise=0.1, seed=4
+2026-02-16 21:34:34.551 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab tfidf done (0.2s)
+2026-02-16 21:34:36.320 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab embed done (1.8s)
+2026-02-16 21:34:36.348 | DEBUG    | __main__:process_dataset:386 - [mental_health_conditions] noise=0.2, seed=0
+2026-02-16 21:34:36.539 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab tfidf done (0.2s)
+2026-02-16 21:34:38.572 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab embed done (2.0s)
+2026-02-16 21:34:38.602 | DEBUG    | __main__:process_dataset:386 - [mental_health_conditions] noise=0.2, seed=1
+2026-02-16 21:34:38.833 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab tfidf done (0.2s)
+2026-02-16 21:34:41.102 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab embed done (2.3s)
+2026-02-16 21:34:41.158 | DEBUG    | __main__:process_dataset:386 - [mental_health_conditions] noise=0.2, seed=2
+2026-02-16 21:34:41.595 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab tfidf done (0.4s)
+2026-02-16 21:34:43.978 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab embed done (2.4s)
+2026-02-16 21:34:44.017 | DEBUG    | __main__:process_dataset:386 - [mental_health_conditions] noise=0.2, seed=3
+2026-02-16 21:34:44.251 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab tfidf done (0.2s)
+2026-02-16 21:34:46.689 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab embed done (2.4s)
+2026-02-16 21:34:46.717 | DEBUG    | __main__:process_dataset:386 - [mental_health_conditions] noise=0.2, seed=4
+2026-02-16 21:34:46.938 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab tfidf done (0.2s)
+2026-02-16 21:34:49.155 | DEBUG    | __main__:compute_cleanlab_scores:267 - [mental_health_conditions] Cleanlab embed done (2.2s)
+2026-02-16 21:34:49.184 | INFO     | __main__:process_dataset:487 - [mental_health_conditions] Done. 18 examples. Elapsed: 112.1s
+2026-02-16 21:34:49.308 | INFO     | __main__:save_output:530 - Saved 90 total examples to method_out_partial.json
+2026-02-16 21:34:49.311 | INFO     | __main__:save_output:530 - Saved 90 total examples to method_out.json
+2026-02-16 21:34:49.311 | SUCCESS  | __main__:main:598 - Output written to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/method_out.json (90 total examples, 112.2s total)
+2026-02-16 21:34:49.312 | INFO     | __main__:main:607 - Removed partial results file

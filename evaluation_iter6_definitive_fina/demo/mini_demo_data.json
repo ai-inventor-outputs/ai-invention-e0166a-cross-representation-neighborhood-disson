@@ -1,0 +1,1560 @@
+{
+  "metadata": {
+    "evaluation_name": "CRND Definitive Final Evaluation",
+    "description": "Capstone evaluation synthesizing all 6 CRND experiments. Adjudicates 3 success criteria (SC1: noise detection \u03c1>0.3, SC2: method selection \u03c4>0.4, SC3: interpretable CRND structure), quantifies novel contributions, resolves kDN AUC anomaly, and produces paper-ready tables.",
+    "experiments_evaluated": [
+      "exp_id1_it2",
+      "exp_id2_it2",
+      "exp_id3_it2",
+      "exp_id2_it3",
+      "exp_id3_it3",
+      "exp_id1_it5"
+    ],
+    "success_criteria_summary": {
+      "SC1_noise_detection": {
+        "criterion": "Spearman \u03c1 > 0.3 between CRND and noise indicator",
+        "pooled_value": 0.000669,
+        "ci": [
+          -0.014043,
+          0.015382
+        ],
+        "threshold": 0.3,
+        "met": false
+      },
+      "SC2_method_selection": {
+        "criterion": "Kendall \u03c4 > 0.4 for niche overlap predicting classifier rank",
+        "pooled_value": 0.210611,
+        "ci": [
+          0.157173,
+          0.264049
+        ],
+        "threshold": 0.4,
+        "met": false
+      },
+      "SC3_interpretable_structure": {
+        "criterion": "Replication rate \u2265 0.6 AND pooled \u03b7\u00b2 > 0.01",
+        "replication_rate": 0.6,
+        "pooled_eta_squared": 0.161998,
+        "met": true
+      }
+    },
+    "paper_tables": {
+      "T1_noise_detection_auc": {
+        "medical_abstracts": {
+          "0.05": {
+            "crnd_auc": 0.511,
+            "crnd_rho": 0.0083,
+            "baseline_auc": 0.5233,
+            "kdn_avg_auc": 0.8887,
+            "cleanlab_avg_auc": 0.8936,
+            "random_auc": 0.5123
+          },
+          "0.1": {
+            "crnd_auc": 0.4972,
+            "crnd_rho": -0.0029,
+            "baseline_auc": 0.4943,
+            "kdn_avg_auc": 0.8773,
+            "cleanlab_avg_auc": 0.8821,
+            "random_auc": 0.5011
+          },
+          "0.2": {
+            "crnd_auc": 0.5023,
+            "crnd_rho": 0.0031,
+            "baseline_auc": 0.4942,
+            "kdn_avg_auc": 0.8627,
+            "cleanlab_avg_auc": 0.8748,
+            "random_auc": 0.4985
+          }
+        },
+        "mimic_iv_ed_demo": {
+          "0.05": {
+            "crnd_auc": 0.5289,
+            "crnd_rho": 0.0214,
+            "baseline_auc": 0.473,
+            "kdn_avg_auc": 0.8152,
+            "cleanlab_avg_auc": 0.789,
+            "random_auc": 0.4556
+          },
+          "0.1": {
+            "crnd_auc": 0.481,
+            "crnd_rho": -0.0194,
+            "baseline_auc": 0.4878,
+            "kdn_avg_auc": 0.8282,
+            "cleanlab_avg_auc": 0.8102,
+            "random_auc": 0.4808
+          },
+          "0.2": {
+            "crnd_auc": 0.5083,
+            "crnd_rho": 0.0114,
+            "baseline_auc": 0.5252,
+            "kdn_avg_auc": 0.8297,
+            "cleanlab_avg_auc": 0.7871,
+            "random_auc": 0.4735
+          }
+        },
+        "clinical_patient_triage_nl": {
+          "0.05": {
+            "crnd_auc": 0.4433,
+            "crnd_rho": -0.0348,
+            "baseline_auc": 0.51,
+            "kdn_avg_auc": 0.7933,
+            "cleanlab_avg_auc": 0.5,
+            "random_auc": 0.46
+          },
+          "0.1": {
+            "crnd_auc": 0.5,
+            "crnd_rho": -0.0,
+            "baseline_auc": 0.4214,
+            "kdn_avg_auc": 0.6238,
+            "cleanlab_avg_auc": 0.6071,
+            "random_auc": 0.4119
+          },
+          "0.2": {
+            "crnd_auc": 0.506,
+            "crnd_rho": 0.0082,
+            "baseline_auc": 0.5293,
+            "kdn_avg_auc": 0.6567,
+            "cleanlab_avg_auc": 0.5707,
+            "random_auc": 0.4747
+          }
+        },
+        "ohsumed_single": {
+          "0.05": {
+            "crnd_auc": 0.4875,
+            "crnd_rho": -0.0094,
+            "baseline_auc": 0.497,
+            "kdn_avg_auc": 0.9628,
+            "cleanlab_avg_auc": 0.9741,
+            "random_auc": 0.5123
+          },
+          "0.1": {
+            "crnd_auc": 0.5062,
+            "crnd_rho": 0.0065,
+            "baseline_auc": 0.5095,
+            "kdn_avg_auc": 0.9619,
+            "cleanlab_avg_auc": 0.9735,
+            "random_auc": 0.5011
+          },
+          "0.2": {
+            "crnd_auc": 0.5014,
+            "crnd_rho": 0.0019,
+            "baseline_auc": 0.5041,
+            "kdn_avg_auc": 0.9534,
+            "cleanlab_avg_auc": 0.9687,
+            "random_auc": 0.4985
+          }
+        },
+        "mental_health_conditions": {
+          "0.05": {
+            "crnd_auc": 0.4806,
+            "crnd_rho": -0.0147,
+            "baseline_auc": 0.4836,
+            "kdn_avg_auc": 0.976,
+            "cleanlab_avg_auc": 0.9809,
+            "random_auc": 0.5123
+          },
+          "0.1": {
+            "crnd_auc": 0.5075,
+            "crnd_rho": 0.0078,
+            "baseline_auc": 0.5086,
+            "kdn_avg_auc": 0.9714,
+            "cleanlab_avg_auc": 0.9778,
+            "random_auc": 0.5011
+          },
+          "0.2": {
+            "crnd_auc": 0.4991,
+            "crnd_rho": -0.0013,
+            "baseline_auc": 0.4971,
+            "kdn_avg_auc": 0.9669,
+            "cleanlab_avg_auc": 0.973,
+            "random_auc": 0.4985
+          }
+        }
+      },
+      "T2_class_characterization": {
+        "medical_abstracts": {
+          "Cardiovascular_diseases": {
+            "mean_crnd": 0.8815,
+            "std_crnd": 0.0547,
+            "n": 223
+          },
+          "Digestive_system_diseases": {
+            "mean_crnd": 0.902,
+            "std_crnd": 0.0482,
+            "n": 102
+          },
+          "General_pathological_conditions": {
+            "mean_crnd": 0.9094,
+            "std_crnd": 0.047,
+            "n": 316
+          },
+          "Neoplasms": {
+            "mean_crnd": 0.8915,
+            "std_crnd": 0.0534,
+            "n": 227
+          },
+          "Nervous_system_diseases": {
+            "mean_crnd": 0.9038,
+            "std_crnd": 0.0491,
+            "n": 132
+          }
+        },
+        "mimic_iv_ed_demo": {
+          "ESI-1": {
+            "mean_crnd": 0.8992,
+            "std_crnd": 0.0553,
+            "n": 18
+          },
+          "ESI-2": {
+            "mean_crnd": 0.8818,
+            "std_crnd": 0.0671,
+            "n": 97
+          },
+          "ESI-3": {
+            "mean_crnd": 0.8896,
+            "std_crnd": 0.0477,
+            "n": 90
+          },
+          "ESI-4": {
+            "mean_crnd": 0.7911,
+            "std_crnd": 0.0284,
+            "n": 2
+          }
+        },
+        "clinical_patient_triage_nl": {
+          "Critical": {
+            "mean_crnd": 0.4036,
+            "std_crnd": 0.0697,
+            "n": 3
+          },
+          "High": {
+            "mean_crnd": 0.4597,
+            "std_crnd": 0.0563,
+            "n": 7
+          },
+          "Low": {
+            "mean_crnd": 0.5154,
+            "std_crnd": 0.026,
+            "n": 6
+          },
+          "Mild": {
+            "mean_crnd": 0.5085,
+            "std_crnd": 0.0,
+            "n": 1
+          },
+          "Moderate": {
+            "mean_crnd": 0.4967,
+            "std_crnd": 0.0423,
+            "n": 11
+          },
+          "Routine": {
+            "mean_crnd": 0.5239,
+            "std_crnd": 0.0087,
+            "n": 3
+          }
+        },
+        "ohsumed_single": {
+          "Bacterial_Infections_and_Mycoses": {
+            "mean_crnd": 0.863,
+            "std_crnd": 0.0705,
+            "n": 114
+          },
+          "Digestive_System_Diseases": {
+            "mean_crnd": 0.8417,
+            "std_crnd": 0.1063,
+            "n": 176
+          },
+          "Musculoskeletal_Diseases": {
+            "mean_crnd": 0.8573,
+            "std_crnd": 0.0894,
+            "n": 83
+          },
+          "Neoplasms": {
+            "mean_crnd": 0.8802,
+            "std_crnd": 0.058,
+            "n": 430
+          },
+          "Otorhinolaryngologic_Diseases": {
+            "mean_crnd": 0.7955,
+            "std_crnd": 0.0,
+            "n": 1
+          },
+          "Parasitic_Diseases": {
+            "mean_crnd": 0.8447,
+            "std_crnd": 0.0618,
+            "n": 21
+          },
+          "Respiratory_Tract_Diseases": {
+            "mean_crnd": 0.8616,
+            "std_crnd": 0.0683,
+            "n": 121
+          },
+          "Stomatognathic_Diseases": {
+            "mean_crnd": 0.8603,
+            "std_crnd": 0.0641,
+            "n": 29
+          },
+          "Virus_Diseases": {
+            "mean_crnd": 0.8607,
+            "std_crnd": 0.0653,
+            "n": 25
+          }
+        },
+        "mental_health_conditions": {
+          "anxiety": {
+            "mean_crnd": 0.852,
+            "std_crnd": 0.0885,
+            "n": 176
+          },
+          "bipolar": {
+            "mean_crnd": 0.8401,
+            "std_crnd": 0.0878,
+            "n": 135
+          },
+          "depression": {
+            "mean_crnd": 0.9412,
+            "std_crnd": 0.039,
+            "n": 167
+          },
+          "normal": {
+            "mean_crnd": 0.9621,
+            "std_crnd": 0.0252,
+            "n": 146
+          },
+          "personality disorder": {
+            "mean_crnd": 0.7766,
+            "std_crnd": 0.1145,
+            "n": 124
+          },
+          "stress": {
+            "mean_crnd": 0.834,
+            "std_crnd": 0.104,
+            "n": 138
+          },
+          "suicidal": {
+            "mean_crnd": 0.9257,
+            "std_crnd": 0.0519,
+            "n": 114
+          }
+        }
+      },
+      "T3_schoener_d_matrices": {
+        "medical_abstracts": {
+          "tfidf_2d": [
+            [
+              1.0,
+              0.5561,
+              0.5947,
+              0.3658,
+              0.5539
+            ],
+            [
+              0.5561,
+              1.0,
+              0.8419,
+              0.614,
+              0.8155
+            ],
+            [
+              0.5947,
+              0.8419,
+              1.0,
+              0.6525,
+              0.8311
+            ],
+            [
+              0.3658,
+              0.614,
+              0.6525,
+              1.0,
+              0.6196
+            ],
+            [
+              0.5539,
+              0.8155,
+              0.8311,
+              0.6196,
+              1.0
+            ]
+          ],
+          "sentence_transformer_2d": [
+            [
+              1.0,
+              0.3215,
+              0.5203,
+              0.146,
+              0.4494
+            ],
+            [
+              0.3215,
+              1.0,
+              0.7731,
+              0.5295,
+              0.8062
+            ],
+            [
+              0.5203,
+              0.7731,
+              1.0,
+              0.4596,
+              0.8079
+            ],
+            [
+              0.146,
+              0.5295,
+              0.4596,
+              1.0,
+              0.4209
+            ],
+            [
+              0.4494,
+              0.8062,
+              0.8079,
+              0.4209,
+              1.0
+            ]
+          ],
+          "llm_zeroshot_2d": [
+            [
+              1.0,
+              0.2122,
+              0.3596,
+              0.3232,
+              0.1686
+            ],
+            [
+              0.2122,
+              1.0,
+              0.5324,
+              0.4568,
+              0.2643
+            ],
+            [
+              0.3596,
+              0.5324,
+              1.0,
+              0.7003,
+              0.4839
+            ],
+            [
+              0.3232,
+              0.4568,
+              0.7003,
+              1.0,
+              0.4266
+            ],
+            [
+              0.1686,
+              0.2643,
+              0.4839,
+              0.4266,
+              1.0
+            ]
+          ]
+        },
+        "ohsumed_single": {
+          "tfidf_2d": [
+            [
+              1.0,
+              0.8046,
+              0.7852,
+              0.6,
+              0.3131,
+              0.6685,
+              0.8194,
+              0.6914,
+              0.7504
+            ],
+            [
+              0.8046,
+              1.0,
+              0.7711,
+              0.5986,
+              0.3034,
+              0.6996,
+              0.8285,
+              0.716,
+              0.705
+            ],
+            [
+              0.7852,
+              0.7711,
+              1.0,
+              0.5458,
+              0.323,
+              0.5864,
+              0.7098,
+              0.7608,
+              0.661
+            ],
+            [
+              0.6,
+              0.5986,
+              0.5458,
+              1.0,
+              0.4834,
+              0.6198,
+              0.6416,
+              0.5264,
+              0.5752
+            ],
+            [
+              0.3131,
+              0.3034,
+              0.323,
+              0.4834,
+              1.0,
+              0.3269,
+              0.3448,
+              0.3282,
+              0.3311
+            ],
+            [
+              0.6685,
+              0.6996,
+              0.5864,
+              0.6198,
+              0.3269,
+              1.0,
+              0.7634,
+              0.6019,
+              0.7635
+            ],
+            [
+              0.8194,
+              0.8285,
+              0.7098,
+              0.6416,
+              0.3448,
+              0.7634,
+              1.0,
+              0.6914,
+              0.7742
+            ],
+            [
+              0.6914,
+              0.716,
+              0.7608,
+              0.5264,
+              0.3282,
+              0.6019,
+              0.6914,
+              1.0,
+              0.6632
+            ],
+            [
+              0.7504,
+              0.705,
+              0.661,
+              0.5752,
+              0.3311,
+              0.7635,
+              0.7742,
+              0.6632,
+              1.0
+            ]
+          ],
+          "sentence_transformer_2d": [
+            [
+              1.0,
+              0.5279,
+              0.3508,
+              0.0909,
+              0.3001,
+              0.5839,
+              0.6796,
+              0.3351,
+              0.5003
+            ],
+            [
+              0.5279,
+              1.0,
+              0.4635,
+              0.1232,
+              0.3647,
+              0.4102,
+              0.6938,
+              0.5058,
+              0.3314
+            ],
+            [
+              0.3508,
+              0.4635,
+              1.0,
+              0.2385,
+              0.3359,
+              0.4432,
+              0.463,
+              0.7539,
+              0.3711
+            ],
+            [
+              0.0909,
+              0.1232,
+              0.2385,
+              1.0,
+              0.4488,
+              0.1698,
+              0.2491,
+              0.3796,
+              0.2014
+            ],
+            [
+              0.3001,
+              0.3647,
+              0.3359,
+              0.4488,
+              1.0,
+              0.3028,
+              0.4797,
+              0.4724,
+              0.2536
+            ],
+            [
+              0.5839,
+              0.4102,
+              0.4432,
+              0.1698,
+              0.3028,
+              1.0,
+              0.4934,
+              0.4156,
+              0.7398
+            ],
+            [
+              0.6796,
+              0.6938,
+              0.463,
+              0.2491,
+              0.4797,
+              0.4934,
+              1.0,
+              0.5145,
+              0.4006
+            ],
+            [
+              0.3351,
+              0.5058,
+              0.7539,
+              0.3796,
+              0.4724,
+              0.4156,
+              0.5145,
+              1.0,
+              0.3484
+            ],
+            [
+              0.5003,
+              0.3314,
+              0.3711,
+              0.2014,
+              0.2536,
+              0.7398,
+              0.4006,
+              0.3484,
+              1.0
+            ]
+          ],
+          "llm_zeroshot_2d": [
+            [
+              1.0,
+              0.4438,
+              0.2812,
+              0.2296,
+              0.0143,
+              0.1901,
+              0.3831,
+              0.2034,
+              0.1307
+            ],
+            [
+              0.4438,
+              1.0,
+              0.1934,
+              0.1257,
+              0.0137,
+              0.1104,
+              0.2078,
+              0.1086,
+              0.1126
+            ],
+            [
+              0.2812,
+              0.1934,
+              1.0,
+              0.135,
+              0.0107,
+              0.3305,
+              0.2703,
+              0.1272,
+              0.0937
+            ],
+            [
+              0.2296,
+              0.1257,
+              0.135,
+              1.0,
+              0.0208,
+              0.1226,
+              0.345,
+              0.522,
+              0.1592
+            ],
+            [
+              0.0143,
+              0.0137,
+              0.0107,
+              0.0208,
+              1.0,
+              0.0085,
+              0.0068,
+              0.0477,
+              0.205
+            ],
+            [
+              0.1901,
+              0.1104,
+              0.3305,
+              0.1226,
+              0.0085,
+              1.0,
+              0.2331,
+              0.1173,
+              0.0718
+            ],
+            [
+              0.3831,
+              0.2078,
+              0.2703,
+              0.345,
+              0.0068,
+              0.2331,
+              1.0,
+              0.2698,
+              0.0922
+            ],
+            [
+              0.2034,
+              0.1086,
+              0.1272,
+              0.522,
+              0.0477,
+              0.1173,
+              0.2698,
+              1.0,
+              0.3404
+            ],
+            [
+              0.1307,
+              0.1126,
+              0.0937,
+              0.1592,
+              0.205,
+              0.0718,
+              0.0922,
+              0.3404,
+              1.0
+            ]
+          ]
+        },
+        "mental_health_conditions": {
+          "tfidf_2d": [
+            [
+              1.0,
+              0.5577,
+              0.1985,
+              0.146,
+              0.332,
+              0.7021,
+              0.162
+            ],
+            [
+              0.5577,
+              1.0,
+              0.2375,
+              0.1517,
+              0.5358,
+              0.4036,
+              0.1965
+            ],
+            [
+              0.1985,
+              0.2375,
+              1.0,
+              0.2833,
+              0.1786,
+              0.1094,
+              0.7567
+            ],
+            [
+              0.146,
+              0.1517,
+              0.2833,
+              1.0,
+              0.147,
+              0.0994,
+              0.3209
+            ],
+            [
+              0.332,
+              0.5358,
+              0.1786,
+              0.147,
+              1.0,
+              0.2203,
+              0.1261
+            ],
+            [
+              0.7021,
+              0.4036,
+              0.1094,
+              0.0994,
+              0.2203,
+              1.0,
+              0.084
+            ],
+            [
+              0.162,
+              0.1965,
+              0.7567,
+              0.3209,
+              0.1261,
+              0.084,
+              1.0
+            ]
+          ],
+          "sentence_transformer_2d": [
+            [
+              1.0,
+              0.4248,
+              0.2498,
+              0.1413,
+              0.4693,
+              0.6207,
+              0.2345
+            ],
+            [
+              0.4248,
+              1.0,
+              0.2598,
+              0.0611,
+              0.2725,
+              0.6832,
+              0.2128
+            ],
+            [
+              0.2498,
+              0.2598,
+              1.0,
+              0.2643,
+              0.0972,
+              0.1752,
+              0.8075
+            ],
+            [
+              0.1413,
+              0.0611,
+              0.2643,
+              1.0,
+              0.0356,
+              0.0679,
+              0.2754
+            ],
+            [
+              0.4693,
+              0.2725,
+              0.0972,
+              0.0356,
+              1.0,
+              0.4231,
+              0.0787
+            ],
+            [
+              0.6207,
+              0.6832,
+              0.1752,
+              0.0679,
+              0.4231,
+              1.0,
+              0.1392
+            ],
+            [
+              0.2345,
+              0.2128,
+              0.8075,
+              0.2754,
+              0.0787,
+              0.1392,
+              1.0
+            ]
+          ],
+          "llm_zeroshot_2d": [
+            [
+              1.0,
+              0.0764,
+              0.2027,
+              0.2289,
+              0.2366,
+              0.402,
+              0.3651
+            ],
+            [
+              0.0764,
+              1.0,
+              0.138,
+              0.2451,
+              0.2842,
+              0.1219,
+              0.1722
+            ],
+            [
+              0.2027,
+              0.138,
+              1.0,
+              0.4013,
+              0.4314,
+              0.2964,
+              0.4705
+            ],
+            [
+              0.2289,
+              0.2451,
+              0.4013,
+              1.0,
+              0.7744,
+              0.4713,
+              0.5786
+            ],
+            [
+              0.2366,
+              0.2842,
+              0.4314,
+              0.7744,
+              1.0,
+              0.4925,
+              0.6263
+            ],
+            [
+              0.402,
+              0.1219,
+              0.2964,
+              0.4713,
+              0.4925,
+              1.0,
+              0.64
+            ],
+            [
+              0.3651,
+              0.1722,
+              0.4705,
+              0.5786,
+              0.6263,
+              0.64,
+              1.0
+            ]
+          ]
+        }
+      },
+      "T4_niche_overlap_correlation": {
+        "medical_abstracts": {
+          "tfidf_2d_vs_sentence_transformer_2d": {
+            "kendall_tau": 0.6444,
+            "p_value": 0.009148478835978836
+          },
+          "tfidf_2d_vs_llm_zeroshot_2d": {
+            "kendall_tau": 0.5556,
+            "p_value": 0.02860945767195767
+          },
+          "sentence_transformer_2d_vs_llm_zeroshot_2d": {
+            "kendall_tau": 0.2889,
+            "p_value": 0.2912483465608466
+          }
+        },
+        "mimic_iv_ed_demo": {
+          "tfidf_2d_vs_sentence_transformer_2d": {
+            "kendall_tau": 0.2,
+            "p_value": 0.7194444444444444
+          },
+          "tfidf_2d_vs_llm_zeroshot_2d": {
+            "kendall_tau": 0.4667,
+            "p_value": 0.2722222222222222
+          },
+          "sentence_transformer_2d_vs_llm_zeroshot_2d": {
+            "kendall_tau": -0.0667,
+            "p_value": 1.0
+          }
+        },
+        "clinical_patient_triage_nl": {
+          "tfidf_2d_vs_sentence_transformer_2d": {
+            "kendall_tau": -0.0098,
+            "p_value": 0.9601057761188054
+          },
+          "tfidf_2d_vs_llm_zeroshot_2d": {
+            "kendall_tau": 0.2653,
+            "p_value": 0.187691591808145
+          },
+          "sentence_transformer_2d_vs_llm_zeroshot_2d": {
+            "kendall_tau": -0.0297,
+            "p_value": 0.8804179397868541
+          }
+        },
+        "ohsumed_single": {
+          "tfidf_2d_vs_sentence_transformer_2d": {
+            "kendall_tau": 0.3587,
+            "p_value": 0.0020816979767858492
+          },
+          "tfidf_2d_vs_llm_zeroshot_2d": {
+            "kendall_tau": 0.2952,
+            "p_value": 0.011293415200324019
+          },
+          "sentence_transformer_2d_vs_llm_zeroshot_2d": {
+            "kendall_tau": 0.0476,
+            "p_value": 0.6828135424202553
+          }
+        },
+        "mental_health_conditions": {
+          "tfidf_2d_vs_sentence_transformer_2d": {
+            "kendall_tau": 0.7238,
+            "p_value": 4.211272699796076e-07
+          },
+          "tfidf_2d_vs_llm_zeroshot_2d": {
+            "kendall_tau": -0.2476,
+            "p_value": 0.12453202701123642
+          },
+          "sentence_transformer_2d_vs_llm_zeroshot_2d": {
+            "kendall_tau": -0.2381,
+            "p_value": 0.14032300106204762
+          }
+        }
+      },
+      "T5_success_criteria_summary": {
+        "SC1_noise_detection": {
+          "criterion": "Spearman \u03c1 > 0.3 between CRND and noise indicator",
+          "pooled_value": 0.000669,
+          "ci": [
+            -0.014043,
+            0.015382
+          ],
+          "threshold": 0.3,
+          "met": false
+        },
+        "SC2_method_selection": {
+          "criterion": "Kendall \u03c4 > 0.4 for niche overlap predicting classifier rank",
+          "pooled_value": 0.210611,
+          "ci": [
+            0.157173,
+            0.264049
+          ],
+          "threshold": 0.4,
+          "met": false
+        },
+        "SC3_interpretable_structure": {
+          "criterion": "Replication rate \u2265 0.6 AND pooled \u03b7\u00b2 > 0.01",
+          "replication_rate": 0.6,
+          "pooled_eta_squared": 0.161998,
+          "met": true
+        }
+      },
+      "T6_method_comparison_wilcoxon": {
+        "crnd_vs_baseline_entropy": {
+          "wilcoxon_stat": 42.0,
+          "wilcoxon_p": 0.330261,
+          "n_comparisons": 15,
+          "crnd_mean_auc": 0.4973,
+          "baseline_mean_auc": 0.4972
+        }
+      }
+    },
+    "anomaly_resolution": {
+      "anomaly_kdn_auc_it2_mean": 0.864533,
+      "anomaly_kdn_auc_it5_mean": 0.512262,
+      "anomaly_delta_auc": 0.352271,
+      "anomaly_source_identified": "feature_space_and_dataset_size",
+      "anomaly_explanation": "Discrepancy arises from: (1) Different 3rd feature space: exp_id3_it2 uses combined SVD(TF-IDF+embed) while exp_id1_it5 uses char n-gram. Combined space preserves discriminative information better for kDN. (2) Different dataset sizes: exp_id3_it2 uses N=3000 for medical_abstracts vs N=500 in exp_id1_it5. (3) Different seed counts: 5 vs 3. (4) exp_id1_it5 includes medical_transcriptions dataset (not in it2) which may have lower kDN performance.",
+      "anomaly_per_dataset_delta": {
+        "medical_abstracts": 0.3819,
+        "mimic_iv_ed_demo": 0.2791,
+        "ohsumed_single": 0.4633,
+        "mental_health_conditions": 0.4559
+      }
+    },
+    "ablation_summary": {
+      "ablation_optimal_k": 5,
+      "ablation_best_formulation": "jaccard",
+      "ablation_most_informative_pair": "tfidf_vs_llm_zeroshot",
+      "ablation_pca_stability_threshold": 2,
+      "ablation_dist_metric_range_medical_abstracts": 0.004,
+      "ablation_dist_metric_range_ohsumed_single": 0.012,
+      "ablation_dist_metric_range_mental_health_conditions": 0.0175,
+      "ablation_confound_raw_rho_medical_abstracts": 0.013317,
+      "ablation_confound_partial_rho_medical_abstracts": -0.000635,
+      "ablation_confound_raw_rho_mimic_iv_ed_demo": -0.085501,
+      "ablation_confound_partial_rho_mimic_iv_ed_demo": -0.04938,
+      "ablation_confound_raw_rho_clinical_patient_triage_nl": 0.116619,
+      "ablation_confound_partial_rho_clinical_patient_triage_nl": -0.046107,
+      "ablation_confound_raw_rho_ohsumed_single": 0.031264,
+      "ablation_confound_partial_rho_ohsumed_single": 0.020369,
+      "ablation_confound_raw_rho_mental_health_conditions": 0.024826,
+      "ablation_confound_partial_rho_mental_health_conditions": 0.002368
+    },
+    "limitation_analysis": {
+      "lim_llm_feature_delta_tau": 0.178706,
+      "lim_llm_feature_pct_drop": 73.6,
+      "lim_llm_feature_explanation": "Replacing char n-gram proxy (\u03c4=0.2428) with true LLM one-hot features (\u03c4=0.0641) caused a 73.6% drop in method selection signal. This suggests the one-hot encoding of LLM text responses loses discriminative information compared to continuous-valued char n-gram features.",
+      "lim_small_datasets": [
+        {
+          "dataset": "mimic_iv_ed_demo",
+          "n": 207,
+          "flag": "low_power"
+        },
+        {
+          "dataset": "clinical_patient_triage_nl",
+          "n": 31,
+          "flag": "underpowered"
+        }
+      ],
+      "lim_mimic_flag": {
+        "dataset": "mimic_iv_ed_demo",
+        "n": 207,
+        "concern": "Demo subset only. ESI-4 has only n=2. Results may not generalize to full MIMIC-IV."
+      },
+      "lim_triage_flag": {
+        "dataset": "clinical_patient_triage_nl",
+        "n": 31,
+        "concern": "Only 31 examples with 6 classes. Noise injection creates only 1-6 noisy labels. Results are unstable."
+      },
+      "lim_n_feature_spaces_tested": 3,
+      "lim_ecological_metric_applicability": "Schoener's D was designed for species distribution overlap in geographic space. Its application to PCA-projected feature spaces has limited theoretical justification. The PCA projection captures only a fraction of variance (1-42% depending on space and dataset)."
+    },
+    "novel_contributions": {
+      "d_gap_selection_accuracy": 0.616915,
+      "schoener_d_unique_variance": 0.001168,
+      "num_deferral_class_pairs": 0,
+      "deferral_pair_examples": []
+    }
+  },
+  "metrics_agg": {
+    "sc1_pooled_spearman_rho": 0.000669,
+    "sc1_pooled_spearman_rho_ci_lower": -0.014043,
+    "sc1_pooled_spearman_rho_ci_upper": 0.015382,
+    "sc1_bayes_factor": 0.0094,
+    "sc1_crnd_mean_auc": 0.501112,
+    "sc1_kdn_mean_auc": 0.814209,
+    "sc1_cleanlab_mean_auc": 0.791654,
+    "sc1_baseline_entropy_mean_auc": 0.497225,
+    "sc1_n_observations": 30,
+    "sc1_total_n_pooled": 17835,
+    "sc1_verdict_met": 0,
+    "sc2_pooled_kendall_tau": 0.210611,
+    "sc2_pooled_tau_ci_lower": 0.157173,
+    "sc2_pooled_tau_ci_upper": 0.264049,
+    "sc2_tau_it2_proxy": 0.242806,
+    "sc2_tau_it3_llm": 0.0641,
+    "sc2_cochrans_q": 6.345567,
+    "sc2_i_squared": 0.84241,
+    "sc2_delta_tau": 0.178706,
+    "sc2_delta_tau_pct_drop": 73.6,
+    "sc2_verdict_met": 0,
+    "sc3_pooled_eta_squared": 0.161998,
+    "sc3_replication_rate": 0.6,
+    "sc3_significant_datasets": 3,
+    "sc3_total_datasets": 5,
+    "sc3_pooled_boundary_cohens_d": 0.56495,
+    "sc3_n_boundary_datasets": 4,
+    "sc3_verdict_met": 1,
+    "sc3_kw_h_medical_abstracts": 46.4687,
+    "sc3_kw_p_medical_abstracts": 0.0,
+    "sc3_eta_sq_medical_abstracts": 0.042682,
+    "sc3_kw_h_mimic_iv_ed_demo": 7.3067,
+    "sc3_kw_p_mimic_iv_ed_demo": 0.062738,
+    "sc3_eta_sq_mimic_iv_ed_demo": 0.021215,
+    "sc3_kw_h_clinical_patient_triage_nl": 10.6473,
+    "sc3_kw_p_clinical_patient_triage_nl": 0.05884021,
+    "sc3_eta_sq_clinical_patient_triage_nl": 0.22589,
+    "sc3_kw_h_ohsumed_single": 61.261,
+    "sc3_kw_p_ohsumed_single": 0.0,
+    "sc3_eta_sq_ohsumed_single": 0.053745,
+    "sc3_kw_h_mental_health_conditions": 469.1918,
+    "sc3_kw_p_mental_health_conditions": 0.0,
+    "sc3_eta_sq_mental_health_conditions": 0.466457,
+    "d_gap_selection_accuracy": 0.616915,
+    "d_gap_concordant": 496,
+    "d_gap_total": 804,
+    "schoener_d_unique_variance": 0.001168,
+    "num_deferral_class_pairs": 0,
+    "anomaly_kdn_auc_it2_mean": 0.864533,
+    "anomaly_kdn_auc_it5_mean": 0.512262,
+    "anomaly_delta_auc": 0.352271,
+    "ablation_optimal_k": 5,
+    "ablation_pca_stability_threshold": 2,
+    "ablation_dist_metric_range_medical_abstracts": 0.004,
+    "ablation_dist_metric_range_ohsumed_single": 0.012,
+    "ablation_dist_metric_range_mental_health_conditions": 0.0175,
+    "ablation_confound_raw_rho_medical_abstracts": 0.013317,
+    "ablation_confound_partial_rho_medical_abstracts": -0.000635,
+    "ablation_confound_raw_rho_mimic_iv_ed_demo": -0.085501,
+    "ablation_confound_partial_rho_mimic_iv_ed_demo": -0.04938,
+    "ablation_confound_raw_rho_clinical_patient_triage_nl": 0.116619,
+    "ablation_confound_partial_rho_clinical_patient_triage_nl": -0.046107,
+    "ablation_confound_raw_rho_ohsumed_single": 0.031264,
+    "ablation_confound_partial_rho_ohsumed_single": 0.020369,
+    "ablation_confound_raw_rho_mental_health_conditions": 0.024826,
+    "ablation_confound_partial_rho_mental_health_conditions": 0.002368,
+    "tau_it2_medical_abstracts": 0.36,
+    "tau_it2_p_medical_abstracts": 0.02927409,
+    "tau_it2_mimic_iv_ed_demo": 0.481481,
+    "tau_it2_p_mimic_iv_ed_demo": 0.12634967,
+    "tau_it2_clinical_patient_triage_nl": 0.281091,
+    "tau_it2_p_clinical_patient_triage_nl": 0.35834323,
+    "tau_it2_ohsumed_single": 0.259333,
+    "tau_it2_p_ohsumed_single": 0.0,
+    "tau_it2_mental_health_conditions": -0.020343,
+    "tau_it2_p_mental_health_conditions": 0.85360877,
+    "tau_it3_medical_abstracts": 0.3167,
+    "tau_it3_mimic_iv_ed_demo": 0.3333,
+    "tau_it3_clinical_patient_triage_nl": 0.2963,
+    "tau_it3_ohsumed_single": -0.0676,
+    "tau_it3_mental_health_conditions": 0.4044,
+    "lim_llm_feature_delta_tau": 0.178706,
+    "lim_llm_feature_pct_drop": 73.6,
+    "lim_n_feature_spaces_tested": 3,
+    "overall_success_criteria_met": 1,
+    "overall_success_criteria_total": 3,
+    "overall_hypothesis_supported": 0
+  },
+  "datasets": [
+    {
+      "dataset": "medical_abstracts",
+      "examples": [
+        {
+          "input": "Tissue changes around loose prostheses. A canine model to investigate the effects of an antiinflammatory agent. The aseptically loosened prosthesis provided a means for investigating the in vivo and in vitro activity of the cells associated with the loosening process in seven dogs. The cells were...",
+          "output": "General_pathological_conditions",
+          "predict_crnd_k10": "0.8991",
+          "predict_crnd_k20": "0.9236",
+          "predict_baseline_entropy_k20": "2.1037",
+          "metadata_source_experiment": "exp_id1_it2",
+          "metadata_dataset": "medical_abstracts",
+          "metadata_boundary_proximity": 0.43333333333333335,
+          "eval_crnd_k10": 0.899123,
+          "eval_crnd_k20": 0.923633,
+          "eval_baseline_entropy_k20": 2.103702
+        },
+        {
+          "input": "Neuropeptide Y and neuron-specific enolase levels in benign and malignant pheochromocytomas. Neuron-specific enolase (NSE) is the isoform of enolase, a glycolytic enzyme found in the neuroendocrine system. Neuropeptide Y (NPY) is a peptide recently discovered in the peripheral and central nervous...",
+          "output": "Neoplasms",
+          "predict_crnd_k10": "0.9167",
+          "predict_crnd_k20": "0.9293",
+          "predict_baseline_entropy_k20": "1.7427",
+          "metadata_source_experiment": "exp_id1_it2",
+          "metadata_dataset": "medical_abstracts",
+          "metadata_boundary_proximity": 0.35000000000000003,
+          "eval_crnd_k10": 0.916667,
+          "eval_crnd_k20": 0.929293,
+          "eval_baseline_entropy_k20": 1.742738
+        },
+        {
+          "input": "Sexually transmitted diseases of the colon, rectum, and anus. The challenge of the nineties. During the past two decades, an explosive growth in both the prevalence and types of sexually transmitted diseases has occurred. Up to 55 percent of homosexual men with anorectal complaints have gonorrhea...",
+          "output": "Digestive_system_diseases",
+          "predict_crnd_k10": "0.9630",
+          "predict_crnd_k20": "0.9644",
+          "predict_baseline_entropy_k20": "2.1834",
+          "metadata_source_experiment": "exp_id1_it2",
+          "metadata_dataset": "medical_abstracts",
+          "metadata_boundary_proximity": 0.5833333333333334,
+          "eval_crnd_k10": 0.962963,
+          "eval_crnd_k20": 0.964426,
+          "eval_baseline_entropy_k20": 2.183383
+        }
+      ]
+    },
+    {
+      "dataset": "mimic_iv_ed_demo",
+      "examples": [
+        {
+          "input": "Chief complaint: Abd pain, LEAKING ASCITES",
+          "output": "ESI-2",
+          "predict_crnd_k10": "0.8538",
+          "predict_crnd_k20": "0.7275",
+          "predict_baseline_entropy_k20": "0.9341",
+          "metadata_source_experiment": "exp_id1_it2",
+          "metadata_dataset": "mimic_iv_ed_demo",
+          "metadata_boundary_proximity": 0.7666666666666666,
+          "eval_crnd_k10": 0.853801,
+          "eval_crnd_k20": 0.727532,
+          "eval_baseline_entropy_k20": 0.934068
+        },
+        {
+          "input": "Chief complaint: Dizziness, Diplopia",
+          "output": "ESI-2",
+          "predict_crnd_k10": "0.8538",
+          "predict_crnd_k20": "0.8777",
+          "predict_baseline_entropy_k20": "0.5690",
+          "metadata_source_experiment": "exp_id1_it2",
+          "metadata_dataset": "mimic_iv_ed_demo",
+          "metadata_boundary_proximity": 0.25,
+          "eval_crnd_k10": 0.853801,
+          "eval_crnd_k20": 0.877735,
+          "eval_baseline_entropy_k20": 0.568996
+        },
+        {
+          "input": "Chief complaint: Abd pain. Vitals: HR 72, RR 18, BP 98/48, Temp 98.8, O2 90%, Pain 13/10",
+          "output": "ESI-2",
+          "predict_crnd_k10": "0.9454",
+          "predict_crnd_k20": "0.8486",
+          "predict_baseline_entropy_k20": "1.2345",
+          "metadata_source_experiment": "exp_id1_it2",
+          "metadata_dataset": "mimic_iv_ed_demo",
+          "metadata_boundary_proximity": 0.44999999999999996,
+          "eval_crnd_k10": 0.945419,
+          "eval_crnd_k20": 0.848645,
+          "eval_baseline_entropy_k20": 1.234498
+        }
+      ]
+    },
+    {
+      "dataset": "clinical_patient_triage_nl",
+      "examples": [
+        {
+          "input": "Patient presents with persistent dry cough and low-grade fever for 5 days. Age: 34. Vital signs: Stable. Primary complaint: Respiratory_Distress",
+          "output": "Mild",
+          "predict_crnd_k10": "0.8671",
+          "predict_crnd_k20": "0.5085",
+          "predict_baseline_entropy_k20": "2.0200",
+          "metadata_source_experiment": "exp_id1_it2",
+          "metadata_dataset": "clinical_patient_triage_nl",
+          "metadata_boundary_proximity": 1.0,
+          "eval_crnd_k10": 0.867102,
+          "eval_crnd_k20": 0.508484,
+          "eval_baseline_entropy_k20": 2.019973
+        },
+        {
+          "input": "Sudden onset of acute chest pain radiating to left arm with diaphoresis. Age: 58. Vital signs: Unstable. Primary complaint: Cardiac_Event",
+          "output": "Critical",
+          "predict_crnd_k10": "0.8158",
+          "predict_crnd_k20": "0.3051",
+          "predict_baseline_entropy_k20": "2.2589",
+          "metadata_source_experiment": "exp_id1_it2",
+          "metadata_dataset": "clinical_patient_triage_nl",
+          "metadata_boundary_proximity": 0.9166666666666666,
+          "eval_crnd_k10": 0.815789,
+          "eval_crnd_k20": 0.305051,
+          "eval_baseline_entropy_k20": 2.258872
+        },
+        {
+          "input": "Minor laceration on right forearm caused by kitchen knife; bleeding controlled. Age: 22. Vital signs: Stable. Primary complaint: Trauma_Minor",
+          "output": "Low",
+          "predict_crnd_k10": "0.7685",
+          "predict_crnd_k20": "0.5172",
+          "predict_baseline_entropy_k20": "1.9477",
+          "metadata_source_experiment": "exp_id1_it2",
+          "metadata_dataset": "clinical_patient_triage_nl",
+          "metadata_boundary_proximity": 0.8166666666666668,
+          "eval_crnd_k10": 0.768519,
+          "eval_crnd_k20": 0.517162,
+          "eval_baseline_entropy_k20": 1.947731
+        }
+      ]
+    },
+    {
+      "dataset": "ohsumed_single",
+      "examples": [
+        {
+          "input": "Superficial cultures in neonatal sepsis evaluations. Impact on antibiotic decision making.\n The authors performed a retrospective analysis of neonatal superficial cultures and their effect on antimicrobial decision making during a nine-month period at Nashville General Hospital.\n They obtained an...",
+          "output": "Bacterial_Infections_and_Mycoses",
+          "predict_crnd_k10": "0.8866",
+          "predict_crnd_k20": "0.7611",
+          "predict_baseline_entropy_k20": "1.3362",
+          "metadata_source_experiment": "exp_id1_it2",
+          "metadata_dataset": "ohsumed_single",
+          "metadata_boundary_proximity": 0.13333333333333333,
+          "eval_crnd_k10": 0.886596,
+          "eval_crnd_k20": 0.761069,
+          "eval_baseline_entropy_k20": 1.33616
+        },
+        {
+          "input": "Catheter-related sepsis: prospective, randomized study of three methods of long-term catheter maintenance.\n We studied the infectious risk of different methods of managing vascular catheters during long-term use.\n Consecutive surgical ICU patients requiring triple lumen catheters, pulmonary arter...",
+          "output": "Bacterial_Infections_and_Mycoses",
+          "predict_crnd_k10": "0.8671",
+          "predict_crnd_k20": "0.7990",
+          "predict_baseline_entropy_k20": "1.7427",
+          "metadata_source_experiment": "exp_id1_it2",
+          "metadata_dataset": "ohsumed_single",
+          "metadata_boundary_proximity": 0.25,
+          "eval_crnd_k10": 0.867102,
+          "eval_crnd_k20": 0.79902,
+          "eval_baseline_entropy_k20": 1.742738
+        },
+        {
+          "input": "Effect of blood transfusion on oxygen consumption in pediatric septic shock.\n Treatment plans for pediatric septic shock advocate increasing oxygen consumption (VO2).\n Recent studies in septic shock indicate that improving oxygen delivery (DO2) by increasing blood flow will increase VO2.\n We pros...",
+          "output": "Bacterial_Infections_and_Mycoses",
+          "predict_crnd_k10": "0.7930",
+          "predict_crnd_k20": "0.7983",
+          "predict_baseline_entropy_k20": "1.9037",
+          "metadata_source_experiment": "exp_id1_it2",
+          "metadata_dataset": "ohsumed_single",
+          "metadata_boundary_proximity": 0.3333333333333333,
+          "eval_crnd_k10": 0.793028,
+          "eval_crnd_k20": 0.798341,
+          "eval_baseline_entropy_k20": 1.903702
+        }
+      ]
+    },
+    {
+      "dataset": "mental_health_conditions",
+      "examples": [
+        {
+          "input": "i cannot believe people actually perceive me, and think about me. i cannot believe i am real? i do not know, its just weird. i want to cease out of existence, i feel like i am going to explode, all of these feelings and emotions bottled up, i just want to fucking explode but i cannot even fucking...",
+          "output": "depression",
+          "predict_crnd_k10": "1.0000",
+          "predict_crnd_k20": "0.9739",
+          "predict_baseline_entropy_k20": "1.1884",
+          "metadata_source_experiment": "exp_id1_it2",
+          "metadata_dataset": "mental_health_conditions",
+          "metadata_boundary_proximity": 0.5333333333333333,
+          "eval_crnd_k10": 1.0,
+          "eval_crnd_k20": 0.973909,
+          "eval_baseline_entropy_k20": 1.188376
+        },
+        {
+          "input": "consider how you can incorporate metaphors and imagery into the thought to provide depth and vividness.\n\nin the labyrinthine maze of my mind, a cacophony of contradictory selves wrestle and clash, a tempestuous symphony of unquenchable desires and insatiable cravings. the dark recesses of my psyc...",
+          "output": "personality disorder",
+          "predict_crnd_k10": "0.9454",
+          "predict_crnd_k20": "0.8529",
+          "predict_baseline_entropy_k20": "1.0540",
+          "metadata_source_experiment": "exp_id1_it2",
+          "metadata_dataset": "mental_health_conditions",
+          "metadata_boundary_proximity": 0.31666666666666665,
+          "eval_crnd_k10": 0.945419,
+          "eval_crnd_k20": 0.852926,
+          "eval_baseline_entropy_k20": 1.054016
+        },
+        {
+          "input": "monologue:\n(breaths in deeply, eyes darting around the room, searching for an escape route)\noh god, what's happening? why do i feel so... uneasy? am i being followed? is it the quiet that's making me so nervous? no, that's ridiculous. it's just my overactive imagination.\n(looks at phone, debates ...",
+          "output": "anxiety",
+          "predict_crnd_k10": "0.9279",
+          "predict_crnd_k20": "0.9174",
+          "predict_baseline_entropy_k20": "1.6710",
+          "metadata_source_experiment": "exp_id1_it2",
+          "metadata_dataset": "mental_health_conditions",
+          "metadata_boundary_proximity": 0.23333333333333336,
+          "eval_crnd_k10": 0.927875,
+          "eval_crnd_k20": 0.917379,
+          "eval_baseline_entropy_k20": 1.670951
+        }
+      ]
+    },
+    {
+      "dataset": "medical_transcriptions",
+      "examples": [
+        {
+          "input": "PREOPERATIVE DIAGNOSIS,Subglottic upper tracheal stenosis.,POSTOPERATIVE DIAGNOSIS,Subglottic upper tracheal stenosis.,OPERATION PREFORMED,Direct laryngoscopy, rigid bronchoscopy and dilation of subglottic upper tracheal stenosis.,INDICATIONS FOR THE SURGERY,The patient is a 76-year-old white fem...",
+          "output": "surgical",
+          "metadata_source_experiment": "exp_id1_it5",
+          "metadata_dataset": "medical_transcriptions",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 3716,
+          "metadata_source": "tchebonenko/MedicalTranscriptions",
+          "metadata_original_specialty": "ENT - Otolaryngology",
+          "metadata_crnd": 0.8402992776057792,
+          "metadata_crnd_tfidf_embed": 0.8235294117647058,
+          "metadata_crnd_tfidf_llm": 0.75,
+          "metadata_crnd_embed_llm": 0.9473684210526316,
+          "metadata_kdn_tfidf": 0.2,
+          "metadata_kdn_embed": 0.3,
+          "metadata_kdn_llm": 0.2,
+          "metadata_kdn_avg": 0.2333333333333333,
+          "metadata_cleanlab_tfidf": 0.38114335501678187,
+          "metadata_cleanlab_embed": 0.40622546217612177,
+          "metadata_cleanlab_avg": 0.3936844085964518,
+          "metadata_wann_adapted": 0.29762672528319445,
+          "metadata_cartography_score": 0.012487918594561942,
+          "metadata_cartography_confidence": 0.627927702236635,
+          "metadata_cartography_variability": 0.007841510153680615,
+          "metadata_label_entropy": 0.2333333333333333,
+          "metadata_h1_score": 0.19606983144134846,
+          "metadata_h2_score": 0.19606983144134846,
+          "metadata_h3_score": 0.778,
+          "metadata_h4_score": 0.175,
+          "metadata_quadrant": "Q2_repr_ambiguous",
+          "predict_crnd_noise_rank": "mid",
+          "predict_best_hybrid": "H3",
+          "eval_crnd_k10": 0
+        },
+        {
+          "input": "PREOPERATIVE DIAGNOSES:,1.  Chronic pelvic pain.,2.  Hypermenorrhea.,3.  Desire for future fertility.,4.  Failed conservative medical therapy.,POSTOPERATIVE DIAGNOSES:,1.  Chronic pelvic pain.,2.  Hypermenorrhea.,3.  Desire for future fertility.,4.  Failed conservative medical therapy.,5.  Possib...",
+          "output": "surgical",
+          "metadata_source_experiment": "exp_id1_it5",
+          "metadata_dataset": "medical_transcriptions",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 927,
+          "metadata_source": "tchebonenko/MedicalTranscriptions",
+          "metadata_original_specialty": "Surgery",
+          "metadata_crnd": 0.6626984126984128,
+          "metadata_crnd_tfidf_embed": 0.6666666666666667,
+          "metadata_crnd_tfidf_llm": 0.5714285714285714,
+          "metadata_crnd_embed_llm": 0.75,
+          "metadata_kdn_tfidf": 0.3,
+          "metadata_kdn_embed": 0.5,
+          "metadata_kdn_llm": 0.3,
+          "metadata_kdn_avg": 0.3666666666666667,
+          "metadata_cleanlab_tfidf": 0.40398033473812045,
+          "metadata_cleanlab_embed": 0.7319451133338715,
+          "metadata_cleanlab_avg": 0.5679627240359959,
+          "metadata_wann_adapted": 0.4729716782240371,
+          "metadata_cartography_score": 0.07240925843137762,
+          "metadata_cartography_confidence": 0.6036605134322722,
+          "metadata_cartography_variability": 0.04371061084602809,
+          "metadata_label_entropy": 0.3666666666666667,
+          "metadata_h1_score": 0.24298941798941803,
+          "metadata_h2_score": 0.24298941798941803,
+          "metadata_h3_score": 0.47300000000000003,
+          "metadata_h4_score": 0.20952380952380953,
+          "metadata_quadrant": "Q1_easy",
+          "predict_crnd_noise_rank": "low",
+          "predict_best_hybrid": "H3",
+          "eval_crnd_k10": 0
+        },
+        {
+          "input": "HISTORY:,  The patient was in the intensive care unit setting; he was intubated and sedated.  The patient is a 55-year-old patient, who was admitted secondary to a diagnosis of pancreatitis, developed hypotension and possible sepsis and respiratory as well as renal failure and found to be intubat...",
+          "output": "radiology_consults_obgyn",
+          "metadata_source_experiment": "exp_id1_it5",
+          "metadata_dataset": "medical_transcriptions",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 5,
+          "metadata_row_index": 4241,
+          "metadata_source": "tchebonenko/MedicalTranscriptions",
+          "metadata_original_specialty": "Consult - History and Phy.",
+          "metadata_crnd": 0.9454191033138402,
+          "metadata_crnd_tfidf_embed": 0.8888888888888888,
+          "metadata_crnd_tfidf_llm": 0.9473684210526316,
+          "metadata_crnd_embed_llm": 1.0,
+          "metadata_kdn_tfidf": 0.8,
+          "metadata_kdn_embed": 0.7,
+          "metadata_kdn_llm": 0.5,
+          "metadata_kdn_avg": 0.6666666666666666,
+          "metadata_cleanlab_tfidf": 0.7308665598006436,
+          "metadata_cleanlab_embed": 0.7996788579959488,
+          "metadata_cleanlab_avg": 0.7652727088982962,
+          "metadata_wann_adapted": 0.6962248565120037,
+          "metadata_cartography_score": 0.0648801616245158,
+          "metadata_cartography_confidence": 0.29757922423392263,
+          "metadata_cartography_variability": 0.019306988813196545,
+          "metadata_label_entropy": 0.6666666666666666,
+          "metadata_h1_score": 0.6302794022092267,
+          "metadata_h2_score": 0.6302794022092267,
+          "metadata_h3_score": 1.6429999999999998,
+          "metadata_h4_score": 0.631578947368421,
+          "metadata_quadrant": "Q4_genuinely_ambiguous",
+          "predict_crnd_noise_rank": "high",
+          "predict_best_hybrid": "H3",
+          "eval_crnd_k10": 0
+        }
+      ]
+    }
+  ]
+}

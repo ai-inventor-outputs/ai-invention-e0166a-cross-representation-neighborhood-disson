@@ -1,0 +1,369 @@
+2026-02-17 00:43:42.436 | INFO     | __main__:main:232 - ============================================================
+2026-02-17 00:43:42.436 | INFO     | __main__:main:233 - PHASE 1 — Load & Merge All Dependency Data
+2026-02-17 00:43:42.436 | INFO     | __main__:main:234 - ============================================================
+2026-02-17 00:43:42.437 | INFO     | __main__:load_json:219 - Loading full_method_out.json (5.1 MB)
+2026-02-17 00:43:42.510 | INFO     | __main__:load_json:221 - Loaded full_method_out.json
+2026-02-17 00:43:42.510 | INFO     | __main__:load_json:219 - Loading full_method_out.json (1.3 MB)
+2026-02-17 00:43:42.547 | INFO     | __main__:load_json:221 - Loaded full_method_out.json
+2026-02-17 00:43:42.550 | INFO     | __main__:load_json:219 - Loading full_method_out.json (0.9 MB)
+2026-02-17 00:43:42.574 | INFO     | __main__:load_json:221 - Loaded full_method_out.json
+2026-02-17 00:43:42.577 | INFO     | __main__:load_json:219 - Loading full_method_out.json (6.4 MB)
+2026-02-17 00:43:42.719 | INFO     | __main__:load_json:221 - Loaded full_method_out.json
+2026-02-17 00:43:42.721 | INFO     | __main__:load_json:219 - Loading full_data_out.json (43.1 MB)
+2026-02-17 00:43:43.370 | INFO     | __main__:load_json:221 - Loaded full_data_out.json
+2026-02-17 00:43:43.370 | INFO     | __main__:main:255 -   exp1 medical_abstracts: 1000 examples
+2026-02-17 00:43:43.370 | INFO     | __main__:main:255 -   exp1 mimic_iv_ed_demo: 207 examples
+2026-02-17 00:43:43.370 | INFO     | __main__:main:255 -   exp1 clinical_patient_triage_nl: 31 examples
+2026-02-17 00:43:43.370 | INFO     | __main__:main:255 -   exp1 ohsumed_single: 1000 examples
+2026-02-17 00:43:43.370 | INFO     | __main__:main:255 -   exp1 mental_health_conditions: 1000 examples
+2026-02-17 00:43:43.376 | INFO     | __main__:main:293 - Datasets: ['medical_abstracts', 'mimic_iv_ed_demo', 'clinical_patient_triage_nl', 'ohsumed_single', 'mental_health_conditions']
+2026-02-17 00:43:43.377 | INFO     | __main__:main:294 - Phase 1 complete in 0.9s
+2026-02-17 00:43:43.377 | INFO     | __main__:main:299 - ============================================================
+2026-02-17 00:43:43.377 | INFO     | __main__:main:300 - PHASE 2 — Class-Level CRND Characterization
+2026-02-17 00:43:43.377 | INFO     | __main__:main:301 - ============================================================
+2026-02-17 00:43:43.377 | INFO     | __main__:main:309 -   Processing medical_abstracts (1000 examples)
+2026-02-17 00:43:43.410 | INFO     | __main__:main:397 -     KW H=41.2505, p=0.000000, Cliff's d=0.3003
+2026-02-17 00:43:43.410 | INFO     | __main__:main:309 -   Processing mimic_iv_ed_demo (207 examples)
+2026-02-17 00:43:43.415 | INFO     | __main__:main:397 -     KW H=5.7566, p=0.124070, Cliff's d=0.8333
+2026-02-17 00:43:43.415 | INFO     | __main__:main:309 -   Processing clinical_patient_triage_nl (31 examples)
+2026-02-17 00:43:43.420 | INFO     | __main__:main:397 -     KW H=9.4226, p=0.051362, Cliff's d=1.0000
+2026-02-17 00:43:43.420 | INFO     | __main__:main:309 -   Processing ohsumed_single (1000 examples)
+2026-02-17 00:43:43.452 | INFO     | __main__:main:397 -     KW H=18.8263, p=0.008749, Cliff's d=0.8581
+2026-02-17 00:43:43.453 | INFO     | __main__:main:309 -   Processing mental_health_conditions (1000 examples)
+2026-02-17 00:43:43.492 | INFO     | __main__:main:397 -     KW H=427.1195, p=0.000000, Cliff's d=0.9268
+2026-02-17 00:43:43.492 | INFO     | __main__:main:399 - Phase 2 complete in 0.1s
+2026-02-17 00:43:43.492 | INFO     | __main__:main:404 - ============================================================
+2026-02-17 00:43:43.492 | INFO     | __main__:main:405 - PHASE 3 — Niche Overlap Topology Analysis
+2026-02-17 00:43:43.492 | INFO     | __main__:main:406 - ============================================================
+2026-02-17 00:43:43.495 | INFO     | __main__:main:479 -   medical_abstracts: 6 topology shifts, max_mag=0.6430
+2026-02-17 00:43:43.496 | INFO     | __main__:main:479 -   mimic_iv_ed_demo: 6 topology shifts, max_mag=0.4044
+2026-02-17 00:43:43.498 | INFO     | __main__:main:479 -   clinical_patient_triage_nl: 6 topology shifts, max_mag=0.9436
+2026-02-17 00:43:43.500 | INFO     | __main__:main:479 -   ohsumed_single: 6 topology shifts, max_mag=0.6918
+2026-02-17 00:43:43.503 | INFO     | __main__:main:479 -   mental_health_conditions: 6 topology shifts, max_mag=0.7388
+2026-02-17 00:43:43.503 | INFO     | __main__:main:512 - Phase 3 complete in 0.0s
+2026-02-17 00:43:43.503 | INFO     | __main__:main:517 - ============================================================
+2026-02-17 00:43:43.503 | INFO     | __main__:main:518 - PHASE 4 — 2×2 Diagnostic Typology
+2026-02-17 00:43:43.503 | INFO     | __main__:main:519 - ============================================================
+2026-02-17 00:43:43.503 | INFO     | __main__:main:526 -   Processing medical_abstracts (1000 examples)
+2026-02-17 00:43:43.510 | INFO     | __main__:main:626 -     Chi2=138.04, p=0.000000, Cramér's V=0.2145
+2026-02-17 00:43:43.510 | INFO     | __main__:main:627 -     Quadrants: {'easy': 232, 'standard_noise': 503, 'representation_sensitive': 20, 'genuinely_ambiguous': 245}
+2026-02-17 00:43:43.510 | INFO     | __main__:main:526 -   Processing mimic_iv_ed_demo (207 examples)
+2026-02-17 00:43:43.512 | INFO     | __main__:main:626 -     Chi2=6.80, p=0.657944, Cramér's V=0.1046
+2026-02-17 00:43:43.512 | INFO     | __main__:main:627 -     Quadrants: {'easy': 51, 'standard_noise': 101, 'representation_sensitive': 17, 'genuinely_ambiguous': 38}
+2026-02-17 00:43:43.512 | INFO     | __main__:main:526 -   Processing clinical_patient_triage_nl (31 examples)
+2026-02-17 00:43:43.514 | INFO     | __main__:main:626 -     Chi2=9.70, p=0.837995, Cramér's V=0.3230
+2026-02-17 00:43:43.514 | INFO     | __main__:main:627 -     Quadrants: {'easy': 6, 'standard_noise': 17, 'representation_sensitive': 3, 'genuinely_ambiguous': 5}
+2026-02-17 00:43:43.514 | INFO     | __main__:main:526 -   Processing ohsumed_single (1000 examples)
+2026-02-17 00:43:43.521 | INFO     | __main__:main:626 -     Chi2=270.28, p=0.000000, Cramér's V=0.3002
+2026-02-17 00:43:43.521 | INFO     | __main__:main:627 -     Quadrants: {'easy': 219, 'standard_noise': 531, 'representation_sensitive': 31, 'genuinely_ambiguous': 219}
+2026-02-17 00:43:43.522 | INFO     | __main__:main:526 -   Processing mental_health_conditions (1000 examples)
+2026-02-17 00:43:43.526 | INFO     | __main__:main:626 -     Chi2=387.29, p=0.000000, Cramér's V=0.4400
+2026-02-17 00:43:43.526 | INFO     | __main__:main:627 -     Quadrants: {'easy': 252, 'standard_noise': 479, 'representation_sensitive': 0, 'genuinely_ambiguous': 269}
+2026-02-17 00:43:43.526 | INFO     | __main__:main:629 - Phase 4 complete in 0.0s
+2026-02-17 00:43:43.526 | INFO     | __main__:main:634 - ============================================================
+2026-02-17 00:43:43.527 | INFO     | __main__:main:635 - PHASE 5 — Clinical Interpretability Case Studies
+2026-02-17 00:43:43.527 | INFO     | __main__:main:636 - ============================================================
+2026-02-17 00:43:43.529 | INFO     | __main__:main:705 -   medical_abstracts: high_boundary=6/10, low_boundary=1/10
+2026-02-17 00:43:43.530 | INFO     | __main__:main:703 -   mimic_iv_ed_demo: ESI-2/3 boundary fraction in high-CRND: 8/10
+2026-02-17 00:43:43.530 | INFO     | __main__:main:705 -   mimic_iv_ed_demo: high_boundary=5/10, low_boundary=2/10
+2026-02-17 00:43:43.530 | INFO     | __main__:main:707 - Phase 5 complete in 0.0s
+2026-02-17 00:43:43.530 | INFO     | __main__:main:712 - ============================================================
+2026-02-17 00:43:43.530 | INFO     | __main__:main:713 - PHASE 6 — Comparison with Standard ML Complexity Measures
+2026-02-17 00:43:43.530 | INFO     | __main__:main:714 - ============================================================
+2026-02-17 00:43:43.531 | INFO     | __main__:main:755 -   medical_abstracts: building TF-IDF features for 1000 examples
+2026-02-17 00:43:44.379 | INFO     | __main__:main:763 -     F1_Fisher=0.0222, N1=0.7850, N2=242317.2116
+2026-02-17 00:43:45.627 | INFO     | __main__:main:933 -     Spearman CRND vs Fisher: rho=-0.1000, p=0.8729
+2026-02-17 00:43:45.627 | INFO     | __main__:main:934 -     Spearman CRND vs N1: rho=0.1000, p=0.8729
+2026-02-17 00:43:45.628 | INFO     | __main__:main:935 -     Incremental R²: 0.059101
+2026-02-17 00:43:45.628 | INFO     | __main__:main:755 -   mimic_iv_ed_demo: building TF-IDF features for 207 examples
+2026-02-17 00:43:45.797 | INFO     | __main__:main:763 -     F1_Fisher=0.2767, N1=0.4638, N2=0.9878
+2026-02-17 00:43:45.967 | INFO     | __main__:main:933 -     Spearman CRND vs Fisher: rho=1.0000, p=0.0000
+2026-02-17 00:43:45.968 | INFO     | __main__:main:934 -     Spearman CRND vs N1: rho=-1.0000, p=0.0000
+2026-02-17 00:43:45.968 | INFO     | __main__:main:935 -     Incremental R²: 0.049750
+2026-02-17 00:43:45.968 | INFO     | __main__:main:755 -   clinical_patient_triage_nl: building TF-IDF features for 31 examples
+2026-02-17 00:43:46.015 | INFO     | __main__:main:763 -     F1_Fisher=1.7925, N1=0.5806, N2=1.0937
+2026-02-17 00:43:46.133 | INFO     | __main__:main:933 -     Spearman CRND vs Fisher: rho=-0.6000, p=0.2848
+2026-02-17 00:43:46.134 | INFO     | __main__:main:934 -     Spearman CRND vs N1: rho=0.3000, p=0.6238
+2026-02-17 00:43:46.135 | INFO     | __main__:main:935 -     Incremental R²: 0.007547
+2026-02-17 00:43:46.138 | INFO     | __main__:main:755 -   ohsumed_single: building TF-IDF features for 1000 examples
+2026-02-17 00:43:46.904 | INFO     | __main__:main:763 -     F1_Fisher=0.3369, N1=0.5950, N2=1.0166
+2026-02-17 00:43:48.548 | INFO     | __main__:main:933 -     Spearman CRND vs Fisher: rho=0.5714, p=0.1390
+2026-02-17 00:43:48.548 | INFO     | __main__:main:934 -     Spearman CRND vs N1: rho=0.2857, p=0.4927
+2026-02-17 00:43:48.549 | INFO     | __main__:main:935 -     Incremental R²: 0.107724
+2026-02-17 00:43:48.550 | INFO     | __main__:main:755 -   mental_health_conditions: building TF-IDF features for 1000 examples
+2026-02-17 00:43:49.085 | INFO     | __main__:main:763 -     F1_Fisher=0.7364, N1=0.4410, N2=0.9539
+2026-02-17 00:43:50.165 | INFO     | __main__:main:933 -     Spearman CRND vs Fisher: rho=-0.8571, p=0.0137
+2026-02-17 00:43:50.165 | INFO     | __main__:main:934 -     Spearman CRND vs N1: rho=1.0000, p=0.0000
+2026-02-17 00:43:50.165 | INFO     | __main__:main:935 -     Incremental R²: 0.173146
+2026-02-17 00:43:50.166 | INFO     | __main__:main:937 - Phase 6 complete in 6.6s
+2026-02-17 00:43:50.166 | INFO     | __main__:main:942 - ============================================================
+2026-02-17 00:43:50.166 | INFO     | __main__:main:943 - PHASE 7 — Aggregate Synthesis
+2026-02-17 00:43:50.166 | INFO     | __main__:main:944 - ============================================================
+2026-02-17 00:43:50.166 | INFO     | __main__:main:1035 - Aggregate metrics:
+2026-02-17 00:43:50.166 | INFO     | __main__:main:1037 -   eval_n_datasets: 5
+2026-02-17 00:43:50.166 | INFO     | __main__:main:1037 -   eval_n_total_examples: 3238
+2026-02-17 00:43:50.166 | INFO     | __main__:main:1037 -   eval_kruskal_wallis_significant_count: 3
+2026-02-17 00:43:50.167 | INFO     | __main__:main:1037 -   eval_mean_topology_shift_tau: 0.3066168552854904
+2026-02-17 00:43:50.167 | INFO     | __main__:main:1037 -   eval_mean_cramers_v: 0.2764726059440447
+2026-02-17 00:43:50.167 | INFO     | __main__:main:1037 -   eval_quadrant_genuinely_ambiguous_overall_frac: 0.23965410747374924
+2026-02-17 00:43:50.167 | INFO     | __main__:main:1037 -   eval_crnd_vs_complexity_incremental_r2: 0.07945340902975936
+2026-02-17 00:43:50.167 | INFO     | __main__:main:1037 -   eval_fisher_crnd_spearman_pooled: 0.002857142857142847
+2026-02-17 00:43:50.167 | INFO     | __main__:main:1037 -   eval_n1_crnd_spearman_pooled: 0.13714285714285715
+2026-02-17 00:43:50.167 | INFO     | __main__:main:1037 -   eval_high_shift_vs_low_shift_tau_diff: 0.0
+2026-02-17 00:43:50.167 | INFO     | __main__:main:1037 -   eval_case_study_high_crnd_boundary_rate: 0.55
+2026-02-17 00:43:50.167 | INFO     | __main__:main:1037 -   eval_diagnostic_typology_chi2_significant_count: 3
+2026-02-17 00:43:50.167 | INFO     | __main__:main:1037 -   eval_verdict_contribution_beyond_complexity: 1
+2026-02-17 00:43:50.167 | INFO     | __main__:main:1037 -   eval_verdict_topology_informative: 1
+2026-02-17 00:43:50.168 | INFO     | __main__:main:1037 -   eval_verdict_typology_useful: 1
+2026-02-17 00:43:50.168 | INFO     | __main__:main:1039 - Phase 7 complete in 0.0s
+2026-02-17 00:43:50.168 | INFO     | __main__:main:1044 - ============================================================
+2026-02-17 00:43:50.168 | INFO     | __main__:main:1045 - Building output JSON
+2026-02-17 00:43:50.168 | INFO     | __main__:main:1046 - ============================================================
+2026-02-17 00:43:50.299 | INFO     | __main__:main:1147 - Saved output to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_4/gen_art/eval_id2_it4__opus/eval_out.json (3341.5 KB)
+2026-02-17 00:43:50.299 | INFO     | __main__:main:1150 - Total evaluation time: 7.9s (0.1min)
+2026-02-17 00:43:55.420 | INFO     | __main__:main:232 - ============================================================
+2026-02-17 00:43:55.420 | INFO     | __main__:main:233 - PHASE 1 — Load & Merge All Dependency Data
+2026-02-17 00:43:55.420 | INFO     | __main__:main:234 - ============================================================
+2026-02-17 00:43:55.420 | INFO     | __main__:load_json:219 - Loading full_method_out.json (5.1 MB)
+2026-02-17 00:43:55.481 | INFO     | __main__:load_json:221 - Loaded full_method_out.json
+2026-02-17 00:43:55.481 | INFO     | __main__:load_json:219 - Loading full_method_out.json (1.3 MB)
+2026-02-17 00:43:55.490 | INFO     | __main__:load_json:221 - Loaded full_method_out.json
+2026-02-17 00:43:55.491 | INFO     | __main__:load_json:219 - Loading full_method_out.json (0.9 MB)
+2026-02-17 00:43:55.498 | INFO     | __main__:load_json:221 - Loaded full_method_out.json
+2026-02-17 00:43:55.498 | INFO     | __main__:load_json:219 - Loading full_method_out.json (6.4 MB)
+2026-02-17 00:43:55.561 | INFO     | __main__:load_json:221 - Loaded full_method_out.json
+2026-02-17 00:43:55.561 | INFO     | __main__:load_json:219 - Loading full_data_out.json (43.1 MB)
+2026-02-17 00:43:56.151 | INFO     | __main__:load_json:221 - Loaded full_data_out.json
+2026-02-17 00:43:56.151 | INFO     | __main__:main:255 -   exp1 medical_abstracts: 1000 examples
+2026-02-17 00:43:56.152 | INFO     | __main__:main:255 -   exp1 mimic_iv_ed_demo: 207 examples
+2026-02-17 00:43:56.152 | INFO     | __main__:main:255 -   exp1 clinical_patient_triage_nl: 31 examples
+2026-02-17 00:43:56.152 | INFO     | __main__:main:255 -   exp1 ohsumed_single: 1000 examples
+2026-02-17 00:43:56.152 | INFO     | __main__:main:255 -   exp1 mental_health_conditions: 1000 examples
+2026-02-17 00:43:56.160 | INFO     | __main__:main:293 - Datasets: ['medical_abstracts', 'mimic_iv_ed_demo', 'clinical_patient_triage_nl', 'ohsumed_single', 'mental_health_conditions']
+2026-02-17 00:43:56.160 | INFO     | __main__:main:294 - Phase 1 complete in 0.7s
+2026-02-17 00:43:56.160 | INFO     | __main__:main:299 - ============================================================
+2026-02-17 00:43:56.160 | INFO     | __main__:main:300 - PHASE 2 — Class-Level CRND Characterization
+2026-02-17 00:43:56.161 | INFO     | __main__:main:301 - ============================================================
+2026-02-17 00:43:56.161 | INFO     | __main__:main:309 -   Processing medical_abstracts (1000 examples)
+2026-02-17 00:43:56.195 | INFO     | __main__:main:397 -     KW H=41.2505, p=0.000000, Cliff's d=0.3003
+2026-02-17 00:43:56.195 | INFO     | __main__:main:309 -   Processing mimic_iv_ed_demo (207 examples)
+2026-02-17 00:43:56.199 | INFO     | __main__:main:397 -     KW H=5.7566, p=0.124070, Cliff's d=0.8333
+2026-02-17 00:43:56.199 | INFO     | __main__:main:309 -   Processing clinical_patient_triage_nl (31 examples)
+2026-02-17 00:43:56.204 | INFO     | __main__:main:397 -     KW H=9.4226, p=0.051362, Cliff's d=1.0000
+2026-02-17 00:43:56.204 | INFO     | __main__:main:309 -   Processing ohsumed_single (1000 examples)
+2026-02-17 00:43:56.235 | INFO     | __main__:main:397 -     KW H=18.8263, p=0.008749, Cliff's d=0.8581
+2026-02-17 00:43:56.236 | INFO     | __main__:main:309 -   Processing mental_health_conditions (1000 examples)
+2026-02-17 00:43:56.266 | INFO     | __main__:main:397 -     KW H=427.1195, p=0.000000, Cliff's d=0.9268
+2026-02-17 00:43:56.266 | INFO     | __main__:main:399 - Phase 2 complete in 0.1s
+2026-02-17 00:43:56.267 | INFO     | __main__:main:404 - ============================================================
+2026-02-17 00:43:56.267 | INFO     | __main__:main:405 - PHASE 3 — Niche Overlap Topology Analysis
+2026-02-17 00:43:56.267 | INFO     | __main__:main:406 - ============================================================
+2026-02-17 00:43:56.269 | INFO     | __main__:main:479 -   medical_abstracts: 6 topology shifts, max_mag=0.6430
+2026-02-17 00:43:56.271 | INFO     | __main__:main:479 -   mimic_iv_ed_demo: 6 topology shifts, max_mag=0.4044
+2026-02-17 00:43:56.272 | INFO     | __main__:main:479 -   clinical_patient_triage_nl: 6 topology shifts, max_mag=0.9436
+2026-02-17 00:43:56.274 | INFO     | __main__:main:479 -   ohsumed_single: 6 topology shifts, max_mag=0.6918
+2026-02-17 00:43:56.277 | INFO     | __main__:main:479 -   mental_health_conditions: 6 topology shifts, max_mag=0.7388
+2026-02-17 00:43:56.277 | INFO     | __main__:main:512 - Phase 3 complete in 0.0s
+2026-02-17 00:43:56.277 | INFO     | __main__:main:517 - ============================================================
+2026-02-17 00:43:56.277 | INFO     | __main__:main:518 - PHASE 4 — 2×2 Diagnostic Typology
+2026-02-17 00:43:56.277 | INFO     | __main__:main:519 - ============================================================
+2026-02-17 00:43:56.278 | INFO     | __main__:main:526 -   Processing medical_abstracts (1000 examples)
+2026-02-17 00:43:56.284 | INFO     | __main__:main:626 -     Chi2=138.04, p=0.000000, Cramér's V=0.2145
+2026-02-17 00:43:56.285 | INFO     | __main__:main:627 -     Quadrants: {'easy': 232, 'standard_noise': 503, 'representation_sensitive': 20, 'genuinely_ambiguous': 245}
+2026-02-17 00:43:56.285 | INFO     | __main__:main:526 -   Processing mimic_iv_ed_demo (207 examples)
+2026-02-17 00:43:56.287 | INFO     | __main__:main:626 -     Chi2=6.80, p=0.657944, Cramér's V=0.1046
+2026-02-17 00:43:56.287 | INFO     | __main__:main:627 -     Quadrants: {'easy': 51, 'standard_noise': 101, 'representation_sensitive': 17, 'genuinely_ambiguous': 38}
+2026-02-17 00:43:56.287 | INFO     | __main__:main:526 -   Processing clinical_patient_triage_nl (31 examples)
+2026-02-17 00:43:56.289 | INFO     | __main__:main:626 -     Chi2=9.70, p=0.837995, Cramér's V=0.3230
+2026-02-17 00:43:56.289 | INFO     | __main__:main:627 -     Quadrants: {'easy': 6, 'standard_noise': 17, 'representation_sensitive': 3, 'genuinely_ambiguous': 5}
+2026-02-17 00:43:56.289 | INFO     | __main__:main:526 -   Processing ohsumed_single (1000 examples)
+2026-02-17 00:43:56.296 | INFO     | __main__:main:626 -     Chi2=270.28, p=0.000000, Cramér's V=0.3002
+2026-02-17 00:43:56.296 | INFO     | __main__:main:627 -     Quadrants: {'easy': 219, 'standard_noise': 531, 'representation_sensitive': 31, 'genuinely_ambiguous': 219}
+2026-02-17 00:43:56.296 | INFO     | __main__:main:526 -   Processing mental_health_conditions (1000 examples)
+2026-02-17 00:43:56.302 | INFO     | __main__:main:626 -     Chi2=387.29, p=0.000000, Cramér's V=0.4400
+2026-02-17 00:43:56.302 | INFO     | __main__:main:627 -     Quadrants: {'easy': 252, 'standard_noise': 479, 'representation_sensitive': 0, 'genuinely_ambiguous': 269}
+2026-02-17 00:43:56.302 | INFO     | __main__:main:629 - Phase 4 complete in 0.0s
+2026-02-17 00:43:56.302 | INFO     | __main__:main:634 - ============================================================
+2026-02-17 00:43:56.302 | INFO     | __main__:main:635 - PHASE 5 — Clinical Interpretability Case Studies
+2026-02-17 00:43:56.302 | INFO     | __main__:main:636 - ============================================================
+2026-02-17 00:43:56.305 | INFO     | __main__:main:705 -   medical_abstracts: high_boundary=6/10, low_boundary=1/10
+2026-02-17 00:43:56.306 | INFO     | __main__:main:703 -   mimic_iv_ed_demo: ESI-2/3 boundary fraction in high-CRND: 8/10
+2026-02-17 00:43:56.306 | INFO     | __main__:main:705 -   mimic_iv_ed_demo: high_boundary=5/10, low_boundary=2/10
+2026-02-17 00:43:56.306 | INFO     | __main__:main:707 - Phase 5 complete in 0.0s
+2026-02-17 00:43:56.306 | INFO     | __main__:main:712 - ============================================================
+2026-02-17 00:43:56.306 | INFO     | __main__:main:713 - PHASE 6 — Comparison with Standard ML Complexity Measures
+2026-02-17 00:43:56.306 | INFO     | __main__:main:714 - ============================================================
+2026-02-17 00:43:56.308 | INFO     | __main__:main:755 -   medical_abstracts: building TF-IDF features for 1000 examples
+2026-02-17 00:43:56.744 | INFO     | __main__:main:763 -     F1_Fisher=0.0222, N1=0.7850, N2=286089.7982
+2026-02-17 00:43:57.269 | INFO     | __main__:main:933 -     Spearman CRND vs Fisher: rho=-0.1000, p=0.8729
+2026-02-17 00:43:57.269 | INFO     | __main__:main:934 -     Spearman CRND vs N1: rho=0.1000, p=0.8729
+2026-02-17 00:43:57.269 | INFO     | __main__:main:935 -     Incremental R²: 0.059101
+2026-02-17 00:43:57.270 | INFO     | __main__:main:755 -   mimic_iv_ed_demo: building TF-IDF features for 207 examples
+2026-02-17 00:43:57.311 | INFO     | __main__:main:763 -     F1_Fisher=0.2767, N1=0.4638, N2=0.9878
+2026-02-17 00:43:57.362 | INFO     | __main__:main:933 -     Spearman CRND vs Fisher: rho=1.0000, p=0.0000
+2026-02-17 00:43:57.362 | INFO     | __main__:main:934 -     Spearman CRND vs N1: rho=-1.0000, p=0.0000
+2026-02-17 00:43:57.362 | INFO     | __main__:main:935 -     Incremental R²: 0.049750
+2026-02-17 00:43:57.362 | INFO     | __main__:main:755 -   clinical_patient_triage_nl: building TF-IDF features for 31 examples
+2026-02-17 00:43:57.371 | INFO     | __main__:main:763 -     F1_Fisher=1.7327, N1=0.5806, N2=1.0943
+2026-02-17 00:43:57.401 | INFO     | __main__:main:933 -     Spearman CRND vs Fisher: rho=-0.6000, p=0.2848
+2026-02-17 00:43:57.401 | INFO     | __main__:main:934 -     Spearman CRND vs N1: rho=0.3000, p=0.6238
+2026-02-17 00:43:57.401 | INFO     | __main__:main:935 -     Incremental R²: 0.000188
+2026-02-17 00:43:57.402 | INFO     | __main__:main:755 -   ohsumed_single: building TF-IDF features for 1000 examples
+2026-02-17 00:43:57.978 | INFO     | __main__:main:763 -     F1_Fisher=0.3369, N1=0.5950, N2=1.0166
+2026-02-17 00:43:58.832 | INFO     | __main__:main:933 -     Spearman CRND vs Fisher: rho=0.5714, p=0.1390
+2026-02-17 00:43:58.832 | INFO     | __main__:main:934 -     Spearman CRND vs N1: rho=0.2857, p=0.4927
+2026-02-17 00:43:58.832 | INFO     | __main__:main:935 -     Incremental R²: 0.107724
+2026-02-17 00:43:58.833 | INFO     | __main__:main:755 -   mental_health_conditions: building TF-IDF features for 1000 examples
+2026-02-17 00:43:59.260 | INFO     | __main__:main:763 -     F1_Fisher=0.7364, N1=0.4410, N2=0.9539
+2026-02-17 00:44:00.201 | INFO     | __main__:main:933 -     Spearman CRND vs Fisher: rho=-0.8571, p=0.0137
+2026-02-17 00:44:00.201 | INFO     | __main__:main:934 -     Spearman CRND vs N1: rho=1.0000, p=0.0000
+2026-02-17 00:44:00.201 | INFO     | __main__:main:935 -     Incremental R²: 0.173146
+2026-02-17 00:44:00.201 | INFO     | __main__:main:937 - Phase 6 complete in 3.9s
+2026-02-17 00:44:00.201 | INFO     | __main__:main:942 - ============================================================
+2026-02-17 00:44:00.201 | INFO     | __main__:main:943 - PHASE 7 — Aggregate Synthesis
+2026-02-17 00:44:00.201 | INFO     | __main__:main:944 - ============================================================
+2026-02-17 00:44:00.201 | INFO     | __main__:main:1035 - Aggregate metrics:
+2026-02-17 00:44:00.201 | INFO     | __main__:main:1037 -   eval_n_datasets: 5
+2026-02-17 00:44:00.201 | INFO     | __main__:main:1037 -   eval_n_total_examples: 3238
+2026-02-17 00:44:00.202 | INFO     | __main__:main:1037 -   eval_kruskal_wallis_significant_count: 3
+2026-02-17 00:44:00.202 | INFO     | __main__:main:1037 -   eval_mean_topology_shift_tau: 0.3066168552854904
+2026-02-17 00:44:00.202 | INFO     | __main__:main:1037 -   eval_mean_cramers_v: 0.2764726059440447
+2026-02-17 00:44:00.202 | INFO     | __main__:main:1037 -   eval_quadrant_genuinely_ambiguous_overall_frac: 0.23965410747374924
+2026-02-17 00:44:00.202 | INFO     | __main__:main:1037 -   eval_crnd_vs_complexity_incremental_r2: 0.07798160865637076
+2026-02-17 00:44:00.202 | INFO     | __main__:main:1037 -   eval_fisher_crnd_spearman_pooled: 0.002857142857142847
+2026-02-17 00:44:00.202 | INFO     | __main__:main:1037 -   eval_n1_crnd_spearman_pooled: 0.13714285714285715
+2026-02-17 00:44:00.202 | INFO     | __main__:main:1037 -   eval_high_shift_vs_low_shift_tau_diff: 0.0
+2026-02-17 00:44:00.202 | INFO     | __main__:main:1037 -   eval_case_study_high_crnd_boundary_rate: 0.55
+2026-02-17 00:44:00.202 | INFO     | __main__:main:1037 -   eval_diagnostic_typology_chi2_significant_count: 3
+2026-02-17 00:44:00.202 | INFO     | __main__:main:1037 -   eval_verdict_contribution_beyond_complexity: 1
+2026-02-17 00:44:00.202 | INFO     | __main__:main:1037 -   eval_verdict_topology_informative: 1
+2026-02-17 00:44:00.203 | INFO     | __main__:main:1037 -   eval_verdict_typology_useful: 1
+2026-02-17 00:44:00.203 | INFO     | __main__:main:1039 - Phase 7 complete in 0.0s
+2026-02-17 00:44:00.203 | INFO     | __main__:main:1044 - ============================================================
+2026-02-17 00:44:00.203 | INFO     | __main__:main:1045 - Building output JSON
+2026-02-17 00:44:00.203 | INFO     | __main__:main:1046 - ============================================================
+2026-02-17 00:44:00.315 | INFO     | __main__:main:1147 - Saved output to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_4/gen_art/eval_id2_it4__opus/eval_out.json (3341.5 KB)
+2026-02-17 00:44:00.315 | INFO     | __main__:main:1150 - Total evaluation time: 4.9s (0.1min)
+2026-02-17 00:45:53.069 | INFO     | __main__:main:235 - ============================================================
+2026-02-17 00:45:53.069 | INFO     | __main__:main:236 - PHASE 1 — Load & Merge All Dependency Data
+2026-02-17 00:45:53.069 | INFO     | __main__:main:237 - ============================================================
+2026-02-17 00:45:53.070 | INFO     | __main__:load_json:222 - Loading full_method_out.json (5.1 MB)
+2026-02-17 00:45:53.126 | INFO     | __main__:load_json:224 - Loaded full_method_out.json
+2026-02-17 00:45:53.126 | INFO     | __main__:load_json:222 - Loading full_method_out.json (1.3 MB)
+2026-02-17 00:45:53.135 | INFO     | __main__:load_json:224 - Loaded full_method_out.json
+2026-02-17 00:45:53.136 | INFO     | __main__:load_json:222 - Loading full_method_out.json (0.9 MB)
+2026-02-17 00:45:53.143 | INFO     | __main__:load_json:224 - Loaded full_method_out.json
+2026-02-17 00:45:53.143 | INFO     | __main__:load_json:222 - Loading full_method_out.json (6.4 MB)
+2026-02-17 00:45:53.205 | INFO     | __main__:load_json:224 - Loaded full_method_out.json
+2026-02-17 00:45:53.205 | INFO     | __main__:load_json:222 - Loading full_data_out.json (43.1 MB)
+2026-02-17 00:45:53.781 | INFO     | __main__:load_json:224 - Loaded full_data_out.json
+2026-02-17 00:45:53.781 | INFO     | __main__:main:258 -   exp1 medical_abstracts: 1000 examples
+2026-02-17 00:45:53.781 | INFO     | __main__:main:258 -   exp1 mimic_iv_ed_demo: 207 examples
+2026-02-17 00:45:53.782 | INFO     | __main__:main:258 -   exp1 clinical_patient_triage_nl: 31 examples
+2026-02-17 00:45:53.782 | INFO     | __main__:main:258 -   exp1 ohsumed_single: 1000 examples
+2026-02-17 00:45:53.782 | INFO     | __main__:main:258 -   exp1 mental_health_conditions: 1000 examples
+2026-02-17 00:45:53.787 | INFO     | __main__:main:296 - Datasets: ['medical_abstracts', 'mimic_iv_ed_demo', 'clinical_patient_triage_nl', 'ohsumed_single', 'mental_health_conditions']
+2026-02-17 00:45:53.788 | INFO     | __main__:main:297 - Phase 1 complete in 0.7s
+2026-02-17 00:45:53.788 | INFO     | __main__:main:302 - ============================================================
+2026-02-17 00:45:53.788 | INFO     | __main__:main:303 - PHASE 2 — Class-Level CRND Characterization
+2026-02-17 00:45:53.788 | INFO     | __main__:main:304 - ============================================================
+2026-02-17 00:45:53.788 | INFO     | __main__:main:312 -   Processing medical_abstracts (1000 examples)
+2026-02-17 00:45:53.810 | INFO     | __main__:main:400 -     KW H=41.2505, p=0.000000, Cliff's d=0.3003
+2026-02-17 00:45:53.810 | INFO     | __main__:main:312 -   Processing mimic_iv_ed_demo (207 examples)
+2026-02-17 00:45:53.814 | INFO     | __main__:main:400 -     KW H=5.7566, p=0.124070, Cliff's d=0.8333
+2026-02-17 00:45:53.814 | INFO     | __main__:main:312 -   Processing clinical_patient_triage_nl (31 examples)
+2026-02-17 00:45:53.818 | INFO     | __main__:main:400 -     KW H=9.4226, p=0.051362, Cliff's d=1.0000
+2026-02-17 00:45:53.818 | INFO     | __main__:main:312 -   Processing ohsumed_single (1000 examples)
+2026-02-17 00:45:53.844 | INFO     | __main__:main:400 -     KW H=18.8263, p=0.008749, Cliff's d=0.8581
+2026-02-17 00:45:53.845 | INFO     | __main__:main:312 -   Processing mental_health_conditions (1000 examples)
+2026-02-17 00:45:53.873 | INFO     | __main__:main:400 -     KW H=427.1195, p=0.000000, Cliff's d=0.9268
+2026-02-17 00:45:53.873 | INFO     | __main__:main:402 - Phase 2 complete in 0.1s
+2026-02-17 00:45:53.873 | INFO     | __main__:main:407 - ============================================================
+2026-02-17 00:45:53.874 | INFO     | __main__:main:408 - PHASE 3 — Niche Overlap Topology Analysis
+2026-02-17 00:45:53.874 | INFO     | __main__:main:409 - ============================================================
+2026-02-17 00:45:53.876 | INFO     | __main__:main:482 -   medical_abstracts: 6 topology shifts, max_mag=0.6430
+2026-02-17 00:45:53.878 | INFO     | __main__:main:482 -   mimic_iv_ed_demo: 6 topology shifts, max_mag=0.4044
+2026-02-17 00:45:53.879 | INFO     | __main__:main:482 -   clinical_patient_triage_nl: 6 topology shifts, max_mag=0.9436
+2026-02-17 00:45:53.881 | INFO     | __main__:main:482 -   ohsumed_single: 6 topology shifts, max_mag=0.6918
+2026-02-17 00:45:53.884 | INFO     | __main__:main:482 -   mental_health_conditions: 6 topology shifts, max_mag=0.7388
+2026-02-17 00:45:53.884 | INFO     | __main__:main:515 - Phase 3 complete in 0.0s
+2026-02-17 00:45:53.884 | INFO     | __main__:main:520 - ============================================================
+2026-02-17 00:45:53.884 | INFO     | __main__:main:521 - PHASE 4 — 2×2 Diagnostic Typology
+2026-02-17 00:45:53.884 | INFO     | __main__:main:522 - ============================================================
+2026-02-17 00:45:53.884 | INFO     | __main__:main:529 -   Processing medical_abstracts (1000 examples)
+2026-02-17 00:45:53.890 | INFO     | __main__:main:629 -     Chi2=138.04, p=0.000000, Cramér's V=0.2145
+2026-02-17 00:45:53.891 | INFO     | __main__:main:630 -     Quadrants: {'easy': 232, 'standard_noise': 503, 'representation_sensitive': 20, 'genuinely_ambiguous': 245}
+2026-02-17 00:45:53.891 | INFO     | __main__:main:529 -   Processing mimic_iv_ed_demo (207 examples)
+2026-02-17 00:45:53.893 | INFO     | __main__:main:629 -     Chi2=6.80, p=0.657944, Cramér's V=0.1046
+2026-02-17 00:45:53.893 | INFO     | __main__:main:630 -     Quadrants: {'easy': 51, 'standard_noise': 101, 'representation_sensitive': 17, 'genuinely_ambiguous': 38}
+2026-02-17 00:45:53.894 | INFO     | __main__:main:529 -   Processing clinical_patient_triage_nl (31 examples)
+2026-02-17 00:45:53.895 | INFO     | __main__:main:629 -     Chi2=9.70, p=0.837995, Cramér's V=0.3230
+2026-02-17 00:45:53.895 | INFO     | __main__:main:630 -     Quadrants: {'easy': 6, 'standard_noise': 17, 'representation_sensitive': 3, 'genuinely_ambiguous': 5}
+2026-02-17 00:45:53.895 | INFO     | __main__:main:529 -   Processing ohsumed_single (1000 examples)
+2026-02-17 00:45:53.902 | INFO     | __main__:main:629 -     Chi2=270.28, p=0.000000, Cramér's V=0.3002
+2026-02-17 00:45:53.902 | INFO     | __main__:main:630 -     Quadrants: {'easy': 219, 'standard_noise': 531, 'representation_sensitive': 31, 'genuinely_ambiguous': 219}
+2026-02-17 00:45:53.902 | INFO     | __main__:main:529 -   Processing mental_health_conditions (1000 examples)
+2026-02-17 00:45:53.908 | INFO     | __main__:main:629 -     Chi2=387.29, p=0.000000, Cramér's V=0.4400
+2026-02-17 00:45:53.909 | INFO     | __main__:main:630 -     Quadrants: {'easy': 252, 'standard_noise': 479, 'representation_sensitive': 0, 'genuinely_ambiguous': 269}
+2026-02-17 00:45:53.909 | INFO     | __main__:main:632 - Phase 4 complete in 0.0s
+2026-02-17 00:45:53.909 | INFO     | __main__:main:637 - ============================================================
+2026-02-17 00:45:53.909 | INFO     | __main__:main:638 - PHASE 5 — Clinical Interpretability Case Studies
+2026-02-17 00:45:53.909 | INFO     | __main__:main:639 - ============================================================
+2026-02-17 00:45:53.912 | INFO     | __main__:main:708 -   medical_abstracts: high_boundary=6/10, low_boundary=1/10
+2026-02-17 00:45:53.913 | INFO     | __main__:main:706 -   mimic_iv_ed_demo: ESI-2/3 boundary fraction in high-CRND: 8/10
+2026-02-17 00:45:53.913 | INFO     | __main__:main:708 -   mimic_iv_ed_demo: high_boundary=5/10, low_boundary=2/10
+2026-02-17 00:45:53.913 | INFO     | __main__:main:710 - Phase 5 complete in 0.0s
+2026-02-17 00:45:53.913 | INFO     | __main__:main:715 - ============================================================
+2026-02-17 00:45:53.913 | INFO     | __main__:main:716 - PHASE 6 — Comparison with Standard ML Complexity Measures
+2026-02-17 00:45:53.913 | INFO     | __main__:main:717 - ============================================================
+2026-02-17 00:45:53.916 | INFO     | __main__:main:760 -   medical_abstracts: building TF-IDF features for 1000 examples
+2026-02-17 00:45:54.470 | INFO     | __main__:main:768 -     F1_Fisher=0.0222, N1=0.7850, N2=1.0664
+2026-02-17 00:45:55.364 | INFO     | __main__:main:937 -     Spearman CRND vs Fisher: rho=-0.1000, p=0.8729
+2026-02-17 00:45:55.365 | INFO     | __main__:main:938 -     Spearman CRND vs N1: rho=0.1000, p=0.8729
+2026-02-17 00:45:55.365 | INFO     | __main__:main:939 -     Incremental R²: 0.059101
+2026-02-17 00:45:55.366 | INFO     | __main__:main:760 -   mimic_iv_ed_demo: building TF-IDF features for 207 examples
+2026-02-17 00:45:55.449 | INFO     | __main__:main:768 -     F1_Fisher=0.2767, N1=0.4638, N2=0.9878
+2026-02-17 00:45:55.586 | INFO     | __main__:main:937 -     Spearman CRND vs Fisher: rho=1.0000, p=0.0000
+2026-02-17 00:45:55.587 | INFO     | __main__:main:938 -     Spearman CRND vs N1: rho=-1.0000, p=0.0000
+2026-02-17 00:45:55.587 | INFO     | __main__:main:939 -     Incremental R²: 0.049750
+2026-02-17 00:45:55.587 | INFO     | __main__:main:760 -   clinical_patient_triage_nl: building TF-IDF features for 31 examples
+2026-02-17 00:45:55.637 | INFO     | __main__:main:768 -     F1_Fisher=1.7327, N1=0.5806, N2=1.0994
+2026-02-17 00:45:55.758 | INFO     | __main__:main:937 -     Spearman CRND vs Fisher: rho=-0.6000, p=0.2848
+2026-02-17 00:45:55.758 | INFO     | __main__:main:938 -     Spearman CRND vs N1: rho=0.3000, p=0.6238
+2026-02-17 00:45:55.758 | INFO     | __main__:main:939 -     Incremental R²: 0.000057
+2026-02-17 00:45:55.764 | INFO     | __main__:main:760 -   ohsumed_single: building TF-IDF features for 1000 examples
+2026-02-17 00:45:56.383 | INFO     | __main__:main:768 -     F1_Fisher=0.3369, N1=0.5950, N2=1.0166
+2026-02-17 00:45:57.673 | INFO     | __main__:main:937 -     Spearman CRND vs Fisher: rho=0.5714, p=0.1390
+2026-02-17 00:45:57.674 | INFO     | __main__:main:938 -     Spearman CRND vs N1: rho=0.2857, p=0.4927
+2026-02-17 00:45:57.674 | INFO     | __main__:main:939 -     Incremental R²: 0.107724
+2026-02-17 00:45:57.676 | INFO     | __main__:main:760 -   mental_health_conditions: building TF-IDF features for 1000 examples
+2026-02-17 00:45:58.083 | INFO     | __main__:main:768 -     F1_Fisher=0.7364, N1=0.4410, N2=0.9539
+2026-02-17 00:45:58.888 | INFO     | __main__:main:937 -     Spearman CRND vs Fisher: rho=-0.8571, p=0.0137
+2026-02-17 00:45:58.889 | INFO     | __main__:main:938 -     Spearman CRND vs N1: rho=1.0000, p=0.0000
+2026-02-17 00:45:58.889 | INFO     | __main__:main:939 -     Incremental R²: 0.173146
+2026-02-17 00:45:58.889 | INFO     | __main__:main:941 - Phase 6 complete in 5.0s
+2026-02-17 00:45:58.889 | INFO     | __main__:main:946 - ============================================================
+2026-02-17 00:45:58.889 | INFO     | __main__:main:947 - PHASE 7 — Aggregate Synthesis
+2026-02-17 00:45:58.889 | INFO     | __main__:main:948 - ============================================================
+2026-02-17 00:45:58.889 | INFO     | __main__:main:1054 - Aggregate metrics:
+2026-02-17 00:45:58.890 | INFO     | __main__:main:1056 -   eval_n_datasets: 5
+2026-02-17 00:45:58.890 | INFO     | __main__:main:1056 -   eval_n_total_examples: 3238
+2026-02-17 00:45:58.890 | INFO     | __main__:main:1056 -   eval_kruskal_wallis_significant_count: 3
+2026-02-17 00:45:58.890 | INFO     | __main__:main:1056 -   eval_mean_topology_shift_tau: 0.3066168552854904
+2026-02-17 00:45:58.890 | INFO     | __main__:main:1056 -   eval_mean_cramers_v: 0.2764726059440447
+2026-02-17 00:45:58.890 | INFO     | __main__:main:1056 -   eval_quadrant_genuinely_ambiguous_overall_frac: 0.23965410747374924
+2026-02-17 00:45:58.890 | INFO     | __main__:main:1056 -   eval_crnd_vs_complexity_incremental_r2: 0.07795543237067741
+2026-02-17 00:45:58.890 | INFO     | __main__:main:1056 -   eval_fisher_crnd_spearman_pooled: 0.002857142857142847
+2026-02-17 00:45:58.890 | INFO     | __main__:main:1056 -   eval_n1_crnd_spearman_pooled: 0.13714285714285715
+2026-02-17 00:45:58.890 | INFO     | __main__:main:1056 -   eval_high_shift_vs_low_shift_tau_diff: -0.003500598453311965
+2026-02-17 00:45:58.890 | INFO     | __main__:main:1056 -   eval_case_study_high_crnd_boundary_rate: 0.55
+2026-02-17 00:45:58.891 | INFO     | __main__:main:1056 -   eval_diagnostic_typology_chi2_significant_count: 3
+2026-02-17 00:45:58.891 | INFO     | __main__:main:1056 -   eval_verdict_contribution_beyond_complexity: 1
+2026-02-17 00:45:58.891 | INFO     | __main__:main:1056 -   eval_verdict_topology_informative: 1
+2026-02-17 00:45:58.891 | INFO     | __main__:main:1056 -   eval_verdict_typology_useful: 1
+2026-02-17 00:45:58.891 | INFO     | __main__:main:1058 - Phase 7 complete in 0.0s
+2026-02-17 00:45:58.891 | INFO     | __main__:main:1063 - ============================================================
+2026-02-17 00:45:58.891 | INFO     | __main__:main:1064 - Building output JSON
+2026-02-17 00:45:58.891 | INFO     | __main__:main:1065 - ============================================================
+2026-02-17 00:45:59.016 | INFO     | __main__:main:1166 - Saved output to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260216_170044/3_invention_loop/iter_4/gen_art/eval_id2_it4__opus/eval_out.json (3341.5 KB)
+2026-02-17 00:45:59.016 | INFO     | __main__:main:1169 - Total evaluation time: 5.9s (0.1min)

@@ -1,0 +1,79 @@
+2026-02-19 22:30:06.896 | INFO     | __main__:main:1124 - ======================================================================
+2026-02-19 22:30:06.903 | INFO     | __main__:main:1125 - Cross-Representation Class Characterization Evaluation
+2026-02-19 22:30:06.903 | INFO     | __main__:main:1126 - ======================================================================
+2026-02-19 22:30:06.904 | INFO     | __main__:main:1129 - Phase 1: Loading dependency data...
+2026-02-19 22:30:06.904 | INFO     | __main__:load_json:79 - Loading full_method_out.json (5.1 MB)
+2026-02-19 22:30:07.824 | INFO     | __main__:load_json:81 -   Loaded successfully
+2026-02-19 22:30:07.825 | INFO     | __main__:load_json:79 - Loading full_method_out.json (1.3 MB)
+2026-02-19 22:30:07.876 | INFO     | __main__:load_json:81 -   Loaded successfully
+2026-02-19 22:30:07.876 | INFO     | __main__:load_json:79 - Loading full_method_out.json (6.4 MB)
+2026-02-19 22:30:08.432 | INFO     | __main__:load_json:81 -   Loaded successfully
+2026-02-19 22:30:08.432 | INFO     | __main__:load_json:79 - Loading full_method_out.json (0.2 MB)
+2026-02-19 22:30:08.434 | INFO     | __main__:load_json:81 -   Loaded successfully
+2026-02-19 22:30:08.434 | INFO     | __main__:main:1139 -   D matrices: ['medical_abstracts', 'mimic_iv_ed_demo', 'clinical_patient_triage_nl', 'ohsumed_single', 'mental_health_conditions']
+2026-02-19 22:30:08.435 | INFO     | __main__:main:1148 -   medical_abstracts: 5 classes
+2026-02-19 22:30:08.435 | INFO     | __main__:main:1148 -   mimic_iv_ed_demo: 4 classes
+2026-02-19 22:30:08.435 | INFO     | __main__:main:1148 -   clinical_patient_triage_nl: 6 classes
+2026-02-19 22:30:08.435 | INFO     | __main__:main:1148 -   ohsumed_single: 9 classes
+2026-02-19 22:30:08.435 | INFO     | __main__:main:1148 -   mental_health_conditions: 7 classes
+2026-02-19 22:30:08.435 | INFO     | __main__:main:1151 -   Classifier F1 data: ['medical_abstracts', 'mimic_iv_ed_demo', 'clinical_patient_triage_nl', 'ohsumed_single', 'mental_health_conditions']
+2026-02-19 22:30:08.441 | INFO     | __main__:main:1154 -   Per-instance CRND: medical_abstracts=1000, mimic_iv_ed_demo=207, clinical_patient_triage_nl=31, ohsumed_single=1000, mental_health_conditions=1000
+2026-02-19 22:30:08.511 | INFO     | __main__:main:1157 -   Per-instance ablation: ['medical_abstracts', 'mimic_iv_ed_demo', 'clinical_patient_triage_nl', 'ohsumed_single', 'mental_health_conditions']
+2026-02-19 22:30:08.511 | INFO     | __main__:main:1160 - Phase 1 complete in 1.6s
+2026-02-19 22:30:08.525 | INFO     | __main__:main:1163 - Phase 2: Computing Representation Suitability Map...
+2026-02-19 22:30:08.532 | INFO     | __main__:main:1166 -   medical_abstracts: mean_d_gap=0.2989, max_d_gap=0.5513, n_pairs=10
+2026-02-19 22:30:08.533 | INFO     | __main__:main:1166 -   mimic_iv_ed_demo: mean_d_gap=0.2831, max_d_gap=0.4044, n_pairs=6
+2026-02-19 22:30:08.533 | INFO     | __main__:main:1166 -   clinical_patient_triage_nl: mean_d_gap=0.4964, max_d_gap=0.9381, n_pairs=15
+2026-02-19 22:30:08.533 | INFO     | __main__:main:1166 -   ohsumed_single: mean_d_gap=0.4592, max_d_gap=0.6918, n_pairs=36
+2026-02-19 22:30:08.533 | INFO     | __main__:main:1166 -   mental_health_conditions: mean_d_gap=0.3021, max_d_gap=0.7388, n_pairs=21
+2026-02-19 22:30:08.533 | INFO     | __main__:main:1171 -   medical_abstracts uniformly-high-D (>0.5): 1/10
+2026-02-19 22:30:08.533 | INFO     | __main__:main:1171 -   mimic_iv_ed_demo uniformly-high-D (>0.5): 1/6
+2026-02-19 22:30:08.533 | INFO     | __main__:main:1171 -   clinical_patient_triage_nl uniformly-high-D (>0.5): 1/15
+2026-02-19 22:30:08.533 | INFO     | __main__:main:1171 -   ohsumed_single uniformly-high-D (>0.5): 0/36
+2026-02-19 22:30:08.533 | INFO     | __main__:main:1171 -   mental_health_conditions uniformly-high-D (>0.5): 0/21
+2026-02-19 22:30:08.534 | INFO     | __main__:main:1174 -   CRND stats computed for 5 datasets
+2026-02-19 22:30:08.534 | INFO     | __main__:main:1177 - Phase 2 complete in 0.0s
+2026-02-19 22:30:08.534 | INFO     | __main__:main:1180 - Phase 3: Computing Disagreement Topology...
+2026-02-19 22:30:19.001 | INFO     | __main__:compute_disagreement_topology:388 -   Mantel test medical_abstracts: r=-0.6336, p=0.8898
+2026-02-19 22:30:23.337 | INFO     | __main__:compute_disagreement_topology:388 -   Mantel test mimic_iv_ed_demo: r=-0.4543, p=0.9160
+2026-02-19 22:30:27.483 | INFO     | __main__:compute_disagreement_topology:388 -   Mantel test clinical_patient_triage_nl: r=-0.0465, p=0.5680
+2026-02-19 22:30:32.126 | INFO     | __main__:compute_disagreement_topology:388 -   Mantel test ohsumed_single: r=-0.3965, p=0.8857
+2026-02-19 22:30:36.144 | INFO     | __main__:compute_disagreement_topology:388 -   Mantel test mental_health_conditions: r=0.1775, p=0.1204
+2026-02-19 22:30:36.145 | INFO     | __main__:main:1186 - Phase 3 complete in 27.6s
+2026-02-19 22:30:36.145 | INFO     | __main__:main:1189 - Phase 4: Computing Predictive Value of Suitability Map...
+2026-02-19 22:30:38.083 | INFO     | __main__:main:1191 -   Pooled Kendall tau: 0.2591817363768771
+2026-02-19 22:31:36.687 | INFO     | __main__:main:1196 -   CRND improvement delta: 0.0
+2026-02-19 22:31:36.711 | INFO     | __main__:main:1199 -   High-overlap best precision: 0.2 at threshold=0.4
+2026-02-19 22:31:36.714 | INFO     | __main__:main:1202 - Phase 4 complete in 60.6s
+2026-02-19 22:31:36.714 | INFO     | __main__:main:1205 - Phase 5: Generating Clinical Interpretability Profiles...
+2026-02-19 22:31:36.715 | INFO     | __main__:main:1210 -   medical_abstracts: 5 class profiles generated
+2026-02-19 22:31:36.715 | INFO     | __main__:main:1210 -   mental_health_conditions: 7 class profiles generated
+2026-02-19 22:31:36.715 | INFO     | __main__:main:1215 -   Total human deferral pairs: 2
+2026-02-19 22:31:36.715 | INFO     | __main__:main:1218 - Phase 5 complete in 0.0s
+2026-02-19 22:31:36.715 | INFO     | __main__:main:1221 - Phase 6: Computing Ecological vs. ML Overlap Comparison...
+2026-02-19 22:31:37.489 | INFO     | __main__:main:1225 -   Fisher F1 computed for 5 datasets
+2026-02-19 22:31:54.390 | INFO     | __main__:main:1230 -   Bhattacharyya coefficients computed for 5 datasets
+2026-02-19 22:31:54.412 | INFO     | __main__:main:1235 -   Spearman D vs inv-Fisher: rho=0.3627027027027027
+2026-02-19 22:31:54.412 | INFO     | __main__:main:1236 -   Spearman D vs Bhattacharyya: rho=0.5011415939163903
+2026-02-19 22:31:54.413 | INFO     | __main__:main:1237 -   Partial Spearman (D controlling Fisher): rho=0.5889466640510302
+2026-02-19 22:31:54.413 | INFO     | __main__:main:1240 - Phase 6 complete in 17.7s
+2026-02-19 22:31:54.413 | INFO     | __main__:main:1243 - Building final output...
+2026-02-19 22:31:54.618 | INFO     | __main__:main:1263 - Output saved to /home/adrian/projects/ai-inventor/aii_pipeline/runs/run__20260219_220558/3_invention_loop/iter_4/gen_art/eval_id2_it4__opus/eval_out.json (3777.0 KB)
+2026-02-19 22:31:54.618 | INFO     | __main__:main:1267 - ======================================================================
+2026-02-19 22:31:54.618 | INFO     | __main__:main:1268 - EVALUATION SUMMARY
+2026-02-19 22:31:54.618 | INFO     | __main__:main:1269 - ======================================================================
+2026-02-19 22:31:54.618 | INFO     | __main__:main:1271 -   mean_d_gap_across_datasets: 0.36791545513832885
+2026-02-19 22:31:54.619 | INFO     | __main__:main:1271 -   frac_uniformly_high_d_pairs: 0.03409090909090909
+2026-02-19 22:31:54.619 | INFO     | __main__:main:1271 -   mean_mantel_r: -0.27067112897489987
+2026-02-19 22:31:54.619 | INFO     | __main__:main:1271 -   mean_mantel_p: 0.67598
+2026-02-19 22:31:54.619 | INFO     | __main__:main:1271 -   kendall_tau_d_gap_vs_f1_gap_pooled: 0.2591817363768771
+2026-02-19 22:31:54.619 | INFO     | __main__:main:1271 -   crnd_improves_prediction_delta: 0.0
+2026-02-19 22:31:54.619 | INFO     | __main__:main:1271 -   high_overlap_precision_at_best_threshold: 0.2
+2026-02-19 22:31:54.619 | INFO     | __main__:main:1271 -   spearman_schoener_vs_fisher_pooled: 0.3627027027027027
+2026-02-19 22:31:54.619 | INFO     | __main__:main:1271 -   spearman_schoener_vs_bhattacharyya_pooled: 0.5011415939163903
+2026-02-19 22:31:54.619 | INFO     | __main__:main:1271 -   schoener_unique_partial_spearman: 0.5889466640510302
+2026-02-19 22:31:54.619 | INFO     | __main__:main:1271 -   num_human_deferral_pairs_total: 2.0
+2026-02-19 22:31:54.619 | INFO     | __main__:main:1271 -   num_datasets: 5.0
+2026-02-19 22:31:54.619 | INFO     | __main__:main:1271 -   num_class_pairs_total: 88.0
+2026-02-19 22:31:54.619 | INFO     | __main__:main:1272 - Total runtime: 107.7s
+2026-02-19 22:31:54.619 | INFO     | __main__:main:1273 - ======================================================================

@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: baseline-noise-detection
+Version: 0.1.0
+Summary: Baseline noise detection methods: kDN, Cleanlab, Single-Space k-NN, Random vs CRND
+Requires-Python: <3.12,>=3.10
+Requires-Dist: scikit-learn>=1.3.0
+Requires-Dist: cleanlab>=2.6.0
+Requires-Dist: sentence-transformers>=2.2.0
+Requires-Dist: scipy>=1.11.0
+Requires-Dist: numpy<2.3.0,>=1.26.0
+Requires-Dist: loguru>=0.7.0
+Requires-Dist: torch>=2.0.0
